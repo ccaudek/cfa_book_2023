@@ -17,6 +17,7 @@ parts:
   - caption: Modelli di crescita latente
     numbered: True
     chapters:
+      - file: 324_lgm_mixed
       - file: 326_growth_1
   - caption: Bibliografia
     numbered: True
