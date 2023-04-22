@@ -14,6 +14,8 @@ parts:
     numbered: True
     chapters:
       - file: 035_ctt
+      - file: 037_err_std_mis
+      - file: 038_err_std_stima
   - caption: Modelli di crescita latente
     numbered: True
     chapters:
