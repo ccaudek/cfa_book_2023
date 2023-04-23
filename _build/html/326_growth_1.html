@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Bibliografia" href="z_biblio.html" />
+    <link rel="next" title="7. Latent Change Score Modeling" href="332_latent_change.html" />
     <link rel="prev" title="5. LGM e modelli misti" href="324_lgm_mixed.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -173,10 +173,11 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">5. LGM e modelli misti</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">7. Latent Change Score Modeling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">7. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">8. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -390,7 +391,9 @@ document.write(`
 <span id="lgm1-notebook"></span><h1><span class="section-number">6. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
 <section id="lgm-e-sem">
 <h2><span class="section-number">6.1. </span>LGM e SEM<a class="headerlink" href="#lgm-e-sem" title="Permalink to this headline">#</a></h2>
-<p>Nei termni del framework delle equazioni strutturali, il modello di crescita latente viene inteso come un modello a fattore comune vincolato, con variabili latenti per l’intercetta e la pendenza. Un tale modello a fattore comune vincolato, corrispondente al modello di crescita latente, può essere scritto nel modo seguente:</p>
+<p>Nei termni del framework delle equazioni strutturali, il modello di crescita latente viene inteso come un modello a fattore comune vincolato, con variabili latenti per l’intercetta e la pendenza.</p>
+<p><img alt="" src="_images/lgm.png" /></p>
+<p>Un tale modello a fattore comune vincolato, corrispondente al modello di crescita latente, può essere scritto nel modo seguente:</p>
 <div class="math notranslate nohighlight">
 \[
 \boldsymbol{y}_i = \boldsymbol{Λη}_i + \boldsymbol{u}_i,
@@ -399,9 +402,9 @@ document.write(`
 <p>I punteggi fattoriali possono essere scritti come deviazioni dalle medie a livello del campione, in modo tale che</p>
 <div class="math notranslate nohighlight">
 \[
-\boldsymbol{η}_i = \boldsymbol{α} + \boldsymbol{xi},
+\boldsymbol{η}_i = \boldsymbol{α} + \boldsymbol{\xi},
 \]</div>
-<p>dove <span class="math notranslate nohighlight">\(\boldsymbol{α}\)</span> è un vettore R × 1 delle medie dei fattori e <span class="math notranslate nohighlight">\(\boldsymbol{xi}\)</span> è un vettore R × 1 delle deviazioni medie per per l’individuo <span class="math notranslate nohighlight">\(i\)</span>.</p>
+<p>dove <span class="math notranslate nohighlight">\(\boldsymbol{α}\)</span> è un vettore R × 1 delle medie dei fattori e <span class="math notranslate nohighlight">\(\boldsymbol{\xi}\)</span> è un vettore R × 1 delle deviazioni medie per per l’individuo <span class="math notranslate nohighlight">\(i\)</span>.</p>
 <p>Il modello di crescita latente definito dalle due equazioni precedenti porta a una serie di previsioni sulla struttura delle medie e delle covarianze dei dati osservati. Queste previsioni del modello vengono utilizzate nel contesto della modellizzazione delle equazioni strutturali per calcolare le stime dei parametri e gli indici di adattamento del modello. La struttura delle media (<span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>) prevista dal modello di crescita latente è</p>
 <div class="math notranslate nohighlight">
 \[
@@ -417,7 +420,7 @@ document.write(`
 <section id="una-applicazione-concreta">
 <h2><span class="section-number">6.2. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
 <p>In questo tutorial esamineremo il modello di base LGM utilizzando un set di dati reali.</p>
-<p>Considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [si veda <span id="id1">[<a class="reference internal" href="z_biblio.html#id2" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
+<p>Considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [si veda <span id="id1">[<a class="reference internal" href="z_biblio.html#id3" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set filepath for data file</span>
@@ -1170,11 +1173,11 @@ Variances:
       </div>
     </a>
     <a class="right-next"
-       href="z_biblio.html"
+       href="332_latent_change.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Bibliografia</p>
+        <p class="prev-next-title"><span class="section-number">7. </span>Latent Change Score Modeling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

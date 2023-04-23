@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. LGM e modelli misti" href="324_lgm_mixed.html" />
+    <link rel="next" title="3. L’errore standard della misurazione" href="037_err_std_mis.html" />
     <link rel="prev" title="1. L’analisi di regressione" href="010_regression.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -166,15 +166,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teoria classica dei test</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">2. Fondamenti teorici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelli di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">3. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">4. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">5. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">6. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">7. Latent Change Score Modeling</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">5. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">8. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -412,9 +415,9 @@ document.write(`
 <section id="valutazione-psicometrica-come-ragionamento-inferenziale">
 <h2><span class="section-number">2.1. </span>Valutazione psicometrica come ragionamento inferenziale<a class="headerlink" href="#valutazione-psicometrica-come-ragionamento-inferenziale" title="Permalink to this headline">#</a></h2>
 <p>Inizialmente, i test psicometrici possono sembrare semplici strumenti di valutazione. Tuttavia, la valutazione psicologica e neuropsicologica va ben oltre l’assegnazione di punteggi. Questa pratica implica l’analisi delle osservazioni sul comportamento, le parole e le azioni delle persone per ottenere una comprensione più profonda di aspetti che non possono essere direttamente osservati. In particolare, la valutazione psicologica e neuropsicologica utilizza modelli probabilistici per formulare spiegazioni, previsioni e conclusioni.</p>
-<p>Un secolo fa, la relazione tra le prestazioni osservate e l’abilità inosservabile del rispondente iniziò ad essere formalizzata in termini di errore di misurazione. <span id="id1">Gulliksen [<a class="reference internal" href="z_biblio.html#id26" title="Harold Gulliksen. Measurement of learning and mental abilities. Technical Report, Princeton University, 1961.">Gul61</a>]</span> descrisse il problema centrale della teoria dei test come la relazione tra l’abilità dell’individuo e il suo punteggio osservato sul test (p. 101). Questa caratterizzazione rimane valida ancora oggi, con una definizione adeguatamente ampia di “abilità” e “punteggio sul test” che possa comprendere le diverse forme di valutazione psicologica e neuropsicologica. Comprendere e rappresentare la relazione tra le prestazioni osservate e l’abilità soggiacente è quindi fondamentale per il ragionamento impiegato nella valutazione psicologica e neuropsicologica.</p>
+<p>Un secolo fa, la relazione tra le prestazioni osservate e l’abilità inosservabile del rispondente iniziò ad essere formalizzata in termini di errore di misurazione. <span id="id1">Gulliksen [<a class="reference internal" href="z_biblio.html#id27" title="Harold Gulliksen. Measurement of learning and mental abilities. Technical Report, Princeton University, 1961.">Gul61</a>]</span> descrisse il problema centrale della teoria dei test come la relazione tra l’abilità dell’individuo e il suo punteggio osservato sul test (p. 101). Questa caratterizzazione rimane valida ancora oggi, con una definizione adeguatamente ampia di “abilità” e “punteggio sul test” che possa comprendere le diverse forme di valutazione psicologica e neuropsicologica. Comprendere e rappresentare la relazione tra le prestazioni osservate e l’abilità soggiacente è quindi fondamentale per il ragionamento impiegato nella valutazione psicologica e neuropsicologica.</p>
 <p>A causa dell’errore di misurazione, il ragionamento impiegato nella valutazione psicologica e neuropsicologica è un esempio di ragionamento in condizioni di incertezza. La natura imperfetta della misurazione e l’incompletezza delle informazioni disponibili rendono le nostre inferenze incerte e sempre soggette a revisione. Il passaggio dalle osservazioni parziali (ciò che vediamo un paziente dire, fare o produrre) alle conclusioni generali (la “vera” abilità del paziente) è necessariamente incerto e le nostre inferenze sono sempre soggette ad errori.</p>
-<p>Per affrontare questa incertezza sulla relazione tra le prestazioni osservate e l’abilità soggiacente, molti progressi nella teoria psicometrica sono stati resi possibili trattando lo studio della relazione tra le risposte agli item di un test e il tratto ipotizzato di un individuo come un problema di inferenza statistica <span id="id2">[<a class="reference internal" href="z_biblio.html#id25" title="Charles Lewis. Test theory and psychometrika: the past twenty-five years. Psychometrika, 51(1):11–22, 1986.">Lew86</a>]</span>. <span id="id3">[<a class="reference internal" href="z_biblio.html#id24" title="Fumiko Samejima. Constant information model on the dichotomous response level. In New horizons in testing, pages 287–308. Elsevier, 1983.">Sam83</a>]</span> ha anche proposto una connessione diretta tra errore di misura e approccio probabilistico, sostenendo che la natura complessa dei fattori che influenzano le reazioni di uno studente a uno stimolo rende necessario gestire la situazione in termini di relazione probabilistica tra i due.</p>
+<p>Per affrontare questa incertezza sulla relazione tra le prestazioni osservate e l’abilità soggiacente, molti progressi nella teoria psicometrica sono stati resi possibili trattando lo studio della relazione tra le risposte agli item di un test e il tratto ipotizzato di un individuo come un problema di inferenza statistica <span id="id2">[<a class="reference internal" href="z_biblio.html#id26" title="Charles Lewis. Test theory and psychometrika: the past twenty-five years. Psychometrika, 51(1):11–22, 1986.">Lew86</a>]</span>. <span id="id3">[<a class="reference internal" href="z_biblio.html#id25" title="Fumiko Samejima. Constant information model on the dichotomous response level. In New horizons in testing, pages 287–308. Elsevier, 1983.">Sam83</a>]</span> ha anche proposto una connessione diretta tra errore di misura e approccio probabilistico, sostenendo che la natura complessa dei fattori che influenzano le reazioni di uno studente a uno stimolo rende necessario gestire la situazione in termini di relazione probabilistica tra i due.</p>
 <p>Il punto di vista che sottolinea l’utilità di utilizzare il linguaggio e gli strumenti della teoria della probabilità per comunicare il carattere parziale dei dati e l’incertezza delle inferenze è diventato dominante nella psicometria moderna.</p>
 <p>I reattivi psicologici possono essere costruiti e validati mediante vari approcci probabilistici, tra cui la Teoria Classica dei Test (CTT) e la Teoria di Risposta all’Item (IRT). Recentemente, il problema della valutazione psicologica è stato anche formulato in un’ottica bayesiana. In questo corso esamineremo la CTT e i suoi sviluppi più recenti.</p>
 </section>
@@ -426,8 +429,8 @@ questionari utilizzati per valutare le caratteristiche psico-sociali,
 non direttamente osservabili, delle persone esaminate. L’impiego su
 vasta scala e lo sviluppo della CTT ha inizio negli anni Trenta, anche
 se il modello formale su cui tale teoria si basa viene proposta da
-Spearman all’inizio del Novecento <span id="id4">[<a class="reference internal" href="z_biblio.html#id23" title="C Spearman. General intelligence objectively determined and measured. American Journal of Psychology, 15:201–293, 1904.">Spe04</a>]</span>. La tecnica dell’analisi fattoriale esplorativa (<em>Exploratory Factor Analysis</em>, EFA), verrà poi affinata da <span id="id5">Thurstone [<a class="reference internal" href="z_biblio.html#id14">Thu47</a>]</span> alla fine della seconda guerra mondiale. Tra la fine degli anni ‘60 e gli inizi degli anni ‘70, <span id="id6">Jöreskog [<a class="reference internal" href="z_biblio.html#id13" title="Karl G Jöreskog. A general approach to confirmatory maximum likelihood factor analysis. Psychometrika, 34(2):183–202, 1969.">Joreskog69</a>]</span> sviluppa l’analisi fattoriale confermativa (<em>Confirmatory Factor Analysis</em>, CFA). Negli anni ‘70, l’analisi fattoriale viene integrata con la path analysis nel lavoro di <span id="id7">Jöreskog [<a class="reference internal" href="z_biblio.html#id11" title="Karl G Jöreskog. Structural analysis of covariance and correlation matrices. Psychometrika, 43(4):443–477, 1978.">Joreskog78</a>]</span> che dà origine ai modelli di equazioni strutturali (<em>Structural Equation Modeling</em>, SEM).</p>
-<p>Iniziamo qui ad esaminare queste tecniche psicometriche prendendo in esame, per prima, la teoria classica dei test. Seguiremo la trattazione proposta da <span id="id8">Lord and Novick [<a class="reference internal" href="z_biblio.html#id28" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>.</p>
+Spearman all’inizio del Novecento <span id="id4">[<a class="reference internal" href="z_biblio.html#id24" title="C Spearman. General intelligence objectively determined and measured. American Journal of Psychology, 15:201–293, 1904.">Spe04</a>]</span>. La tecnica dell’analisi fattoriale esplorativa (<em>Exploratory Factor Analysis</em>, EFA), verrà poi affinata da <span id="id5">Thurstone [<a class="reference internal" href="z_biblio.html#id15">Thu47</a>]</span> alla fine della seconda guerra mondiale. Tra la fine degli anni ‘60 e gli inizi degli anni ‘70, <span id="id6">Jöreskog [<a class="reference internal" href="z_biblio.html#id14" title="Karl G Jöreskog. A general approach to confirmatory maximum likelihood factor analysis. Psychometrika, 34(2):183–202, 1969.">Joreskog69</a>]</span> sviluppa l’analisi fattoriale confermativa (<em>Confirmatory Factor Analysis</em>, CFA). Negli anni ‘70, l’analisi fattoriale viene integrata con la path analysis nel lavoro di <span id="id7">Jöreskog [<a class="reference internal" href="z_biblio.html#id12" title="Karl G Jöreskog. Structural analysis of covariance and correlation matrices. Psychometrika, 43(4):443–477, 1978.">Joreskog78</a>]</span> che dà origine ai modelli di equazioni strutturali (<em>Structural Equation Modeling</em>, SEM).</p>
+<p>Iniziamo qui ad esaminare queste tecniche psicometriche prendendo in esame, per prima, la teoria classica dei test. Seguiremo la trattazione proposta da <span id="id8">Lord and Novick [<a class="reference internal" href="z_biblio.html#id29" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>.</p>
 <p>L’equazione fondamentale alla quale si riconduce la teoria classica dei test è quella che ipotizza una relazione lineare e additiva tra il punteggio osservato
 di un test (<span class="math notranslate nohighlight">\(X\)</span>), la misura della variabile latente (<span class="math notranslate nohighlight">\(T\)</span>) e la
 componente casuale dell’errore (<span class="math notranslate nohighlight">\(E\)</span>). L’aspetto cruciale nella CTT riguarda la varianza dell’errore. Minore è la varianza dell’errore, più accuratamente il punteggio reale viene riflesso dai nostri punteggi osservati. In un mondo perfetto, tutti i valori di errore sarebbero uguali a 0. Cioè, ogni partecipante otterrebbe il punteggio esatto. Questo però non è possibile. Pertanto, abbiamo una certa varianza negli errori. La corrispondente deviazione standard di tali errori ha il un nome: si chiama <em>errore standard di misurazione</em>, indicato da <span class="math notranslate nohighlight">\(\sigma_E\)</span>. Uno dei principali obiettivi della CTT è quello di ottenere una stima di <span class="math notranslate nohighlight">\(\sigma_E\)</span> in modo da potere valutare la qualità di una scala psicometrica.</p>
@@ -470,7 +473,7 @@ sistematica (il punteggio vero) e una componente aleatoria (l’errore di
 misurazione). Ma che cos’è il punteggio vero? CTT attribuisce diverse interpretazioni al punteggio vero.</p>
 <ul class="simple">
 <li><p>La CTT considera un reattivo psicologico come una selezione casuale di item da un
-universo/popolazione di item attinenti al costrutto da misurare <span id="id9">Nunnally [<a class="reference internal" href="z_biblio.html#id22" title="Jum C Nunnally. Psychometric theory. McGraw-Hill, 1994.">Nun94</a>]</span>; <span id="id10">Kline [<a class="reference internal" href="z_biblio.html#id21" title="Paul Kline. Handbook of psychological testing. Routledge, 2013.">Kli13</a>]</span>. Se il reattivo psicologico viene
+universo/popolazione di item attinenti al costrutto da misurare <span id="id9">Nunnally [<a class="reference internal" href="z_biblio.html#id23" title="Jum C Nunnally. Psychometric theory. McGraw-Hill, 1994.">Nun94</a>]</span>; <span id="id10">Kline [<a class="reference internal" href="z_biblio.html#id22" title="Paul Kline. Handbook of psychological testing. Routledge, 2013.">Kli13</a>]</span>. Se il reattivo psicologico viene
 concepito in questo modo, il punteggio vero diventa il punteggio che un
 rispondente otterrebbe se fosse misurato su tutto l’universo degli item del costrutto. In questo senso, l’errore di misurazione riflette
 il grado in cui gli item che costituiscono il test non riescono a
@@ -502,7 +505,7 @@ dato dall’unione di questi due esperimenti casuali, ovvero dalla dimostrazione
 risultati della CTT, la quale è stata sviluppata ipotizzando ipotetiche
 somministrazioni ripetute del test allo stesso individuo sotto le
 medesime condizioni, si generalizzano al caso di una singola
-somministrazione del test ad un campione di individui <span id="id13">[<a class="reference internal" href="z_biblio.html#id20" title="Mary J Allen and Wendy M Yen. Introduction to measurement theory. Waveland Press, 2001.">AY01</a>]</span>. In base a questo risultato, se consideriamo la somministrazione del test ad una popolazione di individui, allora diventa più facile assegnare un contenuto empirico alle quantità discusse dalla CTT:</p>
+somministrazione del test ad un campione di individui <span id="id13">[<a class="reference internal" href="z_biblio.html#id21" title="Mary J Allen and Wendy M Yen. Introduction to measurement theory. Waveland Press, 2001.">AY01</a>]</span>. In base a questo risultato, se consideriamo la somministrazione del test ad una popolazione di individui, allora diventa più facile assegnare un contenuto empirico alle quantità discusse dalla CTT:</p>
 <ul class="simple">
 <li><p><span class="math notranslate nohighlight">\(\sigma^2_X\)</span> è la varianza del punteggio osservato nella popolazione,</p></li>
 <li><p><span class="math notranslate nohighlight">\(\sigma^2_T\)</span> è la varianza dei punteggio vero nella popolazione,</p></li>
@@ -586,10 +589,9 @@ varianza del punteggio vero e della varianza dell’errore di misurazione:</p>
 \]</div>
 <div class="proof admonition" id="proof">
 <p>Proof. La varianza del punteggio osservato è uguale a</p>
-<div class="math notranslate nohighlight">
-\[
+<div class="math notranslate nohighlight" id="equation-eq-3-2-4">
+<span class="eqno">(2.4)<a class="headerlink" href="#equation-eq-3-2-4" title="Permalink to this equation">#</a></span>\[
 \sigma^2_X =  \mathbb{V}(T+E) =  \sigma_T^2 + \sigma_E^2 + 2 \sigma_{TE}.
-(\#eq:3-2-4)
 \]</div>
 <p>Dato che <span class="math notranslate nohighlight">\(\sigma_{TE}=\rho_{TE}\sigma_T \sigma_E=0\)</span>, in quanto <span class="math notranslate nohighlight">\(\rho_{TE}=0\)</span>, ne segue che</p>
 <div class="math notranslate nohighlight">
@@ -602,7 +604,7 @@ varianza del punteggio vero e della varianza dell’errore di misurazione:</p>
 <h3><span class="section-number">2.6.2. </span>La covarianza tra punteggio osservato e punteggio vero<a class="headerlink" href="#la-covarianza-tra-punteggio-osservato-e-punteggio-vero" title="Permalink to this headline">#</a></h3>
 <p>La covarianza tra punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> e punteggio vero <span class="math notranslate nohighlight">\(T\)</span> è uguale alla varianza del punteggio vero:</p>
 <div class="math notranslate nohighlight" id="equation-eq-cov-obs-true">
-<span class="eqno">(2.4)<a class="headerlink" href="#equation-eq-cov-obs-true" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.5)<a class="headerlink" href="#equation-eq-cov-obs-true" title="Permalink to this equation">#</a></span>\[
 \sigma_{X T} = \sigma_T^2.
 \]</div>
 <div class="proof admonition" id="proof">
@@ -623,7 +625,7 @@ varianza del punteggio vero e della varianza dell’errore di misurazione:</p>
 <h3><span class="section-number">2.6.3. </span>Correlazione tra punteggio osservato e punteggio vero<a class="headerlink" href="#correlazione-tra-punteggio-osservato-e-punteggio-vero" title="Permalink to this headline">#</a></h3>
 <p>La correlazione tra punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> e punteggio vero <span class="math notranslate nohighlight">\(T\)</span> è uguale al rapporto tra la covarianza tra <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(T\)</span> divisa per il prodotto delle due deviazioni standard:</p>
 <div class="math notranslate nohighlight" id="equation-eq-sd-ratio">
-<span class="eqno">(2.5)<a class="headerlink" href="#equation-eq-sd-ratio" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.6)<a class="headerlink" href="#equation-eq-sd-ratio" title="Permalink to this equation">#</a></span>\[
 \rho_{XT} = \frac{\sigma_{XT}}{\sigma_X \sigma_T} = \frac{\sigma^2_{T}}{\sigma_X \sigma_T} = \frac{\sigma_{T}}{\sigma_X}.
 \]</div>
 <p>Dunque, la correlazione tra il punteggio osservato e il punteggio vero è uguale al rapporto tra la deviazione standard dei punteggi veri e la deviazione standard dei punteggi osservati.</p>
@@ -635,19 +637,19 @@ La CTT definisce attendibilità di un test (o di un item) come il rapporto tra l
 quadrato della correlazione tra punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> e punteggio vero
 <span class="math notranslate nohighlight">\(T\)</span>:</p>
 <div class="math notranslate nohighlight" id="equation-eq-reliability-1">
-<span class="eqno">(2.6)<a class="headerlink" href="#equation-eq-reliability-1" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-reliability-1" title="Permalink to this equation">#</a></span>\[
 \begin{equation}
 \rho_{XT}^2 = \frac{\sigma_{T}^2}{\sigma_X^2}.
 \end{equation}
 \]</div>
 <p>Questa è la quantità fondamentale della CTT e misura il grado di variazione del punteggio vero rispetto alla variazione del punteggio osservato. Dato che <span class="math notranslate nohighlight">\(\sigma^2_X = \sigma_T^2 + \sigma_E^2\)</span>, in base alla <span class="xref std std-ref">eq-reliability-1</span> possiamo scrivere</p>
 <div class="math notranslate nohighlight" id="equation-eq-3-2-6">
-<span class="eqno">(2.7)<a class="headerlink" href="#equation-eq-3-2-6" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-3-2-6" title="Permalink to this equation">#</a></span>\[
 \begin{equation}
 \rho_{XT}^2 = \frac{\sigma_{T}^2}{\sigma_X^2} =\frac{\sigma_{X}^2 - \sigma^2_E}{\sigma_X^2} = 1-\frac{\sigma_{E}^2}{\sigma_X^2}.
 \end{equation}
 \]</div>
-<p>La <a class="reference internal" href="#equation-eq-3-2-6">(2.7)</a> ci dice che il coefficiente di attendibilità assume valore <span class="math notranslate nohighlight">\(1\)</span> se la varianza degli errori <span class="math notranslate nohighlight">\(\sigma_{E}^2\)</span> è nulla e assume valore <span class="math notranslate nohighlight">\(0\)</span> se la varianza degli errori è uguale alla varianza del punteggio osservato. Il coefficiente di attendibilità è dunque un numero puro contenuto nell’intervallo compreso tra <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<p>La <a class="reference internal" href="#equation-eq-3-2-6">(2.8)</a> ci dice che il coefficiente di attendibilità assume valore <span class="math notranslate nohighlight">\(1\)</span> se la varianza degli errori <span class="math notranslate nohighlight">\(\sigma_{E}^2\)</span> è nulla e assume valore <span class="math notranslate nohighlight">\(0\)</span> se la varianza degli errori è uguale alla varianza del punteggio osservato. Il coefficiente di attendibilità è dunque un numero puro contenuto nell’intervallo compreso tra <span class="math notranslate nohighlight">\(0\)</span> e <span class="math notranslate nohighlight">\(1\)</span>.</p>
 </section>
 </section>
 <section id="attendibilita-e-modello-di-regressione-lineare">
@@ -931,7 +933,7 @@ parallele della stessa abilità latente se</p>
 </div>
 <p>Si noti come la &#64;ref(eq:3-3-5) e l’equazione che definisce il coefficiente di attendibilità, ovvero <span class="math notranslate nohighlight">\(\rho_{XT}^2 = \frac{\sigma_{T}^2}{\sigma_X^2}\)</span>, riportano tutte e due la stessa quantità a destra dell’uguale. Otteniamo così un importante risultato: il coefficiente di attendibilità, ovvero il quadrato del coefficiente di correlazione tra il punteggio osservato e il punteggio vero, è uguale alla correlazione tra il valore osservato di due misurazioni parallele:</p>
 <div class="math notranslate nohighlight" id="equation-eq-rho2xt-rhoxx">
-<span class="eqno">(2.8)<a class="headerlink" href="#equation-eq-rho2xt-rhoxx" title="Permalink to this equation">#</a></span>\[
+<span class="eqno">(2.9)<a class="headerlink" href="#equation-eq-rho2xt-rhoxx" title="Permalink to this equation">#</a></span>\[
 \begin{equation}
 \rho^2_{XT} =  \rho_{XX^\prime}.
 \end{equation}
@@ -982,7 +984,7 @@ correlazione dei punteggi totali dei due test (<em>parallel-forms
 reliability</em>), valendo l’uguaglianza <span class="math notranslate nohighlight">\(\rho_{XX^\prime} = \rho^2_{XT}\)</span>. Anche
 questo metodo, come il metodo del test-retest, non è esente da errori.</p>
 <p>Il metodo di stima più diffuso è quello dell’attendibilità come consistenza interna
-(<em>internal consistency reliability</em>), originariamente ricavato da <span id="id14">Kuder and Richardson [<a class="reference internal" href="z_biblio.html#id19" title="G Frederic Kuder and Marion W Richardson. The theory of the estimation of test reliability. Psychometrika, 2(3):151–160, 1937.">KR37</a>]</span> per item dicotomici e poi generalizzato da <span id="id15">Cronbach [<a class="reference internal" href="z_biblio.html#id18" title="Lee J Cronbach. Coefficient alpha and the internal structure of tests. psychometrika, 16(3):297–334, 1951.">Cro51</a>]</span> per item a risposte ordinali. L’idea su cui si basa consiste nel fatto che ogni singolo item del test, se confrontato con tutti gli altri, può essere usato per stimare l’affidabilità del test. L’analisi degli item valuta dunque quanto gli item del test misurano lo stesso costrutto.</p>
+(<em>internal consistency reliability</em>), originariamente ricavato da <span id="id14">Kuder and Richardson [<a class="reference internal" href="z_biblio.html#id20" title="G Frederic Kuder and Marion W Richardson. The theory of the estimation of test reliability. Psychometrika, 2(3):151–160, 1937.">KR37</a>]</span> per item dicotomici e poi generalizzato da <span id="id15">Cronbach [<a class="reference internal" href="z_biblio.html#id19" title="Lee J Cronbach. Coefficient alpha and the internal structure of tests. psychometrika, 16(3):297–334, 1951.">Cro51</a>]</span> per item a risposte ordinali. L’idea su cui si basa consiste nel fatto che ogni singolo item del test, se confrontato con tutti gli altri, può essere usato per stimare l’affidabilità del test. L’analisi degli item valuta dunque quanto gli item del test misurano lo stesso costrutto.</p>
 <!-- [^2]: Vedremo in seguito -->
 <!--     (§ [\[ch:err_stnd_stima\]](#ch:err_stnd_stima){reference-type="ref" -->
 <!--     reference="ch:err_stnd_stima"}) come il livello di abilità latente -->
@@ -1033,11 +1035,11 @@ questo metodo, come il metodo del test-retest, non è esente da errori.</p>
       </div>
     </a>
     <a class="right-next"
-       href="324_lgm_mixed.html"
+       href="037_err_std_mis.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">3. </span>LGM e modelli misti</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>L’errore standard della misurazione</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
