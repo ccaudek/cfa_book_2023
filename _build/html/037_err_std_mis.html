@@ -67,7 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4. LGM e modelli misti" href="324_lgm_mixed.html" />
+    <link rel="next" title="4. La stima del punteggio vero" href="038_err_std_stima.html" />
     <link rel="prev" title="2. Fondamenti teorici" href="035_ctt.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -167,15 +167,18 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">3. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelli di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">4. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">5. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">5. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">6. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">7. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">8. LCSM bivariato</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">6. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">9. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -390,7 +393,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="l-errore-standard-della-misurazione">
 <span id="err-std-mis-notebook"></span><h1><span class="section-number">3. </span>L’errore standard della misurazione<a class="headerlink" href="#l-errore-standard-della-misurazione" title="Permalink to this headline">#</a></h1>
-<p>Secondo <span id="id1">Lord and Novick [<a class="reference internal" href="z_biblio.html#id28" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>, l’errore <span class="math notranslate nohighlight">\(E = X - T\)</span> rappresenta la variabile aleatoria di primario interesse per la CTT. Infatti, poiché lo scopo della CTT è di stimare il punteggio vero di ciascun rispondente e confrontare le stime ottenute per rispondenti diversi, la grandezza dell’errore <span class="math notranslate nohighlight">\(E\)</span> è un’informazione essenziale. La discrepanza tra il punteggio osservato e il punteggio vero può essere misurata utilizzando la deviazione standard di <span class="math notranslate nohighlight">\(E\)</span>, chiamata “errore standard della misurazione” o SEM. Pertanto, l’errore standard della misurazione è lo strumento utilizzato dalla CTT per stimare in che misura un punteggio osservato si discosta da un punteggio vero.</p>
+<p>Secondo <span id="id1">Lord and Novick [<a class="reference internal" href="z_biblio.html#id29" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>, l’errore <span class="math notranslate nohighlight">\(E = X - T\)</span> rappresenta la variabile aleatoria di primario interesse per la CTT. Infatti, poiché lo scopo della CTT è di stimare il punteggio vero di ciascun rispondente e confrontare le stime ottenute per rispondenti diversi, la grandezza dell’errore <span class="math notranslate nohighlight">\(E\)</span> è un’informazione essenziale. La discrepanza tra il punteggio osservato e il punteggio vero può essere misurata utilizzando la deviazione standard di <span class="math notranslate nohighlight">\(E\)</span>, chiamata “errore standard della misurazione” o SEM. Pertanto, l’errore standard della misurazione è lo strumento utilizzato dalla CTT per stimare in che misura un punteggio osservato si discosta da un punteggio vero.</p>
 <p>In questo capitolo vedremo come si può stimare <span class="math notranslate nohighlight">\(\sigma_E\)</span>.</p>
 <section id="l-incertezza-della-misura">
 <h2><span class="section-number">3.1. </span>L’incertezza della misura<a class="headerlink" href="#l-incertezza-della-misura" title="Permalink to this headline">#</a></h2>
@@ -457,7 +460,7 @@ standard dei punteggi del test nella popolazione fosse pari a 15, la
 somministrazione di un tale test ad un singolo individuo sarebbe di
 scarsa utilità, a causa dell’enorme errore di misurazione. Per fare un
 confronto con i dati di questo esempio, la Full Scale IQ (FSIQ) della
-WAIS-IV <span id="id2">[<a class="reference internal" href="z_biblio.html#id17" title="David Wechsler. Wechsler adult intelligence scale–fourth edition (wais–iv). San Antonio, TX: NCS Pearson, 22(498):816–827, 2008.">Wec08</a>]</span> ha un’attendibilità split-half pari a 0.98, con
+WAIS-IV <span id="id2">[<a class="reference internal" href="z_biblio.html#id18" title="David Wechsler. Wechsler adult intelligence scale–fourth edition (wais–iv). San Antonio, TX: NCS Pearson, 22(498):816–827, 2008.">Wec08</a>]</span> ha un’attendibilità split-half pari a 0.98, con
 errore standard di misurazione pari a 2.16.</p>
 <p>Si noti che l’errore standard della misurazione può essere calcolato con la funzione <code class="docutils literal notranslate"><span class="pre">SE.Means()</span></code> del pacchetto <code class="docutils literal notranslate"><span class="pre">psychometric</span></code>.</p>
 <div class="cell docutils container">
@@ -714,7 +717,7 @@ osservabili, <span class="math notranslate nohighlight">\(\sigma^2_X\)</span> e 
 <h2><span class="section-number">3.3. </span>Intervallo di confidenza per il punteggio vero e <span class="math notranslate nohighlight">\(\sigma_E\)</span><a class="headerlink" href="#intervallo-di-confidenza-per-il-punteggio-vero-e-sigma-e" title="Permalink to this headline">#</a></h2>
 <p>Uno degli usi che vengono fatti dell’errore standard della misurazione è
 quello di costruire, con essi, gli intervalli di confidenza per il
-punteggio vero. Tale uso, però, non è corretto <span id="id3">[<a class="reference internal" href="z_biblio.html#id15" title="Richard A Charter. Revisiting the standard errors of measurement, estimate, and prediction and their application to test scores. Perceptual and Motor Skills, 82(3):1139–1144, 1996.">Cha96</a>]</span>.
+punteggio vero. Tale uso, però, non è corretto <span id="id3">[<a class="reference internal" href="z_biblio.html#id16" title="Richard A Charter. Revisiting the standard errors of measurement, estimate, and prediction and their application to test scores. Perceptual and Motor Skills, 82(3):1139–1144, 1996.">Cha96</a>]</span>.
 Gli intervalli di confidenza costruiti usando l’errore standard della
 misurazione vengono talvolta incorrettamente interpretati in modo tale
 da suggerire che l’intervallo di confidenza al <span class="math notranslate nohighlight">\((1 - \alpha)\%\)</span>
@@ -724,7 +727,7 @@ ipotetiche somministrazioni ripetute del test. Ma le cose non stanno
 così. In realtà, come abbiamo detto sopra, l’errore standard della
 misurazione è la deviazione standard, calcolata rispetto al valore
 vero, di ipotetiche misurazioni ripetute dello stesso test. Si può
-ribadire questo concetto nel modo seguente: “In spite of <span id="id4">Dudek [<a class="reference internal" href="z_biblio.html#id16" title="Frank J Dudek. The continuing misinterpretation of the standard error of measurement. Psychological Bulletin, 86(2):335–-337, 1979.">Dud79</a>]</span>’s reminder that the SEM should not be used to construct confidence intervals, many test manuals, computer-scoring programs, and texts in psychology and education continue to do so. Because authors of many textbooks and manuals make these errors, it is understandable that those who learned from and look to these sources for guidance also make these errors. In summary, the SEM should not be used to construct confidence intervals for test scores” (p. 1141). Sembra piuttosto chiaro.</p>
+ribadire questo concetto nel modo seguente: “In spite of <span id="id4">Dudek [<a class="reference internal" href="z_biblio.html#id17" title="Frank J Dudek. The continuing misinterpretation of the standard error of measurement. Psychological Bulletin, 86(2):335–-337, 1979.">Dud79</a>]</span>’s reminder that the SEM should not be used to construct confidence intervals, many test manuals, computer-scoring programs, and texts in psychology and education continue to do so. Because authors of many textbooks and manuals make these errors, it is understandable that those who learned from and look to these sources for guidance also make these errors. In summary, the SEM should not be used to construct confidence intervals for test scores” (p. 1141). Sembra piuttosto chiaro.</p>
 </section>
 <section id="conclusioni">
 <h2><span class="section-number">3.4. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
@@ -772,11 +775,11 @@ ribadire questo concetto nel modo seguente: “In spite of <span id="id4">Dudek 
       </div>
     </a>
     <a class="right-next"
-       href="324_lgm_mixed.html"
+       href="038_err_std_stima.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">4. </span>LGM e modelli misti</p>
+        <p class="prev-next-title"><span class="section-number">4. </span>La stima del punteggio vero</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6. Curve di crescita latente &#8212; cfa_book</title>
+    <title>14. Curve di crescita latente &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="7. Latent Change Score Modeling" href="332_latent_change.html" />
-    <link rel="prev" title="5. LGM e modelli misti" href="324_lgm_mixed.html" />
+    <link rel="next" title="15. Latent Change Score Modeling" href="332_latent_change.html" />
+    <link rel="prev" title="13. LGM e modelli misti" href="324_lgm_mixed.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -168,16 +168,28 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
 <li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
 <li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
+<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">5. Attendibilità e modello fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">6. CFA: confronto tra modelli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Costruzione di strumenti psicometrici</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">7. Tipologie dei test psicometrici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">8. Valutazione della matrice di correlazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">9. L’estrazione dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="203_numero_fattori.html">10. Il numero dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="205_rotazione.html">11. La rotazione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="206_valutare_sol_fattoriale.html">12. Valutare e rifinire la soluzione fattoriale</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelli di crescita latente</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">5. LGM e modelli misti</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">6. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">7. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">13. LGM e modelli misti</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">14. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">15. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">16. LCSM bivariato</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">8. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">17. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -371,11 +383,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">6.1. LGM e SEM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">6.2. Una applicazione concreta</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">6.3. Modello di assenza di crescita</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">6.4. Modello di crescita lineare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">6.5. Considerazioni conclusive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">14.1. LGM e SEM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">14.2. Una applicazione concreta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">14.3. Modello di assenza di crescita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">14.4. Modello di crescita lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">14.5. Considerazioni conclusive</a></li>
 </ul>
             </nav>
         </div>
@@ -388,9 +400,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
-<span id="lgm1-notebook"></span><h1><span class="section-number">6. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
+<span id="lgm1-notebook"></span><h1><span class="section-number">14. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
 <section id="lgm-e-sem">
-<h2><span class="section-number">6.1. </span>LGM e SEM<a class="headerlink" href="#lgm-e-sem" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.1. </span>LGM e SEM<a class="headerlink" href="#lgm-e-sem" title="Permalink to this headline">#</a></h2>
 <p>Nei termni del framework delle equazioni strutturali, il modello di crescita latente viene inteso come un modello a fattore comune vincolato, con variabili latenti per l’intercetta e la pendenza.</p>
 <p><img alt="" src="_images/lgm.png" /></p>
 <p>Un tale modello a fattore comune vincolato, corrispondente al modello di crescita latente, può essere scritto nel modo seguente:</p>
@@ -418,7 +430,7 @@ document.write(`
 <p>Diversi tipi di modelli di crescita latente possono essere specificati cambiando le dimensioni e i valori contenuti nella matrice <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span>. Per il modello senza crescita, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × 1 (colonna) perché c’è solo una variabile latente nel modello senza crescita. Per il modello a crescita lineare, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × k, con k rilevazioni temporali, dove le saturazioni fattoriali sono fisse e uguali alla separazione temporale tra le rilevazioni.  Per esempio, con tre misurazioni temporali, le saturazioni fattoriali saranno specificate ai valori 0, 1, 2. Si noti che, in questo modo, si assume che tutte le unità di osservazione siano state misurate nella stessa occasione temporale.</p>
 </section>
 <section id="una-applicazione-concreta">
-<h2><span class="section-number">6.2. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
 <p>In questo tutorial esamineremo il modello di base LGM utilizzando un set di dati reali.</p>
 <p>Considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [si veda <span id="id1">[<a class="reference internal" href="z_biblio.html#id3" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
@@ -525,7 +537,7 @@ document.write(`
 </div>
 </section>
 <section id="modello-di-assenza-di-crescita">
-<h2><span class="section-number">6.3. </span>Modello di assenza di crescita<a class="headerlink" href="#modello-di-assenza-di-crescita" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.3. </span>Modello di assenza di crescita<a class="headerlink" href="#modello-di-assenza-di-crescita" title="Permalink to this headline">#</a></h2>
 <p>Sembra esserci una crescita sistematica nei punteggi di matematica nel tempo, come si può vedere nel  grafico precedente. Per iniziare l’analisi adatteremo un modello senza crescita. Questo modello senza crescita agirà come il nostro modello “nullo” a cui confrontare i modelli successivi.</p>
 <p>Il modello senza crescita prevede che i punteggi non cambino con l’aumentare del tempo. Pertanto, il modello senza crescita è un modello che spesso vogliamo respingere. Il modello senza crescita ha una variabile latente, un’intercetta, che rappresenta il livello complessivo di prestazione nel tempo.</p>
 <p>Impostiamo il modello senza crescita con la sintassi di lavaan.</p>
@@ -817,7 +829,7 @@ Variances:
 <p>Vediamo dal grafico che il modello, come richiesto, produce una traiettoria di crescita piatta per ciascun individuo.</p>
 </section>
 <section id="modello-di-crescita-lineare">
-<h2><span class="section-number">6.4. </span>Modello di crescita lineare<a class="headerlink" href="#modello-di-crescita-lineare" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.4. </span>Modello di crescita lineare<a class="headerlink" href="#modello-di-crescita-lineare" title="Permalink to this headline">#</a></h2>
 <p>Nella discussione dei modelli di crescita, dopo il modello di assenza di crescita, si esamina sempre il modello di crescita lineare a causa della sua semplicità. Inoltre, i modelli di crescita lineare sono spesso un punto di partenza quando si cerca di comprendere il cambiamento all’interno della persona.</p>
 <p>Implementiamo dunque un modello di crescita latente lineare.</p>
 <div class="cell docutils container">
@@ -1128,7 +1140,7 @@ Variances:
 <p>Dal grafico si può notare che questo modello rappresenta la traiettoria di ogni bambino come una linea retta, con alcune differenze interindividuali nella velocità del cambiamento intraindividuale. Questo tutorial ha dunque illustrato come impostare e adattare modelli di crescita lineare nel framework di modellizzazione SEM utilizzando il pacchetto lavaan in R, nonché come calcolare e rappresentare graficamente le traiettorie di crescita previste dal modello.</p>
 </section>
 <section id="considerazioni-conclusive">
-<h2><span class="section-number">6.5. </span>Considerazioni conclusive<a class="headerlink" href="#considerazioni-conclusive" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.5. </span>Considerazioni conclusive<a class="headerlink" href="#considerazioni-conclusive" title="Permalink to this headline">#</a></h2>
 <p>I modelli di crescita lineare sono un punto di partenza appropriato per qualsiasi studio sul cambiamento individuale. In molti casi, questi modelli sono in grado di catturare bene il processo di cambiamento osservato; tuttavia, ci sono numerose volte in cui questo non è il caso. Pertanto, è sempre utile adattare e confrontare modelli aggiuntivi e considerare le differenze di gruppo nel cambiamento. Come abbiamo notato, l’adattamento dei modelli di crescita nei framework di modellizzazione multilivello e delle equazioni strutturali ha vantaggi e limitazioni, e uno dei vantaggi del framework delle equazioni strutturali è evidente in questo tutorial poiché sono disponibili gli indici di adattamento globale per valutare l’adattamento del modello ai dati osservati (ad esempio, utilizzando RMSEA, CFI e TLI), mentre l’approccio dei modelli misti può usare solo gli indici AIC e BIC e le diagnostiche del modello (ad esempio, grafico dei residui).</p>
 <p>Indipendentemente dal framework utilizzato per adattare i modelli di crescita lineare, ci sono alcune considerazioni importanti da tenere a mente. La prima è la metrica del tempo. Nell’esempio attuale, abbiamo utilizzato il grado al momento del test come metrica del tempo, ma ovviamente sono possibili altre metriche. In particolare, l’età al momento del test potrebbe essere più rilevante, poiché questa metrica del tempo può catturare meglio lo spazio tra le valutazioni. Inoltre, potrebbero esserci alcune limitazioni nell’utilizzo del grado, come gli studenti che ripetono o saltano un grado. Pertanto, gli anni trascorsi dalla seconda elementare potrebbero essere una metrica del tempo più appropriata.</p>
 <p>Una terza considerazione riguarda la posizione dell’intercetta. Nel nostro esempio illustrativo, l’intercetta era centrata sulla valutazione della seconda elementare perché questa era l’occasione di misurazione più precoce e gli studiosi sono spesso interessati alle differenze individuali in un punto iniziale nel tempo. L’intercetta potrebbe essere posizionata in qualsiasi punto temporale, ma scegliere un punto temporale rilevante, uno con dati osservati e con significato al di fuori dello studio specifico, è l’ideale. Ad esempio, centrare un’intercetta alla fine dell’ottava elementare potrebbe essere importante con i dati di matematica se fossimo interessati alla preparazione per la scuola superiore.</p>
@@ -1169,7 +1181,7 @@ Variances:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">5. </span>LGM e modelli misti</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>LGM e modelli misti</p>
       </div>
     </a>
     <a class="right-next"
@@ -1177,7 +1189,7 @@ Variances:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">7. </span>Latent Change Score Modeling</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Latent Change Score Modeling</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1196,11 +1208,11 @@ Variances:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">6.1. LGM e SEM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">6.2. Una applicazione concreta</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">6.3. Modello di assenza di crescita</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">6.4. Modello di crescita lineare</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">6.5. Considerazioni conclusive</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">14.1. LGM e SEM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">14.2. Una applicazione concreta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">14.3. Modello di assenza di crescita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">14.4. Modello di crescita lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">14.5. Considerazioni conclusive</a></li>
 </ul>
   </nav></div>
 

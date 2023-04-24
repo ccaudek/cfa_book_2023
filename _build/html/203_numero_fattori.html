@@ -1,0 +1,930 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>10. Il numero dei fattori &#8212; cfa_book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '203_numero_fattori';</script>
+    <link rel="shortcut icon" href="_static/increasing.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. LGM e modelli misti" href="324_lgm_mixed.html" />
+    <link rel="prev" title="9. L’estrazione dei fattori" href="202_estrazione.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Benvenuti
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="010_regression.html">1. L’analisi di regressione</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Teoria classica dei test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
+<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">5. Attendibilità e modello fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">6. CFA: confronto tra modelli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Costruzione di strumenti psicometrici</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">7. Tipologie dei test psicometrici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">8. Valutazione della matrice di correlazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">9. L’estrazione dei fattori</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Il numero dei fattori</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelli di crescita latente</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">11. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">12. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">13. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">14. LCSM bivariato</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">15. Bibliografia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ccaudek/cfa_book_2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ccaudek/cfa_book_2023/issues/new?title=Issue%20on%20page%20%2F203_numero_fattori.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/203_numero_fattori.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Il numero dei fattori</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">10.1. Quota di varianza spiegata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">10.2. Valore medio degli autovalori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">10.3. Scree test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">10.4. Parallel analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">10.5. Test di bontà di adattamento</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="il-numero-dei-fattori">
+<span id="number-factors-notebook"></span><h1><span class="section-number">10. </span>Il numero dei fattori<a class="headerlink" href="#il-numero-dei-fattori" title="Permalink to this headline">#</a></h1>
+<p>Sono stati proposti quattro criteri per determinare il numero <span class="math notranslate nohighlight">\(m\)</span> di
+fattori da estrarre (Rencher, 2002). Tali criteri sono elencati di
+seguito.</p>
+<ul class="simple">
+<li><p>Scegliere <span class="math notranslate nohighlight">\(m\)</span> tale per cui la varianza spiegata dal modello
+fattoriale superi una soglia predeterminata, per esempio l’80% della
+varianza totale, <span class="math notranslate nohighlight">\(tr(\textbf{S})\)</span> o <span class="math notranslate nohighlight">\(tr(\textbf{R})\)</span>.</p></li>
+<li><p>Scegliere <span class="math notranslate nohighlight">\(m\)</span> uguale al numero di autovalori aventi un valore
+maggiore del valore medio degli autovalori. Per <strong>R</strong> il valore
+medio degli autovalori è <span class="math notranslate nohighlight">\(1\)</span>; per <strong>S</strong> è <span class="math notranslate nohighlight">\(\sum_{j=1}^p \theta_j/p\)</span>.</p></li>
+<li><p>Usare lo <em>scree test</em>.</p></li>
+<li><p>Valutare l’ipotesi che <span class="math notranslate nohighlight">\(m\)</span> sia il numero corretto di fattori,
+<span class="math notranslate nohighlight">\(H_0: \boldsymbol{\Sigma} =  \boldsymbol{\Lambda}
+  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi}\)</span>,
+dove <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> è di ordine <span class="math notranslate nohighlight">\(p \times m\)</span>.</p></li>
+</ul>
+<section id="quota-di-varianza-spiegata">
+<h2><span class="section-number">10.1. </span>Quota di varianza spiegata<a class="headerlink" href="#quota-di-varianza-spiegata" title="Permalink to this headline">#</a></h2>
+<p>Il primo criterio si applica soprattutto al metodo delle componenti
+principali. La proporzione della varianza capionaria spiegata dal
+fattore <span class="math notranslate nohighlight">\(j\)</span>-esimo estratto da <strong>S</strong> è uguale a</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=i}^p \hat{\lambda}_{ij}^2 / tr(\textbf{S}).\]</div>
+<p>Nel caso in cui
+i fattori vengano estratti da <strong>R</strong> avremo</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=i}^p \hat{\lambda}_{ij}^2 / p.\]</div>
+<p>Nel caso di fattori incorrelati, ciascun fattore contribuisce con una
+quota complessiva di varianza spiegata pari alla somma dei quadrati
+delle saturazioni fattoriali contenute nella matrice
+<span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>:
+<span class="math notranslate nohighlight">\(\sum_{i=1}^p\sum_{j=1}^m\hat{\lambda}_{ij}^2\)</span>. Nel caso del metodo
+delle componenti principali, tale somma è anche uguale alla somma dei
+primi <span class="math notranslate nohighlight">\(m\)</span> autovalori, o alla somma di tutte le <span class="math notranslate nohighlight">\(p\)</span> comunalità:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{i=1}^p\sum_{j=1}^m\hat{\lambda}_{ij}^2= \sum_{i=1}^p \hat{h}_i^2
+= \sum_{j=1}^m \theta_j\]</div>
+<p>Sulla base di queste considerazioni, il numero <span class="math notranslate nohighlight">\(m\)</span> di fattori viene
+scelto in modo da spiegare una quota sufficientemente grande di <strong>S</strong> o
+<span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Il numero dei fattori può essere determinato in questo modo anche nel
+caso in cui l’analisi fattoriale venga eseguita con il metodo dei
+fattori principali (ovvero, nel caso in cui vengano usate le stime delle
+comunalità per generare la matrice ridotta <span class="math notranslate nohighlight">\(\textbf{S} -
+\hat{\boldsymbol{\Psi}}\)</span> o <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span>). In
+questo caso, però, è possibile che alcuni autovalori della matrice
+<span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> o <span class="math notranslate nohighlight">\(\textbf{R} -
+\hat{\boldsymbol{\Psi}}\)</span> assumano valore negativo. In tali circostanze,
+è possibile che la proporzione cumulativa della varianza
+<span class="math notranslate nohighlight">\(\sum_{j=1}^m \theta_j / \sum_{j=1}^p \theta_j\)</span> assuma un valore
+maggiore di <span class="math notranslate nohighlight">\(1.0\)</span> per <span class="math notranslate nohighlight">\(j &lt; p\)</span>.</p>
+<p>La proporzione cumulativa della varianza si riduce poi a <span class="math notranslate nohighlight">\(1.0\)</span> quando
+vengono considerati anche i successivi autovalori negativi. Di
+conseguenza, può succedere che, utilizzando la matrice
+<span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> o
+<span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span>, il criterio definito in base
+alla quota della varianza spiegata venga raggiunto per un valore <span class="math notranslate nohighlight">\(m\)</span>
+minore di quello che verrebbe trovato utilizzando la matrice <strong>S</strong> o
+<strong>R</strong>.</p>
+<p>Nel caso del metodo dei fattori principali iterato, <span class="math notranslate nohighlight">\(m\)</span> viene
+specificato precedentemente a ciascuna iterazione e <span class="math notranslate nohighlight">\(\sum_{i}
+\hat{h}^2_i\)</span> viene ottenuto dopo ciascuna iterazione calcolando
+<span class="math notranslate nohighlight">\(\text{tr}(\textbf{S} - \hat{\boldsymbol{\Psi}})\)</span>. Per scegliere <span class="math notranslate nohighlight">\(m\)</span>,
+come per il metodo delle componenti principali, possono essere usati gli
+autovalori di <strong>S</strong> o <strong>R</strong>.</p>
+</section>
+<section id="valore-medio-degli-autovalori">
+<h2><span class="section-number">10.2. </span>Valore medio degli autovalori<a class="headerlink" href="#valore-medio-degli-autovalori" title="Permalink to this headline">#</a></h2>
+<p>Il calcolo del valore medio degli autovalori è una procedura euristica
+implementata in molti software. In una variante di tale metodo, <span class="math notranslate nohighlight">\(m\)</span>
+viene scelto in modo tale da uguagliare il numero degli autovalori
+positivi della matrice ridotta <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> (in tale matrice vi sono solitamente degli autovalori negativi). Tale variante ha però lo svantaggio di produrre
+solitamente un numero di fattori troppo grande.</p>
+</section>
+<section id="scree-test">
+<h2><span class="section-number">10.3. </span>Scree test<a class="headerlink" href="#scree-test" title="Permalink to this headline">#</a></h2>
+<p>Lo scree test è basato su una rappresentazione grafica degli autovalori
+di <strong>S</strong> o <strong>R</strong>. Si costruisce un grafico che rappresenta gli
+autovalori ordinati in maniera decrescente in funzione del numero dei
+fattori. I punti che rappresentano gli autovalori vengono collegati con
+una spezzata. Il valore <span class="math notranslate nohighlight">\(m\)</span> viene determinato in corrispondenza di quel
+fattore oltre il quale il dislivello tra fattori successivi diventa
+esiguo e la spezzata tende a diventare orizzontale.</p>
+</section>
+<section id="parallel-analysis">
+<h2><span class="section-number">10.4. </span>Parallel analysis<a class="headerlink" href="#parallel-analysis" title="Permalink to this headline">#</a></h2>
+<p>La Parallel Analysis è un metodo alternativo allo scree test[^1]. Nella
+Parallel Analysis, il criterio usato per decidere il numero di fattori
+da estrarre viene determinato dal confronto con la media degli
+autovalori generati da un campione casuale di variabili standardizzate.
+Tale confronto ha lo scopo di controllare le variazioni dovute agli
+errori di campionamento. Anche se, nel caso di variabili incorrelate,
+tutti gli autovalori di una matrice di correlazione dovrebbero avere un
+valore pari a uno, come conseguenza della variabilità campionaria in
+qualunque campione finito vi sono comunque uno o più autovalori empirici
+maggiori di uno.</p>
+<p>Tale fatto può essere illustrato mediante la seguente
+simulazione di Monte Carlo. Si consideri una matrice di correlazione
+calcolata su <span class="math notranslate nohighlight">\(p=10\)</span> variabili casuali mutuamente indipendenti, ciascuna
+costituita da <span class="math notranslate nohighlight">\(n=20\)</span> osservazioni.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">20</span>
+<span class="n">nsim</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1000</span>
+<span class="n">e1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="n">nsim</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">nsim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">Y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cbind</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span>
+<span class="w">    </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">),</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="w">  </span><span class="n">e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">eigen</span><span class="p">(</span><span class="nf">cor</span><span class="p">(</span><span class="n">Y</span><span class="p">))</span>
+<span class="w">  </span><span class="n">e1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">e</span><span class="o">$</span><span class="n">values</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="p">}</span>
+<span class="nf">max</span><span class="p">(</span><span class="n">e1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">3.33286594865205</div></div>
+</div>
+<p>Per i dati di questa simulazione, l’autovalore maggiore ha un valore
+pari a <span class="math notranslate nohighlight">\(3.53\)</span>, anche se i dati sono del tutto casuali. La Parallel
+Analysis tiene conto di questo fatto e determina <span class="math notranslate nohighlight">\(m\)</span> confrontando gli
+autovalori empirici con le loro “controparti casuali.” Vanno a
+determinare <span class="math notranslate nohighlight">\(m\)</span> solo gli autovalori empirici che hanno un valore
+superiore ai corrispondenti autovalori generati da una matrice di dati
+dello stesso ordine composta da colonne mutualmente incorrelate. Nel
+caso dell’esempio presente, per esempio, l’autovalore maggiore dovrà
+avere un valore maggiore di <span class="math notranslate nohighlight">\(3.53\)</span> (anziché di <span class="math notranslate nohighlight">\(1.00\)</span> o del punto di
+flesso della spezzata dello scree test).</p>
+</section>
+<section id="test-di-bonta-di-adattamento">
+<h2><span class="section-number">10.5. </span>Test di bontà di adattamento<a class="headerlink" href="#test-di-bonta-di-adattamento" title="Permalink to this headline">#</a></h2>
+<p>Se si assume la normalità distributiva dei dati è possibile valutare la
+bontà di adattamento attraverso il test del rapporto di verosimiglianze.
+L’ipotesi nulla postula che la matrice di covarianza delle <span class="math notranslate nohighlight">\(Y\)</span> abbia la
+forma specificata dal modello fattoriale, ossia</p>
+<div class="math notranslate nohighlight">
+\[H_0: \boldsymbol{\Sigma} =  \boldsymbol{\Lambda}
+  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi},\]</div>
+<p>ovvero che <span class="math notranslate nohighlight">\(m\)</span> fattori comuni siano sufficienti per spiegare la
+struttura di interdipendenza della variabile casuale <span class="math notranslate nohighlight">\(Y\)</span> oggetto di
+osservazione campionaria. L’alternativa è che <span class="math notranslate nohighlight">\(m\)</span> fattori comuni non
+siano sufficienti a tale spiegazione</p>
+<div class="math notranslate nohighlight">
+\[H_1: \boldsymbol{\Sigma} \neq  \boldsymbol{\Lambda}
+  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi},\]</div>
+<p>dove <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> è di ordine <span class="math notranslate nohighlight">\(p \times m\)</span>. Se l’ipotesi nulla
+non viene rifiutata vuol dire che il modello fornisce un buon
+adattamento ai dati.</p>
+<p>Sotto l’ipotesi nulla, il test ha una distribuzione asintotica, per
+<span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>, di tipo chi quadrato con gradi di libertà pari
+a:</p>
+<div class="math notranslate nohighlight">
+\[\nu=\frac{1}{2}\left[ (p-m)^2 - (p - m) \right].\]</div>
+<p>Tale risultato di natura asintotica, valido per <span class="math notranslate nohighlight">\(n\)</span> grande, può essere migliorato, per
+ottenere una approssimazione migliore, sostituendo <span class="math notranslate nohighlight">\(\nu\)</span> con:</p>
+<div class="math notranslate nohighlight">
+\[\nu^* = n - 2 - \frac{2p-1}{6}-\frac{2}{3}m.\]</div>
+<p>Il rifiuto di <span class="math notranslate nohighlight">\(H_0\)</span> implica che <span class="math notranslate nohighlight">\(m\)</span> è troppo piccolo e un numero maggiore di fattori è
+necessario. Solitamente si inizia l’analisi considerando un numero di
+fattori molto piccolo: <span class="math notranslate nohighlight">\(m^*=1\)</span> e si prende come ipotesi per il test che
+il numero di fattori sia <span class="math notranslate nohighlight">\(m^*\)</span>. Se l’ipotesi nulla è accettata il
+procedimento si arresta, altrimenti si passa a considerare <span class="math notranslate nohighlight">\(m^* + 1\)</span>
+fattori e si prosegue con lo stesso ragionamento. Il procedimento si
+arresta non appena si verifica una delle seguenti situazioni: è stata
+accettata l’ipotesi <span class="math notranslate nohighlight">\(H_0\)</span> per un certo valore di <span class="math notranslate nohighlight">\(m\)</span>, oppure,
+<span class="math notranslate nohighlight">\(\nu=\frac{1}{2}\left[ (p-m)^2 - (p - m) \right]=0\)</span>, ossia la variabile
+<span class="math notranslate nohighlight">\(\chi^2\)</span> dovrebbe avere zero gradi di libertà, che non è possibile.</p>
+<p>Per poter applicare il test che determina il buon grado di adattamento
+del modello fattoriale occorre che i gradi di libertà della statistica
+del chi-quadrato siano positivi. Questo sta a significare che il numero
+di fattori comuni non può superare il più grande numero intero che
+soddisfa la seguente equazione:</p>
+<div class="math notranslate nohighlight">
+\[m &lt; \frac{1}{2} \left( 2p+1-\sqrt{8p+1} \right)\]</div>
+<p>per un numero fissato <span class="math notranslate nohighlight">\(p\)</span> di variabili manifeste. In pratica, quando <span class="math notranslate nohighlight">\(n\)</span> è grande, il
+test basato sul rapporto di verosimiglianze rivela un numero di fattori
+maggiore degli altri metodi descritti in precedenza. Alcuni considerano
+dunque il valore <span class="math notranslate nohighlight">\(m\)</span> indicato dal test quale limite superiore del numero
+dei fattori che rivestono una qualche importanza pratica.</p>
+<p>Per alcuni campioni di dati, la scelta di <span class="math notranslate nohighlight">\(m\)</span> non è ovvia. Questa
+indeterminazione costituisce un limite dell’analisi fattoriale.
+Solitamente, si procede con utilizzando un certo metodo per la scelta di
+<span class="math notranslate nohighlight">\(m\)</span> (diciamo lo scree test) e valuta la proporzione di varianza spiegata
+di ciascun item e, dopo un’appropriata rotazione, l’interpretabilità
+della soluzione ottenuta. Se le comunalità o l’interpretabilità dei
+fattori non sembrano adeguati, si procede con un numero maggiore di
+fattori. Tale procedura è certamente soggettiva e i limiti della
+soluzione che viene ottenuta sono evidenti.</p>
+<p>Per altri campioni di dati, la scelta di <span class="math notranslate nohighlight">\(m\)</span> consente una maggiore
+certezza. Questo avviene quando tutti i metodi che abbiamo descritto
+prima forniscono la stessa risposta. In questi casi, possiamo essere più
+certi della soluzione dell’analisi fattoriale.</p>
+<p><strong>Esempio.</strong> Per confrontare i quattro metodi discussi per la scelta del numero <span class="math notranslate nohighlight">\(m\)</span>
+di fattori usiamo qui una matrice di correlazioni calcolata sulla WAIS. Le 11 sottoscale sono le seguenti:</p>
+<ul class="simple">
+<li><p>X1 = Information</p></li>
+<li><p>X2 = Comprehension</p></li>
+<li><p>X3 = Arithmetic</p></li>
+<li><p>X4 = Similarities</p></li>
+<li><p>X5 = Digit.span</p></li>
+<li><p>X6 = Vocabulary</p></li>
+<li><p>X7 = Digit.symbol</p></li>
+<li><p>X8 = Picture.completion</p></li>
+<li><p>X9 = Block.design</p></li>
+<li><p>X10 = Picture.arrangement</p></li>
+<li><p>X11 = Object.assembly</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">varnames</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;IN&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CO&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;AR&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SI&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VO&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SY&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PC&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">              </span><span class="s">&quot;BD&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;OA&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;AG&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;ED&quot;</span><span class="p">)</span>
+<span class="n">temp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span>
+<span class="w">	</span><span class="m">1</span><span class="p">,</span><span class="m">0.67</span><span class="p">,</span><span class="m">0.62</span><span class="p">,</span><span class="m">0.66</span><span class="p">,</span><span class="m">0.47</span><span class="p">,</span><span class="m">0.81</span><span class="p">,</span><span class="m">0.47</span><span class="p">,</span><span class="m">0.60</span><span class="p">,</span><span class="m">0.49</span><span class="p">,</span><span class="m">0.51</span><span class="p">,</span><span class="m">0.41</span><span class="p">,</span>
+<span class="w">	</span><span class="m">-0.07</span><span class="p">,</span><span class="m">0.66</span><span class="p">,</span><span class="n">.</span><span class="m">67</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.54</span><span class="p">,</span><span class="m">0.60</span><span class="p">,</span><span class="m">0.39</span><span class="p">,</span><span class="m">0.72</span><span class="p">,</span><span class="m">0.40</span><span class="p">,</span><span class="m">0.54</span><span class="p">,</span><span class="m">0.45</span><span class="p">,</span>
+<span class="w">	</span><span class="m">0.49</span><span class="p">,</span><span class="m">0.38</span><span class="p">,</span><span class="m">-0.08</span><span class="p">,</span><span class="m">0.52</span><span class="p">,</span><span class="n">.</span><span class="m">62</span><span class="p">,</span><span class="n">.</span><span class="m">54</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.51</span><span class="p">,</span><span class="m">0.51</span><span class="p">,</span><span class="m">0.58</span><span class="p">,</span><span class="m">0.41</span><span class="p">,</span>
+<span class="w">	</span><span class="m">0.46</span><span class="p">,</span><span class="m">0.48</span><span class="p">,</span><span class="m">0.43</span><span class="p">,</span><span class="m">0.37</span><span class="p">,</span><span class="m">-0.08</span><span class="p">,</span><span class="m">0.49</span><span class="p">,</span><span class="n">.</span><span class="m">66</span><span class="p">,</span><span class="n">.</span><span class="m">60</span><span class="p">,</span><span class="n">.</span><span class="m">51</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.41</span><span class="p">,</span>
+<span class="w">	</span><span class="m">0.68</span><span class="p">,</span><span class="m">0.49</span><span class="p">,</span><span class="m">0.56</span><span class="p">,</span><span class="m">0.50</span><span class="p">,</span><span class="m">0.50</span><span class="p">,</span><span class="m">0.41</span><span class="p">,</span><span class="m">-0.19</span><span class="p">,</span><span class="m">0.55</span><span class="p">,</span><span class="n">.</span><span class="m">47</span><span class="p">,</span><span class="n">.</span><span class="m">39</span><span class="p">,</span><span class="n">.</span><span class="m">51</span><span class="p">,</span>
+<span class="w">	</span><span class="n">.</span><span class="m">41</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.45</span><span class="p">,</span><span class="m">0.45</span><span class="p">,</span><span class="m">0.42</span><span class="p">,</span><span class="m">0.39</span><span class="p">,</span><span class="m">0.42</span><span class="p">,</span><span class="m">0.31</span><span class="p">,</span><span class="m">-0.19</span><span class="p">,</span><span class="m">0.43</span><span class="p">,</span>
+<span class="w">	</span><span class="n">.</span><span class="m">81</span><span class="p">,</span><span class="n">.</span><span class="m">72</span><span class="p">,</span><span class="n">.</span><span class="m">58</span><span class="p">,</span><span class="n">.</span><span class="m">68</span><span class="p">,</span><span class="n">.</span><span class="m">45</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.49</span><span class="p">,</span><span class="m">0.57</span><span class="p">,</span><span class="m">0.46</span><span class="p">,</span><span class="m">0.52</span><span class="p">,</span><span class="m">0.40</span><span class="p">,</span><span class="m">-0.02</span><span class="p">,</span>
+<span class="w">	</span><span class="m">0.62</span><span class="p">,</span><span class="n">.</span><span class="m">47</span><span class="p">,</span><span class="n">.</span><span class="m">40</span><span class="p">,</span><span class="n">.</span><span class="m">41</span><span class="p">,</span><span class="n">.</span><span class="m">49</span><span class="p">,</span><span class="n">.</span><span class="m">45</span><span class="p">,</span><span class="n">.</span><span class="m">49</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.50</span><span class="p">,</span><span class="m">0.50</span><span class="p">,</span><span class="m">0.52</span><span class="p">,</span><span class="m">0.46</span><span class="p">,</span>
+<span class="w">	</span><span class="m">-0.46</span><span class="p">,</span><span class="m">0.57</span><span class="p">,</span><span class="n">.</span><span class="m">60</span><span class="p">,</span><span class="n">.</span><span class="m">54</span><span class="p">,</span><span class="n">.</span><span class="m">46</span><span class="p">,</span><span class="n">.</span><span class="m">56</span><span class="p">,</span><span class="n">.</span><span class="m">42</span><span class="p">,</span><span class="n">.</span><span class="m">57</span><span class="p">,</span><span class="n">.</span><span class="m">50</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.61</span><span class="p">,</span><span class="m">0.59</span><span class="p">,</span>
+<span class="w">	</span><span class="m">0.51</span><span class="p">,</span><span class="m">-0.28</span><span class="p">,</span><span class="m">0.48</span><span class="p">,</span><span class="n">.</span><span class="m">49</span><span class="p">,</span><span class="n">.</span><span class="m">45</span><span class="p">,</span><span class="n">.</span><span class="m">48</span><span class="p">,</span><span class="n">.</span><span class="m">50</span><span class="p">,</span><span class="n">.</span><span class="m">39</span><span class="p">,</span><span class="n">.</span><span class="m">46</span><span class="p">,</span><span class="n">.</span><span class="m">50</span><span class="p">,</span><span class="n">.</span><span class="m">61</span><span class="p">,</span><span class="m">1</span><span class="p">,</span>
+<span class="w">	</span><span class="m">0.54</span><span class="p">,</span><span class="m">0.59</span><span class="p">,</span><span class="m">-0.32</span><span class="p">,</span><span class="m">0.44</span><span class="p">,</span><span class="n">.</span><span class="m">51</span><span class="p">,</span><span class="n">.</span><span class="m">49</span><span class="p">,</span><span class="n">.</span><span class="m">43</span><span class="p">,</span><span class="n">.</span><span class="m">50</span><span class="p">,</span><span class="n">.</span><span class="m">42</span><span class="p">,</span><span class="n">.</span><span class="m">52</span><span class="p">,</span><span class="n">.</span><span class="m">52</span><span class="p">,</span><span class="n">.</span><span class="m">59</span><span class="p">,</span>
+<span class="w">	</span><span class="n">.</span><span class="m">54</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">0.46</span><span class="p">,</span><span class="m">-0.37</span><span class="p">,</span><span class="m">0.49</span><span class="p">,</span><span class="n">.</span><span class="m">41</span><span class="p">,</span><span class="n">.</span><span class="m">38</span><span class="p">,</span><span class="n">.</span><span class="m">37</span><span class="p">,</span><span class="n">.</span><span class="m">41</span><span class="p">,</span><span class="n">.</span><span class="m">31</span><span class="p">,</span><span class="n">.</span><span class="m">40</span><span class="p">,</span><span class="n">.</span><span class="m">46</span><span class="p">,</span><span class="n">.</span><span class="m">51</span><span class="p">,</span>
+<span class="w">	</span><span class="n">.</span><span class="m">59</span><span class="p">,</span><span class="n">.</span><span class="m">46</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">-0.28</span><span class="p">,</span><span class="m">0.40</span><span class="p">,</span><span class="m">-.07</span><span class="p">,</span><span class="m">-.08</span><span class="p">,</span><span class="m">-.08</span><span class="p">,</span><span class="m">-.19</span><span class="p">,</span><span class="m">-.19</span><span class="p">,</span><span class="m">-.02</span><span class="p">,</span>
+<span class="w">	</span><span class="m">-.46</span><span class="p">,</span><span class="m">-.28</span><span class="p">,</span><span class="m">-.32</span><span class="p">,</span><span class="m">-.37</span><span class="p">,</span><span class="m">-.28</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">-0.29</span><span class="p">,</span><span class="n">.</span><span class="m">66</span><span class="p">,</span><span class="n">.</span><span class="m">52</span><span class="p">,</span><span class="n">.</span><span class="m">49</span><span class="p">,</span><span class="n">.</span><span class="m">55</span><span class="p">,</span><span class="n">.</span><span class="m">43</span><span class="p">,</span>
+<span class="w">	</span><span class="n">.</span><span class="m">62</span><span class="p">,</span><span class="n">.</span><span class="m">57</span><span class="p">,</span><span class="n">.</span><span class="m">48</span><span class="p">,</span><span class="n">.</span><span class="m">44</span><span class="p">,</span><span class="n">.</span><span class="m">49</span><span class="p">,</span><span class="n">.</span><span class="m">40</span><span class="p">,</span><span class="m">-.29</span><span class="p">,</span><span class="m">1</span>
+<span class="p">),</span><span class="w"> </span><span class="n">nrow</span><span class="o">=</span><span class="m">13</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="o">=</span><span class="m">13</span><span class="p">,</span><span class="w"> </span><span class="n">byrow</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+
+<span class="nf">colnames</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">varnames</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">varnames</span>
+
+<span class="n">wais_cor</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">temp</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">11</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">11</span><span class="p">]</span>
+<span class="n">wais_cor</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 11 × 11 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>IN</th><th scope=col>CO</th><th scope=col>AR</th><th scope=col>SI</th><th scope=col>DS</th><th scope=col>VO</th><th scope=col>SY</th><th scope=col>PC</th><th scope=col>BD</th><th scope=col>PA</th><th scope=col>OA</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>IN</th><td>1.00</td><td>0.67</td><td>0.62</td><td>0.66</td><td>0.47</td><td>0.81</td><td>0.47</td><td>0.60</td><td>0.49</td><td>0.51</td><td>0.41</td></tr>
+	<tr><th scope=row>CO</th><td>0.67</td><td>1.00</td><td>0.54</td><td>0.60</td><td>0.39</td><td>0.72</td><td>0.40</td><td>0.54</td><td>0.45</td><td>0.49</td><td>0.38</td></tr>
+	<tr><th scope=row>AR</th><td>0.62</td><td>0.54</td><td>1.00</td><td>0.51</td><td>0.51</td><td>0.58</td><td>0.41</td><td>0.46</td><td>0.48</td><td>0.43</td><td>0.37</td></tr>
+	<tr><th scope=row>SI</th><td>0.66</td><td>0.60</td><td>0.51</td><td>1.00</td><td>0.41</td><td>0.68</td><td>0.49</td><td>0.56</td><td>0.50</td><td>0.50</td><td>0.41</td></tr>
+	<tr><th scope=row>DS</th><td>0.47</td><td>0.39</td><td>0.51</td><td>0.41</td><td>1.00</td><td>0.45</td><td>0.45</td><td>0.42</td><td>0.39</td><td>0.42</td><td>0.31</td></tr>
+	<tr><th scope=row>VO</th><td>0.81</td><td>0.72</td><td>0.58</td><td>0.68</td><td>0.45</td><td>1.00</td><td>0.49</td><td>0.57</td><td>0.46</td><td>0.52</td><td>0.40</td></tr>
+	<tr><th scope=row>SY</th><td>0.47</td><td>0.40</td><td>0.41</td><td>0.49</td><td>0.45</td><td>0.49</td><td>1.00</td><td>0.50</td><td>0.50</td><td>0.52</td><td>0.46</td></tr>
+	<tr><th scope=row>PC</th><td>0.60</td><td>0.54</td><td>0.46</td><td>0.56</td><td>0.42</td><td>0.57</td><td>0.50</td><td>1.00</td><td>0.61</td><td>0.59</td><td>0.51</td></tr>
+	<tr><th scope=row>BD</th><td>0.49</td><td>0.45</td><td>0.48</td><td>0.50</td><td>0.39</td><td>0.46</td><td>0.50</td><td>0.61</td><td>1.00</td><td>0.54</td><td>0.59</td></tr>
+	<tr><th scope=row>PA</th><td>0.51</td><td>0.49</td><td>0.43</td><td>0.50</td><td>0.42</td><td>0.52</td><td>0.52</td><td>0.59</td><td>0.54</td><td>1.00</td><td>0.46</td></tr>
+	<tr><th scope=row>OA</th><td>0.41</td><td>0.38</td><td>0.37</td><td>0.41</td><td>0.31</td><td>0.40</td><td>0.46</td><td>0.51</td><td>0.59</td><td>0.46</td><td>1.00</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Il primo metodo per la determinazione di <span class="math notranslate nohighlight">\(m\)</span> richiede di estrarre tanti
+fattori quanti sono necessari per spiegare una quota predeterminata
+della varianza totale. Supponiamo di porre il criterio pari all’80%
+della varianza totale. La soluzione ottenuta in questo modo ci
+porterebbe a mantenere <span class="math notranslate nohighlight">\(m=5\)</span> fattori:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">eigen</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">val</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">val</span><span class="p">)</span>
+<span class="nf">sum</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">val</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">])</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">val</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.765678107076221</div><div class="output text_html">0.811885250571924</div></div>
+</div>
+<p>Il secondo metodo suggerisce di mantenere tutti gli autovalori superiori
+al valore medio degli autovalori (che, nel caso di <strong>R</strong> è uguale a
+<span class="math notranslate nohighlight">\(1\)</span>). Nel caso presente, <span class="math notranslate nohighlight">\(m=2\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>6.074</li><li>1.015</li><li>0.746</li><li>0.587</li><li>0.508</li><li>0.431</li><li>0.423</li><li>0.377</li><li>0.351</li><li>0.31</li><li>0.177</li></ol>
+</div></div>
+</div>
+<p>Il terzo metodo, lo scree test, può essere eseguito usando la funzione
+<code class="docutils literal notranslate"><span class="pre">VSS.scree()</span></code> contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">psych</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">VSS.scree</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/0d9373670b96c28b6290a952337267ee28fb1d777cc143554217efce4bdb2986.png" src="_images/0d9373670b96c28b6290a952337267ee28fb1d777cc143554217efce4bdb2986.png" />
+</div>
+</div>
+<p>Lo scree test suggerisce una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span> fattori, come indicato
+nella figura precedente. Il terzo metodo, nella versione della Parallel
+Analysis, può essere eseguito usando la funzione <code class="docutils literal notranslate"><span class="pre">paran()</span></code> contenuta nel
+pacchetto <code class="docutils literal notranslate"><span class="pre">paran</span></code>. La Parallel Analysis indica una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span>
+fattore.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;paran&quot;</span><span class="p">)</span>
+<span class="nf">paran</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: MASS
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘MASS’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:patchwork’:
+
+    area
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:dplyr’:
+
+    select
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using eigendecomposition of correlation matrix.
+Computing: 10%  20%  30%  40%  50%  60%  70%  80%  90%  100%
+
+
+Results of Horn&#39;s Parallel Analysis for component retention
+330 iterations, using the mean estimate
+
+-------------------------------------------------- 
+Component   Adjusted    Unadjusted    Estimated 
+            Eigenvalue  Eigenvalue    Bias 
+-------------------------------------------------- 
+1           1.636878    3.765744      2.128865
+-------------------------------------------------- 
+
+Adjusted eigenvalues &gt; 1 indicate dimensions to retain.
+(1 components retained)
+</pre></div>
+</div>
+<img alt="_images/856387349247250f4d2227b8d940c23027348b384bf646a93a9d2da8360dea9b.png" src="_images/856387349247250f4d2227b8d940c23027348b384bf646a93a9d2da8360dea9b.png" />
+</div>
+</div>
+<p>Il quarto metodo consiste nell’applicazione di un test inferenziale
+relativo al numero di fattori. Anche questo metodo indica una soluzione
+a sei fattori:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">factanal</span><span class="p">(</span><span class="n">covmat</span><span class="o">=</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">factors</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">n.obs</span><span class="o">=</span><span class="m">933</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+factanal(factors = 5, covmat = wais_cor, n.obs = 933)
+
+Uniquenesses:
+   IN    CO    AR    SI    DS    VO    SY    PC    BD    PA    OA 
+0.235 0.389 0.117 0.419 0.600 0.109 0.277 0.308 0.334 0.472 0.456 
+
+Loadings:
+   Factor1 Factor2 Factor3 Factor4 Factor5
+IN  0.745   0.264   0.301   0.192   0.118 
+CO  0.667   0.278   0.244   0.129   0.111 
+AR  0.378   0.236   0.814   0.145         
+SI  0.591   0.332   0.207   0.252   0.121 
+DS  0.288   0.208   0.366   0.341   0.155 
+VO  0.865   0.216   0.207   0.229         
+SY  0.251   0.364   0.153   0.708         
+PC  0.425   0.548   0.156   0.216   0.375 
+BD  0.246   0.708   0.230   0.201   0.107 
+PA  0.355   0.457   0.163   0.325   0.245 
+OA  0.211   0.664   0.128   0.205         
+
+               Factor1 Factor2 Factor3 Factor4 Factor5
+SS loadings      2.799   1.986   1.176   1.043   0.280
+Proportion Var   0.254   0.181   0.107   0.095   0.025
+Cumulative Var   0.254   0.435   0.542   0.637   0.662
+
+Test of the hypothesis that 5 factors are sufficient.
+The chi square statistic is 12.46 on 10 degrees of freedom.
+The p-value is 0.256 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le differenze tra i risultati ottenuti con i quattro metodi descritti
+sopra suggeriscono la presenza di una componente di arbitrarietà nella
+scelta della soluzione da adottare.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="202_estrazione.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">9. </span>L’estrazione dei fattori</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="324_lgm_mixed.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>LGM e modelli misti</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">10.1. Quota di varianza spiegata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">10.2. Valore medio degli autovalori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">10.3. Scree test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">10.4. Parallel analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">10.5. Test di bontà di adattamento</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Corrado Caudek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

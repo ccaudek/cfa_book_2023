@@ -173,10 +173,12 @@ const thebe_selector_output = ".output, .cell_output"
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">5. LGM e modelli misti</a></li>
 <li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">6. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">7. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">8. LCSM bivariato</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">7. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">9. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -556,7 +558,7 @@ attendibilità.</p>
 <div class="proof admonition" id="proof">
 <p>Proof. Per ricavare la <a class="reference internal" href="#equation-eq-std-err-estimate">(4.3)</a> si definisce <span class="math notranslate nohighlight">\(\varepsilon\)</span> l’errore
 che si commette quando si stima il punteggio vero <span class="math notranslate nohighlight">\(\hat{T}\)</span> con il
-punteggio osservato <span class="math notranslate nohighlight">\(T\)</span> [si veda <span id="id1">Lord and Novick [<a class="reference internal" href="z_biblio.html#id28" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>:</p>
+punteggio osservato <span class="math notranslate nohighlight">\(T\)</span> [si veda <span id="id1">Lord and Novick [<a class="reference internal" href="z_biblio.html#id29" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \varepsilon = T - \hat{T}.
@@ -694,7 +696,7 @@ della stima, <span class="math notranslate nohighlight">\(\sigma_{\hat{T}} = \si
 È importante notare che l’errore standard della stima diventa sempre più grande
 man mano che diminuisce l’attendibilità <span class="math notranslate nohighlight">\(\rho_{XX^\prime}\)</span> del test.</p>
 <p>L’intervallo di confidenza indica quanto l’imprecisione della misura influisce sull’interpretazione dei dati. Più l’intervallo di confidenza è ampio, maggiore è l’incertezza nella valutazione dei risultati.</p>
-<p><strong>Esercizio.</strong> <span id="id2">Charter [<a class="reference internal" href="z_biblio.html#id15" title="Richard A Charter. Revisiting the standard errors of measurement, estimate, and prediction and their application to test scores. Perceptual and Motor Skills, 82(3):1139–1144, 1996.">Cha96</a>]</span> ha esaminato l’effetto della variazione dell’attendibilità del test sull’ampiezza dell’intervallo di confidenza per il punteggio vero. Utilizzando come esempio i punteggi di QI (<span class="math notranslate nohighlight">\(\mu\)</span> = 100, <span class="math notranslate nohighlight">\(\sigma\)</span> = 15), Charter ha immaginato di variare il coefficiente di attendibilità del test utilizzato per la misurazione del QI. I valori presi in considerazione sono 0.55, 0.65, 0.75, 0.85 e 0.95. Ad esempio, supponiamo di avere un punteggio osservato pari a QI = 120 e un coefficiente di attendibilità del test <span class="math notranslate nohighlight">\(\rho_{xx^\prime}\)</span> pari a 0.65. In tali circostanze, la stima del punteggio vero è pari a</p>
+<p><strong>Esercizio.</strong> <span id="id2">Charter [<a class="reference internal" href="z_biblio.html#id16" title="Richard A Charter. Revisiting the standard errors of measurement, estimate, and prediction and their application to test scores. Perceptual and Motor Skills, 82(3):1139–1144, 1996.">Cha96</a>]</span> ha esaminato l’effetto della variazione dell’attendibilità del test sull’ampiezza dell’intervallo di confidenza per il punteggio vero. Utilizzando come esempio i punteggi di QI (<span class="math notranslate nohighlight">\(\mu\)</span> = 100, <span class="math notranslate nohighlight">\(\sigma\)</span> = 15), Charter ha immaginato di variare il coefficiente di attendibilità del test utilizzato per la misurazione del QI. I valori presi in considerazione sono 0.55, 0.65, 0.75, 0.85 e 0.95. Ad esempio, supponiamo di avere un punteggio osservato pari a QI = 120 e un coefficiente di attendibilità del test <span class="math notranslate nohighlight">\(\rho_{xx^\prime}\)</span> pari a 0.65. In tali circostanze, la stima del punteggio vero è pari a</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{equation}
@@ -833,9 +835,9 @@ punteggio vero. Charter e Feldt (1991) descrivono altri quattro approcci
 possibili, oltre a quello discusso qui, per costruire gli intervalli di
 confidenza per il punteggio vero. L’approccio che abbiamo descritto è
 accettato da tutti gli autori; le procedure alternative descritte da
-<span id="id3">Charter and Feldt [<a class="reference internal" href="z_biblio.html#id12" title="Richard A Charter and Leonard S Feldt. Confidence intervals for true scores: is there a correct approach? Journal of Psychoeducational Assessment, 19(4):350–364, 2001.">CF01</a>]</span>, non sono invece accettate come valide da tutti
+<span id="id3">Charter and Feldt [<a class="reference internal" href="z_biblio.html#id13" title="Richard A Charter and Leonard S Feldt. Confidence intervals for true scores: is there a correct approach? Journal of Psychoeducational Assessment, 19(4):350–364, 2001.">CF01</a>]</span>, non sono invece accettate come valide da tutti
 gli autori.</p>
-<p>La più comune delle procedure alternative descritte da <span id="id4">Charter and Feldt [<a class="reference internal" href="z_biblio.html#id12" title="Richard A Charter and Leonard S Feldt. Confidence intervals for true scores: is there a correct approach? Journal of Psychoeducational Assessment, 19(4):350–364, 2001.">CF01</a>]</span>, che rappresenta l’approccio tradizionale a questo problema,
+<p>La più comune delle procedure alternative descritte da <span id="id4">Charter and Feldt [<a class="reference internal" href="z_biblio.html#id13" title="Richard A Charter and Leonard S Feldt. Confidence intervals for true scores: is there a correct approach? Journal of Psychoeducational Assessment, 19(4):350–364, 2001.">CF01</a>]</span>, che rappresenta l’approccio tradizionale a questo problema,
 centra l’intervallo di confidenza sul punteggio osservato di un
 rispondente e utilizza l’errore standard della misurazione per
 calcolare i limiti dell’intervallo di confidenza:</p>
@@ -843,7 +845,7 @@ calcolare i limiti dell’intervallo di confidenza:</p>
 \[
 X_j \pm z_{\frac{\alpha}{2}} \sigma_E,
 \]</div>
-<p>dove <span class="math notranslate nohighlight">\(\sigma_E = \sigma_X \sqrt{1 -\rho_{XX^\prime}}\)</span>. Come abbiamo visto in precedenza, però, tale procedura non è corretta e non dovrebbe essere usata [es., <span id="id5">Dudek [<a class="reference internal" href="z_biblio.html#id16" title="Frank J Dudek. The continuing misinterpretation of the standard error of measurement. Psychological Bulletin, 86(2):335–-337, 1979.">Dud79</a>]</span>].</p>
+<p>dove <span class="math notranslate nohighlight">\(\sigma_E = \sigma_X \sqrt{1 -\rho_{XX^\prime}}\)</span>. Come abbiamo visto in precedenza, però, tale procedura non è corretta e non dovrebbe essere usata [es., <span id="id5">Dudek [<a class="reference internal" href="z_biblio.html#id17" title="Frank J Dudek. The continuing misinterpretation of the standard error of measurement. Psychological Bulletin, 86(2):335–-337, 1979.">Dud79</a>]</span>].</p>
 </section>
 <section id="conclusioni">
 <h2><span class="section-number">4.6. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>

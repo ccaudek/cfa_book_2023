@@ -16,6 +16,17 @@ parts:
       - file: 035_ctt
       - file: 037_err_std_mis
       - file: 038_err_std_stima
+      - file: 062_constraints_on_parms
+      - file: 070_cfa_mod_comp
+  - caption: Costruzione di strumenti psicometrici
+    numbered: True
+    chapters:
+      - file: 200_problema_strumento
+      - file: 201_valutare_le_matrici
+      - file: 202_estrazione
+      - file: 203_numero_fattori
+      - file: 205_rotazione
+      - file: 206_valutare_sol_fattoriale
   - caption: Modelli di crescita latente
     numbered: True
     chapters:

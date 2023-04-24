@@ -1,0 +1,62 @@
+Traceback (most recent call last):
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/asyncio/base_events.py", line 650, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/client.py", line 608, in async_setup_kernel
+    yield
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/Users/corrado/opt/anaconda3/envs/pymc_511/lib/python3.11/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+faT1 <- fa(r=cormat, nfactors=2, n.obs=192, rotate="oblimin")
+faT1$loadings
+
+Loadings:
+    MR1    MR2   
+i1   0.132       
+i2   0.270  0.107
+i3   0.489       
+i4   0.343  0.365
+i5   0.130  0.105
+i6   0.565 -0.497
+i7   0.527       
+i8          0.792
+i9   0.363       
+i10  0.467  0.250
+i11  0.459  0.190
+i12  0.111  0.497
+i13  0.401       
+i14  0.511  0.173
+i15  0.206  0.252
+i16  0.247  0.365
+------------------
+
+Error in parse(text = x, srcfile = src): <text>:5:12: unexpected symbol
+4: Loadings:
+5:     MR1    MR2
+              ^
+Traceback:
+
+ERROR: Error in parse(text = x, srcfile = src): <text>:5:12: unexpected symbol
+4: Loadings:
+5:     MR1    MR2
+              ^
+
+
