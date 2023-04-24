@@ -1,0 +1,1025 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>13. Invarianza di misura &#8212; cfa_book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '250_group_invariance';</script>
+    <link rel="shortcut icon" href="_static/increasing.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="14. Indici di bontà dell’adattamento" href="300_gof.html" />
+    <link rel="prev" title="12. Valutare e rifinire la soluzione fattoriale" href="206_valutare_sol_fattoriale.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Benvenuti
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modello lineare</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="010_regression.html">1. L’analisi di regressione</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Teoria classica dei test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analisi fattoriale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">5. Attendibilità e modello fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">6. CFA: confronto tra modelli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Costruzione di strumenti psicometrici</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">7. Tipologie dei test psicometrici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">8. Valutazione della matrice di correlazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">9. L’estrazione dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="203_numero_fattori.html">10. Il numero dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="205_rotazione.html">11. La rotazione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="206_valutare_sol_fattoriale.html">12. Valutare e rifinire la soluzione fattoriale</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. Invarianza di misura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="300_gof.html">14. Indici di bontà dell’adattamento</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">15. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">16. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">17. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">18. LCSM bivariato</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">19. Bibliografia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ccaudek/cfa_book_2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ccaudek/cfa_book_2023/issues/new?title=Issue%20on%20page%20%2F250_group_invariance.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/250_group_invariance.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Invarianza di misura</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-continui">13.1. Indicatori continui</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intercette-degli-item">13.1.1. Intercette degli item</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminologia">13.1.2. Terminologia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#un-esempio-concreto">13.1.3. Un esempio concreto</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-a-livello-di-scala-ordinale">13.2. Indicatori a livello di scala ordinale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">13.2.1. Un esempio concreto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">13.2.2. Baseline model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-delle-soglie">13.2.3. Invarianza delle soglie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-delle-soglie-e-delle-saturazioni-fattoriali">13.2.4. Invarianza delle soglie e delle saturazioni fattoriali</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="invarianza-di-misura">
+<span id="factorial-invariance-notebook"></span><h1><span class="section-number">13. </span>Invarianza di misura<a class="headerlink" href="#invarianza-di-misura" title="Permalink to this headline">#</a></h1>
+<p>I precedenti esempi di CFA presentati in questa dispensa sono stati stimati all’interno di un singolo gruppo, hanno utilizzato come input un’unica matrice covarianza e hanno portato alla stima dei parametri del modello sui quali non è stata imposta alcuna restrizione. In questo capitolo, le  analisi precedenti verranno estese considerando il problema dell’invarianza di misura. Quello che ci chiediamo è se sia sensato considerare la medesima struttura fattoriale in gruppi diversi. In altre parole, ci chiediamo se viene misurata la stessa variabile latente tra gruppi diversi. Questa proprietà è chiamata <em>invarianza di misura</em> <span id="id1">[<a class="reference internal" href="z_biblio.html#id7" title="William Meredith. Measurement invariance, factor analysis and factorial invariance. Psychometrika, 58(4):525–543, 1993.">Mer93</a>]</span>.</p>
+<p>L’approccio che viene utilizzato per valutare l’invarianza di misura è quello dell’analisi fattoriale confermativa a gruppi multipli (<em>multiple-group confirmatory factor analysis</em>, MG-CFA). Questa verifica è importante perché i confronti tra le medie dei gruppi sono possibili solo se viene dimostrata l’equivalenza di misura: se lo stesso reattivo misura dimensioni diverse in gruppi diversi, i confronti tra gruppi nei termini di quella misura non sono ovviamente possibili. Nel presente Capitolo, verrà affrontato il problema dell’invarianza di misura considerando prima il caso degli indicatori continui e poi il caso ddeli indicatori categoriali.</p>
+<section id="indicatori-continui">
+<h2><span class="section-number">13.1. </span>Indicatori continui<a class="headerlink" href="#indicatori-continui" title="Permalink to this headline">#</a></h2>
+<section id="intercette-degli-item">
+<h3><span class="section-number">13.1.1. </span>Intercette degli item<a class="headerlink" href="#intercette-degli-item" title="Permalink to this headline">#</a></h3>
+<p>In generale, i modelli di equazioni strutturali vengono utilizzati per modellare unicamente la matrice di covarianza delle variabili osservate in un set di dati.  Ricordiamo che, quando abbiamo introdotto il modello dell’analisi fattoriale,</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = \mu + \lambda_j \xi_k + \delta_i,
+\]</div>
+<p>per semplicità abbiamo ignorato la media <span class="math notranslate nohighlight">\(\mu\)</span> degli indicatori esprimendo i dati osservati nei termini degli scarti dalla media, <span class="math notranslate nohighlight">\(y_i -\mu\)</span>, in quanto ciò lascia immutate le covarianze. Tuttavia, in alcune applicazioni (quali, appunto, l’invarianza di misura), è utile considerare anche le medie delle variabili osservate. Per includere nel modello fattoriale le informazioni sulle medie facciamo esplicito riferimento all’intercetta della precedente equazione. Usando la sintassi <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>, la media di una variabile manifesta viene inserita nel modello specificando l’intercetta dell’equazione precedente come segue</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">my_item</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>my_item ~ 1
+</pre></div>
+</div>
+</div>
+</div>
+<p>La parte sinistra dell’espressione precedente contiene il nome della variabile manifesta a cui si fa riferimento; la parte destra dell’espressione precedente specifica la presenza dell’intercetta.</p>
+<p>Per esempio, nella specificazione di un modello a due fattori comuni, è possibile aggiungere al modello le medie delle variabili manifeste nel modo seguente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mod1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;</span>
+<span class="s">  # two-factor model</span>
+<span class="s">  f1 =~ x1 + x2 + x3</span>
+<span class="s">  f2 =~ x4 + x5 + x6</span>
+<span class="s">  # intercepts</span>
+<span class="s">  x1 ~ 1</span>
+<span class="s">  x2 ~ 1</span>
+<span class="s">  x3 ~ 1</span>
+<span class="s">  x4 ~ 1</span>
+<span class="s">  x5 ~ 1</span>
+<span class="s">  x6 ~ 1</span>
+<span class="s">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Tuttavia, è più conveniente omettere le intercette nella specificazione del modello e aggiungere l’argomento <code class="docutils literal notranslate"><span class="pre">meanstructure</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> nella funzione <code class="docutils literal notranslate"><span class="pre">cfa()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mod2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;</span>
+<span class="s">  f1 =~ x1 + x2 + x3</span>
+<span class="s">  f2 =~ x4 + x5 + x6</span>
+<span class="s">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">mod2</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">,</span>
+<span class="w">  </span><span class="n">meanstructure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">lavaan</span><span class="p">::</span><span class="n">lavaan</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">mod2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span> <span class="n">meanstructure</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="p">:</span> <span class="nb">object</span> <span class="s1">&#39;d&#39;</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">cfa</span><span class="p">(</span><span class="n">mod2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span> <span class="n">meanstructure</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">())</span>
+<span class="mi">3</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">())</span>
+<span class="mi">4</span><span class="o">.</span> <span class="n">lavaan</span><span class="p">::</span><span class="n">lavaan</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">mod2</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">d</span><span class="p">,</span> <span class="n">meanstructure</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">model</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;cfa&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="o">.</span><span class="n">ov</span><span class="o">.</span><span class="n">free</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="nb">int</span><span class="o">.</span><span class="n">lv</span><span class="o">.</span><span class="n">free</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">auto</span><span class="o">.</span><span class="n">fix</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">fix</span><span class="o">.</span><span class="n">single</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">auto</span><span class="o">.</span><span class="n">cov</span><span class="o">.</span><span class="n">lv</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">cov</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">th</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">auto</span><span class="o">.</span><span class="n">delta</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">efa</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si noti che modelli con o senza <code class="docutils literal notranslate"><span class="pre">meanstructure</span></code> avranno la stessa statistica chi-quadrato e lo stesso numero di gradi di libertà. Il motivo è che, nel caso di un modello con <code class="docutils literal notranslate"><span class="pre">meanstructure</span></code>, vengono introdotti <span class="math notranslate nohighlight">\(p\)</span> nuovi dati (ovvero, il valore della media per ciascuno dei <span class="math notranslate nohighlight">\(p\)</span> indicatori) ma vengono anche stimati ulteriori <span class="math notranslate nohighlight">\(p\)</span> parametri (ovvero, un’intercetta per ciascuno dei <span class="math notranslate nohighlight">\(p\)</span> indicatori). Il risultato finale è che la bontà dell’adattamento resta immutata. In pratica, l’unico motivo per aggiungere le intercette nella sintassi del modello è quello di introdurre dei vincoli nella stima di tali parametri.</p>
+</section>
+<section id="terminologia">
+<h3><span class="section-number">13.1.2. </span>Terminologia<a class="headerlink" href="#terminologia" title="Permalink to this headline">#</a></h3>
+<p>La discussione dell’invarianza di misura nel contesto della CFA fa uso della seguente terminologia.</p>
+<ul class="simple">
+<li><p>L’<em>invarianza configurale</em> (<em>configural invariance</em>) verifica se la struttura dei fattori sia la stessa tra i gruppi, ovvero verifica la presenza dello stesso numero di fattori e della stessa struttura fattoriale (nella CFA) tra i gruppi.</p></li>
+<li><p>L’<em>invarianza metrica</em> (<em>metric invariance</em>) o <em>invarianza fattoriale debole</em> (<em>weak factorial invariance</em>) verifica inoltre se le saturazioni fattoriali rimangono invariante tra i gruppi.</p></li>
+<li><p>L’<em>invarianza scalare</em> (<em>scalar invariance</em>) o <em>invarianza fattoriale forte</em> verifica inoltre se le intercette degli item rimangono invariate tra i gruppi.</p></li>
+<li><p>L’<em>invarianza fattoriale rigorosa</em> (<em>strict factorial invariance</em>) verifica inoltre se i residui degli indicatori rimangono invarianti tra i gruppi.</p></li>
+</ul>
+</section>
+<section id="un-esempio-concreto">
+<h3><span class="section-number">13.1.3. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h3>
+<p>Consideriamo qui un esempio discusso da &#64;brown2015confirmatory. Il modello CFA riguarda un modello di misurazione per la depressione maggiore così come è definita nel DSM-IV. Il campione include 9 indicatori:</p>
+<ul class="simple">
+<li><p>MDD1, depressed mood;</p></li>
+<li><p>MDD2, loss of interest in usual activities;</p></li>
+<li><p>MDD3, weight/appetite change;</p></li>
+<li><p>MDD4, sleep disturbance;</p></li>
+<li><p>MDD5, psychomotor agitation/retardation;</p></li>
+<li><p>MDD6, fatigue/loss of energy;</p></li>
+<li><p>MDD7, feelings of worthlessness/guilt;</p></li>
+<li><p>MDD8, concentration difficulties;</p></li>
+<li><p>MDD9, thoughts of death/suicidality.</p></li>
+</ul>
+<p>Leggiamo i dati in <span class="math notranslate nohighlight">\(\mathsf{R}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span>
+<span class="w">  </span><span class="n">here</span><span class="o">::</span><span class="nf">here</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;mdd_sex.RDS&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>I due gruppi considerati corrispondono al genere. Il problema riguarda l’invarianza fattoriale in funzione del genere. Consideriamo il seguente modello:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_mdd</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;</span>
+<span class="s">  MDD =~ mdd1 + mdd2 + mdd3 + mdd4 + mdd5 + mdd6 + mdd7 + mdd8 +</span>
+<span class="s">         mdd9</span>
+<span class="s">  mdd1 ~~ mdd2</span>
+<span class="s">&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Si noti la presenza di una correlazione residua tra gli indicatori <code class="docutils literal notranslate"><span class="pre">mdd1</span></code> e <code class="docutils literal notranslate"><span class="pre">mdd2</span></code>.</p>
+<p>Esaminiamo dunque di seguito le varie forme di invarianza fattoriale. Si notino i vincoli che vengono via via introdotti quando vengono specificati modelli via via più restrittivi. Nella sintassi <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> i vincoli vengono specificati dall’argomento <code class="docutils literal notranslate"><span class="pre">group.equal</span></code>.</p>
+<p>Le forme di invarianza fattoriale qui verificate sono leggermente diverse da quelle elencate sopra.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># configural invariance</span>
+<span class="n">fit_ef</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model_mdd</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">d</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;sex&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">meanstructure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
+<span class="p">)</span>
+<span class="c1"># plus equal factor loadings- metric invariance</span>
+<span class="n">fit_efl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit_ef</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;loadings&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># plus equal indicator intercepts</span>
+<span class="n">fit_eii</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit_efl</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;loadings&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;intercepts&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># plus equal indicator error variances</span>
+<span class="n">fit_eir</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit_eii</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;loadings&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;intercepts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;residuals&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># plus equal factor variances</span>
+<span class="n">fit_fv</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit_eir</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;loadings&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;intercepts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;residuals&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;lv.variances&quot;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">)</span>
+<span class="c1"># plus equal latent means</span>
+<span class="n">fit_fm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">update</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit_fv</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;loadings&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;intercepts&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;residuals&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;lv.variances&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;means&quot;</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Confrontiamo i modelli:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit_ef</span><span class="p">,</span><span class="w"> </span><span class="n">fit_efl</span><span class="p">,</span><span class="w"> </span><span class="n">fit_eii</span><span class="p">,</span><span class="w"> </span><span class="n">fit_eir</span><span class="p">,</span><span class="w"> </span><span class="n">fit_fv</span><span class="p">,</span><span class="w"> </span><span class="n">fit_fm</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Il confronto tra i precedenti modelli nidificati che introducono vincoli sempre più stringenti sui parametri indica che non vi è una “significativa” perdita di bontà dell’adattamento passando dal modello congenerico al modello che assume l’uguaglianza delle saturazioni fattoriali, delle intercette, delle varianze residue, delle varianze delle variabili latenti e delle medie dei due gruppi. Per i dati discussi da <span id="id2">Brown [<a class="reference internal" href="z_biblio.html#id32" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>, dunque, possiamo concludere che vi sono forti evidenze di invarianza fattoriale tra maschi e femmine in relazione al costrutto di depressione maggiore. L’invarianza fattoriali giustifica, per questi dati, un confronto tra le medie dei punteggi totali del test calcolate nei due gruppi.</p>
+</section>
+</section>
+<section id="indicatori-a-livello-di-scala-ordinale">
+<h2><span class="section-number">13.2. </span>Indicatori a livello di scala ordinale<a class="headerlink" href="#indicatori-a-livello-di-scala-ordinale" title="Permalink to this headline">#</a></h2>
+<p>I test di invarianza fattoriale per i dati ordinali sono diversi da quelli utilizzati con le variabili continue per due aspetti: differiscono sia per lo stimatore che viene utilizzato per la stima delle saturazioni fattoriali, sia per il tipo di analisi statistiche che vengono svolte.</p>
+<p>Le variabili ordinali sono costituite da una serie di modalità (opzioni di risposta) caratterizzate da un ordine logico; ad esempio, le modalità “fortemente in disaccordo” fino a “fortemente d’accordo”; oppure le modalità “mai”, “a volte”, “spesso”, “sempre”. Queste opzioni di risposta sono logicamente ordinate e, per convenzione, ad esse vengono assegnati valori numerici interi. Tuttavia, poiché le risposte ordinali non descrivono l’intensità della presenza di un attributo, l’assegnazione di numeri alle risposte ordinali è arbitraria. Ad esempio, alle stesse cinque opzioni di risposta ordinate possiamo assegnare valori da 0 a 4, da 1 a 5, o da 5 a 1. Pertanto, i dati ordinali non possono essere analizzati come
+se fossero continui: nel caso di dati ordinali, le medie, le varianze e le covarianze delle variabili non hanno significato.</p>
+<p>Un primo problema da affrontare è quello di come si possono calcolare le correlazioni per variabili di questo tipo. La risposta a questa domanda viene fornita dalle correlazioni policoriche. Le correlazioni policoriche si calcolano ipotizzando che vi sia una variabile continua latente normalmente distribuita che è responsabile delle frequenze osservate delle varie modalità di ciascuna variabile ordinali. Secondo questa ipotesi, ogni valore di risposta ordinale (es, “spesso”) corrisponde ai valori della variabile continua latente sottostante compresi in un determinato intervallo di valori. Tali soglie, o cutoff, (<span class="math notranslate nohighlight">\(\tau_1, \tau_2, \dots, \tau_k\)</span>) sono concepite come dei margini verticali che suddividono l’area sottesa alla funzione di densità della distribuzione normale sottostante in <span class="math notranslate nohighlight">\(k\)</span> sezioni, ciascuna delle quali corrisponde alla frequenza del punteggio ordinale che è stato osservato in quella categoria di risposta.</p>
+<p>Se le correlazioni tra variabili ordinali sono stimate mediante le correlazioni policoriche, allora, nel contesto dell’invarianza fattoriale, un primo problema è quello dell’invarianza delle soglie (<em>treshold invariance</em>), la quale assume che le soglie necessarie per definire le correlazioni policoriche siano invarianti tra i gruppi.</p>
+<p>Un secondo aspetto specifico che riguarda lo studio dell’invarianza fattoriale nel caso di variabili ordinali riguarda lo stimatore da usare per la stima delle saturazioni fattoriali.  Lo stimatore attualmente consigliato per i dati ordinali è quello dei <em>minimi quadrati ponderati</em> (<em>Weighted least squares, WLS</em>).</p>
+<section id="id3">
+<h3><span class="section-number">13.2.1. </span>Un esempio concreto<a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p><span id="id4">Wu and Estabrook [<a class="reference internal" href="z_biblio.html#id6" title="Hao Wu and Ryne Estabrook. Identification of confirmatory factor analysis models of different levels of invariance for ordered categorical outcomes. Psychometrika, 81(4):1014–1045, 2016.">WE16</a>]</span> ritengono che la procedura per la valutazione dell’invarianza fattoriale che è stata descritta in precedenza (per dati continui) debba essere modificata se vogliamo applicarla a indicatori categoriali. La procedura usuale consiste nel definire prima un modello di riferimento e successivamente di imporre restrizioni crescenti ai parametri. Secondo <span id="id5">Wu and Estabrook [<a class="reference internal" href="z_biblio.html#id6" title="Hao Wu and Ryne Estabrook. Identification of confirmatory factor analysis models of different levels of invariance for ordered categorical outcomes. Psychometrika, 81(4):1014–1045, 2016.">WE16</a>]</span>, tale approccio non è ottimale nel caso di dati categoriali perché dipende fortemente dal modo in cui vengono definite le soglie necessarie per definire le correlazioni policoriche assegnate alle variabili continue latenti nel modello dell’invarianza configurale. Secondo <span id="id6">Wu and Estabrook [<a class="reference internal" href="z_biblio.html#id6" title="Hao Wu and Ryne Estabrook. Identification of confirmatory factor analysis models of different levels of invariance for ordered categorical outcomes. Psychometrika, 81(4):1014–1045, 2016.">WE16</a>]</span>, dunque, è prima necessario valutare l’equivalenza delle soglie tra gruppi (<em>threshold model</em>) e poi valutare il modello che ipotizza l’equivalenza delle saturazioni fattoriali tra i gruppi.</p>
+<p>Per illustrare tale procedura, replichiamo qui il tutorial messo a punto da <span id="id7">Svetina <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Dubravka Svetina, Leslie Rutkowski, and David Rutkowski. Multiple-group invariance with categorical outcomes using updated guidelines: an illustration using m plus and the lavaan/semtools packages. Structural Equation Modeling: A Multidisciplinary Journal, 27(1):111–130, 2020.">SRR20</a>]</span>. Questi autori utilizzano quattro item di una scala del bullismo ed esaminano i dati raccolti in tre paesi (31 = Azerbaigian; 40 = Austria; 246 = Finlandia). Tutti gli item sono misurati su una scala di tipo Likert a 4 punti, che va da 0 (mai) a 3 (almeno una volta alla settimana). Gli item chiedono al partecipante di valutare delle affermazioni relative ad episodi di bullismo. Per esempio, “mi prendevano in giro o mi insultavano”. Per l’Azerbaigian, l’Austria e la Finlandia, le dimensioni del campione sono rispettivamente pari a 3,808, 4,457 e 4,520.</p>
+<p>Leggiamo in dati in <span class="math notranslate nohighlight">\(\textsf{R}\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.table</span><span class="p">(</span><span class="s">&quot;data/BULLY.dat&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">header</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Viene creata la matrice <code class="docutils literal notranslate"><span class="pre">all.results</span></code> per immagazzinare i risultati dei diversi modelli che verranno confrontati, chiamati <em>baseline</em> (nessun vincolo tra i gruppi), <em>proposition 4</em> (equivalenza delle soglie tra i gruppi), e <em>proposition 7</em> (equivalenza delle soglie e delle saturazioni fattoriali tra i gruppi). Gli indici di bontà dell’adattamento che verranno considerati sono: chi-square, df, p, RMSEA, CFI, e TLI.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">all.results</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">matrix</span><span class="p">(</span><span class="kc">NA</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="baseline-model">
+<h3><span class="section-number">13.2.2. </span>Baseline model<a class="headerlink" href="#baseline-model" title="Permalink to this headline">#</a></h3>
+<p>Nel <em>baseline model</em> non viene posto alcun vincolo tra i gruppi. È quello dell’invarianza configurale.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mod.cat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;F1 =~ R09A + R09B + R09C + R09D&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">baseline</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">measEq.syntax</span><span class="p">(</span>
+<span class="w">  </span><span class="n">configural.model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mod.cat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="n">parameterization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;delta&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ID.fac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;std.lv&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ID.cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Wu.Estabrook.2016&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;configural&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Informazioni sul modello baseline si ottengono nel modo seguente:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">baseline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Le proprietà del modello possono essere esplicitate con la seguente istruzione:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cat</span><span class="p">(</span><span class="nf">as.character</span><span class="p">(</span><span class="n">baseline</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Per potere essere passato a <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>, l’oggetto <code class="docutils literal notranslate"><span class="pre">baseline</span></code> deve essere in formato <code class="docutils literal notranslate"><span class="pre">char</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.baseline</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">baseline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adattiamo il modello ai dati:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.baseline</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.baseline</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Salviamo i risultati:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">all.results</span><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span>
+<span class="w">  </span><span class="nf">round</span><span class="p">(</span><span class="nf">data.matrix</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">fitmeasures</span><span class="p">(</span><span class="n">fit.baseline</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">      </span><span class="s">&quot;chisq.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;df.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pvalue.scaled&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s">&quot;rmsea.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cfi.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tli.scaled&quot;</span>
+<span class="w">    </span><span class="p">))</span>
+<span class="w">  </span><span class="p">),</span>
+<span class="w">  </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+<span class="w">  </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="invarianza-delle-soglie">
+<h3><span class="section-number">13.2.3. </span>Invarianza delle soglie<a class="headerlink" href="#invarianza-delle-soglie" title="Permalink to this headline">#</a></h3>
+<p>Consideriamo ora il modello <em>threshold invariance</em> [chiamato <em>Proposition 4</em> da &#64;wu2016identification].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">prop4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">measEq.syntax</span><span class="p">(</span>
+<span class="w">  </span><span class="n">configural.model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mod.cat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="n">parameterization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;delta&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ID.fac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;std.lv&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ID.cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Wu.Estabrook.2016&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;thresholds&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adattiamo il modello ai dati:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.prop4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">prop4</span><span class="p">)</span>
+<span class="n">fit.prop4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.prop4</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Salviamo i risulati</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#store model fit information for proposition 4</span>
+<span class="n">all.results</span><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span>
+<span class="w">  </span><span class="nf">round</span><span class="p">(</span><span class="nf">data.matrix</span><span class="p">(</span>
+<span class="w">  </span><span class="nf">fitmeasures</span><span class="p">(</span><span class="n">fit.prop4</span><span class="p">,</span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;chisq.scaled&quot;</span><span class="p">,</span><span class="s">&quot;df.scaled&quot;</span><span class="p">,</span><span class="s">&quot;pvalue.scaled&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="s">&quot;rmsea.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cfi.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tli.scaled&quot;</span><span class="p">))),</span><span class="w"> </span>
+<span class="w">  </span><span class="n">digits</span><span class="o">=</span><span class="m">3</span>
+<span class="w">  </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eseguiamo il confronto tra il modello <em>threshold invariance</em> e il modello <em>baseline</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit.baseline</span><span class="p">,</span><span class="w"> </span><span class="n">fit.prop4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="invarianza-delle-soglie-e-delle-saturazioni-fattoriali">
+<h3><span class="section-number">13.2.4. </span>Invarianza delle soglie e delle saturazioni fattoriali<a class="headerlink" href="#invarianza-delle-soglie-e-delle-saturazioni-fattoriali" title="Permalink to this headline">#</a></h3>
+<p>Consideriamo ora il modello <em>threshold and loading invariance</em> [chiamato <em>Proposition 7</em> da &#64;wu2016identification].</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">prop7</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">measEq.syntax</span><span class="p">(</span>
+<span class="w">  </span><span class="n">configural.model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mod.cat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">),</span>
+<span class="w">  </span><span class="n">parameterization</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;delta&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ID.fac</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;std.lv&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">ID.cat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Wu.Estabrook.2016&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">group.equal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;thresholds&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;loadings&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adattiamo il modello ai dati:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.prop7</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.character</span><span class="p">(</span><span class="n">prop7</span><span class="p">)</span>
+<span class="n">fit.prop7</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.prop7</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dat</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;IDCNTRY&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">ordered</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;R09A&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09B&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09C&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;R09D&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Salviamo i risultati:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">all.results</span><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">&lt;-</span>
+<span class="w">  </span><span class="nf">round</span><span class="p">(</span><span class="nf">data.matrix</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">fitmeasures</span><span class="p">(</span><span class="n">fit.prop7</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">      </span><span class="s">&quot;chisq.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;df.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pvalue.scaled&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="s">&quot;rmsea.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cfi.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tli.scaled&quot;</span>
+<span class="w">    </span><span class="p">))</span>
+<span class="w">  </span><span class="p">),</span><span class="w"> </span><span class="n">digits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+
+<span class="n">column.names</span><span class="w"> </span><span class="o">&lt;-</span>
+<span class="w">  </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">    </span><span class="s">&quot;chisq.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;df.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pvalue.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rmsea.scaled&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="s">&quot;cfi.scaled&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;tli.scaled&quot;</span>
+<span class="w">  </span><span class="p">)</span>
+
+<span class="n">row.names</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;baseline&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;prop4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;prop7&quot;</span><span class="p">)</span>
+
+<span class="nf">colnames</span><span class="p">(</span><span class="n">all.results</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">column.names</span>
+<span class="nf">rownames</span><span class="p">(</span><span class="n">all.results</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">row.names</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Eseguiamo i confronti tra modelli:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit.prop4</span><span class="p">,</span><span class="w"> </span><span class="n">fit.prop7</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit.prop7</span><span class="p">,</span><span class="w"> </span><span class="n">fit.baseline</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Un confronto tra gli indici di bontà di adattamento dei tre modelli è fornito di seguito:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">all.results</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In conclusione, nel caso presente, il test del rapporto di verosimiglianza indica che non viene rispettata neppure l’invarianza delle soglie tra gruppi. Gli altri confronti, dunque, sono superflui e sono stati qui presentati solo allo scopo di illustrare la procedura,</p>
+<!-- ### Invarianza parziale -->
+<!-- Viene introdotto il vincolo dell'eguaglianza delle soglie mentre viene liberamente stimata  la saturazione fattoriale R09C, come conseguenza delle indicazioni derivate dagli indici di modificazione (_modification indices_). -->
+<!-- ```{r} -->
+<!-- fit.prop7 <- cfa( -->
+<!--   model.prop7, -->
+<!--   data = dat, -->
+<!--   group = "IDCNTRY", -->
+<!--   ordered = c("R09A", "R09B", "R09C", "R09D") -->
+<!-- ) -->
+<!-- mi <- modindices(fit.prop7, free.remove = FALSE) -->
+<!-- mi[mi$op == "=~", ] -->
+<!-- ``` -->
+<!-- Definiamo il modello: -->
+<!-- ```{r} -->
+<!-- prop7.part <- measEq.syntax( -->
+<!--   configural.model = mod.cat, -->
+<!--   data = dat, -->
+<!--   ordered = c("R09A", "R09B", "R09C", "R09D"), -->
+<!--   parameterization = "delta", -->
+<!--   ID.fac = "std.lv", -->
+<!--   ID.cat = "Wu.Estabrook.2016", -->
+<!--   group = "IDCNTRY", -->
+<!--   group.equal = c("thresholds", "loadings"), -->
+<!--   group.partial = "F1 =~ R09C" -->
+<!-- ) -->
+<!-- ``` -->
+<!-- Adattiamo il modello ai dati: -->
+<!-- ```{r} -->
+<!-- model.prop7.part <- as.character(prop7.part) -->
+<!-- fit.prop7.part <- cfa( -->
+<!--   model.prop7.part,  -->
+<!--   data = dat,  -->
+<!--   group = "IDCNTRY",  -->
+<!--   ordered = c("R09A", "R09B", "R09C", "R09D") -->
+<!-- ) -->
+<!-- ``` -->
+<!-- Eseguiamo i confronto con il modello di _threshold invariance_: -->
+<!-- ```{r} -->
+<!-- ## Test of model fit between prop4 and prop 7 with one loading freed -->
+<!-- lavTestLRT(fit.prop7.part, fit.prop4) -->
+<!-- ``` -->
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="206_valutare_sol_fattoriale.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Valutare e rifinire la soluzione fattoriale</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="300_gof.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Indici di bontà dell’adattamento</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-continui">13.1. Indicatori continui</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intercette-degli-item">13.1.1. Intercette degli item</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#terminologia">13.1.2. Terminologia</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#un-esempio-concreto">13.1.3. Un esempio concreto</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-a-livello-di-scala-ordinale">13.2. Indicatori a livello di scala ordinale</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">13.2.1. Un esempio concreto</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#baseline-model">13.2.2. Baseline model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-delle-soglie">13.2.3. Invarianza delle soglie</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-delle-soglie-e-delle-saturazioni-fattoriali">13.2.4. Invarianza delle soglie e delle saturazioni fattoriali</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Corrado Caudek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
