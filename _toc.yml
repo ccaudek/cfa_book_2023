@@ -42,6 +42,9 @@ parts:
       - file: 326_growth_1
       - file: 327_growth_cont
       - file: 328_time_inv_cov
+      - file: 329_growth_groups
+      - file: 330_bivariate_growth_models
+      - file: 331_inv_measurement
       - file: 332_latent_change
       - file: 333_biv_change
   - caption: Bibliografia
