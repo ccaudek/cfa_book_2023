@@ -1,0 +1,708 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>17. Curve di crescita latente &#8212; cfa_book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '320_growth_models_intro';</script>
+    <link rel="shortcut icon" href="_static/increasing.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="18. LGM e modelli misti" href="324_lgm_mixed.html" />
+    <link rel="prev" title="16. CFA per matrici multi-tratto multi-metodo" href="315_mmm.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Benvenuti
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modello lineare</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="010_regression.html">1. L’analisi di regressione</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Teoria classica dei test</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analisi fattoriale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">5. Attendibilità e modello fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">6. CFA: confronto tra modelli</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Costruzione di strumenti psicometrici</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">7. Tipologie dei test psicometrici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">8. Valutazione della matrice di correlazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">9. L’estrazione dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="203_numero_fattori.html">10. Il numero dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="205_rotazione.html">11. La rotazione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="206_valutare_sol_fattoriale.html">12. Valutare e rifinire la soluzione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="250_group_invariance.html">13. Invarianza di misura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="300_gof.html">14. Indici di bontà dell’adattamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">15. La revisione del modello</a></li>
+<li class="toctree-l1"><a class="reference internal" href="315_mmm.html">16. CFA per matrici multi-tratto multi-metodo</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">17. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">18. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">19. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">20. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">21. LCSM bivariato</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">22. Bibliografia</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ccaudek/cfa_book_2023" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ccaudek/cfa_book_2023/issues/new?title=Issue%20on%20page%20%2F320_growth_models_intro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/320_growth_models_intro.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Curve di crescita latente</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">17.1. Preliminari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">17.1.1. Strutture dei dati</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-di-dati-longitudinali">17.1.2. Visualizzazione di dati longitudinali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">17.1.3. Data screening</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">17.1.4. Attendibilità</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">17.1.5. Invarianza di misurazione</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
+<span id="lgm-intro-notebook"></span><h1><span class="section-number">17. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
+<p>Un importante classe di modelli a variabili latenti è quella dei modelli delle curve di crescita latente (<em>latent growth models</em>, LGM). I modelli delle curve di crescita latente vengono spesso utilizzati per analizzare dati longitudinali. In questo tipo di dati, una misura di esito viene ottenuta in diversi momenti del tempo e si vuole studiare il cambiamento nel tempo.</p>
+<p><span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id3" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> elencano cinque motivi per usare i modelli LGM.</p>
+<ol class="arabic simple">
+<li><p>l’identificazione diretta del cambiamento (e della stabilità) intra-individuale. Misurare lo stesso individuo ripetutamente consente ai ricercatori di identificare se e come specifici attributi dell’individuo sono cambiati (o rimasti gli stessi) nel tempo. Le teorie dello sviluppo (e altre) del cambiamento spesso concettualizzano e descrivono il cambiamento come un processo incrementale o trasformazionale. Il cambiamento incrementale viene osservato e identificato come un cambiamento nella grandezza (quantitativa) dello stesso costrutto lungo un continuum durante un intervallo di tempo specifico. Il cambiamento trasformazionale viene osservato e identificato come un cambiamento o una transizione tra stati discreti durante un intervallo di tempo specifico (ad esempio, la teoria dello sviluppo a stadi di Piaget; Piaget, 1952). Analiticamente, l’obiettivo principale è ottenere una descrizione parsimoniosa e accurata di come e quando gli attributi dell’individuo cambiano nel tempo. È importante notare che la stabilità e la costanza nel tempo sono casi speciali di cambiamento intra-individuale.</p></li>
+<li><p>Una volta identificato il modello di cambiamento intra-individuale (all’interno della persona) (in termini di grandezza o passaggi transformazionali), una domanda logica successiva da porre è se diversi individui cambiano in modi diversi. Pertanto, il secondo motivo per la ricerca longitudinale è l’identificazione delle differenze interindividuali (o similitudine) nel cambiamento intra-individuale. Ci poniamo le seguenti domande: i diversi individui cambiano in quantità diverse o in direzioni diverse? o i diversi individui passano da uno stadio all’altro in momenti diversi?</p></li>
+<li><p>Riconoscendo che il cambiamento raramente si verifica in isolamento, il terzo motivo per la ricerca longitudinale è l’analisi delle interrelazioni nel cambiamento comportamentale. Questo approccio si basa sull’idea che vi sono cambiamenti simultaneanei e/o sequenziali in più costrutti. Analiticamente, il compito richiede l’analisi simultanea di più variabili e la valutazione di come i cambiamenti in una variabile precedano, covarino e/o seguano i cambiamenti in un’altra variabile.</p></li>
+<li><p>Il quarto motivo, l’analisi delle cause (determinanti) del cambiamento intra-individuale, si concentra sulla spiegazione o sulla contabilizzazione del processo di cambiamento osservato all’interno della persona. In particolare, l’obiettivo è identificare i fattori e/o i meccanismi variabili nel tempo che influenzano e/o guidano i cambiamenti intra-individuali identificati nel Motivo 1. Si assume che i cambiamenti sono probabilmente destinati a procedere a ritmi diversi in periodi di tempo diversi. Ad esempio, quando si impara una nuova abilità, i cambiamenti intra-individuali possono procedere rapidamente all’inizio, ma più lentamente in seguito quando gli individui raggiungono livelli asintotici di performance.</p></li>
+<li><p>Il quinto motivo per la ricerca longitudinale è l’analisi delle cause (determinanti) delle differenze interindividuali nel cambiamento intra-individuale. Dato che gli individui differiscono nel modo in cui cambiano nel tempo (Motivo 2), i ricercatori sono spesso interessati a identificare i fattori e/o i meccanismi che possono spiegare queste differenze tra le persone. L’obiettivo è identificare le variabili invarianti nel tempo che sono correlate a specifici aspetti del cambiamento all’interno della persona. Ad esempio, le caratteristiche demografiche/di background, le manipolazioni sperimentali (ad esempio, gli interventi) e le caratteristiche dei contesti prossimali e distali degli individui possono influenzare come e quando il cambiamento procede. Le domande di ricerca derivanti dal Motivo 5 sono spesso esaminate attraverso l’inclusione di covariate invarianti nel tempo.</p></li>
+</ol>
+<p>Insieme, questi cinque motivi per la ricerca longitudinale forniscono la base per costruire domande di ricerca precise che possono essere esaminate utilizzando modelli di crescita contemporanei. Quando si pensa agli studi longitudinali, è sempre possibile fare riferimento a questi 5 punti. Qual è la tua teoria del cambiamento intra-individuale? Qual è la tua teoria delle differenze tra le persone? e così via. Puoi quindi selezionare modelli specifici che sono appropriati per quelle domande e puoi considerare attentamente se e come i dati consentono e/o limitano la tua capacità di ottenere risposte accurate.</p>
+<p>I cinque motivi per la ricerca longitudinale forniscono una solida base per creare domande di ricerca precise che possono essere esaminate utilizzando modelli di crescita contemporanei. Quando si affrontano gli studi longitudinali, si possono considerare questi cinque punti chiave. Ad esempio, si potrebbero porre domande come: Qual è la teoria del cambiamento intra-individuale? Qual è la teoria delle differenze tra le persone? In base alle domande poste, è possibile scegliere modelli specifici appropriati e valutare come i dati possano aiutare o limitare la capacità di ottenere risposte accurate.</p>
+<section id="preliminari">
+<h2><span class="section-number">17.1. </span>Preliminari<a class="headerlink" href="#preliminari" title="Permalink to this headline">#</a></h2>
+<p>I modelli di crescita sono tipicamente applicati a dati ottenuti da studi in cui sono state ottenute diverse misure ripetute da più individui. Tradizionalmente, gli studi longitudinali erano progettati in modo tale che il numero di valutazioni ripetute fosse relativamente basso (cioè &lt;8) e il numero di individui fosse relativamente elevato (cioè &gt;200). Tuttavia, i progressi sia nelle considerazioni teoriche del cambiamento (ad esempio, la non linearità) sia nella tecnologia per la raccolta dei dati (ad esempio, sondaggi basati sul web, smartphone) hanno notevolmente ampliato le possibilità di raccolta e analisi dei dati longitudinali: <span id="id2">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id3" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> discutono applicazioni di modelli di crescita a dati longitudinali ottenuti fino a 50.000 persone e fino a 1.000 valutazioni ripetute.</p>
+<p>Questa complessità richiede che il ricercatore sia ben versato in (1) la manipolazione delle strutture dei dati longitudinali (ad esempio, il ridimensionamento dei dati dal formato wide al formato long), (2) la rappresentazione grafica dei dati longitudinali e (3) lo screening dei dati longitudinali.</p>
+<section id="strutture-dei-dati">
+<h3><span class="section-number">17.1.1. </span>Strutture dei dati<a class="headerlink" href="#strutture-dei-dati" title="Permalink to this headline">#</a></h3>
+<p>I dati longitudinali tipicamente si presentano in due forme: long e wide. Nel formato long, la descrizione del tempo è sulle righe; nel formato wide le variabili relative ad ogni occasione temporale sono organizzate in colonne.</p>
+<p>È possibile trasformere i dati dal formato long in formato wide e viceversa usando le funzioni R <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> e <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>. La sintassi è spiegata nella pagina web <a class="reference external" href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr</a>.</p>
+</section>
+<section id="visualizzazione-di-dati-longitudinali">
+<h3><span class="section-number">17.1.2. </span>Visualizzazione di dati longitudinali<a class="headerlink" href="#visualizzazione-di-dati-longitudinali" title="Permalink to this headline">#</a></h3>
+<p>Come in qualsiasi analisi statistica, è importante esaminare attentamente i dati. Ciò include la produzione di sia riepiloghi quantitativi che visualizzazioni. Per fare un esempio di visualizzazione di dati longitudinali, esaminiamo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [i dati sono presentati nel capitolo 3 del libro di <span id="id3">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id3" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>].</p>
+<p>Iniziamo a leggere i dati.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set filepath for data file</span>
+<span class="n">filepath</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;https://raw.githubusercontent.com/LRI-2/Data/main/GrowthModeling/nlsy_math_long_R.dat&quot;</span>
+<span class="c1"># read in the text data file using the url() function</span>
+<span class="n">dat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">read.table</span><span class="p">(</span>
+<span class="w">  </span><span class="n">file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">url</span><span class="p">(</span><span class="n">filepath</span><span class="p">),</span>
+<span class="w">  </span><span class="n">na.strings</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;.&quot;</span>
+<span class="p">)</span><span class="w"> </span><span class="c1"># indicates the missing data designator</span>
+<span class="c1"># copy data with new name</span>
+<span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">dat</span>
+
+<span class="c1"># Add names the columns of the data set</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
+<span class="w">  </span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;female&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;lb_wght&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;anti_k1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;grade&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;occ&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;age&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;men&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="s">&quot;spring&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;anti&quot;</span>
+<span class="p">)</span>
+
+<span class="c1"># view the first few observations in the data set</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 11</caption>
+<thead>
+	<tr><th></th><th scope=col>id</th><th scope=col>female</th><th scope=col>lb_wght</th><th scope=col>anti_k1</th><th scope=col>math</th><th scope=col>grade</th><th scope=col>occ</th><th scope=col>age</th><th scope=col>men</th><th scope=col>spring</th><th scope=col>anti</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td> 201</td><td>1</td><td>0</td><td>0</td><td>38</td><td>3</td><td>2</td><td>111</td><td> 0</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>2</th><td> 201</td><td>1</td><td>0</td><td>0</td><td>55</td><td>5</td><td>3</td><td>135</td><td> 1</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>3</th><td> 303</td><td>1</td><td>0</td><td>1</td><td>26</td><td>2</td><td>2</td><td>121</td><td> 0</td><td>1</td><td>2</td></tr>
+	<tr><th scope=row>4</th><td> 303</td><td>1</td><td>0</td><td>1</td><td>33</td><td>5</td><td>3</td><td>145</td><td> 0</td><td>1</td><td>2</td></tr>
+	<tr><th scope=row>5</th><td>2702</td><td>0</td><td>0</td><td>0</td><td>56</td><td>2</td><td>2</td><td>100</td><td>NA</td><td>1</td><td>0</td></tr>
+	<tr><th scope=row>6</th><td>2702</td><td>0</td><td>0</td><td>0</td><td>58</td><td>4</td><td>3</td><td>125</td><td>NA</td><td>1</td><td>2</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Le traiettorie di cambiamento intra-individuale possono essere prodotte nel modo seguente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span><span class="c1"># data set</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding points to plot</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
+<span class="w">  </span><span class="nf">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># changing style/background</span>
+<span class="w">  </span><span class="c1"># setting the x-axis with breaks and labels</span>
+<span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span>
+<span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
+<span class="w">    </span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">,</span><span class="w"> </span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="m">7</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Grade at Testing&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="c1"># setting the y-axis with limits breaks and labels</span>
+<span class="w">  </span><span class="nf">scale_y_continuous</span><span class="p">(</span>
+<span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">90</span><span class="p">),</span>
+<span class="w">    </span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="m">30</span><span class="p">,</span><span class="w"> </span><span class="m">50</span><span class="p">,</span><span class="w"> </span><span class="m">70</span><span class="p">,</span><span class="w"> </span><span class="m">90</span><span class="p">),</span>
+<span class="w">    </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PIAT Mathematics&quot;</span>
+<span class="w">  </span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/70b4a55a3a9b83b781c7bab559d014ab116d18abcd0071f724552779d7a56156.png" src="_images/70b4a55a3a9b83b781c7bab559d014ab116d18abcd0071f724552779d7a56156.png" />
+</div>
+</div>
+</section>
+<section id="data-screening">
+<h3><span class="section-number">17.1.3. </span>Data screening<a class="headerlink" href="#data-screening" title="Permalink to this headline">#</a></h3>
+<p>Prima di adattare i modelli di crescita, è importante esaminare i dati e ottenere informazioni di base sulle variabili da utilizzare nell’analisi. La selezione preliminare dovrebbe includere l’esame della distribuzione dei punteggi per ogni variabile. Come al solito, le principali statistiche descrittive univariate includono la media, la mediana, la varianza (deviazione standard), l’asimmetria, la curtosi, il minimo, il massimo, l’intervallo e il numero di osservazioni per ogni variabile in base alla metrica del tempo scelta. Le statistiche descrittive bivariate includono correlazioni/covarianze e tabelle di frequenza bivariate per variabili nominali o ordinali. Tutte queste statistiche possono essere esaminate per individuare schemi e relazioni non lineari, così come potenziali valori anomali e codici errati.</p>
+<p>I dati longitudinali sono speciali perché sono ordinati, il che può essere indicizzato lungo una o più metriche del tempo (variabili come occasione di misurazione, età, data, tempo dall’evento, numero di esposizioni, ecc.). Ad esempio, è immediatamente informativo esaminare come la media, la varianza e il numero di casi disponibili cambiano attraverso le misure ripetute (ad esempio wght5, wght6, wght7). Si noti che la selezione della metrica del tempo influenza notevolmente come i risultati di qualsiasi modello di crescita specifico possono essere interpretati. Pertanto, nella fase di selezione dei dati è importante considerare come varie proprietà dei dati longitudinali differiscano quando i dati sono organizzati in relazione a diverse metriche del tempo.</p>
+<p>Per i dati dell’esempio, le statistiche descrittive possono essere ottenute nel modo seguente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">describe</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A psych: 11 × 13</caption>
+<thead>
+	<tr><th></th><th scope=col>vars</th><th scope=col>n</th><th scope=col>mean</th><th scope=col>sd</th><th scope=col>median</th><th scope=col>trimmed</th><th scope=col>mad</th><th scope=col>min</th><th scope=col>max</th><th scope=col>range</th><th scope=col>skew</th><th scope=col>kurtosis</th><th scope=col>se</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>id</th><td> 1</td><td>2221</td><td>5.284491e+05</td><td>3.273037e+05</td><td>497403</td><td>5.154669e+05</td><td>384144.6252</td><td>201</td><td>1256601</td><td>1256400</td><td> 0.30258128</td><td>-0.8968290</td><td>6.945070e+03</td></tr>
+	<tr><th scope=row>female</th><td> 2</td><td>2221</td><td>4.934714e-01</td><td>5.000700e-01</td><td>     0</td><td>4.918402e-01</td><td>     0.0000</td><td>  0</td><td>      1</td><td>      1</td><td> 0.02609895</td><td>-2.0002188</td><td>1.061100e-02</td></tr>
+	<tr><th scope=row>lb_wght</th><td> 3</td><td>2221</td><td>7.969383e-02</td><td>2.708796e-01</td><td>     0</td><td>0.000000e+00</td><td>     0.0000</td><td>  0</td><td>      1</td><td>      1</td><td> 3.10187193</td><td> 7.6250432</td><td>5.747805e-03</td></tr>
+	<tr><th scope=row>anti_k1</th><td> 4</td><td>2221</td><td>1.416929e+00</td><td>1.497133e+00</td><td>     1</td><td>1.194147e+00</td><td>     1.4826</td><td>  0</td><td>      8</td><td>      8</td><td> 1.14091473</td><td> 1.1448077</td><td>3.176772e-02</td></tr>
+	<tr><th scope=row>math</th><td> 5</td><td>2221</td><td>4.611977e+01</td><td>1.279992e+01</td><td>    46</td><td>4.621666e+01</td><td>    11.8608</td><td> 12</td><td>     81</td><td>     69</td><td>-0.03406619</td><td>-0.1808447</td><td>2.716020e-01</td></tr>
+	<tr><th scope=row>grade</th><td> 6</td><td>2221</td><td>4.512382e+00</td><td>1.769220e+00</td><td>     4</td><td>4.435566e+00</td><td>     1.4826</td><td>  2</td><td>      8</td><td>      6</td><td> 0.25689681</td><td>-0.9232006</td><td>3.754115e-02</td></tr>
+	<tr><th scope=row>occ</th><td> 7</td><td>2221</td><td>2.841063e+00</td><td>7.886855e-01</td><td>     3</td><td>2.774902e+00</td><td>     1.4826</td><td>  2</td><td>      5</td><td>      3</td><td> 0.54731500</td><td>-0.4754854</td><td>1.673515e-02</td></tr>
+	<tr><th scope=row>age</th><td> 8</td><td>2221</td><td>1.269032e+02</td><td>2.206059e+01</td><td>   126</td><td>1.262802e+02</td><td>    25.2042</td><td> 82</td><td>    175</td><td>     93</td><td> 0.18672163</td><td>-0.9115950</td><td>4.681044e-01</td></tr>
+	<tr><th scope=row>men</th><td> 9</td><td>1074</td><td>1.945996e-01</td><td>3.960766e-01</td><td>     0</td><td>1.186047e-01</td><td>     0.0000</td><td>  0</td><td>      1</td><td>      1</td><td> 1.54069191</td><td> 0.3740825</td><td>1.208585e-02</td></tr>
+	<tr><th scope=row>spring</th><td>10</td><td>2221</td><td>6.497073e-01</td><td>4.771690e-01</td><td>     1</td><td>6.871131e-01</td><td>     0.0000</td><td>  0</td><td>      1</td><td>      1</td><td>-0.62719892</td><td>-1.6073446</td><td>1.012507e-02</td></tr>
+	<tr><th scope=row>anti</th><td>11</td><td>2170</td><td>1.576959e+00</td><td>1.544730e+00</td><td>     1</td><td>1.377880e+00</td><td>     1.4826</td><td>  0</td><td>      8</td><td>      8</td><td> 0.98051743</td><td> 0.6368685</td><td>3.316063e-02</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Esaminiamo le statistiche descrittive bivariate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cor</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="p">,</span><span class="w"> </span><span class="n">use</span><span class="o">=</span><span class="s">&#39;pairwise.complete.obs&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span><span class="w"> </span>
+<span class="w">  </span><span class="nf">round</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 11 × 11 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>id</th><th scope=col>female</th><th scope=col>lb_wght</th><th scope=col>anti_k1</th><th scope=col>math</th><th scope=col>grade</th><th scope=col>occ</th><th scope=col>age</th><th scope=col>men</th><th scope=col>spring</th><th scope=col>anti</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>id</th><td> 1.00</td><td>-0.01</td><td>-0.01</td><td>-0.02</td><td>-0.22</td><td>-0.01</td><td> 0.01</td><td>-0.01</td><td>-0.02</td><td>-0.11</td><td> 0.01</td></tr>
+	<tr><th scope=row>female</th><td>-0.01</td><td> 1.00</td><td> 0.06</td><td>-0.09</td><td>-0.05</td><td> 0.00</td><td>-0.02</td><td>-0.04</td><td> 0.02</td><td> 0.04</td><td>-0.07</td></tr>
+	<tr><th scope=row>lb_wght</th><td>-0.01</td><td> 0.06</td><td> 1.00</td><td> 0.03</td><td>-0.03</td><td>-0.02</td><td>-0.03</td><td> 0.01</td><td> 0.04</td><td> 0.03</td><td> 0.02</td></tr>
+	<tr><th scope=row>anti_k1</th><td>-0.02</td><td>-0.09</td><td> 0.03</td><td> 1.00</td><td>-0.08</td><td>-0.03</td><td>-0.04</td><td>-0.01</td><td> 0.01</td><td>-0.01</td><td> 0.52</td></tr>
+	<tr><th scope=row>math</th><td>-0.22</td><td>-0.05</td><td>-0.03</td><td>-0.08</td><td> 1.00</td><td> 0.59</td><td> 0.53</td><td> 0.58</td><td> 0.30</td><td> 0.29</td><td>-0.05</td></tr>
+	<tr><th scope=row>grade</th><td>-0.01</td><td> 0.00</td><td>-0.02</td><td>-0.03</td><td> 0.59</td><td> 1.00</td><td> 0.87</td><td> 0.95</td><td> 0.62</td><td> 0.12</td><td> 0.04</td></tr>
+	<tr><th scope=row>occ</th><td> 0.01</td><td>-0.02</td><td>-0.03</td><td>-0.04</td><td> 0.53</td><td> 0.87</td><td> 1.00</td><td> 0.86</td><td> 0.57</td><td> 0.17</td><td> 0.04</td></tr>
+	<tr><th scope=row>age</th><td>-0.01</td><td>-0.04</td><td> 0.01</td><td>-0.01</td><td> 0.58</td><td> 0.95</td><td> 0.86</td><td> 1.00</td><td> 0.64</td><td> 0.21</td><td> 0.06</td></tr>
+	<tr><th scope=row>men</th><td>-0.02</td><td> 0.02</td><td> 0.04</td><td> 0.01</td><td> 0.30</td><td> 0.62</td><td> 0.57</td><td> 0.64</td><td> 1.00</td><td> 0.16</td><td> 0.13</td></tr>
+	<tr><th scope=row>spring</th><td>-0.11</td><td> 0.04</td><td> 0.03</td><td>-0.01</td><td> 0.29</td><td> 0.12</td><td> 0.17</td><td> 0.21</td><td> 0.16</td><td> 1.00</td><td>-0.01</td></tr>
+	<tr><th scope=row>anti</th><td> 0.01</td><td>-0.07</td><td> 0.02</td><td> 0.52</td><td>-0.05</td><td> 0.04</td><td> 0.04</td><td> 0.06</td><td> 0.13</td><td>-0.01</td><td> 1.00</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="attendibilita">
+<h3><span class="section-number">17.1.4. </span>Attendibilità<a class="headerlink" href="#attendibilita" title="Permalink to this headline">#</a></h3>
+<p>Come in tutte le analisi, i ricercatori dovrebbero esaminare l’affidabilità dei loro strumenti di misurazione.</p>
+</section>
+<section id="invarianza-di-misurazione">
+<h3><span class="section-number">17.1.5. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h3>
+<p>Quando si lavora con dati di misure ripetute, la comparabilità dei punteggi tra le occasioni di misurazione richiede un certo livello di invarianza di misurazione. Lo strumento di misurazione misura lo stesso costrutto nella stessa metrica in ogni occasione? Formalmente, l’invarianza di misurazione garantisce che i punteggi siano confrontabili sia tra le persone che tra le occasioni di misurazione. Ad esempio, l’invarianza di misurazione tra le misure ripetute del peso degli individui è facilitata dall’uso dello stesso dispositivo di misurazione (bilancia) ogni anno, a condizione che la bilancia sia tarata nello stesso modo ogni anno. Se la bilancia è tarata in modo diverso in occasioni diverse o se vengono utilizzate unità di misura diverse, i punteggi risultanti non possono essere confrontati quantitativamente: lo strumento di misurazione è non invariante. Quando si lavora con dispositivi fisici, l’invarianza di misurazione viene testata e garantita attraverso la taratura. Quando si lavora con scale psicologiche, l’invarianza di misurazione viene o assunta (il che non ideale) o testata utilizzando modelli di misurazione formali.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            name: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="315_mmm.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">16. </span>CFA per matrici multi-tratto multi-metodo</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="324_lgm_mixed.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">18. </span>LGM e modelli misti</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">17.1. Preliminari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">17.1.1. Strutture dei dati</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-di-dati-longitudinali">17.1.2. Visualizzazione di dati longitudinali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">17.1.3. Data screening</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">17.1.4. Attendibilità</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">17.1.5. Invarianza di misurazione</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            <div class="bd-footer-content__inner">
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Corrado Caudek
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div></div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
