@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>22. Latent Change Score Modeling &#8212; cfa_book</title>
+    <title>25. Latent Change Score Modeling &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="23. LCSM bivariato" href="333_biv_change.html" />
-    <link rel="prev" title="21. Covariate indipendenti dal tempo" href="328_time_inv_cov.html" />
+    <link rel="next" title="26. LCSM bivariato" href="333_biv_change.html" />
+    <link rel="prev" title="24. Invarianza di misurazione" href="331_inv_measurement.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -194,12 +194,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">19. Curve di crescita latente</a></li>
 <li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">20. Il tempo su una metrica continua</a></li>
 <li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">21. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">22. Latent Change Score Modeling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">23. LCSM bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">22. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">23. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">24. Invarianza di misurazione</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">25. Latent Change Score Modeling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">26. LCSM bivariato</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">24. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">27. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -393,9 +396,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">22.1. LGM e SEM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lcs-univariato">22.2. LCS univariato</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrazione">22.3. Illustrazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">25.1. LGM e SEM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lcs-univariato">25.2. LCS univariato</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrazione">25.3. Illustrazione</a></li>
 </ul>
             </nav>
         </div>
@@ -408,9 +411,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="latent-change-score-modeling">
-<span id="latent-change-notebook"></span><h1><span class="section-number">22. </span>Latent Change Score Modeling<a class="headerlink" href="#latent-change-score-modeling" title="Permalink to this headline">#</a></h1>
+<span id="latent-change-notebook"></span><h1><span class="section-number">25. </span>Latent Change Score Modeling<a class="headerlink" href="#latent-change-score-modeling" title="Permalink to this headline">#</a></h1>
 <section id="lgm-e-sem">
-<h2><span class="section-number">22.1. </span>LGM e SEM<a class="headerlink" href="#lgm-e-sem" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">25.1. </span>LGM e SEM<a class="headerlink" href="#lgm-e-sem" title="Permalink to this headline">#</a></h2>
 <p>I modelli del cambiamento del punteggio latente (<em>Latent Change Score Models</em>, LCSM; McArdle, 2001, 2009; McArdle &amp; Hamagami, 2001) vengono utilizzati in varie discipline nelle scienze comportamentali per studiare come i costrutti cambiano nel tempo. Gli LCSM possono essere utilizzati per stimare la traiettoria di un costrutto (univariato) e consentono l’indagine di come i cambiamenti tra due costrutti (bivariati) siano associati tra loro nel tempo (ad esempio, la depressione per mariti e mogli; vedi McArdle, Hamagami, Kadlec e Fisher, 2007).</p>
 <p>Da un punto di vista teorico, i modelli LCSM considerano il cambiamento dipendente dal tempo quale l’esito di interesse, piuttosto che i punteggi osservati. Questo semplice passaggio allo studio del cambiamento dipendente dal tempo rispetto agli stati dipendenti dal tempo consente di studiare direttamente il cambiamento all’interno della persona mediante una adeguata modellizzazione statistica.</p>
 <p>I modelli LCS vengono utilizzati in varie discipline nelle scienze comportamentali per studiare come i costrutti cambiano nel tempo. Questo quadro può essere esteso per esaminare specificamente come i cambiamenti in un costrutto siano associati a cambiamenti in un altro costrutto e può essere ampliato per stimare traiettorie non lineari più complesse rispetto ad altre tecniche statistiche. Tali domande di “cambiamento del cambiamento” possono essere di interesse in una serie di discipline di ricerca, poiché possono essere utilizzate per esaminare se i cambiamenti su una variabile predittiva sono correlati a cambiamenti su una variabile di esito in un momento successivo. Ad esempio, nella ricerca sulle terapie psicologiche, una domanda comune è se i cambiamenti in un dato processo terapeutico (ad esempio, valutazioni negative) siano correlati a cambiamenti successivi su una misura di risultato terapeutico (ad esempio, sintomi del disturbo da stress post-traumatico (PTSD)). La modellizzazione LCS può essere particolarmente adatta per studiare tali domande.</p>
@@ -424,12 +427,12 @@ X_{ti} = lx_{ti} + u_{ti}
 <p>In questo tutorial utilizzeremo la descrizione dei modelli LCS fornita da <span id="id1">[<a class="reference internal" href="z_biblio.html#id2" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span>. Useremo inoltre le funzionalità del pacchetto R <code class="docutils literal notranslate"><span class="pre">lcsm</span></code> fornito dagli stessi autori.</p>
 </section>
 <section id="lcs-univariato">
-<h2><span class="section-number">22.2. </span>LCS univariato<a class="headerlink" href="#lcs-univariato" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">25.2. </span>LCS univariato<a class="headerlink" href="#lcs-univariato" title="Permalink to this headline">#</a></h2>
 <p>Un LCSM univariato mira a descrivere i cambiamenti degli individui (<span class="math notranslate nohighlight">\(i\)</span>) in un costrutto (<span class="math notranslate nohighlight">\(X\)</span>) nel tempo (<span class="math notranslate nohighlight">\(t\)</span>). Esaminiamo qui sotto la figura fornita da <span id="id2">Wiedemann <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id2" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span>.</p>
 <figure class="align-default" id="lcsm1-fig">
 <a class="reference internal image-reference" href="_images/lcsm_1.png"><img alt="_images/lcsm_1.png" src="_images/lcsm_1.png" style="height: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 22.1 </span><span class="caption-text"><strong>Diagramma di percorso semplificato di LCSM univariato.</strong> Quadrati bianchi = punteggi osservati sulla variabile <span class="math notranslate nohighlight">\(x\)</span> nei punti temporali da 1 a 5; cerchi verdi = punteggi veri latenti (prefisso ‘l’); cerchi blu = punteggi di cambiamento latenti (prefisso ‘d’); cerchio giallo = fattore di cambiamento latente costante. Frecce direzionali = regressioni; frecce bidirezionali = covarianze. Parametro <code class="docutils literal notranslate"><span class="pre">beta_x</span></code> = fattore di cambiamento proporzionale; parametro <code class="docutils literal notranslate"><span class="pre">phi_x</span></code> = autoregressione dei punteggi di cambiamento; parametro <code class="docutils literal notranslate"><span class="pre">sigma_g2lx1</span></code> = covarianza del fattore di cambiamento (<code class="docutils literal notranslate"><span class="pre">g2</span></code>) con il punteggio vero iniziale (<code class="docutils literal notranslate"><span class="pre">lx1</span></code>). I punteggi unici (<span class="math notranslate nohighlight">\(ux_t\)</span>) e le varianze uniche (<span class="math notranslate nohighlight">\(σ^2_{ux}\)</span>) non sono mostrati nella figura per semplicità.</span><a class="headerlink" href="#lcsm1-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 25.1 </span><span class="caption-text"><strong>Diagramma di percorso semplificato di LCSM univariato.</strong> Quadrati bianchi = punteggi osservati sulla variabile <span class="math notranslate nohighlight">\(x\)</span> nei punti temporali da 1 a 5; cerchi verdi = punteggi veri latenti (prefisso ‘l’); cerchi blu = punteggi di cambiamento latenti (prefisso ‘d’); cerchio giallo = fattore di cambiamento latente costante. Frecce direzionali = regressioni; frecce bidirezionali = covarianze. Parametro <code class="docutils literal notranslate"><span class="pre">beta_x</span></code> = fattore di cambiamento proporzionale; parametro <code class="docutils literal notranslate"><span class="pre">phi_x</span></code> = autoregressione dei punteggi di cambiamento; parametro <code class="docutils literal notranslate"><span class="pre">sigma_g2lx1</span></code> = covarianza del fattore di cambiamento (<code class="docutils literal notranslate"><span class="pre">g2</span></code>) con il punteggio vero iniziale (<code class="docutils literal notranslate"><span class="pre">lx1</span></code>). I punteggi unici (<span class="math notranslate nohighlight">\(ux_t\)</span>) e le varianze uniche (<span class="math notranslate nohighlight">\(σ^2_{ux}\)</span>) non sono mostrati nella figura per semplicità.</span><a class="headerlink" href="#lcsm1-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Il quadro LCSM offre diverse opzioni per descrivere il cambiamento di un costrutto nel tempo:</p>
@@ -447,7 +450,7 @@ X_{ti} = lx_{ti} + u_{ti}
 <p>Questo modello viene chiamato modello di cambiamento duale ed è il modello LCS più comunemente usato. In questo modello c’è quello che viene spesso definito come un effetto maturativo (<span class="math notranslate nohighlight">\(g2_i\)</span>), così come l’effetto di cambiamento proporzionale (<span class="math notranslate nohighlight">\(\beta_x\)</span>). Il modello di cambiamento duale produce una traiettoria di crescita esponenziale che dipende dal segno e dalla grandezza di <span class="math notranslate nohighlight">\(g2_i\)</span>, <span class="math notranslate nohighlight">\(\beta_x\)</span> e <span class="math notranslate nohighlight">\(lx1_i\)</span> (si veda Grimm, An, McArdle, Zonderman e Resnick, 2012).</p>
 </section>
 <section id="illustrazione">
-<h2><span class="section-number">22.3. </span>Illustrazione<a class="headerlink" href="#illustrazione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">25.3. </span>Illustrazione<a class="headerlink" href="#illustrazione" title="Permalink to this headline">#</a></h2>
 <p>Per illustrare l’adattamento e l’interpretazione dei modelli LCS, analizziamo i dati longitudinali di matematica che sono stati utilizzati nel Capitolo 3 di <span id="id3">[<a class="reference internal" href="z_biblio.html#id3" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. I dati longitudinali di matematica sono stati raccolti dall’NLSY-CYA (Center for Human Resource Research, 2009) e i punteggi di matematica provengono dal PIAT (Dunn &amp; Markwardt, 1970). Il grado scolastico al momento del test viene utilizzato come metrica temporale e varia dalla seconda elementare (grado 2) alla terza media (grado 8).</p>
 <p>Leggiamo i pacchetti necessari.</p>
 <div class="cell docutils container">
@@ -1706,12 +1709,12 @@ $ rec8  &lt;int&gt; NA, NA, 66, NA, 77, 78, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="328_time_inv_cov.html"
+       href="331_inv_measurement.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">21. </span>Covariate indipendenti dal tempo</p>
+        <p class="prev-next-title"><span class="section-number">24. </span>Invarianza di misurazione</p>
       </div>
     </a>
     <a class="right-next"
@@ -1719,7 +1722,7 @@ $ rec8  &lt;int&gt; NA, NA, 66, NA, 77, 78, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">23. </span>LCSM bivariato</p>
+        <p class="prev-next-title"><span class="section-number">26. </span>LCSM bivariato</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1738,9 +1741,9 @@ $ rec8  &lt;int&gt; NA, NA, 66, NA, 77, 78, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">22.1. LGM e SEM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lcs-univariato">22.2. LCS univariato</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrazione">22.3. Illustrazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">25.1. LGM e SEM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lcs-univariato">25.2. LCS univariato</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#illustrazione">25.3. Illustrazione</a></li>
 </ul>
   </nav></div>
 
