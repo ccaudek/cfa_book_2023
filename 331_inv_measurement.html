@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>26. Invarianza di misurazione &#8212; cfa_book</title>
+    <title>27. Invarianza di misurazione &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="27. Modello LCS univariato" href="332_latent_change.html" />
-    <link rel="prev" title="25. Modelli di crescita latenti bivariati" href="330_bivariate_growth_models.html" />
+    <link rel="next" title="28. Modello LCS univariato" href="332_latent_change.html" />
+    <link rel="prev" title="26. Modelli di crescita latenti bivariati" href="330_bivariate_growth_models.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -188,23 +188,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">20. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">21. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">22. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">23. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">24. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">25. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">26. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">27. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">28. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">29. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">30. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">31. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -398,18 +400,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-fattoriale-longitudinale">26.1. Invarianza fattoriale longitudinale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-esempio-concreto">26.2. Un esempio concreto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-configurale">26.2.1. Modello di invarianza configurale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-debole">26.2.2. Modello di invarianza debole</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-forte">26.2.3. Modello di invarianza forte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-stretta">26.2.4. Invarianza stretta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-fattoriale-longitudinale">27.1. Invarianza fattoriale longitudinale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-esempio-concreto">27.2. Un esempio concreto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-configurale">27.2.1. Modello di invarianza configurale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-debole">27.2.2. Modello di invarianza debole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-forte">27.2.3. Modello di invarianza forte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-stretta">27.2.4. Invarianza stretta</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli">26.3. Confronto tra modelli</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-growth-model">26.4. Second-Order Growth Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traiettorie-di-sviluppo">26.5. Traiettorie di sviluppo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusione">26.6. Conclusione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli">27.3. Confronto tra modelli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-growth-model">27.4. Second-Order Growth Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traiettorie-di-sviluppo">27.5. Traiettorie di sviluppo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusione">27.6. Conclusione</a></li>
 </ul>
             </nav>
         </div>
@@ -422,13 +424,13 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="invarianza-di-misurazione">
-<span id="inv-meas-lgm-notebook"></span><h1><span class="section-number">26. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h1>
+<span id="inv-meas-lgm-notebook"></span><h1><span class="section-number">27. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h1>
 <p>In questo capitolo, esaminiamo come il modello a fattore comune possa essere utilizzato nell’analisi dei dati longitudinali per studiare i cambiamenti nei fattori comuni attraverso l’uso di modelli di crescita latente. Ci concentriamo sui fattori comuni misurati da variabili osservate con punteggio continuo. La modellizzazione del cambiamento nei fattori comuni è un’estensione logica delle nostre precedenti discussioni nel framework di modellizzazione delle equazioni strutturali, dove i dati sono organizzati in forma multivariata (wide).</p>
 <p>Un concetto chiave quando si studia il cambiamento nelle variabili latenti è stabilire una metrica comune per le variabili latenti nel tempo. A differenza delle variabili osservate analizzate nei capitoli precedenti, le variabili latenti non hanno una scala intrinseca e longitudinalmente è necessario che quella scala sia la stessa nel tempo. Questo viene tipicamente fatto testando l’invarianza fattoriale. L’invarianza fattoriale corrisponde al concetto per cui la variabile latente stia misurando lo stesso costrutto nel tempo, in modo che una differenza di un’unità nel punteggio del fattore in un momento significhi la stessa cosa in tutti i momenti.</p>
 <p>In questo tutorial, introduciamo il test di invarianza di misura nel contesto di un modello a fattore longitudinale e come un modello di crescita latente di secondo ordine possa essere utilizzato per descrivere il cambiamento in un fattore latente.</p>
 <p>Questo tutorial segue l’esempio fornito nel Capitolo 14 <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Utilizzando dati con tre misurazioni temporali succesive dall’ECLS-K, testiamo l’invarianza fattoriale e quindi utilizziamo un modello di crescita di secondo ordine per descrivere il cambiamento nei punteggi del fattore nel tempo.</p>
 <section id="invarianza-fattoriale-longitudinale">
-<h2><span class="section-number">26.1. </span>Invarianza fattoriale longitudinale<a class="headerlink" href="#invarianza-fattoriale-longitudinale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.1. </span>Invarianza fattoriale longitudinale<a class="headerlink" href="#invarianza-fattoriale-longitudinale" title="Permalink to this headline">#</a></h2>
 <p>L’invarianza fattoriale longitudinale si riferisce all’equivalenza di alcuni parametri del modello a fattore comune nel tempo. Avere una struttura fattoriale invariante è un aspetto importante dell’utilizzo dell’analisi fattoriale come strumento di indagine scientifica. I fattori non hanno un’unità di misura o un significato intrinseco; la loro interpretazione deriva dalle loro relazioni con l’insieme delle variabili osservate. Se un fattore deve essere trattato come lo stesso in diverse occasioni temporali di misurazione, l’associazione di quel fattore con altre variabili deve rimanere costante nel tempo. Poiché tutti i parametri coinvolti nell’analisi dei fattori hanno il loro proprio significato intrinseco, quali parametri vengono mantenuti costanti nel tempo influisce su come interpretiamo il cambiamento nei fattori comuni.</p>
 <p>Il test di invarianza fattoriale è una procedura multi-step che spesso comporta l’adattamento di quattro modelli con un numero crescente di vincoli. I quattro modelli sono: (1) il modello di invarianza configurale, (2) il modello di invarianza debole, (3) il modello di invarianza forte e (4) il modello di invarianza rigorosa. Ognuno di questi modelli e le loro interpretazioni vengono discussi di seguito.</p>
 <p>Il modello di invarianza configurale richiede che il numero di fattori e la struttura delle saturazioni fattoriali siano uguali nelle diverse occasioni di misurazione. Altre caratteristiche come le varianze dei fattori e le medie dei fattori possono variare. I fattori estratti in ogni occasione possono essere interpretati in modo simile, ma non possono essere considerati come misure di costrutti identici o sulla stessa scala. Le differenze longitudinali nelle medie osservate, nelle varianze e nelle covarianze potrebbero essere dovute a cambiamenti nelle variabili osservate indipendenti dai fattori.</p>
@@ -438,7 +440,7 @@ document.write(`
 <p>L’invarianza fattoriale rigorosa è il modello di fattore longitudinale con i vincoli più forti. Oltre ai vincoli sulle saturazioni fattoriali e sulle intercette delle variabili osservate, questo modello richiede che le varianze uniche siano uguali nelle diverse occasioni di misurazione. In questo modello, tutti i cambiamenti longitudinali nelle medie osservate, nelle varianze e nelle covarianze sono attribuiti ai cambiamenti nei fattori comuni nel tempo.</p>
 </section>
 <section id="un-esempio-concreto">
-<h2><span class="section-number">26.2. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.2. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h2>
 <p>Questo tutorial segue l’esempio del Capitolo 14 di <span id="id2">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Utilizzando dati relativi a 3 misurazioni dell’ECLS-K, testiamo l’invarianza fattoriale e poi usiamo un modello di crescita latente di secondo ordine per descrivere il cambiamento nei punteggi fattoriali nel tempo.</p>
 <p>Carichiamo i pacchetti necessari.</p>
 <p>Leggiamo i dati.</p>
@@ -551,7 +553,7 @@ document.write(`
 </div>
 </div>
 <section id="modello-di-invarianza-configurale">
-<h3><span class="section-number">26.2.1. </span>Modello di invarianza configurale<a class="headerlink" href="#modello-di-invarianza-configurale" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.1. </span>Modello di invarianza configurale<a class="headerlink" href="#modello-di-invarianza-configurale" title="Permalink to this headline">#</a></h3>
 <p>Il modello di invarianza configurale impone pochi vincoli sulla struttura del fattore nel tempo. L’unico vincolo è che il numero di fattori e la struttura delle saturazioni fattoriali siano uguali nelle diverse occasioni di misurazione. Definiamo un fattore “rendimento accademico” per ciascuna delle 3 occasioni, utilizzando le variabili di matematica, scienze e lettura relative a quella misurazione temporale.</p>
 <p>Anche se il fattore comune può essere interpretato in modo simile in ciascuna occasione di misurazione (ad esempio, chiamato “rendimento accademico”), questo modello non impone o assume che i fattori specifici per il tempo misurino lo stesso costrutto o che siano misurati sulla stessa scala.</p>
 <p>Definiamo il modello nella sintassi di lavaan.</p>
@@ -795,7 +797,7 @@ Variances:
 </div>
 </section>
 <section id="modello-di-invarianza-debole">
-<h3><span class="section-number">26.2.2. </span>Modello di invarianza debole<a class="headerlink" href="#modello-di-invarianza-debole" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.2. </span>Modello di invarianza debole<a class="headerlink" href="#modello-di-invarianza-debole" title="Permalink to this headline">#</a></h3>
 <p>Il modello di invarianza debole impone che la matrice di saturazioni fattoriali sia identica in tutte le occasioni di misurazione. Questo implica che le strutture di covarianza nel tempo siano proporzionali. Tuttavia, il modello permette che le intercette delle variabili osservate possano variare nel tempo e quindi non consente di esaminare il cambiamento longitudinale del fattore.</p>
 <p>Definiamo il modello usando la sintassi di lavaan.</p>
 <div class="cell docutils container">
@@ -1038,7 +1040,7 @@ Variances:
 </div>
 </section>
 <section id="modello-di-invarianza-forte">
-<h3><span class="section-number">26.2.3. </span>Modello di invarianza forte<a class="headerlink" href="#modello-di-invarianza-forte" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.3. </span>Modello di invarianza forte<a class="headerlink" href="#modello-di-invarianza-forte" title="Permalink to this headline">#</a></h3>
 <p>Il modello di invarianza forte impone che le intercette delle variabili osservate siano uguali nel tempo, mentre le medie delle variabili latenti possono variare nelle diverse occasioni. Poiché tutti i cambiamenti nelle medie delle variabili osservate sono attribuiti ai fattori, la scala delle variabili latenti è uguale nelle diverse occasioni di misurazione.</p>
 <p>Scriviamo il modello nella sintassi di lavaan.</p>
 <div class="cell docutils container">
@@ -1281,7 +1283,7 @@ Variances:
 </div>
 </section>
 <section id="invarianza-stretta">
-<h3><span class="section-number">26.2.4. </span>Invarianza stretta<a class="headerlink" href="#invarianza-stretta" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.4. </span>Invarianza stretta<a class="headerlink" href="#invarianza-stretta" title="Permalink to this headline">#</a></h3>
 <p>Il modello di invarianza rigorosa impone vincoli aggiuntivi sulle saturazioni fattoriali, sulle intercette delle variabili osservate e sulle varianze uniche. Quando l’invarianza fattoriale rigorosa è soddisfatta, i cambiamenti longitudinali nelle medie osservate, nelle varianze e nelle covarianze ci informano sui cambiamenti longitudinali dei fattori.</p>
 <p>Definiamo il modello con la sintassi di lavaan.</p>
 <div class="cell docutils container">
@@ -1525,7 +1527,7 @@ Variances:
 </section>
 </section>
 <section id="confronto-tra-modelli">
-<h2><span class="section-number">26.3. </span>Confronto tra modelli<a class="headerlink" href="#confronto-tra-modelli" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.3. </span>Confronto tra modelli<a class="headerlink" href="#confronto-tra-modelli" title="Permalink to this headline">#</a></h2>
 <p>È possibile valutare il tipo di invarianza fattoriale longitudinale giustificata dai dati mediante un confronto tra modelli.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1668,7 +1670,7 @@ Variances:
 <p>Nel caso presente, solo l’invarianza configurale è giustificata dal test di verosimiglianze. L’esame degli indici di bontà di adattamento, comunque, suggerisce che l’invarianza debole sembra giustificata per questi dati. &#64;grimm2016growth concludono invece che anche l’invarianza forte è giustificata per questi dati.</p>
 </section>
 <section id="second-order-growth-model">
-<h2><span class="section-number">26.4. </span>Second-Order Growth Model<a class="headerlink" href="#second-order-growth-model" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.4. </span>Second-Order Growth Model<a class="headerlink" href="#second-order-growth-model" title="Permalink to this headline">#</a></h2>
 <p>Una volta che abbiamo dimostrato che l’invarianza forte o rigorosa è supportata per il modello di crescita latente, possiamo esaminare i cambiamenti nei punteggi  fattoriali.</p>
 <p>In questo esempio, imponiamo l’invarianza fattoriale rigorosa e modelliamo il cambiamento nei punteggi fattoriali del rendimento accademico dei bambini utilizzando un Second-Order Growth Model. Si noti che devono essere apportate alcune altre modifiche per l’identificazione e la scala.</p>
 <div class="cell docutils container">
@@ -1941,7 +1943,7 @@ Variances:
 </div>
 </section>
 <section id="traiettorie-di-sviluppo">
-<h2><span class="section-number">26.5. </span>Traiettorie di sviluppo<a class="headerlink" href="#traiettorie-di-sviluppo" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.5. </span>Traiettorie di sviluppo<a class="headerlink" href="#traiettorie-di-sviluppo" title="Permalink to this headline">#</a></h2>
 <p>Possiamo visualizzare le traiettorie previste dei punteggi fattoriali nel modo seguente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2005,7 +2007,7 @@ Variances:
 </div>
 </section>
 <section id="conclusione">
-<h2><span class="section-number">26.6. </span>Conclusione<a class="headerlink" href="#conclusione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.6. </span>Conclusione<a class="headerlink" href="#conclusione" title="Permalink to this headline">#</a></h2>
 <p>Utilizzando più indicatori all’interno del framework di analisi dei fattori longitudinali, possiamo descrivere il cambiamento con maggiore precisione. Questo perché siamo in grado di filtrare il rumore di misura utilizzando un modello di misura multivariato. In questo modo, possiamo espandere le possibilità di indagine e studio delle differenze interindividuali nel cambiamento intra-individuale.</p>
 </section>
 </section>
@@ -2044,7 +2046,7 @@ Variances:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">25. </span>Modelli di crescita latenti bivariati</p>
+        <p class="prev-next-title"><span class="section-number">26. </span>Modelli di crescita latenti bivariati</p>
       </div>
     </a>
     <a class="right-next"
@@ -2052,7 +2054,7 @@ Variances:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">27. </span>Modello LCS univariato</p>
+        <p class="prev-next-title"><span class="section-number">28. </span>Modello LCS univariato</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2071,18 +2073,18 @@ Variances:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-fattoriale-longitudinale">26.1. Invarianza fattoriale longitudinale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-esempio-concreto">26.2. Un esempio concreto</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-configurale">26.2.1. Modello di invarianza configurale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-debole">26.2.2. Modello di invarianza debole</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-forte">26.2.3. Modello di invarianza forte</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-stretta">26.2.4. Invarianza stretta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-fattoriale-longitudinale">27.1. Invarianza fattoriale longitudinale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-esempio-concreto">27.2. Un esempio concreto</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-configurale">27.2.1. Modello di invarianza configurale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-debole">27.2.2. Modello di invarianza debole</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-invarianza-forte">27.2.3. Modello di invarianza forte</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-stretta">27.2.4. Invarianza stretta</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli">26.3. Confronto tra modelli</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-growth-model">26.4. Second-Order Growth Model</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traiettorie-di-sviluppo">26.5. Traiettorie di sviluppo</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusione">26.6. Conclusione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli">27.3. Confronto tra modelli</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#second-order-growth-model">27.4. Second-Order Growth Model</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#traiettorie-di-sviluppo">27.5. Traiettorie di sviluppo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusione">27.6. Conclusione</a></li>
 </ul>
   </nav></div>
 
