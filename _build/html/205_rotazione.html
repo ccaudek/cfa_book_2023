@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>11. La rotazione fattoriale &#8212; cfa_book</title>
+    <title>13. La rotazione fattoriale &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12. LGM e modelli misti" href="324_lgm_mixed.html" />
-    <link rel="prev" title="10. Il numero dei fattori" href="203_numero_fattori.html" />
+    <link rel="next" title="14. Valutare e rifinire la soluzione fattoriale" href="206_valutare_sol_fattoriale.html" />
+    <link rel="prev" title="12. Il numero dei fattori" href="203_numero_fattori.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -159,36 +159,52 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modello lineare</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="010_regression.html">1. L’analisi di regressione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_intro_r.html">1. Linguaggio di programmazione R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010_regression.html">2. L’analisi di regressione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teoria classica dei test</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
-<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
-<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">5. Attendibilità e modello fattoriale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">6. CFA: confronto tra modelli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">3. Fondamenti teorici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">4. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">5. La stima del punteggio vero</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analisi fattoriale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">6. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">7. Attendibilità e modello fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">8. CFA: confronto tra modelli</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Costruzione di strumenti psicometrici</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">7. Tipologie dei test psicometrici</a></li>
-<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">8. Valutazione della matrice di correlazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">9. L’estrazione dei fattori</a></li>
-<li class="toctree-l1"><a class="reference internal" href="203_numero_fattori.html">10. Il numero dei fattori</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. La rotazione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">9. Tipologie dei test psicometrici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">10. Valutazione della matrice di correlazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">11. L’estrazione dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="203_numero_fattori.html">12. Il numero dei fattori</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">13. La rotazione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="206_valutare_sol_fattoriale.html">14. Valutare e rifinire la soluzione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="250_group_invariance.html">15. Invarianza di misura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
+<li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelli di crescita latente</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">12. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">13. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">14. Latent Change Score Modeling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">15. LCSM bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">16. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -382,29 +398,29 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeterminatezza-della-soluzione-fattoriale">11.1. Indeterminatezza della soluzione fattoriale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsimonia-e-semplicita">11.2. Parsimonia e semplicità</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#il-criterio-della-struttura-semplice">11.2.1. Il criterio della struttura semplice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeterminatezza-della-soluzione-fattoriale">13.1. Indeterminatezza della soluzione fattoriale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsimonia-e-semplicita">13.2. Parsimonia e semplicità</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#il-criterio-della-struttura-semplice">13.2.1. Il criterio della struttura semplice</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-nello-spazio-geometrico">11.3. Rotazione nello spazio geometrico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-ortogonale">11.3.1. Rotazione ortogonale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vincoli-alla-rotazione">11.3.2. Vincoli alla rotazione</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-grafico">11.3.3. Metodo grafico</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medodi-di-rotazione-ortogonale">11.3.4. Medodi di rotazione ortogonale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-di-rotazione-obliqua">11.3.5. Metodi di rotazione obliqua</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-nello-spazio-geometrico">13.3. Rotazione nello spazio geometrico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-ortogonale">13.3.1. Rotazione ortogonale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vincoli-alla-rotazione">13.3.2. Vincoli alla rotazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-grafico">13.3.3. Metodo grafico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medodi-di-rotazione-ortogonale">13.3.4. Medodi di rotazione ortogonale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-di-rotazione-obliqua">13.3.5. Metodi di rotazione obliqua</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrice-dei-pesi-fattoriali-e-matrice-di-struttura">11.4. Matrice dei pesi fattoriali e matrice di struttura</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-con-semtools">11.5. Esempio con <code class="docutils literal notranslate"><span class="pre">semTools</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-varimax">11.5.1. Orthogonal varimax</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-quartimin">11.5.2. Orthogonal Quartimin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-quartimin">11.5.3. Oblique Quartimin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-geomin">11.5.4. Orthogonal Geomin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-geomin">11.5.5. Oblique Geomin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrice-dei-pesi-fattoriali-e-matrice-di-struttura">13.4. Matrice dei pesi fattoriali e matrice di struttura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-con-semtools">13.5. Esempio con <code class="docutils literal notranslate"><span class="pre">semTools</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-varimax">13.5.1. Orthogonal varimax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-quartimin">13.5.2. Orthogonal Quartimin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-quartimin">13.5.3. Oblique Quartimin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-geomin">13.5.4. Orthogonal Geomin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-geomin">13.5.5. Oblique Geomin</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretazione">11.6. Interpretazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretazione">13.6. Interpretazione</a></li>
 </ul>
             </nav>
         </div>
@@ -417,7 +433,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="la-rotazione-fattoriale">
-<span id="rotazione-notebook"></span><h1><span class="section-number">11. </span>La rotazione fattoriale<a class="headerlink" href="#la-rotazione-fattoriale" title="Permalink to this headline">#</a></h1>
+<span id="rotazione-notebook"></span><h1><span class="section-number">13. </span>La rotazione fattoriale<a class="headerlink" href="#la-rotazione-fattoriale" title="Permalink to this headline">#</a></h1>
 <p>Nel capitolo <span class="xref std std-ref">estrazione</span> abbiamo visto come sia possibile ottenere la
 soluzione fattoriale non ruotata per il numero di fattori comuni che
 meglio riassume l’informazione contenuta nella matrice di correlazioni
@@ -427,7 +443,7 @@ osservate. Si tende dunque a ricorrere alla rotazione degli assi
 fattoriali nella ricerca di una soluzione più facilmente interpretabile
 di quella ottenuta in prima istanza.</p>
 <section id="indeterminatezza-della-soluzione-fattoriale">
-<h2><span class="section-number">11.1. </span>Indeterminatezza della soluzione fattoriale<a class="headerlink" href="#indeterminatezza-della-soluzione-fattoriale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.1. </span>Indeterminatezza della soluzione fattoriale<a class="headerlink" href="#indeterminatezza-della-soluzione-fattoriale" title="Permalink to this headline">#</a></h2>
 <p>Il problema della rotazione si pone perché la matrice delle saturazioni
 non presenta un’unica soluzione e, attraverso la sua trasformazione
 matematica, si possono ottenere infinite matrici dello stesso ordine.
@@ -584,7 +600,7 @@ fattoriali corrispondenti ad un numero diverso di fattori comuni:</p>
 </div>
 </section>
 <section id="parsimonia-e-semplicita">
-<h2><span class="section-number">11.2. </span>Parsimonia e semplicità<a class="headerlink" href="#parsimonia-e-semplicita" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.2. </span>Parsimonia e semplicità<a class="headerlink" href="#parsimonia-e-semplicita" title="Permalink to this headline">#</a></h2>
 <p>Come si raggiunge allora una qualche certezza sui risultati dell’analisi
 fattoriale? Il problema dell’<em>indeterminazione fattoriale</em> si affronta
 scegliendo la soluzione che soddisfa i seguenti due criteri: <em>criterio
@@ -604,7 +620,7 @@ matrice <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\
 seconda che i fattori ruotati risultino o meno incorrelati, si distingue
 tra metodi di rotazione ortogonale o obliqua dei fattori.</p>
 <section id="il-criterio-della-struttura-semplice">
-<h3><span class="section-number">11.2.1. </span>Il criterio della struttura semplice<a class="headerlink" href="#il-criterio-della-struttura-semplice" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.2.1. </span>Il criterio della struttura semplice<a class="headerlink" href="#il-criterio-della-struttura-semplice" title="Permalink to this headline">#</a></h3>
 <p>Tramite la rotazione degli assi fattoriali miriamo alla “struttura
 semplice” della matrice delle saturazioni fattoriali: poche ma forti
 saturazioni diverse da zero e assenza di variabili saturate da più di un
@@ -642,9 +658,9 @@ variabili che saturano su più fattori.</p>
 </section>
 </section>
 <section id="rotazione-nello-spazio-geometrico">
-<h2><span class="section-number">11.3. </span>Rotazione nello spazio geometrico<a class="headerlink" href="#rotazione-nello-spazio-geometrico" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.3. </span>Rotazione nello spazio geometrico<a class="headerlink" href="#rotazione-nello-spazio-geometrico" title="Permalink to this headline">#</a></h2>
 <section id="rotazione-ortogonale">
-<h3><span class="section-number">11.3.1. </span>Rotazione ortogonale<a class="headerlink" href="#rotazione-ortogonale" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.1. </span>Rotazione ortogonale<a class="headerlink" href="#rotazione-ortogonale" title="Permalink to this headline">#</a></h3>
 <p>Come è stato notato nella sezione precedente, la matrice
 <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> non è <em>identificabile</em> poiché non esiste una
 soluzione unica alla determinazione delle saturazioni fattoriali:
@@ -671,7 +687,7 @@ modello fattoriale. L’indeterminazione fattoriale nasce dal fatto che
 sono possibili infinite rotazioni diverse degli assi.</p>
 </section>
 <section id="vincoli-alla-rotazione">
-<h3><span class="section-number">11.3.2. </span>Vincoli alla rotazione<a class="headerlink" href="#vincoli-alla-rotazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.2. </span>Vincoli alla rotazione<a class="headerlink" href="#vincoli-alla-rotazione" title="Permalink to this headline">#</a></h3>
 <p>Il problema della non identificabilità di <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>
 viene generalmente risolto imponendo dei vincoli alla rotazione. Il
 criterio che ci guida nella scelta di una delle possibili trasformazioni
@@ -704,7 +720,7 @@ dell’indeterminazione fattoriale mediante il metodo grafico. Esamineremo
 poi i metodi Quartimax e Varimax.</p>
 </section>
 <section id="metodo-grafico">
-<h3><span class="section-number">11.3.3. </span>Metodo grafico<a class="headerlink" href="#metodo-grafico" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.3. </span>Metodo grafico<a class="headerlink" href="#metodo-grafico" title="Permalink to this headline">#</a></h3>
 <p>Come si può ruotare il sitema degli assi? Se ci sono solo <span class="math notranslate nohighlight">\(m=2\)</span> fattori,
 per ottenere la loro rappresentazione geometrica utilizziamo un sistema
 di coordinate bidimensionale. L’ispezione visiva del diagramma delle
@@ -892,7 +908,7 @@ ortogonale dei punti sugli assi ruotati:</p>
 Rencher (2002).</p>
 </section>
 <section id="medodi-di-rotazione-ortogonale">
-<h3><span class="section-number">11.3.4. </span>Medodi di rotazione ortogonale<a class="headerlink" href="#medodi-di-rotazione-ortogonale" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.4. </span>Medodi di rotazione ortogonale<a class="headerlink" href="#medodi-di-rotazione-ortogonale" title="Permalink to this headline">#</a></h3>
 <p>Un tipo di rotazione ortogonale molto utilizzato è la rotazione Varimax
 (Kaiser, 1958). La matrice <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> è semplificata
 in modo tale che le varianze dei quadrati degli elementi <span class="math notranslate nohighlight">\(\lambda_{ij}\)</span>
@@ -952,7 +968,7 @@ diverse, subordinatamente alla condizione che la varianza delle righe
 rimanga inalterata.</p>
 </section>
 <section id="metodi-di-rotazione-obliqua">
-<h3><span class="section-number">11.3.5. </span>Metodi di rotazione obliqua<a class="headerlink" href="#metodi-di-rotazione-obliqua" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.3.5. </span>Metodi di rotazione obliqua<a class="headerlink" href="#metodi-di-rotazione-obliqua" title="Permalink to this headline">#</a></h3>
 <p>Parlare di rotazione obliqua significa usare un termine improprio: per
 definizione, infatti, una rotazione implica una trasformazione
 ortogonale che preserva le distanze. Secondo Rencher (2002), un termine
@@ -975,7 +991,7 @@ il seguente:</p>
 </section>
 </section>
 <section id="matrice-dei-pesi-fattoriali-e-matrice-di-struttura">
-<h2><span class="section-number">11.4. </span>Matrice dei pesi fattoriali e matrice di struttura<a class="headerlink" href="#matrice-dei-pesi-fattoriali-e-matrice-di-struttura" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.4. </span>Matrice dei pesi fattoriali e matrice di struttura<a class="headerlink" href="#matrice-dei-pesi-fattoriali-e-matrice-di-struttura" title="Permalink to this headline">#</a></h2>
 <p>Nella rotazione ortogonale i fattori sono incorrelati. Si consideri la situazione presentata nella figura successiva, con due variabili latenti incorrelate
 (<span class="math notranslate nohighlight">\(\xi_1\)</span> e <span class="math notranslate nohighlight">\(\xi_2\)</span>) e quattro variabili manifeste (<span class="math notranslate nohighlight">\(y_1\)</span>, <span class="math notranslate nohighlight">\(y_2\)</span>, <span class="math notranslate nohighlight">\(y_3\)</span>,
 <span class="math notranslate nohighlight">\(y_4\)</span>). Siano <span class="math notranslate nohighlight">\(\lambda_{11}\)</span>, <span class="math notranslate nohighlight">\(\lambda_{12}\)</span>, <span class="math notranslate nohighlight">\(\lambda_{13}\)</span> e
@@ -986,7 +1002,7 @@ fattore.</p>
 <figure class="align-default" id="orto-rot-fig">
 <a class="reference internal image-reference" href="_images/rot_4.png"><img alt="_images/rot_4.png" src="_images/rot_4.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11.1 </span><span class="caption-text">Rotazione ortogonale.</span><a class="headerlink" href="#orto-rot-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13.1 </span><span class="caption-text">Rotazione ortogonale.</span><a class="headerlink" href="#orto-rot-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>In un diagramma di percorso, la correlazione tra due variabili contenute
@@ -1027,7 +1043,7 @@ numerici dei percorsi legittimi che collegano <span class="math notranslate nohi
 <figure class="align-default" id="obl-rot-fig">
 <a class="reference internal image-reference" href="_images/rot_5.png"><img alt="_images/rot_5.png" src="_images/rot_5.png" style="height: 300px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 11.2 </span><span class="caption-text">Rotazione obliqua.</span><a class="headerlink" href="#obl-rot-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 13.2 </span><span class="caption-text">Rotazione obliqua.</span><a class="headerlink" href="#obl-rot-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Per illustrare la rotazione obliqua, utilizziamo i dati discussi da
@@ -1188,7 +1204,7 @@ Fit based upon off diagonal values = 0.99
 </div>
 </section>
 <section id="esempio-con-semtools">
-<h2><span class="section-number">11.5. </span>Esempio con <code class="docutils literal notranslate"><span class="pre">semTools</span></code><a class="headerlink" href="#esempio-con-semtools" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.5. </span>Esempio con <code class="docutils literal notranslate"><span class="pre">semTools</span></code><a class="headerlink" href="#esempio-con-semtools" title="Permalink to this headline">#</a></h2>
 <p>Presento qui un esempio di uso di vari metodi di estrazione fattoriale. Tra tali  metodi, la rotazione obliqua Geomin è molto popolare ed è il default di M-Plus.</p>
 <p>Iniziamo a caricare il pacchetto <code class="docutils literal notranslate"><span class="pre">semTools</span></code>.</p>
 <div class="cell docutils container">
@@ -1302,7 +1318,7 @@ Constraints:
 </div>
 <p>Si noti che, in assenza di rotazione, è impossibile assegnare un significato ai fattori comuni.</p>
 <section id="orthogonal-varimax">
-<h3><span class="section-number">11.5.1. </span>Orthogonal varimax<a class="headerlink" href="#orthogonal-varimax" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.5.1. </span>Orthogonal varimax<a class="headerlink" href="#orthogonal-varimax" title="Permalink to this headline">#</a></h3>
 <p>Utilizziamo ora la rotazione ortogonale Varimax.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1410,7 +1426,7 @@ Test Statistics for Standardized Rotated Factor Loadings
 </div>
 </section>
 <section id="orthogonal-quartimin">
-<h3><span class="section-number">11.5.2. </span>Orthogonal Quartimin<a class="headerlink" href="#orthogonal-quartimin" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.5.2. </span>Orthogonal Quartimin<a class="headerlink" href="#orthogonal-quartimin" title="Permalink to this headline">#</a></h3>
 <p>Un metodo alternativo per la rotazione ortogonale è Quartimin.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1518,7 +1534,7 @@ Test Statistics for Standardized Rotated Factor Loadings
 </div>
 </section>
 <section id="oblique-quartimin">
-<h3><span class="section-number">11.5.3. </span>Oblique Quartimin<a class="headerlink" href="#oblique-quartimin" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.5.3. </span>Oblique Quartimin<a class="headerlink" href="#oblique-quartimin" title="Permalink to this headline">#</a></h3>
 <p>L’algoritmo Quartimin può anche essere usato per una soluzione obliqua.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1626,7 +1642,7 @@ Test Statistics for Standardized Rotated Factor Loadings
 </div>
 </section>
 <section id="orthogonal-geomin">
-<h3><span class="section-number">11.5.4. </span>Orthogonal Geomin<a class="headerlink" href="#orthogonal-geomin" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.5.4. </span>Orthogonal Geomin<a class="headerlink" href="#orthogonal-geomin" title="Permalink to this headline">#</a></h3>
 <p>Consideriamo ora la rotazione Geomin. L’algoritmo Geomin fornisce un metodo di rotazione che riduce al minimo la media geometrica delle saturazioni fattoriali innalzate al quadrato. Qui è usato per ottenere una soluzione ortogonale.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1734,7 +1750,7 @@ Test Statistics for Standardized Rotated Factor Loadings
 </div>
 </section>
 <section id="oblique-geomin">
-<h3><span class="section-number">11.5.5. </span>Oblique Geomin<a class="headerlink" href="#oblique-geomin" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.5.5. </span>Oblique Geomin<a class="headerlink" href="#oblique-geomin" title="Permalink to this headline">#</a></h3>
 <p>La rotazione Geomin può anche essere usata per ottenere una soluzione obliqua.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1843,7 +1859,7 @@ Test Statistics for Standardized Rotated Factor Loadings
 </section>
 </section>
 <section id="interpretazione">
-<h2><span class="section-number">11.6. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.6. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this headline">#</a></h2>
 <p>Possiamo chiederci se, per fornire un’interpretazione ai fattori comuni latenti, sia più opportuno usare la matrice pattern o la matrice struttura.  Teoricamente, il fattore individuato dall’analisi fattoriale è una caratteristica latente univariata (una sorta di qualità che esprime l‘“essenza” di un fenomeno psicologico). Poiché il fattore è una sorta di “essenza” univariata, dovrebbe essere interpretato come il significato (relativamente semplice) che giace sopra (o “dietro”) l’intersezione dei significati/contenuti delle variabili che saturano nel fattore. Nella rotazione obliqua i fattori sono correlati. Vogliamo comunque interpretarli come dimensioni psicologiche distinte. L’etichetta che assegniamo al fattore <span class="math notranslate nohighlight">\(F_1\)</span> dovrebbe contribuire a dissociare, in termini teorici, il fenomeno psicologico corrispondente a <span class="math notranslate nohighlight">\(F_1\)</span> dal fenomeno denotato dall’etichetta del fattore <span class="math notranslate nohighlight">\(F_2\)</span>, anche in presenza di una correlazione tra i due, per sottolineare l’individualità di entrambi i fattori, pur riconoscendo il fatto che “nella realtà esterna” i due corrispondenti fenomeni psicologici tendono a covariare.</p>
 <p>Se è questa la strategia interpretativa, allora lo strumento principale per l’interpretazione corrisponde alla matrice pattern. Infatti, i coefficienti della matrice  pattern, in quanto interpretabili come coefficienti parziali di regressione, rivelano l’influenza “causale” del fattore comune nella determinazione delle variabili manifeste. La matrice struttura, invece, descrive le correlazioni tra variabili e fattori. Abbiamo visto che, all’interno di un diagramma di percorso, la correlazione dipende sia dai percorsi diretti (“relazioni causali”) sia dai percorsi indiretti (che dipendono dalle correlazioni tra i fattori). Dunque la matrice struttura non descrive gli “effetti diretti”, cioè “causali” dei fattori comuni latenti sulle variabili manifeste ma solo, appunto, la covariazione tra i fattori comuni e le variabili manifeste.</p>
 <p>Il punto debole della matrice pattern è che è meno stabile da un campione all’altro, come lo sono di solito i coefficienti di regressione rispetto ai coefficienti di correlazione. Di conseguenza, fare affidamento sulla matrice pattern per l’interpretazione richiede  uno studio ben pianificato e un’adeguata dimensione campionaria. Per uno studio pilota e un’interpretazione provvisoria, invece, la matrice struttura potrebbe essere la scelta migliore.</p>
@@ -1884,15 +1900,15 @@ Test Statistics for Standardized Rotated Factor Loadings
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">10. </span>Il numero dei fattori</p>
+        <p class="prev-next-title"><span class="section-number">12. </span>Il numero dei fattori</p>
       </div>
     </a>
     <a class="right-next"
-       href="324_lgm_mixed.html"
+       href="206_valutare_sol_fattoriale.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">12. </span>LGM e modelli misti</p>
+        <p class="prev-next-title"><span class="section-number">14. </span>Valutare e rifinire la soluzione fattoriale</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1911,29 +1927,29 @@ Test Statistics for Standardized Rotated Factor Loadings
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeterminatezza-della-soluzione-fattoriale">11.1. Indeterminatezza della soluzione fattoriale</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsimonia-e-semplicita">11.2. Parsimonia e semplicità</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#il-criterio-della-struttura-semplice">11.2.1. Il criterio della struttura semplice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indeterminatezza-della-soluzione-fattoriale">13.1. Indeterminatezza della soluzione fattoriale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parsimonia-e-semplicita">13.2. Parsimonia e semplicità</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#il-criterio-della-struttura-semplice">13.2.1. Il criterio della struttura semplice</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-nello-spazio-geometrico">11.3. Rotazione nello spazio geometrico</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-ortogonale">11.3.1. Rotazione ortogonale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vincoli-alla-rotazione">11.3.2. Vincoli alla rotazione</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-grafico">11.3.3. Metodo grafico</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medodi-di-rotazione-ortogonale">11.3.4. Medodi di rotazione ortogonale</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-di-rotazione-obliqua">11.3.5. Metodi di rotazione obliqua</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-nello-spazio-geometrico">13.3. Rotazione nello spazio geometrico</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rotazione-ortogonale">13.3.1. Rotazione ortogonale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vincoli-alla-rotazione">13.3.2. Vincoli alla rotazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-grafico">13.3.3. Metodo grafico</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#medodi-di-rotazione-ortogonale">13.3.4. Medodi di rotazione ortogonale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-di-rotazione-obliqua">13.3.5. Metodi di rotazione obliqua</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrice-dei-pesi-fattoriali-e-matrice-di-struttura">11.4. Matrice dei pesi fattoriali e matrice di struttura</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-con-semtools">11.5. Esempio con <code class="docutils literal notranslate"><span class="pre">semTools</span></code></a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-varimax">11.5.1. Orthogonal varimax</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-quartimin">11.5.2. Orthogonal Quartimin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-quartimin">11.5.3. Oblique Quartimin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-geomin">11.5.4. Orthogonal Geomin</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-geomin">11.5.5. Oblique Geomin</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matrice-dei-pesi-fattoriali-e-matrice-di-struttura">13.4. Matrice dei pesi fattoriali e matrice di struttura</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#esempio-con-semtools">13.5. Esempio con <code class="docutils literal notranslate"><span class="pre">semTools</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-varimax">13.5.1. Orthogonal varimax</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-quartimin">13.5.2. Orthogonal Quartimin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-quartimin">13.5.3. Oblique Quartimin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#orthogonal-geomin">13.5.4. Orthogonal Geomin</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#oblique-geomin">13.5.5. Oblique Geomin</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretazione">11.6. Interpretazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretazione">13.6. Interpretazione</a></li>
 </ul>
   </nav></div>
 

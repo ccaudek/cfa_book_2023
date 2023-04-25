@@ -13,16 +13,19 @@ In questo esempio, le finestre temporali sono definite come semestri. Quindi, pr
 
 ```{r, include = FALSE}
 source("_common.R")
-library("lavaan")
-library("semPlot")
-library("knitr")
-library("markdown")
-library("patchwork")
-library("psych")
-library("DT")
-library("kableExtra")
-library("lme4")
-set.seed(12345)
+suppressPackageStartupMessages({
+  library("lavaan")
+  library("semPlot")
+  library("knitr")
+  library("markdown")
+  library("patchwork")
+  library("psych")
+  library("DT")
+  library("kableExtra")
+  library("lme4")
+})
+
+set.seed(42)
 ```
 
 Per questo esempio considereremo i dati di presrtazione matematica dal data set NLSY-CYA Long Data [si veda @grimm2016growth]. Iniziamo a leggere i dati.

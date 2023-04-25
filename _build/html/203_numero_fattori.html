@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>10. Il numero dei fattori &#8212; cfa_book</title>
+    <title>12. Il numero dei fattori &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="11. LGM e modelli misti" href="324_lgm_mixed.html" />
-    <link rel="prev" title="9. L’estrazione dei fattori" href="202_estrazione.html" />
+    <link rel="next" title="13. La rotazione fattoriale" href="205_rotazione.html" />
+    <link rel="prev" title="11. L’estrazione dei fattori" href="202_estrazione.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -159,35 +159,52 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduzione</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Modello lineare</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="010_regression.html">1. L’analisi di regressione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_intro_r.html">1. Linguaggio di programmazione R</a></li>
+<li class="toctree-l1"><a class="reference internal" href="010_regression.html">2. L’analisi di regressione</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Teoria classica dei test</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">2. Fondamenti teorici</a></li>
-<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">3. L’errore standard della misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">4. La stima del punteggio vero</a></li>
-<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">5. Attendibilità e modello fattoriale</a></li>
-<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">6. CFA: confronto tra modelli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="035_ctt.html">3. Fondamenti teorici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="037_err_std_mis.html">4. L’errore standard della misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="038_err_std_stima.html">5. La stima del punteggio vero</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Analisi fattoriale</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">6. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">7. Attendibilità e modello fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">8. CFA: confronto tra modelli</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Costruzione di strumenti psicometrici</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">7. Tipologie dei test psicometrici</a></li>
-<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">8. Valutazione della matrice di correlazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">9. L’estrazione dei fattori</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">10. Il numero dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="200_problema_strumento.html">9. Tipologie dei test psicometrici</a></li>
+<li class="toctree-l1"><a class="reference internal" href="201_valutare_le_matrici.html">10. Valutazione della matrice di correlazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="202_estrazione.html">11. L’estrazione dei fattori</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">12. Il numero dei fattori</a></li>
+<li class="toctree-l1"><a class="reference internal" href="205_rotazione.html">13. La rotazione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="206_valutare_sol_fattoriale.html">14. Valutare e rifinire la soluzione fattoriale</a></li>
+<li class="toctree-l1"><a class="reference internal" href="250_group_invariance.html">15. Invarianza di misura</a></li>
+<li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
+<li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
+<li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Modelli di crescita latente</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">11. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">12. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">13. Latent Change Score Modeling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">14. LCSM bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">15. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -381,11 +398,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">10.1. Quota di varianza spiegata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">10.2. Valore medio degli autovalori</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">10.3. Scree test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">10.4. Parallel analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">10.5. Test di bontà di adattamento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">12.1. Quota di varianza spiegata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">12.2. Valore medio degli autovalori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">12.3. Scree test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">12.4. Parallel analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">12.5. Test di bontà di adattamento</a></li>
 </ul>
             </nav>
         </div>
@@ -398,7 +415,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="il-numero-dei-fattori">
-<span id="number-factors-notebook"></span><h1><span class="section-number">10. </span>Il numero dei fattori<a class="headerlink" href="#il-numero-dei-fattori" title="Permalink to this headline">#</a></h1>
+<span id="number-factors-notebook"></span><h1><span class="section-number">12. </span>Il numero dei fattori<a class="headerlink" href="#il-numero-dei-fattori" title="Permalink to this headline">#</a></h1>
 <p>Sono stati proposti quattro criteri per determinare il numero <span class="math notranslate nohighlight">\(m\)</span> di
 fattori da estrarre (Rencher, 2002). Tali criteri sono elencati di
 seguito.</p>
@@ -416,7 +433,7 @@ medio degli autovalori è <span class="math notranslate nohighlight">\(1\)</span
 dove <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> è di ordine <span class="math notranslate nohighlight">\(p \times m\)</span>.</p></li>
 </ul>
 <section id="quota-di-varianza-spiegata">
-<h2><span class="section-number">10.1. </span>Quota di varianza spiegata<a class="headerlink" href="#quota-di-varianza-spiegata" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1. </span>Quota di varianza spiegata<a class="headerlink" href="#quota-di-varianza-spiegata" title="Permalink to this headline">#</a></h2>
 <p>Il primo criterio si applica soprattutto al metodo delle componenti
 principali. La proporzione della varianza capionaria spiegata dal
 fattore <span class="math notranslate nohighlight">\(j\)</span>-esimo estratto da <strong>S</strong> è uguale a</p>
@@ -466,7 +483,7 @@ come per il metodo delle componenti principali, possono essere usati gli
 autovalori di <strong>S</strong> o <strong>R</strong>.</p>
 </section>
 <section id="valore-medio-degli-autovalori">
-<h2><span class="section-number">10.2. </span>Valore medio degli autovalori<a class="headerlink" href="#valore-medio-degli-autovalori" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.2. </span>Valore medio degli autovalori<a class="headerlink" href="#valore-medio-degli-autovalori" title="Permalink to this headline">#</a></h2>
 <p>Il calcolo del valore medio degli autovalori è una procedura euristica
 implementata in molti software. In una variante di tale metodo, <span class="math notranslate nohighlight">\(m\)</span>
 viene scelto in modo tale da uguagliare il numero degli autovalori
@@ -474,7 +491,7 @@ positivi della matrice ridotta <span class="math notranslate nohighlight">\(\tex
 solitamente un numero di fattori troppo grande.</p>
 </section>
 <section id="scree-test">
-<h2><span class="section-number">10.3. </span>Scree test<a class="headerlink" href="#scree-test" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.3. </span>Scree test<a class="headerlink" href="#scree-test" title="Permalink to this headline">#</a></h2>
 <p>Lo scree test è basato su una rappresentazione grafica degli autovalori
 di <strong>S</strong> o <strong>R</strong>. Si costruisce un grafico che rappresenta gli
 autovalori ordinati in maniera decrescente in funzione del numero dei
@@ -484,7 +501,7 @@ fattore oltre il quale il dislivello tra fattori successivi diventa
 esiguo e la spezzata tende a diventare orizzontale.</p>
 </section>
 <section id="parallel-analysis">
-<h2><span class="section-number">10.4. </span>Parallel analysis<a class="headerlink" href="#parallel-analysis" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.4. </span>Parallel analysis<a class="headerlink" href="#parallel-analysis" title="Permalink to this headline">#</a></h2>
 <p>La Parallel Analysis è un metodo alternativo allo scree test[^1]. Nella
 Parallel Analysis, il criterio usato per decidere il numero di fattori
 da estrarre viene determinato dal confronto con la media degli
@@ -531,7 +548,7 @@ avere un valore maggiore di <span class="math notranslate nohighlight">\(3.53\)<
 flesso della spezzata dello scree test).</p>
 </section>
 <section id="test-di-bonta-di-adattamento">
-<h2><span class="section-number">10.5. </span>Test di bontà di adattamento<a class="headerlink" href="#test-di-bonta-di-adattamento" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.5. </span>Test di bontà di adattamento<a class="headerlink" href="#test-di-bonta-di-adattamento" title="Permalink to this headline">#</a></h2>
 <p>Se si assume la normalità distributiva dei dati è possibile valutare la
 bontà di adattamento attraverso il test del rapporto di verosimiglianze.
 L’ipotesi nulla postula che la matrice di covarianza delle <span class="math notranslate nohighlight">\(Y\)</span> abbia la
@@ -842,15 +859,15 @@ scelta della soluzione da adottare.</p>
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">9. </span>L’estrazione dei fattori</p>
+        <p class="prev-next-title"><span class="section-number">11. </span>L’estrazione dei fattori</p>
       </div>
     </a>
     <a class="right-next"
-       href="324_lgm_mixed.html"
+       href="205_rotazione.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">11. </span>LGM e modelli misti</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>La rotazione fattoriale</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -869,11 +886,11 @@ scelta della soluzione da adottare.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">10.1. Quota di varianza spiegata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">10.2. Valore medio degli autovalori</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">10.3. Scree test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">10.4. Parallel analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">10.5. Test di bontà di adattamento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">12.1. Quota di varianza spiegata</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">12.2. Valore medio degli autovalori</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">12.3. Scree test</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">12.4. Parallel analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">12.5. Test di bontà di adattamento</a></li>
 </ul>
   </nav></div>
 

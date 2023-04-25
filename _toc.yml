@@ -9,6 +9,7 @@ parts:
   - caption: Modello lineare
     numbered: True
     chapters:
+      - file: 05_intro_r
       - file: 010_regression
   - caption: Teoria classica dei test
     numbered: True
@@ -19,6 +20,7 @@ parts:
   - caption: Analisi fattoriale
     numbered: True
     chapters:
+      - file: 060_path_analysis
       - file: 062_constraints_on_parms
       - file: 070_cfa_mod_comp
   - caption: Costruzione di strumenti psicometrici

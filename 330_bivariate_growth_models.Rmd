@@ -6,16 +6,19 @@ Carichiamo i pacchetti necessari.
 
 ```{r, include = FALSE}
 source("_common.R")
-library("lavaan")
-library("semPlot")
-library("knitr")
-library("markdown")
-library("patchwork")
-library("psych")
-library("DT")
-library("kableExtra")
-library("lme4")
-set.seed(12345)
+suppressPackageStartupMessages({
+  library("lavaan")
+  library("semPlot")
+  library("knitr")
+  library("markdown")
+  library("patchwork")
+  library("psych")
+  library("DT")
+  library("kableExtra")
+  library("lme4")
+})
+
+set.seed(42)
 ```
 
 Questo tutorial mostra come adattare modelli di crescita lineare multivariati (bivariati) nel framework SEM in R. I dati sono tratti dal Capitolo 8 @grimm2016growth. In particolare, utilizzando il set di dati NLSY-CYA, esaminiamo come le differenze individuali nella variazione del rendimento in matematica dei bambini durante la scuola siano correlate alle differenze individuali nella variazione dell’iperattività dei bambini (valutata dagli insegnanti). Iniziamo a leggere i dati.
