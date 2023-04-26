@@ -402,10 +402,11 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">20.1. Preliminari</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">20.1.1. Strutture dei dati</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-di-dati-longitudinali">20.1.2. Visualizzazione di dati longitudinali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-dei-dati-longitudinali">20.1.2. Visualizzazione dei dati longitudinali</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">20.1.3. Data screening</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">20.1.4. Attendibilità</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">20.1.5. Invarianza di misurazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-con-lmer">20.1.5. Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">20.1.6. Invarianza di misurazione</a></li>
 </ul>
 </li>
 </ul>
@@ -421,32 +422,28 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
 <span id="lgm-intro-notebook"></span><h1><span class="section-number">20. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
-<p>Negli ultimi decenni sono state sviluppate varie estensioni del framework SEM per i dati longitudinali o per misure ripetute (McArdle, 2009). Le tecniche più tradizionali (ad esempio ANOVA a misure ripetute) raramente sono adattate alla complessa struttura degli errori dei dati longitudinali, trascurano le differenze individuali e non sono sviluppate esplicitamente per testare le previsioni che derivano da ipotesi causali su un intero insieme di variabili contemporaneamente. Il framework SEM longitudinale, che risulta strettamente associato ai modelli misti (Bernal-Rusiel et al., 2013; Rovine e Molenaar, 2001), è così flessibile che molte procedure statistiche comuni come i test t, le regressioni e le analisi per misure ripetute di tipo (M)ANOVA possono essere considerate come casi speciali di modelli SEM longitudinali (Voelkle, 2007). Esempi di SEM longitudinale includono i growth curve models, i latent change score models, i growth mixture models, i latent class growth curve modelling e i continuous time models  (Driver et al., 2016; McArdle, 2009).</p>
-<p>Un importante classe di modelli SEM longitudinali è quella dei modelli delle curve di crescita latente (<em>latent growth models</em>, LGM) che vengono utilizzati per analizzare dati longitudinali in cui una misura di esito viene ottenuta in diversi momenti del tempo e si vuole studiare il cambiamento nel tempo.</p>
+<p>Negli ultimi decenni, il framework SEM è stato esteso per adattarsi ai dati longitudinali e alle misure ripetute (McArdle, 2009). A differenza delle tecniche tradizionali come l’ANOVA a misure ripetute, che spesso non tengono conto della complessa struttura degli errori dei dati longitudinali, il framework SEM longitudinale consente di descrivere tale complessità. Questo approccio è strettamente associato ai modelli misti (Bernal-Rusiel et al., 2013; Rovine e Molenaar, 2001) e può essere considerato come un caso generale di cui molte procedure statistiche come i test t di Student, la regressione lineare e le analisi per misure ripetute di tipo (M)ANOVA sono casi speciali (Voelkle, 2007). Esempi di SEM longitudinale includono i growth curve models, i latent change score models, i growth mixture models, i latent class growth curve modelling e i continuous time models (Driver et al., 2016; McArdle, 2009).</p>
+<p>Una classe importante di modelli SEM longitudinali sono i latent growth models (LGM), utilizzati per analizzare i dati longitudinali in cui una misura di esito viene raccolta in diversi momenti nel tempo per studiare il cambiamento nel tempo.</p>
 <p><span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> elencano cinque motivi per usare i modelli LGM.</p>
 <ol class="arabic simple">
-<li><p>l’identificazione diretta del cambiamento (e della stabilità) intra-individuale. Misurare lo stesso individuo ripetutamente consente ai ricercatori di identificare se e come specifici attributi dell’individuo sono cambiati (o rimasti gli stessi) nel tempo. Le teorie dello sviluppo (e altre) del cambiamento spesso concettualizzano e descrivono il cambiamento come un processo incrementale o trasformazionale. Il cambiamento incrementale viene osservato e identificato come un cambiamento nella grandezza (quantitativa) dello stesso costrutto lungo un continuum durante un intervallo di tempo specifico. Il cambiamento trasformazionale viene osservato e identificato come un cambiamento o una transizione tra stati discreti durante un intervallo di tempo specifico (ad esempio, la teoria dello sviluppo a stadi di Piaget; Piaget, 1952). Analiticamente, l’obiettivo principale è ottenere una descrizione parsimoniosa e accurata di come e quando gli attributi dell’individuo cambiano nel tempo. È importante notare che la stabilità e la costanza nel tempo sono casi speciali di cambiamento intra-individuale.</p></li>
-<li><p>Una volta identificato il modello di cambiamento intra-individuale (all’interno della persona) (in termini di grandezza o passaggi transformazionali), una domanda logica successiva da porre è se diversi individui cambiano in modi diversi. Pertanto, il secondo motivo per la ricerca longitudinale è l’identificazione delle differenze interindividuali (o similitudine) nel cambiamento intra-individuale. Ci poniamo le seguenti domande: i diversi individui cambiano in quantità diverse o in direzioni diverse? o i diversi individui passano da uno stadio all’altro in momenti diversi?</p></li>
-<li><p>Riconoscendo che il cambiamento raramente si verifica in isolamento, il terzo motivo per la ricerca longitudinale è l’analisi delle interrelazioni nel cambiamento comportamentale. Questo approccio si basa sull’idea che vi sono cambiamenti simultaneanei e/o sequenziali in più costrutti. Analiticamente, il compito richiede l’analisi simultanea di più variabili e la valutazione di come i cambiamenti in una variabile precedano, covarino e/o seguano i cambiamenti in un’altra variabile.</p></li>
-<li><p>Il quarto motivo, l’analisi delle cause (determinanti) del cambiamento intra-individuale, si concentra sulla spiegazione o sulla contabilizzazione del processo di cambiamento osservato all’interno della persona. In particolare, l’obiettivo è identificare i fattori e/o i meccanismi variabili nel tempo che influenzano e/o guidano i cambiamenti intra-individuali identificati nel Motivo 1. Si assume che i cambiamenti sono probabilmente destinati a procedere a ritmi diversi in periodi di tempo diversi. Ad esempio, quando si impara una nuova abilità, i cambiamenti intra-individuali possono procedere rapidamente all’inizio, ma più lentamente in seguito quando gli individui raggiungono livelli asintotici di performance.</p></li>
-<li><p>Il quinto motivo per la ricerca longitudinale è l’analisi delle cause (determinanti) delle differenze interindividuali nel cambiamento intra-individuale. Dato che gli individui differiscono nel modo in cui cambiano nel tempo (Motivo 2), i ricercatori sono spesso interessati a identificare i fattori e/o i meccanismi che possono spiegare queste differenze tra le persone. L’obiettivo è identificare le variabili invarianti nel tempo che sono correlate a specifici aspetti del cambiamento all’interno della persona. Ad esempio, le caratteristiche demografiche/di background, le manipolazioni sperimentali (ad esempio, gli interventi) e le caratteristiche dei contesti prossimali e distali degli individui possono influenzare come e quando il cambiamento procede. Le domande di ricerca derivanti dal Motivo 5 sono spesso esaminate attraverso l’inclusione di covariate invarianti nel tempo.</p></li>
+<li><p>L’identificazione diretta del cambiamento e della stabilità intra-individuale. Misurando lo stesso individuo ripetutamente, i ricercatori possono identificare se e come specifici attributi dell’individuo cambiano o rimangono gli stessi nel tempo. Le teorie dello sviluppo spesso descrivono il cambiamento come un processo incrementale o trasformazionale. Il cambiamento incrementale viene identificato come un cambiamento nella grandezza di un costrutto lungo un continuum durante un intervallo di tempo specifico. Il cambiamento trasformazionale viene identificato come una transizione tra stati discreti durante un intervallo di tempo specifico (ad esempio, la teoria dello sviluppo a stadi di Piaget; Piaget, 1952). L’obiettivo principale è ottenere una descrizione accurata e parsimoniosa di come e quando gli attributi dell’individuo cambiano nel tempo. La stabilità e la costanza nel tempo sono casi speciali di cambiamento intra-individuale.</p></li>
+<li><p>Una volta identificato il modello di cambiamento intra-individuale, una domanda logica successiva è se diversi individui cambiano in modi diversi. Pertanto, il secondo motivo per la ricerca longitudinale è l’identificazione delle differenze interindividuali nel cambiamento intra-individuale. Ci si chiede se i diversi individui cambino in quantità o direzioni diverse o se passino da uno stadio all’altro in momenti diversi.</p></li>
+<li><p>Il terzo motivo per la ricerca longitudinale è l’analisi delle interrelazioni nel cambiamento comportamentale. Questo approccio si basa sull’idea che ci sono cambiamenti simultanei e/o sequenziali in più costrutti. L’analisi richiede l’analisi simultanea di più variabili e la valutazione di come i cambiamenti in una variabile influenzino i cambiamenti in un’altra variabile.</p></li>
+<li><p>Il quarto motivo è l’analisi delle cause del cambiamento intra-individuale. L’obiettivo è identificare i fattori e/o i meccanismi variabili nel tempo che influenzano i cambiamenti intra-individuali. Si assume che i cambiamenti procedano a ritmi diversi in periodi di tempo diversi.</p></li>
+<li><p>Il quinto motivo per la ricerca longitudinale è l’analisi delle cause delle differenze interindividuali nel cambiamento intra-individuale. Poiché gli individui differiscono nel modo in cui cambiano nel tempo, i ricercatori sono interessati a identificare i fattori che possono spiegare queste differenze. L’obiettivo è identificare le variabili invarianti nel tempo che sono correlate a specifici aspetti del cambiamento all’interno della persona. Ad esempio, le caratteristiche demografiche, gli interventi sperimentali e le caratteristiche dei contesti degli individui possono influenzare come e quando il cambiamento avviene. Le domande di ricerca derivanti dal quinto motivo sono spesso esaminate attraverso l’inclusione di covariate invarianti nel tempo.</p></li>
 </ol>
-<p>Insieme, questi cinque motivi per la ricerca longitudinale forniscono la base per costruire domande di ricerca precise che possono essere esaminate utilizzando modelli di crescita contemporanei. Quando si pensa agli studi longitudinali, è sempre possibile fare riferimento a questi 5 punti. Qual è la tua teoria del cambiamento intra-individuale? Qual è la tua teoria delle differenze tra le persone? e così via. Puoi quindi selezionare modelli specifici che sono appropriati per quelle domande e puoi considerare attentamente se e come i dati consentono e/o limitano la tua capacità di ottenere risposte accurate.</p>
-<p>I cinque motivi per la ricerca longitudinale forniscono una solida base per creare domande di ricerca precise che possono essere esaminate utilizzando modelli di crescita contemporanei. Quando si affrontano gli studi longitudinali, si possono considerare questi cinque punti chiave. Ad esempio, si potrebbero porre domande come: Qual è la teoria del cambiamento intra-individuale? Qual è la teoria delle differenze tra le persone? In base alle domande poste, è possibile scegliere modelli specifici appropriati e valutare come i dati possano aiutare o limitare la capacità di ottenere risposte accurate.</p>
 <section id="preliminari">
 <h2><span class="section-number">20.1. </span>Preliminari<a class="headerlink" href="#preliminari" title="Permalink to this headline">#</a></h2>
-<p>I modelli di crescita sono tipicamente applicati a dati ottenuti da studi in cui sono state ottenute diverse misure ripetute da più individui. Un problema comune nella ricerca psicologica che richiede la modellizzazione a variabili latenti è lo studio di come le persone differiscono nei loro sentimenti, pensieri e comportamenti nel tempo e nello spazio. L’obiettivo non è solo determinare se le persone differiscono, ma anche capire se queste differenze sono sistematiche e come descriverle al meglio. L’analisi potrebbe esaminare i pattern di affetto o comportamento nel tempo, come le persone differiscono nelle risposte emotive in funzione della situazione o come cambiano le relazioni tra coppie di variabili nel tempo.</p>
+<p>I modelli di crescita sono applicati a dati ottenuti da studi in cui sono state ottenute diverse misure ripetute da più individui. Un problema comune nella ricerca psicologica è lo studio di come le persone differiscono nei loro sentimenti, pensieri e comportamenti nel tempo e nello spazio. L’obiettivo è capire se queste differenze sono sistematiche e come descriverle al meglio.</p>
 <p>Tradizionalmente, gli studi longitudinali erano progettati in modo tale che il numero di valutazioni ripetute fosse relativamente basso (cioè &lt;8) e il numero di individui fosse relativamente elevato (cioè &gt;200). Tuttavia, i progressi sia nelle considerazioni teoriche del cambiamento (ad esempio, la non linearità) sia nella tecnologia per la raccolta dei dati (ad esempio, sondaggi basati sul web, smartphone) hanno notevolmente ampliato le possibilità di raccolta e analisi dei dati longitudinali: <span id="id2">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> discutono applicazioni di modelli di crescita a dati longitudinali ottenuti fino a 50.000 persone e fino a 1.000 valutazioni ripetute.</p>
-<p>Questa complessità richiede che il ricercatore sia ben versato in (1) la manipolazione delle strutture dei dati longitudinali (ad esempio, il ridimensionamento dei dati dal formato wide al formato long), (2) la rappresentazione grafica dei dati longitudinali e (3) lo screening dei dati longitudinali.</p>
 <section id="strutture-dei-dati">
 <h3><span class="section-number">20.1.1. </span>Strutture dei dati<a class="headerlink" href="#strutture-dei-dati" title="Permalink to this headline">#</a></h3>
-<p>I dati longitudinali tipicamente si presentano in due forme: long e wide. Nel formato long, la descrizione del tempo è sulle righe; nel formato wide le variabili relative ad ogni occasione temporale sono organizzate in colonne.</p>
-<p>È possibile trasformere i dati dal formato long in formato wide e viceversa usando le funzioni R <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> e <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>. La sintassi è spiegata nella pagina web <a class="reference external" href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr</a>.</p>
+<p>I dati longitudinali tipicamente si presentano in due forme: long e wide. Nel formato long, la descrizione del tempo è sulle righe; nel formato wide le variabili relative ad ogni occasione temporale sono organizzate in colonne. È possibile trasformere i dati dal formato long in formato wide e viceversa usando le funzioni R <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> e <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>. La sintassi è spiegata nella pagina web <a class="reference external" href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr</a>.</p>
 </section>
-<section id="visualizzazione-di-dati-longitudinali">
-<h3><span class="section-number">20.1.2. </span>Visualizzazione di dati longitudinali<a class="headerlink" href="#visualizzazione-di-dati-longitudinali" title="Permalink to this headline">#</a></h3>
-<p>Come in qualsiasi analisi statistica, è importante esaminare attentamente i dati. Ciò include la produzione di sia riepiloghi quantitativi che visualizzazioni. Per fare un esempio di visualizzazione di dati longitudinali, esaminiamo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [i dati sono presentati nel capitolo 3 del libro di <span id="id3">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>].</p>
-<p>Iniziamo a leggere i dati.</p>
+<section id="visualizzazione-dei-dati-longitudinali">
+<h3><span class="section-number">20.1.2. </span>Visualizzazione dei dati longitudinali<a class="headerlink" href="#visualizzazione-dei-dati-longitudinali" title="Permalink to this headline">#</a></h3>
+<p>Come in qualsiasi analisi statistica, è importante esaminare attentamente i dati. Ciò include la produzione di sia riepiloghi quantitativi che visualizzazioni.</p>
+<p>Per fare un esempio di visualizzazione di dati longitudinali, esaminiamo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [i dati sono presentati nel capitolo 3 del libro di <span id="id3">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># set filepath for data file</span>
@@ -582,13 +579,273 @@ document.write(`
 </table>
 </div></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">tmp</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">meanDecompose</span><span class="p">(</span><span class="n">math</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">)</span>
+<span class="nf">glimpse</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>List of 2
+ $ math by id      :Classes ‘data.table’ and &#39;data.frame&#39;:	932 obs. of  2 variables:
+  ..$ id: int [1:932] 201 303 2702 4303 5002 5005 5701 6102 6801 6802 ...
+  ..$ X : num [1:932] 46.5 29.5 64.7 49.5 55.3 ...
+  ..- attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt; 
+ $ math by residual:Classes ‘data.table’ and &#39;data.frame&#39;:	2221 obs. of  1 variable:
+  ..$ X: num [1:2221] -8.5 8.5 -3.5 3.5 -8.67 ...
+  ..- attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt; 
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">testDistribution</span><span class="p">(</span>
+<span class="w">        </span><span class="n">tmp</span><span class="p">[[</span><span class="s">&quot;math by id&quot;</span><span class="p">]]</span><span class="o">$</span><span class="n">X</span><span class="p">,</span>
+<span class="w">        </span><span class="n">extremevalues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;theoretical&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ev.perc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">001</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="n">varlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Between Person Math Scores&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/786d8a87b5356935b3f7da8525608dddccedab262aabde3c66f8717ba0af3fde.png" src="_images/786d8a87b5356935b3f7da8525608dddccedab262aabde3c66f8717ba0af3fde.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">testDistribution</span><span class="p">(</span>
+<span class="w">        </span><span class="n">tmp</span><span class="p">[[</span><span class="s">&quot;math by residual&quot;</span><span class="p">]]</span><span class="o">$</span><span class="n">X</span><span class="p">,</span>
+<span class="w">        </span><span class="n">extremevalues</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;theoretical&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ev.perc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">001</span>
+<span class="w">    </span><span class="p">),</span>
+<span class="w">    </span><span class="n">varlab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Within Person Math Scores&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8ceb93e71ccdaeb5402dada675388a511dc73a9f8886ba6d69e56fc4a6c921a4.png" src="_images/8ceb93e71ccdaeb5402dada675388a511dc73a9f8886ba6d69e56fc4a6c921a4.png" />
+</div>
+</div>
 </section>
 <section id="attendibilita">
 <h3><span class="section-number">20.1.4. </span>Attendibilità<a class="headerlink" href="#attendibilita" title="Permalink to this headline">#</a></h3>
 <p>Come in tutte le analisi, i ricercatori dovrebbero esaminare l’affidabilità dei loro strumenti di misurazione.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_only_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">%&gt;%</span>
+<span class="w">    </span><span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">iccMixed</span><span class="p">(</span>
+<span class="w">  </span><span class="n">dv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;math&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_long</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.table: 2 × 3</caption>
+<thead>
+	<tr><th scope=col>Var</th><th scope=col>Sigma</th><th scope=col>ICC</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>id      </td><td> 47.02036</td><td>0.2872289</td></tr>
+	<tr><td>Residual</td><td>116.68307</td><td>0.7127711</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</section>
+<section id="analisi-con-lmer">
+<h3><span class="section-number">20.1.5. </span>Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code><a class="headerlink" href="#analisi-con-lmer" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lmer</span><span class="p">(</span><span class="n">math</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">grade</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">id</span><span class="p">),</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">md</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">modelDiagnostics</span><span class="p">(</span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">ev.perc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">001</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">md</span><span class="p">,</span><span class="w"> </span><span class="n">ask</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span><span class="w"> </span><span class="n">ncol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">nrow</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/792b37a7f6d00033dce0ee993b4ae419d3672fd11b95a89979857dd2d9a711f1.png" src="_images/792b37a7f6d00033dce0ee993b4ae419d3672fd11b95a89979857dd2d9a711f1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mvextreme</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">subset</span><span class="p">(</span>
+<span class="w">  </span><span class="n">md</span><span class="o">$</span><span class="n">extremeValues</span><span class="p">,</span>
+<span class="w">  </span><span class="n">EffectType</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s">&quot;Multivariate Random Effect UserID&quot;</span>
+<span class="p">)</span>
+
+<span class="nf">head</span><span class="p">(</span><span class="n">mvextreme</span><span class="p">)</span>
+<span class="nf">unique</span><span class="p">(</span><span class="n">mvextreme</span><span class="o">$</span><span class="n">UserID</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.table: 0 × 4</caption>
+<thead>
+	<tr><th scope=col>math</th><th scope=col>id</th><th scope=col>Index</th><th scope=col>EffectType</th></tr>
+	<tr><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NULL
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear mixed model fit by REML [&#39;lmerMod&#39;]
+Formula: math ~ grade + (1 + grade | id)
+   Data: nlsy_math_long
+
+REML criterion at convergence: 15941
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-3.02728 -0.52567  0.00174  0.54025  2.54129 
+
+Random effects:
+ Groups   Name        Variance Std.Dev. Corr 
+ id       (Intercept) 68.4055  8.2708        
+          grade        0.7392  0.8597   -0.24
+ Residual             36.2364  6.0197        
+Number of obs: 2221, groups:  id, 932
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 26.58805    0.47203   56.33
+grade        4.33956    0.08741   49.65
+
+Correlation of Fixed Effects:
+      (Intr)
+grade -0.771
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ranef</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">$</span><span class="n">id</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 5 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>(Intercept)</th><th scope=col>grade</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>201</th><td> 1.284771</td><td> 0.1960644</td></tr>
+	<tr><th scope=row>303</th><td>-8.654039</td><td>-0.2892441</td></tr>
+	<tr><th scope=row>2702</th><td>13.929647</td><td> 0.2542062</td></tr>
+	<tr><th scope=row>4303</th><td> 5.355823</td><td> 0.2094322</td></tr>
+	<tr><th scope=row>5002</th><td> 1.425426</td><td> 0.1581868</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">modelPerformance</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>$Performance
+    Model Estimator N_Obs N_Groups      AIC      BIC        LL LLDF   Sigma
+1: merMod      REML  2221 id (932) 15952.99 15987.22 -7970.494    6 6.01967
+   MarginalR2 ConditionalR2 MarginalF2 ConditionalF2
+1:  0.3553142      0.781476  0.5511433      3.576157
+
+attr(,&quot;class&quot;)
+[1] &quot;modelPerformance.merMod&quot; &quot;modelPerformance&quot;       
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mt</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">modelTest</span><span class="p">(</span><span class="n">m</span><span class="p">)</span>
+<span class="nf">names</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
+<span class="nf">APAStyler</span><span class="p">(</span><span class="n">mt</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Parameters and CIs are based on REML, 
+but modelTests requires ML not REML fit for comparisons, 
+and these are used in effect sizes. Refitting.
+</pre></div>
+</div>
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'FixedEffects'</li><li>'RandomEffects'</li><li>'EffectSizes'</li><li>'OverallModel'</li></ol>
+</div><div class="output text_html"><table class="dataframe">
+<caption>A data.table: 18 × 3</caption>
+<thead>
+	<tr><th scope=col>Term</th><th scope=col>Est</th><th scope=col>Type</th></tr>
+	<tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>(Intercept)             </td><td>26.59*** [25.66, 27.51]</td><td>Fixed Effects </td></tr>
+	<tr><td>grade                   </td><td> 4.34*** [ 4.17,  4.51]</td><td>Fixed Effects </td></tr>
+	<tr><td>cor_grade.(Intercept)|id</td><td>-0.24                  </td><td>Random Effects</td></tr>
+	<tr><td>sd_(Intercept)|id       </td><td> 8.27                  </td><td>Random Effects</td></tr>
+	<tr><td>sd_grade|id             </td><td> 0.86                  </td><td>Random Effects</td></tr>
+	<tr><td>sigma                   </td><td> 6.02                  </td><td>Random Effects</td></tr>
+	<tr><td>Model DF                </td><td>6                      </td><td>Overall Model </td></tr>
+	<tr><td>N (Groups)              </td><td>id (932)               </td><td>Overall Model </td></tr>
+	<tr><td>N (Observations)        </td><td>2221                   </td><td>Overall Model </td></tr>
+	<tr><td>logLik                  </td><td>-7968.69               </td><td>Overall Model </td></tr>
+	<tr><td>AIC                     </td><td>15949.39               </td><td>Overall Model </td></tr>
+	<tr><td>BIC                     </td><td>15983.62               </td><td>Overall Model </td></tr>
+	<tr><td>Marginal R2             </td><td>0.36                   </td><td>Overall Model </td></tr>
+	<tr><td>Marginal F2             </td><td>0.55                   </td><td>Overall Model </td></tr>
+	<tr><td>Conditional R2          </td><td>0.78                   </td><td>Overall Model </td></tr>
+	<tr><td>Conditional F2          </td><td>3.57                   </td><td>Overall Model </td></tr>
+	<tr><td><span style=white-space:pre-wrap>grade (Fixed + Random)  </span></td><td><span style=white-space:pre-wrap>0.55/2.26, p &lt; .001    </span></td><td><span style=white-space:pre-wrap>Effect Sizes  </span></td></tr>
+	<tr><td>grade (Random)          </td><td>0.01/0.09, p = .002    </td><td>Effect Sizes  </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
 </section>
 <section id="invarianza-di-misurazione">
-<h3><span class="section-number">20.1.5. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">20.1.6. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h3>
 <p>Quando si lavora con dati di misure ripetute, la comparabilità dei punteggi tra le occasioni di misurazione richiede un certo livello di invarianza di misurazione. Lo strumento di misurazione misura lo stesso costrutto nella stessa metrica in ogni occasione? Formalmente, l’invarianza di misurazione garantisce che i punteggi siano confrontabili sia tra le persone che tra le occasioni di misurazione. Ad esempio, l’invarianza di misurazione tra le misure ripetute del peso degli individui è facilitata dall’uso dello stesso dispositivo di misurazione (bilancia) ogni anno, a condizione che la bilancia sia tarata nello stesso modo ogni anno. Se la bilancia è tarata in modo diverso in occasioni diverse o se vengono utilizzate unità di misura diverse, i punteggi risultanti non possono essere confrontati quantitativamente: lo strumento di misurazione è non invariante. Quando si lavora con dispositivi fisici, l’invarianza di misurazione viene testata e garantita attraverso la taratura. Quando si lavora con scale psicologiche, l’invarianza di misurazione viene o assunta (il che non ideale) o testata utilizzando modelli di misurazione formali.</p>
 </section>
 </section>
@@ -657,10 +914,11 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">20.1. Preliminari</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">20.1.1. Strutture dei dati</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-di-dati-longitudinali">20.1.2. Visualizzazione di dati longitudinali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-dei-dati-longitudinali">20.1.2. Visualizzazione dei dati longitudinali</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">20.1.3. Data screening</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">20.1.4. Attendibilità</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">20.1.5. Invarianza di misurazione</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-con-lmer">20.1.5. Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">20.1.6. Invarianza di misurazione</a></li>
 </ul>
 </li>
 </ul>

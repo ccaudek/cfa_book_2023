@@ -188,23 +188,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">20. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">21. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">22. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">23. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">24. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">25. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">26. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">27. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">28. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">29. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">30. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">31. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -416,58 +418,150 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="cfa-confronto-tra-modelli">
 <span id="model-comparison-notebook"></span><h1><span class="section-number">8. </span>CFA: confronto tra modelli<a class="headerlink" href="#cfa-confronto-tra-modelli" title="Permalink to this headline">#</a></h1>
 <p>In un modello CFA, i parametri  possono essere stimati senza vincoli, possono essere fissi o possono essre stimati sulla base di alcuni vincoli. Un parametro libero è sconosciuto e il ricercatore consente all’algoritmo di stima di trovare il suo valore ottimale che, insime agli altri parametri del modello, riduce al minimo le differenze tra le matrici di varianze-covarianze osservate e quelle predette dal modello. Un parametro fisso è pre-specificato dal ricercatore ad un valore specifico, più comunemente 1.0 (ad esempio, per definire la metrica di una variabile latente) o 0 (ad esempio, l’assenza di saturazionoi fattoriali o di covarianze di errore). Come per un parametro libero, anche un parametro vincolato è sconosciuto; tuttavia, un tale parametro non può assumere un valore qualsiasi, ma deve rispettare le restrizioni su suoi valori che il ricercatore ha imposto. I vincoli più comuni sono i vincoli di uguaglianza, in cui i parametri non standardizzati devono assumere valori uguali (ad esempio, in diversi gruppi).</p>
-<p>Consideriamo un esempio discusso da <span id="id1">Brown [<a class="reference internal" href="z_biblio.html#id34" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>. Viene qui considerato un set di dati in cui le prime tre misure osservate (X1, X2, X3) sono indicatori di un costrutto latente corrispondente alla Memoria uditiva e il secondo insieme di misure (X4, X5, X6) sono indicatori di un altro costrutto latente, Memoria visiva. Le tre misure usate quali indicatori del costrutto di memoria uditiva sono: X1 = memoria logica, X2 = associazione verbale a coppie, X3 = liste di parole; le tre misure usate come indicatori del costrutto di memoria visiva sono: X4 = immagini di facce, X5 = foto di famiglia, X6 = generiche riproduzioni visive. I dati sono i seguenti:</p>
+<p>Consideriamo un esempio discusso da <span id="id1">Brown [<a class="reference internal" href="z_biblio.html#id34" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>. Viene qui esaminato un set di dati in cui le prime tre misure osservate (X1, X2, X3) sono indicatori di un costrutto latente corrispondente alla Memoria uditiva e il secondo insieme di misure (X4, X5, X6) sono indicatori di un altro costrutto latente, Memoria visiva. Le tre misure usate quali indicatori del costrutto di memoria uditiva sono: X1 = memoria logica, X2 = associazione verbale a coppie, X3 = liste di parole; le tre misure usate come indicatori del costrutto di memoria visiva sono: X4 = immagini di facce, X5 = foto di famiglia, X6 = generiche riproduzioni visive. I dati sono i seguenti:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sds</span> <span class="o">&lt;-</span> <span class="s1">&#39;2.610  2.660  2.590  1.940  2.030  2.050&#39;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sds</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;2.610  2.660  2.590  1.940  2.030  2.050&#39;</span>
 
-<span class="n">cors</span> <span class="o">&lt;-</span><span class="s1">&#39;</span>
-  <span class="mf">1.000</span>
-  <span class="mf">0.661</span>  <span class="mf">1.000</span>
-  <span class="mf">0.630</span>  <span class="mf">0.643</span>  <span class="mf">1.000</span>
-  <span class="mf">0.270</span>  <span class="mf">0.300</span>  <span class="mf">0.268</span>  <span class="mf">1.000</span>
-  <span class="mf">0.297</span>  <span class="mf">0.265</span>  <span class="mf">0.225</span>  <span class="mf">0.805</span>  <span class="mf">1.000</span>
-  <span class="mf">0.290</span>  <span class="mf">0.287</span>  <span class="mf">0.248</span>  <span class="mf">0.796</span>  <span class="mf">0.779</span>  <span class="mf">1.000</span><span class="s1">&#39;</span>
+<span class="n">cors</span><span class="w"> </span><span class="o">&lt;-</span><span class="s">&#39;</span>
+<span class="s">  1.000</span>
+<span class="s">  0.661  1.000</span>
+<span class="s">  0.630  0.643  1.000</span>
+<span class="s">  0.270  0.300  0.268  1.000</span>
+<span class="s">  0.297  0.265  0.225  0.805  1.000</span>
+<span class="s">  0.290  0.287  0.248  0.796  0.779  1.000&#39;</span>
 
-<span class="n">covs</span> <span class="o">&lt;-</span> <span class="n">getCov</span><span class="p">(</span><span class="n">cors</span><span class="p">,</span> <span class="n">sds</span> <span class="o">=</span> <span class="n">sds</span><span class="p">,</span> <span class="n">names</span> <span class="o">=</span> <span class="n">paste</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">6</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span><span class="p">))</span>
+<span class="n">covs</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">getCov</span><span class="p">(</span><span class="n">cors</span><span class="p">,</span><span class="w"> </span><span class="n">sds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sds</span><span class="p">,</span><span class="w"> </span><span class="n">names</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;x&quot;</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>Adattiamo i cinque modelli discussi da &#64;brown2015confirmatory.</p>
+<p>Adattiamo i cinque modelli discussi da <span id="id2">Brown [<a class="reference internal" href="z_biblio.html#id34" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>.</p>
 <section id="modello-congenerico">
 <h2><span class="section-number">8.1. </span>Modello congenerico<a class="headerlink" href="#modello-congenerico" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">congeneric</span> <span class="o">&lt;-</span> <span class="s1">&#39;</span>
-  <span class="n">auditorymemory</span> <span class="o">=~</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span>
-  <span class="n">visualmemory</span>   <span class="o">=~</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">+</span> <span class="n">x6</span>
-<span class="s1">&#39;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.congeneric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
+<span class="s">  auditorymemory =~ x1 + x2 + x3</span>
+<span class="s">  visualmemory   =~ x4 + x5 + x6</span>
+<span class="s">&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">congeneric</span> <span class="o">&lt;-</span> <span class="n">cfa</span><span class="p">(</span>
-  <span class="n">model</span><span class="o">.</span><span class="n">congeneric</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">covs</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> 
-  <span class="n">std</span><span class="o">.</span><span class="n">lv</span> <span class="o">=</span> <span class="n">TRUE</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.congeneric</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.congeneric</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">covs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.nobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">std.lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<p>L’output (qui non fornito) si ottiene con:</p>
+<p>L’output si ottiene con:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">summary</span><span class="p">(</span>
-  <span class="n">fit</span><span class="o">.</span><span class="n">congeneric</span><span class="p">,</span> 
-  <span class="n">fit</span><span class="o">.</span><span class="n">measures</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
-  <span class="n">standardized</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
-  <span class="n">rsquare</span> <span class="o">=</span> <span class="n">TRUE</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit.congeneric</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">rsquare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 21 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        13
+
+  Number of observations                           200
+
+Model Test User Model:
+                                                      
+  Test statistic                                 4.877
+  Degrees of freedom                                 8
+  P-value (Chi-square)                           0.771
+
+Model Test Baseline Model:
+
+  Test statistic                               719.515
+  Degrees of freedom                                15
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    1.000
+  Tucker-Lewis Index (TLI)                       1.008
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)              -2337.980
+  Loglikelihood unrestricted model (H1)      -2335.541
+                                                      
+  Akaike (AIC)                                4701.959
+  Bayesian (BIC)                              4744.837
+  Sample-size adjusted Bayesian (SABIC)       4703.652
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.000
+  90 Percent confidence interval - lower         0.000
+  90 Percent confidence interval - upper         0.057
+  P-value H_0: RMSEA &lt;= 0.050                    0.929
+  P-value H_0: RMSEA &gt;= 0.080                    0.010
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.012
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  auditorymemory =~                                                      
+    x1                 2.101    0.166   12.663    0.000    2.101    0.807
+    x2                 2.182    0.168   12.976    0.000    2.182    0.823
+    x3                 2.013    0.166   12.124    0.000    2.013    0.779
+  visualmemory =~                                                        
+    x4                 1.756    0.108   16.183    0.000    1.756    0.907
+    x5                 1.795    0.115   15.608    0.000    1.795    0.887
+    x6                 1.796    0.117   15.378    0.000    1.796    0.878
+
+Covariances:
+                    Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  auditorymemory ~~                                                      
+    visualmemory       0.382    0.070    5.463    0.000    0.382    0.382
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .x1                2.366    0.372    6.365    0.000    2.366    0.349
+   .x2                2.277    0.383    5.940    0.000    2.277    0.323
+   .x3                2.621    0.373    7.027    0.000    2.621    0.393
+   .x4                0.662    0.117    5.668    0.000    0.662    0.177
+   .x5                0.877    0.134    6.554    0.000    0.877    0.214
+   .x6                0.956    0.139    6.866    0.000    0.956    0.229
+    auditorymemory    1.000                               1.000    1.000
+    visualmemory      1.000                               1.000    1.000
+
+R-Square:
+                   Estimate
+    x1                0.651
+    x2                0.677
+    x3                0.607
+    x4                0.823
+    x5                0.786
+    x6                0.771
 </pre></div>
 </div>
 </div>
@@ -478,21 +572,21 @@ document.write(`
 <p>Solo memoria auditiva:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">a</span> <span class="o">&lt;-</span> <span class="s1">&#39;</span>
-  <span class="n">auditorymemory</span> <span class="o">=~</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x3</span>
-  <span class="n">visualmemory</span>   <span class="o">=~</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">x5</span> <span class="o">+</span> <span class="n">x6</span>
-<span class="s1">&#39;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.tau.a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
+<span class="s">  auditorymemory =~ x1 + v1*x1 + v1*x2 + v1*x3</span>
+<span class="s">  visualmemory   =~ x4 + x5 + x6</span>
+<span class="s">&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">a</span> <span class="o">&lt;-</span> <span class="n">cfa</span><span class="p">(</span>
-  <span class="n">model</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">covs</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> 
-  <span class="n">std</span><span class="o">.</span><span class="n">lv</span> <span class="o">=</span> <span class="n">TRUE</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.tau.a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.tau.a</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">covs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.nobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">std.lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -501,21 +595,21 @@ document.write(`
 <p>Memoria auditiva e visiva:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">av</span> <span class="o">&lt;-</span> <span class="s1">&#39;</span>
-  <span class="n">auditorymemory</span> <span class="o">=~</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x3</span>
-  <span class="n">visualmemory</span>   <span class="o">=~</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x4</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x5</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x6</span>
-<span class="s1">&#39;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.tau.av</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
+<span class="s">  auditorymemory =~ x1 + v1*x1 + v1*x2 + v1*x3</span>
+<span class="s">  visualmemory   =~ x4 + v2*x4 + v2*x5 + v2*x6</span>
+<span class="s">&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">av</span> <span class="o">&lt;-</span> <span class="n">cfa</span><span class="p">(</span>
-  <span class="n">model</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">covs</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> 
-  <span class="n">std</span><span class="o">.</span><span class="n">lv</span> <span class="o">=</span> <span class="n">TRUE</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.tau.av</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.tau.av</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">covs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.nobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">std.lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -527,24 +621,24 @@ document.write(`
 <p>Solo memoria auditiva:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">a</span> <span class="o">&lt;-</span> <span class="s1">&#39;</span>
-  <span class="n">auditorymemory</span> <span class="o">=~</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x3</span>
-  <span class="n">visualmemory</span>   <span class="o">=~</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x4</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x5</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x6</span>
-  <span class="n">x1</span> <span class="o">~~</span> <span class="n">v3</span> <span class="o">*</span> <span class="n">x1</span>
-  <span class="n">x2</span> <span class="o">~~</span> <span class="n">v3</span> <span class="o">*</span> <span class="n">x2</span>
-  <span class="n">x3</span> <span class="o">~~</span> <span class="n">v3</span> <span class="o">*</span> <span class="n">x3</span>
-<span class="s1">&#39;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.parallel.a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
+<span class="s">  auditorymemory =~ x1 + v1*x1 + v1*x2 + v1*x3</span>
+<span class="s">  visualmemory   =~ x4 + v2*x4 + v2*x5 + v2*x6</span>
+<span class="s">  x1 ~~ v3 * x1</span>
+<span class="s">  x2 ~~ v3 * x2</span>
+<span class="s">  x3 ~~ v3 * x3</span>
+<span class="s">&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">a</span> <span class="o">&lt;-</span> <span class="n">cfa</span><span class="p">(</span>
-  <span class="n">model</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">covs</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> 
-  <span class="n">std</span><span class="o">.</span><span class="n">lv</span> <span class="o">=</span> <span class="n">TRUE</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.parallel.a</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.parallel.a</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">covs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.nobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">std.lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -553,28 +647,28 @@ document.write(`
 <p>Memoria auditiva e visiva:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">av</span> <span class="o">&lt;-</span> <span class="s1">&#39;</span>
-  <span class="n">auditorymemory</span> <span class="o">=~</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x1</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x2</span> <span class="o">+</span> <span class="n">v1</span><span class="o">*</span><span class="n">x3</span>
-  <span class="n">visualmemory</span>   <span class="o">=~</span> <span class="n">x4</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x4</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x5</span> <span class="o">+</span> <span class="n">v2</span><span class="o">*</span><span class="n">x6</span>
-  <span class="n">x1</span> <span class="o">~~</span> <span class="n">v3</span> <span class="o">*</span> <span class="n">x1</span>
-  <span class="n">x2</span> <span class="o">~~</span> <span class="n">v3</span> <span class="o">*</span> <span class="n">x2</span>
-  <span class="n">x3</span> <span class="o">~~</span> <span class="n">v3</span> <span class="o">*</span> <span class="n">x3</span>
- 
-  <span class="n">x4</span> <span class="o">~~</span> <span class="n">v4</span> <span class="o">*</span> <span class="n">x4</span>
-  <span class="n">x5</span> <span class="o">~~</span> <span class="n">v4</span> <span class="o">*</span> <span class="n">x5</span>
-  <span class="n">x6</span> <span class="o">~~</span> <span class="n">v4</span> <span class="o">*</span> <span class="n">x6</span>
-<span class="s1">&#39;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model.parallel.av</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
+<span class="s">  auditorymemory =~ x1 + v1*x1 + v1*x2 + v1*x3</span>
+<span class="s">  visualmemory   =~ x4 + v2*x4 + v2*x5 + v2*x6</span>
+<span class="s">  x1 ~~ v3 * x1</span>
+<span class="s">  x2 ~~ v3 * x2</span>
+<span class="s">  x3 ~~ v3 * x3</span>
+<span class="s"> </span>
+<span class="s">  x4 ~~ v4 * x4</span>
+<span class="s">  x5 ~~ v4 * x5</span>
+<span class="s">  x6 ~~ v4 * x6</span>
+<span class="s">&#39;</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fit</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">av</span> <span class="o">&lt;-</span> <span class="n">cfa</span><span class="p">(</span>
-  <span class="n">model</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">covs</span><span class="p">,</span> 
-  <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">200</span><span class="p">,</span> 
-  <span class="n">std</span><span class="o">.</span><span class="n">lv</span> <span class="o">=</span> <span class="n">TRUE</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit.parallel.av</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">cfa</span><span class="p">(</span>
+<span class="w">  </span><span class="n">model.parallel.av</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.cov</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">covs</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">sample.nobs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">200</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">std.lv</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
 </pre></div>
 </div>
@@ -588,14 +682,27 @@ document.write(`
 <p>Nel caso dell’esempio in dicussione, abbiamo</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">anova</span><span class="p">(</span>
-  <span class="n">fit</span><span class="o">.</span><span class="n">congeneric</span><span class="p">,</span> 
-  <span class="n">fit</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> 
-  <span class="n">fit</span><span class="o">.</span><span class="n">tau</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> 
-  <span class="n">fit</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">a</span><span class="p">,</span> 
-  <span class="n">fit</span><span class="o">.</span><span class="n">parallel</span><span class="o">.</span><span class="n">av</span><span class="p">,</span> 
-  <span class="n">test</span> <span class="o">=</span> <span class="s2">&quot;chisq&quot;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">anova</span><span class="p">(</span>
+<span class="w">  </span><span class="n">fit.congeneric</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">fit.tau.a</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">fit.tau.av</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">fit.parallel.a</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">fit.parallel.av</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">test</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;chisq&quot;</span>
 <span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-Squared Difference Test
+
+                Df    AIC    BIC  Chisq Chisq diff    RMSEA Df diff Pr(&gt;Chisq)
+fit.congeneric   8 4702.0 4744.8 4.8773                                       
+fit.tau.a       10 4698.7 4735.0 5.6597     0.7823 0.000000       2     0.6763
+fit.tau.av      12 4695.0 4724.6 5.8810     0.2213 0.000000       2     0.8952
+fit.parallel.a  14 4691.1 4714.1 5.9769     0.0959 0.000000       2     0.9532
+fit.parallel.av 16 4690.4 4706.9 9.2772     3.3003 0.057016       2     0.1920
 </pre></div>
 </div>
 </div>
@@ -613,16 +720,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
                 </article>
               

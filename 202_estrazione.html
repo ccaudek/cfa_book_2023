@@ -188,23 +188,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">20. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">21. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">22. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">23. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">24. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">25. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">26. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">27. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">28. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">29. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">30. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">31. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -398,14 +400,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivazione">11.1. Motivazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-delle-componenti-principali">11.2. Metodo delle componenti principali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali">11.3. Metodo dei fattori principali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali-iterato">11.4. Metodo dei fattori principali iterato</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casi-di-heywood">11.4.1. Casi di Heywood</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-delle-componenti-principali">11.1. Metodo delle componenti principali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali">11.2. Metodo dei fattori principali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali-iterato">11.3. Metodo dei fattori principali iterato</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casi-di-heywood">11.3.1. Casi di Heywood</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-massima-verosimiglianza">11.5. Metodo di massima verosimiglianza</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-massima-verosimiglianza">11.4. Metodo di massima verosimiglianza</a></li>
 </ul>
             </nav>
         </div>
@@ -419,17 +420,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="l-estrazione-dei-fattori">
 <span id="extraction-notebook"></span><h1><span class="section-number">11. </span>L’estrazione dei fattori<a class="headerlink" href="#l-estrazione-dei-fattori" title="Permalink to this headline">#</a></h1>
-<section id="motivazione">
-<h2><span class="section-number">11.1. </span>Motivazione<a class="headerlink" href="#motivazione" title="Permalink to this headline">#</a></h2>
-<p>Lo scopo dell’analisi fattoriale è quello di descrivere in maniera
-parsimoniosa le relazioni che intercorrono tra un grande numero di item.
-Ci si chiede se è possibile identificare un piccolo numero di variabili
-latenti che, quando vengono controllate, rendono uguali a zero le
-correlazioni parziali tra gli item. Abbiamo visto nel capitolo
-precedente come sia possibile determinare il numero dei fattori comuni.
-Chiediamoci ora come sia possibile stimare le saturazioni fattoriali
-che corrispondono alle correlazioni (o
-covarianze) tra gli item e i fattori.</p>
+<p>L’analisi fattoriale mira a descrivere in modo parsimonioso le relazioni tra un grande numero di item. L’obiettivo è identificare un piccolo numero di variabili latenti che, quando controllate, rendono uguali a zero le correlazioni parziali tra gli item. Una volta determinato il numero dei fattori comuni, è possibile stimare le saturazioni fattoriali, che corrispondono alle correlazioni o covarianze tra gli item e i fattori.</p>
 <p>In termini matriciali, il modello multifattoriale si scrive</p>
 <div class="math notranslate nohighlight">
 \[
@@ -437,26 +428,21 @@ covarianze) tra gli item e i fattori.</p>
 \]</div>
 <p>dove <span class="math notranslate nohighlight">\(\boldsymbol{\Phi}\)</span> è la matrice di ordine <span class="math notranslate nohighlight">\(m \times m\)</span> di varianze
 e covarianze tra i fattori comuni e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> è una matrice
-diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con le unicità delle variabili. Poniamoci ora il
-problema di stimare <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span>.</p>
-</section>
+diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con le unicità delle variabili.</p>
+<p>In questo capitolo descriveremo alcuni dei metodi che possono essere usati per stimare <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span>. Esamineremo il metodo delle componenti principali, il metodo dei fattori principali, il metodo dei fattori principali iterato e il metodo di massima verosimiglianza.</p>
 <section id="metodo-delle-componenti-principali">
-<h2><span class="section-number">11.2. </span>Metodo delle componenti principali<a class="headerlink" href="#metodo-delle-componenti-principali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.1. </span>Metodo delle componenti principali<a class="headerlink" href="#metodo-delle-componenti-principali" title="Permalink to this headline">#</a></h2>
 <p>L’analisi fattoriale eseguita mediante il metodo delle componenti
 principali, nonostante il nome, non è un’analisi delle componenti
 principali. Il metodo delle componenti principali costituisce invece
 un’applicazione del teorema di scomposizione spettrale di una matrice.
-Il <em>teorema spettrale</em> afferma che “data la matrice simmetrica
+Il <em>teorema spettrale</em> afferma che, data la matrice simmetrica
 <span class="math notranslate nohighlight">\(\textbf{S}_{p \times p}\)</span>, è sempre possibile trovare una matrice
-<span class="math notranslate nohighlight">\(\textbf{C}_{p \times p}\)</span> ortogonale tale che</p>
-<div class="math notranslate nohighlight">
-\[
+<span class="math notranslate nohighlight">\(\textbf{C}_{p \times p}\)</span> ortogonale tale che
+<span class="math notranslate nohighlight">\(
 \textbf{S} = \textbf{C}\textbf{D}\textbf{C}^{\mathsf{T}}
-\]</div>
-<p>con <strong>D</strong> diagonale.” Il teorema specifica inoltre che gli elementi
-presenti sulla diagonale di <strong>D</strong> sono gli autovalori di <strong>S</strong>, mentre
-le colonne di <strong>C</strong> rappresentano i rispettivi autovettori normalizzati
-associati agli autovalori di <strong>S</strong>.</p>
+\)</span>
+con <strong>D</strong> diagonale. Il teorema specifica inoltre che gli elementi presenti sulla diagonale di <strong>D</strong> sono gli autovalori di <strong>S</strong>, mentre le colonne di <strong>C</strong> rappresentano i rispettivi autovettori normalizzati associati agli autovalori di <strong>S</strong>.</p>
 <p>Facciamo un esempio numerico utilizzando i dati discussi da
 Rencher(2002). Brown, Williams e Barlow (1984) hanno raccolto le
 valutazioni di una ragazza dodicenne relativamente a sette persone di
@@ -478,30 +464,46 @@ riportata di seguito:</p>
 <span class="w">  </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;K&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;I&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;H&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;L&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;J&quot;</span><span class="p">)</span>
 <span class="p">)</span>
 <span class="p">)</span>
+<span class="n">R</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 5 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>K</th><th scope=col>I</th><th scope=col>H</th><th scope=col>L</th><th scope=col>J</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>K</th><td>1.000</td><td> 0.296</td><td> 0.881</td><td>0.995</td><td>0.545</td></tr>
+	<tr><th scope=row>I</th><td>0.296</td><td> 1.000</td><td>-0.022</td><td>0.326</td><td>0.837</td></tr>
+	<tr><th scope=row>H</th><td>0.881</td><td>-0.022</td><td> 1.000</td><td>0.867</td><td>0.130</td></tr>
+	<tr><th scope=row>L</th><td>0.995</td><td> 0.326</td><td> 0.867</td><td>1.000</td><td>0.544</td></tr>
+	<tr><th scope=row>J</th><td>0.545</td><td> 0.837</td><td> 0.130</td><td>0.544</td><td>1.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Gli autovalori e gli autovettori si calcolano con la funzione <code class="docutils literal notranslate"><span class="pre">eigen()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">e</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">eigen</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigen() decomposition
 $values
-[1] 3.263377 1.538382 0.167969 0.030030 0.000242
+[1] 3.2633766259 1.5383820947 0.1679692814 0.0300298228 0.0002421752
 
 $vectors
-       [,1]   [,2]    [,3]   [,4]   [,5]
-[1,] -0.537 -0.186 -0.1899 -0.125  0.791
-[2,] -0.287  0.651  0.6849 -0.120  0.103
-[3,] -0.434 -0.474  0.4069  0.614 -0.212
-[4,] -0.537 -0.169 -0.0953 -0.629 -0.527
-[5,] -0.390  0.538 -0.5658  0.444 -0.204
+           [,1]       [,2]        [,3]       [,4]       [,5]
+[1,] -0.5367301 -0.1859819 -0.18991841 -0.1247931  0.7910052
+[2,] -0.2874672  0.6505666  0.68488713 -0.1198141  0.1034406
+[3,] -0.4343545 -0.4736877  0.40694897  0.6136634 -0.2115794
+[4,] -0.5373909 -0.1692797 -0.09532905 -0.6293896 -0.5266275
+[5,] -0.3896544  0.5377158 -0.56583170  0.4442491 -0.2037363
 </pre></div>
 </div>
 </div>
@@ -541,7 +543,7 @@ il 96% della varianza campionaria:</p>
 <div class="cell_output docutils container">
 <div class="output text_html">0.960351744117911</div></div>
 </div>
-<p>Usando i primi due autovalori e i primi due autovettori sarà dunque
+<p>Usando i primi due autovalori e i primi due autovettori è dunque
 possibile riprodurre in maniera soddisfacente la matrice <strong>R</strong> operando
 nel contempo una riduzione di dimensionalità dei dati.</p>
 <p>Per fattorizzare
@@ -576,7 +578,7 @@ questo modo, possiamo scrivere</p>
 \begin{aligned}
 \textbf{R} &amp;= \textbf{C}\textbf{D}\textbf{C}^{\mathsf{T}}\notag\\
 &amp;= \textbf{C}\textbf{D}^{1/2}\textbf{D}^{1/2}\textbf{C}^{\mathsf{T}}\notag\\
-&amp;= (\textbf{C}\textbf{D}^{1/2}) (\textbf{C}\textbf{D}^{1/2})^{\mathsf{T}}
+&amp;= (\textbf{C}\textbf{D}^{1/2}) (\textbf{C}\textbf{D}^{1/2})^{\mathsf{T}}.
 \end{aligned}
 \end{equation}
 \end{split}\]</div>
@@ -589,7 +591,8 @@ definiamo la matrice <span class="math notranslate nohighlight">\(\textbf{D}_1= 
 \theta_2, \dots, \theta_m)\)</span> come la la matrice contenente gli <span class="math notranslate nohighlight">\(m\)</span>
 autovalori più grandi di <strong>R</strong> e <span class="math notranslate nohighlight">\(\textbf{C}_1=( \textbf{c}_1,
 \textbf{c}_2, \dots,  \textbf{c}_m)\)</span> come la matrice contenente i
-rispettivi autovettori. Mediante il metodo delle componenti principali,
+rispettivi autovettori.</p>
+<p>Mediante il metodo delle componenti principali,
 le saturazioni fattoriali <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> vengono quindi
 stimate nel modo seguente:</p>
 <div class="math notranslate nohighlight">
@@ -672,7 +675,8 @@ stimate nel modo seguente:</p>
 principale) diventa</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="n">L</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">L</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">R_hat</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">round</span><span class="p">(</span><span class="n">L</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">L</span><span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="n">R_hat</span>
 </pre></div>
 </div>
 </div>
@@ -689,11 +693,33 @@ principale) diventa</p>
 </table>
 </div></div>
 </div>
-<p>Possiamo ora capire il motivo del nome “metodo delle componenti
-principali.” Le saturazioni fattoriali sono proporzionali agli
-autovettori di <span class="math notranslate nohighlight">\(\textbf{R}\)</span>. Tuttavia, dopo la rotazione delle
-saturazioni fattoriali, l’interpretazione dei fattori è diversa da
-quella che viene assegnata ai risultai dell’analisi delle componenti
+<p>La matrice di correlazioni residue (con le specificità sulla diagonale principale) è la seguente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">R</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">R_hat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 5 × 5 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>K</th><th scope=col>I</th><th scope=col>H</th><th scope=col>L</th><th scope=col>J</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>K</th><td> 0.007</td><td>-0.021</td><td>-0.015</td><td> 0.005</td><td> 0.016</td></tr>
+	<tr><th scope=row>I</th><td>-0.021</td><td> 0.079</td><td> 0.045</td><td>-0.009</td><td>-0.067</td></tr>
+	<tr><th scope=row>H</th><td>-0.015</td><td> 0.045</td><td> 0.039</td><td>-0.018</td><td>-0.030</td></tr>
+	<tr><th scope=row>L</th><td> 0.005</td><td>-0.009</td><td>-0.018</td><td> 0.013</td><td> 0.001</td></tr>
+	<tr><th scope=row>J</th><td> 0.016</td><td>-0.067</td><td>-0.030</td><td> 0.001</td><td> 0.060</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Possiamo ora capire il motivo del nome <em>metodo delle componenti
+principali</em>: le saturazioni fattoriali sono proporzionali agli
+autovettori di <span class="math notranslate nohighlight">\(\textbf{R}\)</span>. Tuttavia, l’interpretazione è diversa da
+quella che viene assegnata ai risultati dell’analisi delle componenti
 principali.</p>
 <p>È possibile condurre l’analisi fattoriale con il metodo delle componenti
 principali sia utilizzando la matrice <span class="math notranslate nohighlight">\(\textbf{S}\)</span> di
@@ -707,39 +733,37 @@ invece svolto quando la soluzione viene trovata con il metodo della
 massima verosimiglianza.</p>
 </section>
 <section id="metodo-dei-fattori-principali">
-<h2><span class="section-number">11.3. </span>Metodo dei fattori principali<a class="headerlink" href="#metodo-dei-fattori-principali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.2. </span>Metodo dei fattori principali<a class="headerlink" href="#metodo-dei-fattori-principali" title="Permalink to this headline">#</a></h2>
 <p>Il <em>metodo dei fattori principali</em> (<em>principal factor method</em>, anche
 detto <em>principal axis method</em>) è uno dei metodi maggiormente usati per
 la stima delle saturazioni fattoriali e delle comunalità. Il metodo
-delle componenti principali trascura la specificità <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span>
-e si limita a fattorializzare le covarianze di <strong>S</strong> o le correlazioni
-di <strong>R</strong>. Il metodo dei fattori principali utilizza una procedura simile
-al metodo delle componenti principali, utilizzando però una matrice
-ridotta di varianze-covarianze <span class="math notranslate nohighlight">\(\textbf{S} -
-  \hat{\boldsymbol{\Psi}}\)</span> in cui una stima delle comunalità viene
-sostituita alle varianze presenti sulla diagonale principale. Nel caso
-della matrice ridotta di correlazioni
+delle componenti principali che abbiamo usato in precedenza trascura la specificità <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> e si limita a fattorializzare le covarianze di <strong>S</strong> o le correlazioni
+di <strong>R</strong>. Il metodo dei fattori principali affronta questo problema ricorrendo ad una procedura simile
+al metodo delle componenti principali, nella quale però viene utilizzata una matrice
+ridotta di varianze-covarianze <span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> in cui una <em>stima delle comunalità</em> viene sostituita alle varianze presenti sulla diagonale principale della matrice <strong>S</strong> o  <strong>R</strong>.</p>
+<p>Nel caso della matrice ridotta di correlazioni
 <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span>, per la comunalità <span class="math notranslate nohighlight">\(i\)</span>-esima
 <span class="math notranslate nohighlight">\(\sum_{j}\lambda_{ij}^2\)</span> si sceglie il quadrato del coefficiente di
 correlazione multipla tra <span class="math notranslate nohighlight">\(Y_i\)</span> e tutte le altre <span class="math notranslate nohighlight">\(p-1\)</span> variabili. Tale
-valore si può trovare nel modo seguente:</p>
+valore si può trovare nel modo seguente</p>
 <div class="math notranslate nohighlight">
-\[\hat{h}^2_i=R^2_i=1-\frac{1}{r^{ii}}\]</div>
-<p>dove <span class="math notranslate nohighlight">\(r^{ii}\)</span> è l’elemento
-diagonale <span class="math notranslate nohighlight">\(i\)</span>-esimo di <span class="math notranslate nohighlight">\(\textbf{R}^{-1}\)</span>. Nel caso di una matrice
+\[
+\hat{h}^2_i=R^2_i=1-\frac{1}{r^{ii}},
+\]</div>
+<p>dove <span class="math notranslate nohighlight">\(r^{ii}\)</span> è l’elemento diagonale <span class="math notranslate nohighlight">\(i\)</span>-esimo di <span class="math notranslate nohighlight">\(\textbf{R}^{-1}\)</span>. Nel caso di una matrice
 ridotta di varianze-covarianze <span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span>,
 le comunalità possono essere stimate calcolando</p>
 <div class="math notranslate nohighlight">
-\[\hat{h}_i^2=s_{ii}-\frac{1}{r^{ii}}\]</div>
+\[
+\hat{h}_i^2=s_{ii}-\frac{1}{r^{ii}},
+\]</div>
 <p>dove <span class="math notranslate nohighlight">\(s_{ii}\)</span> è l’elemento diagonale <span class="math notranslate nohighlight">\(i\)</span>-esimo di <span class="math notranslate nohighlight">\(\textbf{S}\)</span>.</p>
 <p>Affinché le stime comunalità possano essere calcolate come descritto
-sopra, la matrice <span class="math notranslate nohighlight">\(\textbf{R}\)</span> deve essere non singolare. Nel caso in
-cui <span class="math notranslate nohighlight">\(\textbf{R}\)</span> sia singolare, per la stima della comunalità <span class="math notranslate nohighlight">\(i\)</span>-esima,
-<span class="math notranslate nohighlight">\(\hat{h}^2_i\)</span>, si utilizza il valore assoluto del più elevato
+sopra, la matrice <span class="math notranslate nohighlight">\(\textbf{R}\)</span> non deve essere singolare. Se <span class="math notranslate nohighlight">\(\textbf{R}\)</span> è singolare, per la stima della comunalità <span class="math notranslate nohighlight">\(i\)</span>-esima, <span class="math notranslate nohighlight">\(\hat{h}^2_i\)</span>, si utilizza il valore assoluto del più elevato
 coefficiente di correlazione lineare tra <span class="math notranslate nohighlight">\(Y_i\)</span> e le altre variabili.</p>
 <p>Scelta la stima della comunalità, la matrice ridotta di
-varianze-covarianze si ottiene sostituendo alle varianze sulla diagonale
-principale le stime delle comunalità:</p>
+varianze-covarianze si ottiene sostituendo le stime delle comunalità alle varianze sulla diagonale
+principale della matrice <span class="math notranslate nohighlight">\(\textbf{S}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \textbf{S} - \hat{\boldsymbol{\Psi}} = 
@@ -766,10 +790,9 @@ ottiene nel modo seguente:</p>
   \end{array} 
 \right]
 \end{split}\]</div>
-<p>Verranno ora svolti i calcoli necessari per la stima dei coefficienti di
-saturazione con il metodo dei fattori principali utilizzando la matrice
+<p>Facciamo ora un esempio concreto usando la matrice
 di correlazione dell’esempio precedente. Quale stima della comunalità
-<span class="math notranslate nohighlight">\(i\)</span>-esima, verrà utilizzato il valore assoluto più elevato nella riga
+<span class="math notranslate nohighlight">\(i\)</span>-esima, useremo il valore assoluto più elevato nella riga
 <span class="math notranslate nohighlight">\(i\)</span>-esima della matrice <strong>R</strong>. Per i dati dell’esempio, le stime delle
 comunalità sono dunque pari a <span class="math notranslate nohighlight">\(0.995\)</span>, <span class="math notranslate nohighlight">\(0.837\)</span>, <span class="math notranslate nohighlight">\(0.881\)</span>, <span class="math notranslate nohighlight">\(0.995\)</span> e
 <span class="math notranslate nohighlight">\(0.837\)</span>.</p>
@@ -805,48 +828,46 @@ ridotta delle correlazioni <span class="math notranslate nohighlight">\(\textbf{
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ee</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">eigen</span><span class="p">(</span><span class="n">R1</span><span class="p">)</span>
-<span class="nf">round</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3.202</li><li>1.394</li><li>0.029</li><li>0</li><li>-0.08</li></ol>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]  3.202  1.394  0.029  0.000 -0.080
+</pre></div>
+</div>
+</div>
 </div>
 <p>La somma degli autovalori è uguale a</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sum</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">values</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">sum</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">values</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">4.54499999999999</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 4.545
+</pre></div>
+</div>
+</div>
 </div>
 <p>I primi due autovalori di <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> sono:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">vectors</span><span class="p">[,</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">vectors</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 2 of type dbl</caption>
-<tbody>
-	<tr><td>-0.548</td><td>-0.177</td></tr>
-	<tr><td>-0.272</td><td> 0.656</td></tr>
-	<tr><td>-0.431</td><td>-0.461</td></tr>
-	<tr><td>-0.549</td><td>-0.159</td></tr>
-	<tr><td>-0.373</td><td> 0.549</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       [,1]   [,2]
+[1,] -0.548 -0.177
+[2,] -0.272  0.656
+[3,] -0.431 -0.461
+[4,] -0.549 -0.159
+[5,] -0.373  0.549
+</pre></div>
+</div>
+</div>
 </div>
 <p>Moltiplicando tali valori per la radice quadrata dei rispettivi
 autovalori si ottengono le stime delle saturazioni fattoriali:</p>
@@ -872,7 +893,7 @@ autovalori si ottengono le stime delle saturazioni fattoriali:</p>
 <p>Tale risultato replica quello riportato da Rencher (2002).</p>
 </section>
 <section id="metodo-dei-fattori-principali-iterato">
-<h2><span class="section-number">11.4. </span>Metodo dei fattori principali iterato<a class="headerlink" href="#metodo-dei-fattori-principali-iterato" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">11.3. </span>Metodo dei fattori principali iterato<a class="headerlink" href="#metodo-dei-fattori-principali-iterato" title="Permalink to this headline">#</a></h2>
 <p>Solitamente, per migliorare la stima della comunalità, la diagonale
 della matrice <span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> o
 <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> viene ottenuta per iterazione.
@@ -883,10 +904,10 @@ utilizzando le stime delle saturazioni fattoriali così ottenute possiamo
 stimare le comunalità nel modo seguente:</p>
 <div class="math notranslate nohighlight">
 \[\hat{h}^2_i = \sum_{i=1}^m \hat{\lambda}_{ij}^2.\]</div>
-<p>I valori di <span class="math notranslate nohighlight">\(\hat{h}^2_i\)</span> vengono quindi sostituiti nella diagonale della matrice
+<p>I valori di <span class="math notranslate nohighlight">\(\hat{h}^2_i\)</span> così trovati vengono quindi sostituiti nella diagonale della matrice
 ridotta <span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> o
 <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span>. A partire da questa nuova
-matrice, usando il metodo descritto in precedenza, possiamo così
+matrice, usando il metodo descritto in precedenza, possiamo
 ottenere una nuova stima delle saturazioni fattoriali
 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>. Mediante questa nuova stima di
 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>, possiamo procedere ad una nuova stima
@@ -899,7 +920,7 @@ delle componenti principali producono risultati molto simili quando <span class=
 assume un piccolo valore (questo si verifica quando le correlazioni sono
 alte) e quando <span class="math notranslate nohighlight">\(p\)</span> (il numero delle variabili) è grande.</p>
 <section id="casi-di-heywood">
-<h3><span class="section-number">11.4.1. </span>Casi di Heywood<a class="headerlink" href="#casi-di-heywood" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">11.3.1. </span>Casi di Heywood<a class="headerlink" href="#casi-di-heywood" title="Permalink to this headline">#</a></h3>
 <p>Tra gli inconvenienti del metodo dei fattori principali iterato vi è il
 fatto che può talvolta portare a soluzioni inammissibili (quando viene
 fattorizzata la matrice <strong>R</strong>) caratterizzate da valori di comunalità
@@ -908,9 +929,7 @@ maggiori di uno (<em>caso di Heywood</em>). Se <span class="math notranslate noh
 non può assumere un valore negativo. Solitamente, quando la stima di una
 comunalità è maggiore di uno, il processo iterativo viene interrotto e
 il programma riporta che non può essere trovata una soluzione.</p>
-<p>Nell’esempio presente viene utilizzata la funzione <code class="docutils literal notranslate"><span class="pre">factor.pa()</span></code>
-contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">psych</span></code> per trovare la soluzione dei fattori
-principali mediante il metodo iterativo:</p>
+<p>Per fare un esempio, usiamo la funzione <code class="docutils literal notranslate"><span class="pre">fa()</span></code> contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">psych</span></code>. Tale funzione per trovare la soluzione dei fattori principali mediante il metodo iterativo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">pa</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">fa</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">nfactors</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">rotate</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;none&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">fm</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;pa&quot;</span><span class="p">)</span>
@@ -963,33 +982,17 @@ suggerisce che la soluzione è impropria.</p>
 </section>
 </section>
 <section id="metodo-di-massima-verosimiglianza">
-<h2><span class="section-number">11.5. </span>Metodo di massima verosimiglianza<a class="headerlink" href="#metodo-di-massima-verosimiglianza" title="Permalink to this headline">#</a></h2>
-<p>L’applicazione del metodo di massima verosimiglianza è indicata quando
-si può assumere che le variabili manifeste seguono una distribuzione
-normale multivariata. Sotto tali condizioni, tale metodo produce le
-stime dei pesi fattoriali che più verosimilmente hanno prodotto le
-correlazioni osservate. Gli stimatori di massima verosimiglianza sono
-preferibili a quelli ottenuti con altri metodi, sempre che siano
-pienamente realizzate le premesse. La funzione <span class="math notranslate nohighlight">\(F\)</span> da minimizzare
-rappresenta una misura di “distanza” tra la matrice di covarianza
-osservata e quella predetta dal modello. Uguagliando a zero le derivate
-di <span class="math notranslate nohighlight">\(F\)</span> rispetto a <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> si
+<h2><span class="section-number">11.4. </span>Metodo di massima verosimiglianza<a class="headerlink" href="#metodo-di-massima-verosimiglianza" title="Permalink to this headline">#</a></h2>
+<p>Il metodo di massima verosimiglianza è indicato quando si può assumere che le variabili manifeste seguano una distribuzione normale multivariata. In queste condizioni, il metodo produce stime dei pesi fattoriali che più verosimilmente hanno prodotto le correlazioni osservate. Gli stimatori di massima verosimiglianza sono preferibili a quelli ottenuti con altri metodi, a condizione che le premesse siano pienamente realizzate.</p>
+<p>La funzione <span class="math notranslate nohighlight">\(F\)</span> che viene minimizzata dal metodo di massima verosimiglianza rappresenta una misura di “distanza” tra la matrice di covarianza osservata e quella predetta dal modello. Uguagliando a zero le derivate di <span class="math notranslate nohighlight">\(F\)</span> rispetto ai parametri del modello <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> si
 ottengono le equazioni per le stime di massima verosimiglianza di
 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> e <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Psi}}\)</span>. Risolvendo
 tali equazioni rispetto alle incognite <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> e
 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Psi}}\)</span> si ricavano le stime di massima
 verosimiglianza.</p>
-<p>Non esistendo una soluzione analitica per queste equazioni, si ricorre a
-procedimenti numerici iterativi che talvolta presentano problemi di
-convergenza. La soluzione, pur presentando la possibilità di fornire
-delle stime di comunalità superiori a 1 (caso di Heywood), è
-equivariante rispetto a cambiamenti di scala: le stime di massima
-verosimiglianza sono indipendenti dall’unità di misura delle variabili
-manifeste. Pertanto, si ottiene la stessa soluzione sia che si analizzi
-la matrice delle varianze e covarianze, sia che si analizzi la matrice
-delle correlazioni.</p>
-<p>Consideriamo nuovamente i dati dell’esempio precedente. Le istruzioni
-sono le seguenti:</p>
+<p>Poiché non esiste una soluzione analitica per le equazioni che stimano i parametri <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span>, si utilizzano metodi numerici iterativi per minimizzare la differenza tra la matrice di covarianze (o correlazioni) osservata e quella predetta dal modello. Tuttavia, le stime di massima verosimiglianza possono presentare problemi di convergenza e casi di Heywood, in cui le stime di comunalità sono superiori a 1. Nonostante ciò, la soluzione è indipendente dall’unità di misura delle variabili manifeste e si ottiene la stessa soluzione sia analizzando la matrice delle varianze e covarianze sia quella delle correlazioni.</p>
+<p>La stima di massima verosimiglianza si ottiene usando <code class="docutils literal notranslate"><span class="pre">factanal</span></code>. È inoltre il metodo di stima di default di <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>.</p>
+<p>Consideriamo nuovamente i dati dell’esempio precedente. La stima di massima verosimiglianza dei parametri <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> si ottiene nel modo seguente. i</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">factanal</span><span class="p">(</span><span class="n">covmat</span><span class="o">=</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">factors</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">rotation</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n.obs</span><span class="o">=</span><span class="m">225</span><span class="p">)</span>
@@ -1024,6 +1027,7 @@ The p-value is 5.81e-143
 </div>
 </div>
 </div>
+<p>Si noti che il risultato è molto simile a quello ottenuto in precedenza. Si noti inoltre che le stime di massima verosimiglianza consentono un test di bontà di adattamento del modello ai dati (test chi quadrato).</p>
 </section>
 </section>
 
@@ -1088,14 +1092,13 @@ The p-value is 5.81e-143
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#motivazione">11.1. Motivazione</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-delle-componenti-principali">11.2. Metodo delle componenti principali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali">11.3. Metodo dei fattori principali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali-iterato">11.4. Metodo dei fattori principali iterato</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casi-di-heywood">11.4.1. Casi di Heywood</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-delle-componenti-principali">11.1. Metodo delle componenti principali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali">11.2. Metodo dei fattori principali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-dei-fattori-principali-iterato">11.3. Metodo dei fattori principali iterato</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#casi-di-heywood">11.3.1. Casi di Heywood</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-massima-verosimiglianza">11.5. Metodo di massima verosimiglianza</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodo-di-massima-verosimiglianza">11.4. Metodo di massima verosimiglianza</a></li>
 </ul>
   </nav></div>
 

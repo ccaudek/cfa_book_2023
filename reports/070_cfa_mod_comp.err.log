@@ -25,16 +25,22 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-source("_common.R")
-library("psych")
+sds <- '2.610  2.660  2.590  1.940  2.030  2.050'
+
+cors <-'
+  1.000
+  0.661  1.000
+  0.630  0.643  1.000
+  0.270  0.300  0.268  1.000
+  0.297  0.265  0.225  0.805  1.000
+  0.290  0.287  0.248  0.796  0.779  1.000'
+
+covs <- getCov(cors, sds = sds, names = paste("x", 1:6, sep = ""))
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [43msource[49m([38;5;124m"[39m[38;5;124m_common.R[39m[38;5;124m"[39m)
-[1;32m      2[0m library([38;5;124m"[39m[38;5;124mpsych[39m[38;5;124m"[39m)
+Error in getCov(cors, sds = sds, names = paste("x", 1:6, sep = "")): could not find function "getCov"
+Traceback:
 
-[0;31mNameError[0m: name 'source' is not defined
-NameError: name 'source' is not defined
+ERROR: Error in getCov(cors, sds = sds, names = paste("x", 1:6, sep = "")): could not find function "getCov"
+
 
