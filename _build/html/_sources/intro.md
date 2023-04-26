@@ -1,6 +1,6 @@
 <div align="center">
 
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/ccaudek/ds4psy_2023">![GitHub last update](https://img.shields.io/github/last-commit/ccaudek/ds4psy_2023?color=blue&label=last%20update)</a>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/ccaudek/cfa_book_2023"></a>
 
 </div>
 
@@ -10,7 +10,7 @@
 Coming Soon – Sito in costruzione
 ```
 
-Questo sito web presenta il materiale didattico dell'insegnamento di [Psicometria](https://www.unifi.it/index.php?module=ofform2&mode=1&cmd=3&AA=2019&afId=523562) (A.A. 2022/2023) rivolto agli studenti del primo anno del Corso di Laurea in Scienze e Tecniche Psicologiche dell'Università degli Studi di Firenze.
+Questo sito web presenta il materiale didattico dell'insegnamento di [Costruzione e validazione di strumenti di misura dell’efficacia dell’intervento psicologico in neuropsicologia](https://www.unifi.it/index.php?module=ofform2&mode=1&cmd=3&AA=2022&afId=600381) (A.A. 2022/2023) rivolto agli studenti del Corso di Laurea Magistrale in PSICOLOGIA CLINICA E DELLA SALUTE E NEUROPSICOLOGIA dell'Università degli Studi di Firenze.
 
 ## License
 

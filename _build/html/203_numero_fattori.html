@@ -188,23 +188,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">20. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">21. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">22. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">23. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">24. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">25. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">26. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">27. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">28. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">29. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">30. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">31. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -398,11 +400,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">12.1. Quota di varianza spiegata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">12.2. Valore medio degli autovalori</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">12.3. Scree test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">12.4. Parallel analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">12.5. Test di bontà di adattamento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-basati-sugli-autovalori">12.1. Metodi basati sugli autovalori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">12.1.1. Quota di varianza spiegata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">12.1.2. Valore medio degli autovalori</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">12.1.3. Scree test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">12.1.4. Parallel analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-basati-sul-confronto-tra-modelli">12.2. Metodi basati sul confronto tra modelli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-del-rapporto-di-verosimiglianze">12.2.1. Test del rapporto di verosimiglianze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimizzazione-dell-out-of-sample-prediction-error">12.2.2. Minimizzazione dell’out-of-sample prediction error</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">12.3. Considerazioni conclusive</a></li>
 </ul>
             </nav>
         </div>
@@ -416,9 +426,17 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="il-numero-dei-fattori">
 <span id="number-factors-notebook"></span><h1><span class="section-number">12. </span>Il numero dei fattori<a class="headerlink" href="#il-numero-dei-fattori" title="Permalink to this headline">#</a></h1>
-<p>Sono stati proposti quattro criteri per determinare il numero <span class="math notranslate nohighlight">\(m\)</span> di
-fattori da estrarre (Rencher, 2002). Tali criteri sono elencati di
-seguito.</p>
+<p>L’analisi fattoriale esplorativa (EFA) è uno dei modelli statistici più utilizzati in psicologia. È fondamentale per la validazione delle scale di misurazione, l’identificazione di dimensioni latenti  e la sintesi dei dati. Il problema chiave in un’EFA è la selezione del numero di fattori, che non è banale perché l’aggiunta di ulteriori fattori migliorerà sempre l’adattamento ai dati, anche se il vero numero di fattori è piccolo.</p>
+<p>La maggior parte dei metodi esistenti per selezionare il numero di fattori si divide in due categorie.</p>
+<ul class="simple">
+<li><p>I metodi della prima categoria analizzano gli autovalori della matrice di covarianza per determinare il numero di fattori.</p></li>
+<li><p>La seconda categoria affronta la stima del numero di fattori come un problema di selezione di modelli. Poiché il modello fattoriale con il maggior numero di fattori si adatta sempre meglio ai dati, la stima del numero di fattori nella popolazione richiede un compromesso tra adattamento del modello e complessità.</p></li>
+</ul>
+<p>Oltre a queste due categorie principali, esistono altri metodi come il metodo Very Simple Structure (VSS) (Revelle e Rocklin, 1979) che cerca di recuperare strutture semplici facilmente interpretabili, o l’analisi grafica esplorativa (EGA) recentemente proposta (Golino e Demetriou, 2017; Golino e Epskamp, 2017), che stima prima una matrice di correlazione parziale regolarizzata e successivamente applica un algoritmo di rilevamento della comunità per determinare il numero di fattori.</p>
+<section id="metodi-basati-sugli-autovalori">
+<h2><span class="section-number">12.1. </span>Metodi basati sugli autovalori<a class="headerlink" href="#metodi-basati-sugli-autovalori" title="Permalink to this headline">#</a></h2>
+<p>Sono stati proposti quattro criteri basati sugli autovalori per determinare il numero <span class="math notranslate nohighlight">\(m\)</span> di
+fattori da estrarre (Rencher, 2002).</p>
 <ul class="simple">
 <li><p>Scegliere <span class="math notranslate nohighlight">\(m\)</span> tale per cui la varianza spiegata dal modello
 fattoriale superi una soglia predeterminata, per esempio l’80% della
@@ -427,13 +445,13 @@ varianza totale, <span class="math notranslate nohighlight">\(tr(\textbf{S})\)</
 maggiore del valore medio degli autovalori. Per <strong>R</strong> il valore
 medio degli autovalori è <span class="math notranslate nohighlight">\(1\)</span>; per <strong>S</strong> è <span class="math notranslate nohighlight">\(\sum_{j=1}^p \theta_j/p\)</span>.</p></li>
 <li><p>Usare lo <em>scree test</em>.</p></li>
-<li><p>Valutare l’ipotesi che <span class="math notranslate nohighlight">\(m\)</span> sia il numero corretto di fattori,
+<li><p>Mediante la statistica <span class="math notranslate nohighlight">\(\chi^2\)</span>, valutare l’ipotesi che <span class="math notranslate nohighlight">\(m\)</span> sia il numero corretto di fattori,
 <span class="math notranslate nohighlight">\(H_0: \boldsymbol{\Sigma} =  \boldsymbol{\Lambda}
   \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi}\)</span>,
 dove <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> è di ordine <span class="math notranslate nohighlight">\(p \times m\)</span>.</p></li>
 </ul>
 <section id="quota-di-varianza-spiegata">
-<h2><span class="section-number">12.1. </span>Quota di varianza spiegata<a class="headerlink" href="#quota-di-varianza-spiegata" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">12.1.1. </span>Quota di varianza spiegata<a class="headerlink" href="#quota-di-varianza-spiegata" title="Permalink to this headline">#</a></h3>
 <p>Il primo criterio si applica soprattutto al metodo delle componenti
 principali. La proporzione della varianza capionaria spiegata dal
 fattore <span class="math notranslate nohighlight">\(j\)</span>-esimo estratto da <strong>S</strong> è uguale a</p>
@@ -483,7 +501,7 @@ come per il metodo delle componenti principali, possono essere usati gli
 autovalori di <strong>S</strong> o <strong>R</strong>.</p>
 </section>
 <section id="valore-medio-degli-autovalori">
-<h2><span class="section-number">12.2. </span>Valore medio degli autovalori<a class="headerlink" href="#valore-medio-degli-autovalori" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">12.1.2. </span>Valore medio degli autovalori<a class="headerlink" href="#valore-medio-degli-autovalori" title="Permalink to this headline">#</a></h3>
 <p>Il calcolo del valore medio degli autovalori è una procedura euristica
 implementata in molti software. In una variante di tale metodo, <span class="math notranslate nohighlight">\(m\)</span>
 viene scelto in modo tale da uguagliare il numero degli autovalori
@@ -491,17 +509,11 @@ positivi della matrice ridotta <span class="math notranslate nohighlight">\(\tex
 solitamente un numero di fattori troppo grande.</p>
 </section>
 <section id="scree-test">
-<h2><span class="section-number">12.3. </span>Scree test<a class="headerlink" href="#scree-test" title="Permalink to this headline">#</a></h2>
-<p>Lo scree test è basato su una rappresentazione grafica degli autovalori
-di <strong>S</strong> o <strong>R</strong>. Si costruisce un grafico che rappresenta gli
-autovalori ordinati in maniera decrescente in funzione del numero dei
-fattori. I punti che rappresentano gli autovalori vengono collegati con
-una spezzata. Il valore <span class="math notranslate nohighlight">\(m\)</span> viene determinato in corrispondenza di quel
-fattore oltre il quale il dislivello tra fattori successivi diventa
-esiguo e la spezzata tende a diventare orizzontale.</p>
+<h3><span class="section-number">12.1.3. </span>Scree test<a class="headerlink" href="#scree-test" title="Permalink to this headline">#</a></h3>
+<p>Lo scree test si basa su un grafico che rappresenta gli autovalori di <strong>S</strong> o <strong>R</strong> ordinati in modo decrescente in funzione del numero dei fattori. I punti che rappresentano gli autovalori vengono collegati con una spezzata. Il valore m viene determinato in corrispondenza del fattore oltre il quale il dislivello tra fattori successivi diventa esiguo e la spezzata tende a diventare orizzontale.</p>
 </section>
 <section id="parallel-analysis">
-<h2><span class="section-number">12.4. </span>Parallel analysis<a class="headerlink" href="#parallel-analysis" title="Permalink to this headline">#</a></h2>
+<h3><span class="section-number">12.1.4. </span>Parallel analysis<a class="headerlink" href="#parallel-analysis" title="Permalink to this headline">#</a></h3>
 <p>La Parallel Analysis è un metodo alternativo allo scree test[^1]. Nella
 Parallel Analysis, il criterio usato per decidere il numero di fattori
 da estrarre viene determinato dal confronto con la media degli
@@ -512,7 +524,7 @@ tutti gli autovalori di una matrice di correlazione dovrebbero avere un
 valore pari a uno, come conseguenza della variabilità campionaria in
 qualunque campione finito vi sono comunque uno o più autovalori empirici
 maggiori di uno.</p>
-<p>Tale fatto può essere illustrato mediante la seguente
+<p>La procedura può essere illustrata mediante la seguente
 simulazione di Monte Carlo. Si consideri una matrice di correlazione
 calcolata su <span class="math notranslate nohighlight">\(p=10\)</span> variabili casuali mutuamente indipendenti, ciascuna
 costituita da <span class="math notranslate nohighlight">\(n=20\)</span> osservazioni.</p>
@@ -534,7 +546,7 @@ costituita da <span class="math notranslate nohighlight">\(n=20\)</span> osserva
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">3.33286594865205</div></div>
+<div class="output text_html">3.34528401303822</div></div>
 </div>
 <p>Per i dati di questa simulazione, l’autovalore maggiore ha un valore
 pari a <span class="math notranslate nohighlight">\(3.53\)</span>, anche se i dati sono del tutto casuali. La Parallel
@@ -544,25 +556,33 @@ determinare <span class="math notranslate nohighlight">\(m\)</span> solo gli aut
 superiore ai corrispondenti autovalori generati da una matrice di dati
 dello stesso ordine composta da colonne mutualmente incorrelate. Nel
 caso dell’esempio presente, per esempio, l’autovalore maggiore dovrà
-avere un valore maggiore di <span class="math notranslate nohighlight">\(3.53\)</span> (anziché di <span class="math notranslate nohighlight">\(1.00\)</span> o del punto di
-flesso della spezzata dello scree test).</p>
+avere un valore maggiore di <span class="math notranslate nohighlight">\(3.53\)</span>.</p>
 </section>
-<section id="test-di-bonta-di-adattamento">
-<h2><span class="section-number">12.5. </span>Test di bontà di adattamento<a class="headerlink" href="#test-di-bonta-di-adattamento" title="Permalink to this headline">#</a></h2>
-<p>Se si assume la normalità distributiva dei dati è possibile valutare la
+</section>
+<section id="metodi-basati-sul-confronto-tra-modelli">
+<h2><span class="section-number">12.2. </span>Metodi basati sul confronto tra modelli<a class="headerlink" href="#metodi-basati-sul-confronto-tra-modelli" title="Permalink to this headline">#</a></h2>
+<p>Il confronto tra modelli può essere eseguito usando varie statistiche. Una scelta popolare per stimare il numero di fattori nella EFA è il Criterio d’Informazione Bayesiano (BIC; Schwarz, 1978), introdotto come un miglioramento rispetto al Criterio d’Informazione di Akaike (AIC; Akaike, 1973). Un’alternativa è l’indice RMSEA, che può essere considerato come una stima della mancanza di adattamento che tiene in considerazione i gradi di libertà del modello (Browne e Cudeck, 1992). Un altro metodo di questo tipo è il test Minimum Average Partial (MAP), che stima le correlazioni parziali residue medie per diversi numeri di fattori e seleziona quello con il valore più basso (Velicer, 1976).</p>
+<section id="test-del-rapporto-di-verosimiglianze">
+<h3><span class="section-number">12.2.1. </span>Test del rapporto di verosimiglianze<a class="headerlink" href="#test-del-rapporto-di-verosimiglianze" title="Permalink to this headline">#</a></h3>
+<p>Consideriamo il confronto tra modelli più semplice, ovvero quello basato sulla statistica <span class="math notranslate nohighlight">\(\chi^2\)</span>.
+Se si assume la normalità distributiva dei dati è possibile valutare la
 bontà di adattamento attraverso il test del rapporto di verosimiglianze.
 L’ipotesi nulla postula che la matrice di covarianza delle <span class="math notranslate nohighlight">\(Y\)</span> abbia la
 forma specificata dal modello fattoriale, ossia</p>
 <div class="math notranslate nohighlight">
-\[H_0: \boldsymbol{\Sigma} =  \boldsymbol{\Lambda}
-  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi},\]</div>
+\[
+H_0: \boldsymbol{\Sigma} =  \boldsymbol{\Lambda}
+  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi},
+\]</div>
 <p>ovvero che <span class="math notranslate nohighlight">\(m\)</span> fattori comuni siano sufficienti per spiegare la
 struttura di interdipendenza della variabile casuale <span class="math notranslate nohighlight">\(Y\)</span> oggetto di
 osservazione campionaria. L’alternativa è che <span class="math notranslate nohighlight">\(m\)</span> fattori comuni non
-siano sufficienti a tale spiegazione</p>
+siano sufficienti per riprodurre <span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span></p>
 <div class="math notranslate nohighlight">
-\[H_1: \boldsymbol{\Sigma} \neq  \boldsymbol{\Lambda}
-  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi},\]</div>
+\[
+H_1: \boldsymbol{\Sigma} \neq  \boldsymbol{\Lambda}
+  \boldsymbol{\Lambda}^{\mathsf{T}} +  \boldsymbol{\Psi},
+\]</div>
 <p>dove <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> è di ordine <span class="math notranslate nohighlight">\(p \times m\)</span>. Se l’ipotesi nulla
 non viene rifiutata vuol dire che il modello fornisce un buon
 adattamento ai dati.</p>
@@ -571,12 +591,9 @@ adattamento ai dati.</p>
 a:</p>
 <div class="math notranslate nohighlight">
 \[\nu=\frac{1}{2}\left[ (p-m)^2 - (p - m) \right].\]</div>
-<p>Tale risultato di natura asintotica, valido per <span class="math notranslate nohighlight">\(n\)</span> grande, può essere migliorato, per
-ottenere una approssimazione migliore, sostituendo <span class="math notranslate nohighlight">\(\nu\)</span> con:</p>
-<div class="math notranslate nohighlight">
-\[\nu^* = n - 2 - \frac{2p-1}{6}-\frac{2}{3}m.\]</div>
 <p>Il rifiuto di <span class="math notranslate nohighlight">\(H_0\)</span> implica che <span class="math notranslate nohighlight">\(m\)</span> è troppo piccolo e un numero maggiore di fattori è
-necessario. Solitamente si inizia l’analisi considerando un numero di
+necessario.</p>
+<p>Solitamente si inizia l’analisi considerando un numero di
 fattori molto piccolo: <span class="math notranslate nohighlight">\(m^*=1\)</span> e si prende come ipotesi per il test che
 il numero di fattori sia <span class="math notranslate nohighlight">\(m^*\)</span>. Se l’ipotesi nulla è accettata il
 procedimento si arresta, altrimenti si passa a considerare <span class="math notranslate nohighlight">\(m^* + 1\)</span>
@@ -584,34 +601,19 @@ fattori e si prosegue con lo stesso ragionamento. Il procedimento si
 arresta non appena si verifica una delle seguenti situazioni: è stata
 accettata l’ipotesi <span class="math notranslate nohighlight">\(H_0\)</span> per un certo valore di <span class="math notranslate nohighlight">\(m\)</span>, oppure,
 <span class="math notranslate nohighlight">\(\nu=\frac{1}{2}\left[ (p-m)^2 - (p - m) \right]=0\)</span>, ossia la variabile
-<span class="math notranslate nohighlight">\(\chi^2\)</span> dovrebbe avere zero gradi di libertà, che non è possibile.</p>
-<p>Per poter applicare il test che determina il buon grado di adattamento
-del modello fattoriale occorre che i gradi di libertà della statistica
-del chi-quadrato siano positivi. Questo sta a significare che il numero
-di fattori comuni non può superare il più grande numero intero che
-soddisfa la seguente equazione:</p>
-<div class="math notranslate nohighlight">
-\[m &lt; \frac{1}{2} \left( 2p+1-\sqrt{8p+1} \right)\]</div>
-<p>per un numero fissato <span class="math notranslate nohighlight">\(p\)</span> di variabili manifeste. In pratica, quando <span class="math notranslate nohighlight">\(n\)</span> è grande, il
-test basato sul rapporto di verosimiglianze rivela un numero di fattori
-maggiore degli altri metodi descritti in precedenza. Alcuni considerano
+<span class="math notranslate nohighlight">\(\chi^2\)</span> dovrebbe avere zero gradi di libertà, che non è possibile. Per poter applicare il test che determina il buon grado di adattamento del modello fattoriale occorre che i gradi di libertà della statistica del chi-quadrato siano positivi.</p>
+<p>In pratica, quando <span class="math notranslate nohighlight">\(n\)</span> è grande, il test basato sul rapporto di verosimiglianze rivela un numero di fattori maggiore degli altri metodi descritti in precedenza. Alcuni considerano
 dunque il valore <span class="math notranslate nohighlight">\(m\)</span> indicato dal test quale limite superiore del numero
 dei fattori che rivestono una qualche importanza pratica.</p>
-<p>Per alcuni campioni di dati, la scelta di <span class="math notranslate nohighlight">\(m\)</span> non è ovvia. Questa
-indeterminazione costituisce un limite dell’analisi fattoriale.
-Solitamente, si procede con utilizzando un certo metodo per la scelta di
-<span class="math notranslate nohighlight">\(m\)</span> (diciamo lo scree test) e valuta la proporzione di varianza spiegata
-di ciascun item e, dopo un’appropriata rotazione, l’interpretabilità
-della soluzione ottenuta. Se le comunalità o l’interpretabilità dei
-fattori non sembrano adeguati, si procede con un numero maggiore di
-fattori. Tale procedura è certamente soggettiva e i limiti della
-soluzione che viene ottenuta sono evidenti.</p>
-<p>Per altri campioni di dati, la scelta di <span class="math notranslate nohighlight">\(m\)</span> consente una maggiore
-certezza. Questo avviene quando tutti i metodi che abbiamo descritto
-prima forniscono la stessa risposta. In questi casi, possiamo essere più
-certi della soluzione dell’analisi fattoriale.</p>
+<p>Un limite della procedura basata su <span class="math notranslate nohighlight">\(\chi^2\)</span> è che questa statistica è fortemente dipendente dalle dimensioni del campione.</p>
+<p>Se si usa lavaan, è possibile ricavare le statistiche AIC, BIC e RMSEA. Come per il <span class="math notranslate nohighlight">\(\chi^2\)</span> è possibile calcolare il valore di queste statistiche in funzione del numero dei fattori. Gli indici AIC, BIC e RMSEA non consentono un test statistico per il confronto tra modelli. Se si effettua una scelta in base a tali criteri, si sceglie la soluzione a cui è associato il valore più piccolo di AIC, BIC o RMSEA.</p>
+</section>
+<section id="minimizzazione-dell-out-of-sample-prediction-error">
+<h3><span class="section-number">12.2.2. </span>Minimizzazione dell’out-of-sample prediction error<a class="headerlink" href="#minimizzazione-dell-out-of-sample-prediction-error" title="Permalink to this headline">#</a></h3>
+<p>Recentemente è stato proposto un nuovo metodo per stimare il numero di fattori in EFA che affronta il problema come un problema di selezione del modello <span id="id1">[<a class="reference internal" href="z_biblio.html#id2" title="Jonas Haslbeck and Riet van Bork. Estimating the number of factors in exploratory factor analysis via out-of-sample prediction errors. Psychological Methods, 2022.">HvB22</a>]</span>. L’obiettivo è confrontare i modelli con 1, 2, …, p fattori, dove <span class="math notranslate nohighlight">\(p\)</span> è il numero di variabili, e selezionare il modello con l’errore di previsione atteso più basso nella popolazione. Tuttavia, questo è un compito non banale perché il modello che minimizza l’errore di previsione nel campione non minimizza sempre l’errore di previsione nella popolazione.</p>
+<p>Intuitivamente, questo problema viene affrontato suddividendo il campione di dati in due insiemi: un set di training e un set di test. Il set di training viene utilizzato per stimare i parametri del modello, le cui previsioni vengono poi verificate utilizzando i dati di test (non utilizzati per la stima dei parametri). Questo calcolo dell’errore di previsione fuori campione viene ripetuto diverse volte, suddividendo ogni volta in modo casuale il campione negli insiemi di training e test. Tale metodo per stimare il numero di fattori è implementato nel pacchetto R <code class="docutils literal notranslate"><span class="pre">fspe</span></code>.</p>
 <p><strong>Esempio.</strong> Per confrontare i quattro metodi discussi per la scelta del numero <span class="math notranslate nohighlight">\(m\)</span>
-di fattori usiamo qui una matrice di correlazioni calcolata sulla WAIS. Le 11 sottoscale sono le seguenti:</p>
+di fattori usiamo qui una matrice di correlazioni calcolata sulle sottoscale della WAIS. Le 11 sottoscale del test sono le seguenti:</p>
 <ul class="simple">
 <li><p>X1 = Information</p></li>
 <li><p>X2 = Comprehension</p></li>
@@ -623,8 +625,9 @@ di fattori usiamo qui una matrice di correlazioni calcolata sulla WAIS. Le 11 so
 <li><p>X8 = Picture.completion</p></li>
 <li><p>X9 = Block.design</p></li>
 <li><p>X10 = Picture.arrangement</p></li>
-<li><p>X11 = Object.assembly</p></li>
+<li><p>X11 = Object.</p></li>
 </ul>
+<p>I dati sono stati ottenuti dal manuale della III edizione.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">varnames</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;IN&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;CO&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;AR&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SI&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;DS&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;VO&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;SY&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;PC&quot;</span><span class="p">,</span><span class="w"> </span>
@@ -698,18 +701,15 @@ al valore medio degli autovalori (che, nel caso di <strong>R</strong> è uguale 
 <span class="math notranslate nohighlight">\(1\)</span>). Nel caso presente, <span class="math notranslate nohighlight">\(m=2\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">out</span><span class="o">$</span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>6.074</li><li>1.015</li><li>0.746</li><li>0.587</li><li>0.508</li><li>0.431</li><li>0.423</li><li>0.377</li><li>0.351</li><li>0.31</li><li>0.177</li></ol>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1] 6.074 1.015 0.746 0.587 0.508 0.431 0.423 0.377 0.351 0.310 0.177
+</pre></div>
+</div>
+</div>
 </div>
 <p>Il terzo metodo, lo scree test, può essere eseguito usando la funzione
 <code class="docutils literal notranslate"><span class="pre">VSS.scree()</span></code> contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">psych</span></code>.</p>
@@ -724,34 +724,16 @@ al valore medio degli autovalori (che, nel caso di <strong>R</strong> è uguale 
 </div>
 </div>
 <p>Lo scree test suggerisce una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span> fattori, come indicato
-nella figura precedente. Il terzo metodo, nella versione della Parallel
-Analysis, può essere eseguito usando la funzione <code class="docutils literal notranslate"><span class="pre">paran()</span></code> contenuta nel
-pacchetto <code class="docutils literal notranslate"><span class="pre">paran</span></code>. La Parallel Analysis indica una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span>
+nella figura precedente.</p>
+<p>Il terzo metodo, nella versione della Parallel Analysis, può essere eseguito usando la funzione <code class="docutils literal notranslate"><span class="pre">paran()</span></code> contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">paran</span></code>. La Parallel Analysis indica una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span>
 fattore.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="s">&quot;paran&quot;</span><span class="p">)</span>
-<span class="nf">paran</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">paran</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required package: MASS
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘MASS’
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:patchwork’:
-
-    area
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:dplyr’:
-
-    select
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using eigendecomposition of correlation matrix.
 Computing: 10%  20%  30%  40%  50%  60%  70%  80%  90%  100%
 
@@ -763,26 +745,58 @@ Results of Horn&#39;s Parallel Analysis for component retention
 Component   Adjusted    Unadjusted    Estimated 
             Eigenvalue  Eigenvalue    Bias 
 -------------------------------------------------- 
-1           1.636878    3.765744      2.128865
+1           1.647667    3.765744      2.118077
 -------------------------------------------------- 
 
 Adjusted eigenvalues &gt; 1 indicate dimensions to retain.
 (1 components retained)
 </pre></div>
 </div>
-<img alt="_images/856387349247250f4d2227b8d940c23027348b384bf646a93a9d2da8360dea9b.png" src="_images/856387349247250f4d2227b8d940c23027348b384bf646a93a9d2da8360dea9b.png" />
+<img alt="_images/2732bc6a03f96d8221229b161a80f2d76c0ac340dcc71274139d32b318fafe39.png" src="_images/2732bc6a03f96d8221229b161a80f2d76c0ac340dcc71274139d32b318fafe39.png" />
 </div>
 </div>
 <p>Il quarto metodo consiste nell’applicazione di un test inferenziale
-relativo al numero di fattori. Anche questo metodo indica una soluzione
+relativo al numero di fattori. Questo metodo indica una soluzione
 a sei fattori:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">factanal</span><span class="p">(</span><span class="n">covmat</span><span class="o">=</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">factors</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">n.obs</span><span class="o">=</span><span class="m">933</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">factanal</span><span class="p">(</span><span class="n">covmat</span><span class="o">=</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">factors</span><span class="o">=</span><span class="m">4</span><span class="p">,</span><span class="w"> </span><span class="n">n.obs</span><span class="o">=</span><span class="m">933</span><span class="p">)</span>
+<span class="nf">factanal</span><span class="p">(</span><span class="n">covmat</span><span class="o">=</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">factors</span><span class="o">=</span><span class="m">5</span><span class="p">,</span><span class="w"> </span><span class="n">n.obs</span><span class="o">=</span><span class="m">933</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+factanal(factors = 4, covmat = wais_cor, n.obs = 933)
+
+Uniquenesses:
+   IN    CO    AR    SI    DS    VO    SY    PC    BD    PA    OA 
+0.229 0.387 0.005 0.416 0.645 0.137 0.005 0.375 0.331 0.492 0.519 
+
+Loadings:
+   Factor1 Factor2 Factor3 Factor4
+IN 0.758   0.306   0.279   0.157  
+CO 0.672   0.312   0.229   0.107  
+AR 0.368   0.247   0.886   0.120  
+SI 0.602   0.376   0.193   0.207  
+DS 0.315   0.288   0.331   0.252  
+VO 0.851   0.242   0.208   0.192  
+SY 0.238   0.359   0.144   0.888  
+PC 0.432   0.623   0.143   0.172  
+BD 0.237   0.733   0.217   0.168  
+PA 0.367   0.539   0.150   0.245  
+OA 0.207   0.620   0.133   0.190  
+
+               Factor1 Factor2 Factor3 Factor4
+SS loadings      2.826   2.264   1.233   1.137
+Proportion Var   0.257   0.206   0.112   0.103
+Cumulative Var   0.257   0.463   0.575   0.678
+
+Test of the hypothesis that 4 factors are sufficient.
+The chi square statistic is 35.4 on 17 degrees of freedom.
+The p-value is 0.00551 
+</pre></div>
+</div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
 factanal(factors = 5, covmat = wais_cor, n.obs = 933)
 
@@ -816,12 +830,73 @@ The p-value is 0.256
 </div>
 </div>
 </div>
-<p>Le differenze tra i risultati ottenuti con i quattro metodi descritti
-sopra suggeriscono la presenza di una componente di arbitrarietà nella
-scelta della soluzione da adottare.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+<p>Considero qui un esempio del metodo basato sulla minimizzazione dell’errore di previsione. Non è possibile applicare tale metodo ai dati dell’esempio in quanto è necessario disporre dei dati grezzi )(la matrice di correlazioni non è sufficiente). Useremo dunque un set di dati diverso (<code class="docutils literal notranslate"><span class="pre">holzinger19</span></code>), allo scopo di illustrare la procedura.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">data</span><span class="p">(</span><span class="n">holzinger19</span><span class="p">)</span>
+
+<span class="nf">suppressWarnings</span><span class="p">(</span>
+<span class="w">    </span><span class="n">fspe_out</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">fspe</span><span class="p">(</span>
+<span class="w">        </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">holzinger19</span><span class="p">,</span>
+<span class="w">        </span><span class="n">maxK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">        </span><span class="n">nfold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">        </span><span class="n">rep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">10</span><span class="p">,</span>
+<span class="w">        </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PE&quot;</span>
+<span class="w">    </span><span class="p">)</span>
+<span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
+  |                                                                      |   0%
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required namespace: GPArotation
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
+  |-------                                                               |  10%
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
+  |--------------                                                        |  20%
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
+  |---------------------                                                 |  30%
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
+  |----------------------------                                          |  40%
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">par</span><span class="p">(</span><span class="n">mar</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1</span><span class="p">))</span>
+<span class="nf">plot.new</span><span class="p">()</span>
+<span class="nf">plot.window</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">10</span><span class="p">),</span><span class="w"> </span><span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="n">.</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">.</span><span class="m">8</span><span class="p">))</span>
+<span class="nf">axis</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span>
+<span class="nf">axis</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">las</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="nf">min</span><span class="p">(</span><span class="n">fspe_out</span><span class="o">$</span><span class="n">PEs</span><span class="p">),</span><span class="w"> </span><span class="n">col</span><span class="o">=</span><span class="s">&quot;grey&quot;</span><span class="p">)</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">fspe_out</span><span class="o">$</span><span class="n">PEs</span><span class="p">,</span><span class="w"> </span><span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+<span class="nf">points</span><span class="p">(</span><span class="n">fspe_out</span><span class="o">$</span><span class="n">PEs</span><span class="p">,</span><span class="w"> </span><span class="n">pch</span><span class="o">=</span><span class="m">20</span><span class="p">,</span><span class="w"> </span><span class="n">cex</span><span class="o">=</span><span class="m">1.5</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Number of Factors&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Prediction Error&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/052799985cc2f4989590f2afa2bbadbedc599ca24d63037cf63bdcde566e01d2.png" src="_images/052799985cc2f4989590f2afa2bbadbedc599ca24d63037cf63bdcde566e01d2.png" />
+</div>
+</div>
+<p>Per i dati <code class="docutils literal notranslate"><span class="pre">holzinger19</span></code>, il metodo di <span id="id2">Haslbeck and van Bork [<a class="reference internal" href="z_biblio.html#id2" title="Jonas Haslbeck and Riet van Bork. Estimating the number of factors in exploratory factor analysis via out-of-sample prediction errors. Psychological Methods, 2022.">HvB22</a>]</span> produce dunque una soluzione a 4 fattori.</p>
+</section>
+</section>
+<section id="considerazioni-conclusive">
+<h2><span class="section-number">12.3. </span>Considerazioni conclusive<a class="headerlink" href="#considerazioni-conclusive" title="Permalink to this headline">#</a></h2>
+<p>In conclusione, si noti che, per alcuni campioni di dati, la scelta del numero di fattori <span class="math notranslate nohighlight">\(m\)</span> non è ovvia e questa indeterminazione costituisce un limite dell’analisi fattoriale. Solitamente, si utilizza un metodo per la scelta di <span class="math notranslate nohighlight">\(m\)</span>, come lo scree test, e si valuta la proporzione di varianza spiegata di ciascun item e l’interpretabilità della soluzione ottenuta dopo una rotazione appropriata. Se le comunalità o l’interpretabilità dei fattori non sembrano adeguati, si può procedere con un numero maggiore di fattori. Tuttavia, questa procedura è soggettiva e i limiti della soluzione ottenuta sono evidenti. In altri campioni di dati, la scelta di <span class="math notranslate nohighlight">\(m\)</span> può essere più certa quando tutti i metodi forniscono la stessa risposta.</p>
 </section>
 </section>
 
@@ -886,11 +961,19 @@ scelta della soluzione da adottare.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">12.1. Quota di varianza spiegata</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">12.2. Valore medio degli autovalori</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">12.3. Scree test</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">12.4. Parallel analysis</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-bonta-di-adattamento">12.5. Test di bontà di adattamento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-basati-sugli-autovalori">12.1. Metodi basati sugli autovalori</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#quota-di-varianza-spiegata">12.1.1. Quota di varianza spiegata</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#valore-medio-degli-autovalori">12.1.2. Valore medio degli autovalori</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#scree-test">12.1.3. Scree test</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-analysis">12.1.4. Parallel analysis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodi-basati-sul-confronto-tra-modelli">12.2. Metodi basati sul confronto tra modelli</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#test-del-rapporto-di-verosimiglianze">12.2.1. Test del rapporto di verosimiglianze</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimizzazione-dell-out-of-sample-prediction-error">12.2.2. Minimizzazione dell’out-of-sample prediction error</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">12.3. Considerazioni conclusive</a></li>
 </ul>
   </nav></div>
 

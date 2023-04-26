@@ -188,23 +188,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">20. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">21. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">22. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">23. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">24. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">25. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">26. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">27. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">28. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">29. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">30. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">31. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -400,10 +402,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ispezione-visiva-della-matrice-di-correlazione">10.1. Ispezione visiva della matrice di correlazione</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sfericita-di-bartlett">10.2. Sfericità di Bartlett</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-adeguatezza-campionaria-di-kaiser-meyer-olkin">10.3. Test di adeguatezza campionaria di Kaiser-Meyer-Olkin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrice-anti-immagine">10.3.1. Matrice anti-immagine</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-adeguatezza-campionaria-di-kaiser-meyer-olkin">10.3. Test di adeguatezza campionaria di Kaiser-Meyer-Olkin</a></li>
 </ul>
             </nav>
         </div>
@@ -417,49 +416,28 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="valutazione-della-matrice-di-correlazione">
 <span id="evaluate-matrices-notebook"></span><h1><span class="section-number">10. </span>Valutazione della matrice di correlazione<a class="headerlink" href="#valutazione-della-matrice-di-correlazione" title="Permalink to this headline">#</a></h1>
-<p>L’analisi fattoriale, essendo una tecnica di analisi multivariata,
-richiede la comprensione di almeno alcuni concetti di base dell’algebra
-matriciale. A livello minimale è necessario capire che cosa sono i
-vettori e le matrici, che cosa è il determinante di una matrice, e in
-che modo possano essere eseguite le operazioni algebriche su vettori e
-matrici (si veda l’Appendice).</p>
-<p>Dopo avere padroneggiato gli aspetti di base dell’algebra matriciale,
-possiamo valutare il determinante della matrice da fattorializzare: se
-il determinante è nullo non si può fare l’analisi. Se invece il
-determinante non è nullo, ci possiamo chiedere se le correlazioni
-campionarie siano sufficientemente grandi da giustificare l’analisi
-fattoriale. Se le correlazioni tra gli item sono di modesta entità,
-allora la soluzione fornita dall’analisi fattoriale non consentirà una
-descrizione parsimoniosa delle informazioni contenute nella matrice
-delle correlazioni. Per rispondere a questa domanda si ricorre
-all’ispezione visiva della matrice di correlazione e si possono svolgere
-due test: il test della sfericità di Bartlett e il Kaiser-Meyer-Olkin
-test.</p>
+<p>Prima di eseguire un’analisi fattoriale, è importante esaminare la matrice di correlazione tra le variabili. Se il determinante della matrice è nullo, l’analisi fattoriale non può essere eseguita. In caso contrario, è necessario valutare se le correlazioni campionarie sono sufficientemente grandi da giustificare l’analisi fattoriale. Se le correlazioni tra gli item sono modeste, la soluzione fornita dall’analisi fattoriale potrebbe non essere parsimoniosa. Per valutare questo, si può ispezionare visivamente la matrice di correlazione e utilizzare due test: il test della sfericità di Bartlett e il test Kaiser-Meyer-Olkin.</p>
 <section id="ispezione-visiva-della-matrice-di-correlazione">
 <h2><span class="section-number">10.1. </span>Ispezione visiva della matrice di correlazione<a class="headerlink" href="#ispezione-visiva-della-matrice-di-correlazione" title="Permalink to this headline">#</a></h2>
-<p>L’ispezione visiva della matrice di correlazione viene effettuata per
-vedere che vi siano blocchi di correlazioni alte fra loro e basse con le
-alte.</p>
+<p>L’ispezione visiva della matrice di correlazione viene effettuata per verificare la presenza di blocchi di correlazioni alte tra loro e basse con le altre variabili. Ciò suggerisce la presenza di più fattori comuni.</p>
 </section>
 <section id="sfericita-di-bartlett">
 <h2><span class="section-number">10.2. </span>Sfericità di Bartlett<a class="headerlink" href="#sfericita-di-bartlett" title="Permalink to this headline">#</a></h2>
-<p>Il test della sfericità di Bartlett verifica l’ipotesi
-<span class="math notranslate nohighlight">\(H_0 : \boldsymbol{R} = \boldsymbol{I}\)</span> (ovvero che gli item siano tra
-loro incorrelati) tramite la formula:</p>
+<p>Il test della sfericità di Bartlett verifica l’ipotesi <span class="math notranslate nohighlight">\(H_0 : \boldsymbol{R} = \boldsymbol{I}\)</span> (ovvero che gli item sono tra loro incorrelati) tramite la formula:</p>
 <div class="math notranslate nohighlight">
-\[\chi^2 = -\bigg[n -1 -\frac{1}{6} (2p +5)\bigg] \ln |\boldsymbol{R}|,\]</div>
+\[
+\chi^2 = -\bigg[n -1 -\frac{1}{6} (2p +5)\bigg] \ln |\boldsymbol{R}|,
+\]</div>
 <p>in cui <span class="math notranslate nohighlight">\(n\)</span> è il numero dei soggetti, <span class="math notranslate nohighlight">\(p\)</span> il numero delle variabili e
 <span class="math notranslate nohighlight">\(|\boldsymbol{R}|\)</span> il determinante della matrice di correlazione. La
 statistica del test della sfericità di Bartlett si distribuisce come
-<span class="math notranslate nohighlight">\(\chi^2\)</span> con <span class="math notranslate nohighlight">\(p(p - 1)/2\)</span> gradi di libertà. Se il risultato del test è
-significativo (ovvero, se il valore della statistica test è
-sufficientemente grande), significa che <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> ha correlazioni
-sufficientemente elevate da non essere paragonabili a 0; se è non
-significativo le correlazioni sono basse e non si distinguono da 0. Il
-limite di questo test è che dipende dal numero delle variabili e dalla
-numerosità del campione, quindi tende ad essere significativo
-all’aumentare del campione e del numero delle variabili anche se ci sono
-correlazioni basse.</p>
+<span class="math notranslate nohighlight">\(\chi^2\)</span> con <span class="math notranslate nohighlight">\(p(p - 1)/2\)</span> gradi di libertà. Se il valore della statistica test è
+sufficientemente grande, questo significa che <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> include valori di correlazione
+sufficientemente diversi da 0; se la statistica test è piccola, questo significa che le correlazioni sono basse e non si distinguono da 0.</p>
+<p>Il limite di questo test è che dipende dal numero delle variabili e dalla
+numerosità del campione, quindi tende a produrre un risultato statisticamente significativo
+all’aumentare del campione e del numero delle variabili, anche se le
+correlazioni sono piccole.</p>
 </section>
 <section id="test-di-adeguatezza-campionaria-di-kaiser-meyer-olkin">
 <h2><span class="section-number">10.3. </span>Test di adeguatezza campionaria di Kaiser-Meyer-Olkin<a class="headerlink" href="#test-di-adeguatezza-campionaria-di-kaiser-meyer-olkin" title="Permalink to this headline">#</a></h2>
@@ -475,19 +453,7 @@ correlazioni parzializzate su tutte le altre. Se le correlazioni
 parzializzate sono piccole, KMO tende a 1. Secondo Kaiser (1970), se KMO
 &gt; 0.90, l’adeguatezza campionaria è eccellente, fra .80 e .90 è buona,
 fra .70 e .80 è accettabile, fra .60 e .70 è mediocre, se è inferiore a
-.60 è meglio non fare l’analisi.</p>
-<section id="matrice-anti-immagine">
-<h3><span class="section-number">10.3.1. </span>Matrice anti-immagine<a class="headerlink" href="#matrice-anti-immagine" title="Permalink to this headline">#</a></h3>
-<p>La matrice delle correlazioni parzializzate riporta il valore di ogni
-correlazione dopo aver eliminato il contributo di tutte le altre
-variabili non implicate. Una correlazione parzializzata alta significa
-che due variabili sono molto correlate fra loro, ma non hanno legami con
-nessun altra variabile. L’analisi fattoriale richiede invece che ci
-siano più di due variabili per fattore. La matrice anti-immagine
-contiene i complementi a 1 della correlazione parzializzata fra due
-variabili rispetto a tutte e altre. Valori alti indicano correlazioni
-parziali basse e viceversa.</p>
-</section>
+.60 è meglio non eseguire l’analisi fattoriale.</p>
 </section>
 </section>
 
@@ -554,10 +520,7 @@ parziali basse e viceversa.</p>
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ispezione-visiva-della-matrice-di-correlazione">10.1. Ispezione visiva della matrice di correlazione</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sfericita-di-bartlett">10.2. Sfericità di Bartlett</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-adeguatezza-campionaria-di-kaiser-meyer-olkin">10.3. Test di adeguatezza campionaria di Kaiser-Meyer-Olkin</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrice-anti-immagine">10.3.1. Matrice anti-immagine</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#test-di-adeguatezza-campionaria-di-kaiser-meyer-olkin">10.3. Test di adeguatezza campionaria di Kaiser-Meyer-Olkin</a></li>
 </ul>
   </nav></div>
 
