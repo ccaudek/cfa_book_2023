@@ -711,20 +711,32 @@ al valore medio degli autovalori (che, nel caso di <strong>R</strong> è uguale 
 </div>
 </div>
 </div>
-<p>Il terzo metodo, lo scree test, può essere eseguito usando la funzione
-<code class="docutils literal notranslate"><span class="pre">VSS.scree()</span></code> contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">psych</span></code>.</p>
+<p>Il terzo metodo, lo scree test, può essere eseguito creando il grafico seguente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">VSS.scree</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">dim</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+<span class="n">scree_tb</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">tibble</span><span class="p">(</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">,</span>
+<span class="w">    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">sort</span><span class="p">(</span><span class="nf">eigen</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">)</span><span class="o">$</span><span class="n">value</span><span class="p">,</span><span class="w"> </span><span class="n">decreasing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="n">scree_plot</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">scree_tb</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span><span class="n">breaks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">ggtitle</span><span class="p">(</span><span class="s">&quot;Scree plot&quot;</span><span class="p">)</span>
+
+<span class="n">scree_plot</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/0d9373670b96c28b6290a952337267ee28fb1d777cc143554217efce4bdb2986.png" src="_images/0d9373670b96c28b6290a952337267ee28fb1d777cc143554217efce4bdb2986.png" />
+<img alt="_images/f8174a60931662827ff0d1ffddbbadc46ea5751880587110baf06a49cba2ec81.png" src="_images/f8174a60931662827ff0d1ffddbbadc46ea5751880587110baf06a49cba2ec81.png" />
 </div>
 </div>
-<p>Lo scree test suggerisce una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span> fattori, come indicato
-nella figura precedente.</p>
+<p>Lo scree test suggerisce la presenza di un unico fattore comune.</p>
 <p>Il terzo metodo, nella versione della Parallel Analysis, può essere eseguito usando la funzione <code class="docutils literal notranslate"><span class="pre">paran()</span></code> contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">paran</span></code>. La Parallel Analysis indica una soluzione a <span class="math notranslate nohighlight">\(m=1\)</span>
 fattore.</p>
 <div class="cell docutils container">
@@ -865,10 +877,6 @@ The p-value is 0.256
 </div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
   |---------------------                                                 |  30%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |----------------------------                                          |  40%
 </pre></div>
 </div>
 </div>
