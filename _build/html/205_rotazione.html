@@ -188,23 +188,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">20. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">21. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">22. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">23. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">24. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">25. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">26. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">27. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">28. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">29. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">30. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">31. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -434,29 +436,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="la-rotazione-fattoriale">
 <span id="rotazione-notebook"></span><h1><span class="section-number">13. </span>La rotazione fattoriale<a class="headerlink" href="#la-rotazione-fattoriale" title="Permalink to this headline">#</a></h1>
-<p>Nel capitolo <span class="xref std std-ref">estrazione</span> abbiamo visto come sia possibile ottenere la
+<p>Nel capitolo <a class="reference internal" href="202_estrazione.html#extraction-notebook"><span class="std std-ref">L’estrazione dei fattori</span></a> abbiamo visto come sia possibile ottenere la
 soluzione fattoriale non ruotata per il numero di fattori comuni che
 meglio riassume l’informazione contenuta nella matrice di correlazioni
-(o covarianze). La soluzione non ruotata non garantisce
-l’identificazione di aggregati omogenei e interpretabili di variabili
-osservate. Si tende dunque a ricorrere alla rotazione degli assi
-fattoriali nella ricerca di una soluzione più facilmente interpretabile
-di quella ottenuta in prima istanza.</p>
+(o covarianze). Tuttavia, questa soluzione non garantisce l’identificazione di gruppi omogenei e interpretabili di variabili osservate. Pertanto, si ricorre alla rotazione degli assi fattoriali per ottenere una soluzione più facilmente interpretabile rispetto a quella iniziale.</p>
 <section id="indeterminatezza-della-soluzione-fattoriale">
 <h2><span class="section-number">13.1. </span>Indeterminatezza della soluzione fattoriale<a class="headerlink" href="#indeterminatezza-della-soluzione-fattoriale" title="Permalink to this headline">#</a></h2>
-<p>Il problema della rotazione si pone perché la matrice delle saturazioni
-non presenta un’unica soluzione e, attraverso la sua trasformazione
-matematica, si possono ottenere infinite matrici dello stesso ordine.
-Tale fatto va sotto il nome di <em>indeterminatezza della soluzione
-fattoriale</em>.</p>
-<p>La matrice delle saturazioni fattoriali <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> non
-risulta univocamente definita in quanto non esiste una soluzione unica
-alla determinazione delle saturazioni fattoriali. Una matrice di
-correlazioni <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> consente di determinare soluzioni
-fattoriali diverse, ovvero matrici aventi lo stesso numero di fattori
-comuni ma una diversa configurazione di saturazioni fattoriali, oppure
-matrici di saturazioni fattoriali corrispondenti ad un diverso numero di
-fattori comuni.</p>
+<p>La necessità di effettuare la rotazione deriva dal fatto che la matrice delle saturazioni non ha un’unica soluzione. Attraverso trasformazioni matematiche, è possibile ottenere infinite matrici dello stesso ordine. Questo fenomeno è noto come indeterminatezza della soluzione fattoriale.</p>
+<p>La matrice delle saturazioni fattoriali <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> non è univocamente definita poiché non esiste una soluzione unica per determinare le saturazioni fattoriali. Una matrice di correlazioni <span class="math notranslate nohighlight">\(\boldsymbol{R}\)</span> può produrre diverse soluzioni fattoriali, ovvero matrici con lo stesso numero di fattori comuni ma con diverse configurazioni di saturazioni fattoriali, o matrici di saturazioni fattoriali corrispondenti a un diverso numero di fattori comuni.</p>
 <p><strong>Esempio.</strong> Siano <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}_1\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}_2\)</span> due matrici
 aventi lo stesso numero di righe e colonne, ma contenenti saturazioni
 fattoriali diverse. <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}_1\)</span> è definita dai valori
@@ -499,7 +486,6 @@ pesi fattoriali (con le comunalità sulla diagonale di <span class="math notrans
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">l1</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span>
-<span class="n">l2</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -515,7 +501,16 @@ pesi fattoriali (con le comunalità sulla diagonale di <span class="math notrans
 	<tr><td>0.159792</td><td>0.139737</td><td>0.119682</td><td>0.350169</td><td>0.300153</td><td>0.250137</td></tr>
 </tbody>
 </table>
-</div><div class="output text_html"><table class="dataframe">
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">l2</span><span class="w"> </span><span class="o">%*%</span><span class="w"> </span><span class="nf">t</span><span class="p">(</span><span class="n">l2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
 <caption>A matrix: 6 × 6 of type dbl</caption>
 <tbody>
 	<tr><td>0.639658</td><td>0.559664</td><td>0.479670</td><td>0.223624</td><td>0.191990</td><td>0.159573</td></tr>
@@ -601,60 +596,20 @@ fattoriali corrispondenti ad un numero diverso di fattori comuni:</p>
 </section>
 <section id="parsimonia-e-semplicita">
 <h2><span class="section-number">13.2. </span>Parsimonia e semplicità<a class="headerlink" href="#parsimonia-e-semplicita" title="Permalink to this headline">#</a></h2>
-<p>Come si raggiunge allora una qualche certezza sui risultati dell’analisi
-fattoriale? Il problema dell’<em>indeterminazione fattoriale</em> si affronta
-scegliendo la soluzione che soddisfa i seguenti due criteri: <em>criterio
-della parsimonia</em>: se sia un modello ad un fattore comune sia un modello
-a due fattori comuni possono spiegare la covariazione tra le variabili
-si deve accettare quello ad un fattore; <em>criterio della semplicità</em>: a
-parità di numero di fattori, sono da preferire le strutture più semplici
-della matrice <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> (Thurstone, 1947).</p>
-<p>Il criterio della parsimonia è facilmente applicabile: se due soluzioni
-fattoriali aventi un numero diverso di fattori riproducono allo stesso
-modo la matrice <strong>S</strong> o <strong>R</strong>, si sceglie la soluzione con il numero
-minore di fattori. D’altra parte, se vi sono diverse soluzioni
-fattoriali con lo stesso numero <span class="math notranslate nohighlight">\(m\)</span> di fattori, il criterio della
-semplicità ci guida nella scelta della trasformazione più appropriata
-della matrice <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>. La trasformazione della
-matrice <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> va sotto il nome di <em>rotazione</em>. A
-seconda che i fattori ruotati risultino o meno incorrelati, si distingue
-tra metodi di rotazione ortogonale o obliqua dei fattori.</p>
+<p>Per ottenere risultati affidabili dall’analisi fattoriale, si affronta il problema dell’indeterminazione fattoriale scegliendo la soluzione che soddisfa due criteri: il criterio della parsimonia e il criterio della semplicità. Il criterio della parsimonia suggerisce di scegliere il modello con il minor numero di fattori comuni che può spiegare la covarianza tra le variabili. Il criterio della semplicità suggerisce di preferire le strutture più semplici della matrice <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> a parità di numero di fattori (Thurstone, 1947).</p>
+<p>Il criterio della parsimonia è facilmente applicabile: se due soluzioni fattoriali con un diverso numero di fattori riproducono allo stesso modo la matrice <strong>S</strong> o <strong>R</strong>, si sceglie quella con il minor numero di fattori. Se invece ci sono diverse soluzioni fattoriali con lo stesso numero m di fattori, il criterio della semplicità guida nella scelta della trasformazione più appropriata della matrice <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span>. Questa trasformazione è nota come rotazione. A seconda che i fattori ruotati siano o meno incorrelati, si distinguono metodi di rotazione ortogonale o obliqua dei fattori.</p>
 <section id="il-criterio-della-struttura-semplice">
 <h3><span class="section-number">13.2.1. </span>Il criterio della struttura semplice<a class="headerlink" href="#il-criterio-della-struttura-semplice" title="Permalink to this headline">#</a></h3>
-<p>Tramite la rotazione degli assi fattoriali miriamo alla “struttura
-semplice” della matrice delle saturazioni fattoriali: poche ma forti
-saturazioni diverse da zero e assenza di variabili saturate da più di un
-fattore. Il criterio della “struttura semplice” è stato originariamente
-proposto da Thurstone (1947) secondo il quale tale criterio viene
-raggiunto quando:</p>
+<p>Attraverso la rotazione degli assi fattoriali, miriamo a ottenere una “struttura semplice” della matrice delle saturazioni fattoriali, caratterizzata da poche ma forti saturazioni diverse da zero e dall’assenza di variabili saturate da più di un fattore. Questo criterio è stato originariamente proposto da Thurstone (1947), secondo il quale viene raggiunto quando:</p>
 <ul class="simple">
-<li><p>nella matrice fattoriale ruotata, ogni variabile deve avere almeno
-un peso nullo;</p></li>
-<li><p>ogni fattore deve avere almeno <span class="math notranslate nohighlight">\(m\)</span> saturazioni nulle (<span class="math notranslate nohighlight">\(m\)</span>: numero
-dei fattori comuni);</p></li>
-<li><p>per ciascuna coppia di fattori vi devono essere saturazioni basse su
-un fattore e saturazioni alte sull’altro;</p></li>
-<li><p>nel caso di molti fattori, per ciascuna coppia di fattori una grande
-proporzione di saturazioni dovrebbe essere nulla;</p></li>
-<li><p>per ciascuna coppia di fattori, vi dovrebbero essere solo poche
-saturazioni di entità non trascurabile su entrambi i fattori.</p></li>
+<li><p>Nella matrice fattoriale ruotata, ogni variabile ha almeno un peso nullo;</p></li>
+<li><p>Ogni fattore ha almeno <span class="math notranslate nohighlight">\(m\)</span> saturazioni nulle (<span class="math notranslate nohighlight">\(m\)</span>: numero dei fattori comuni);</p></li>
+<li><p>Per ciascuna coppia di fattori ci sono saturazioni basse su un fattore e saturazioni alte sull’altro;</p></li>
+<li><p>Nel caso di molti fattori, per ciascuna coppia di fattori una grande proporzione di saturazioni dovrebbe essere nulla;</p></li>
+<li><p>Per ciascuna coppia di fattori, ci dovrebbero essere solo poche saturazioni di entità non trascurabile su entrambi i fattori.</p></li>
 </ul>
-<p>Nella pratica, il requisito della struttura semplice viene perseguito,
-non tanto seguendo le indicazioni di Thursone, quanto bensì cercando di
-massimizzare il numero di saturazioni nulle o quasi nulle nella matrice
-<span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>. Uno dei grandi vantaggi che derivano
-dall’ottenimento della struttura semplice è la facilitazione
-nell’interpretazione dei fattori (Cattell, 1978).</p>
-<p>L’esame delle saturazioni fattoriali contenute nella matrice
-<span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}^*\)</span> ruotata consente infatti di fornire
-un’interpretazione ai fattori. Per poter interpretare un fattore,
-dobbiamo chiederci quali sono le variabili che risultano maggiormente
-associate con tale fattore e quanto forti siano tali legami. Se i
-coefficienti di impatto di un fattore sono positivi e piuttosto elevati
-su un sottoinsieme di variabili osservate, da ciò deduciamo che il
-fattore rappresenta ciò che hanno in comune le variabili che saturano
-sul fattore. Ovviamente, l’interpretazione si complica nel caso di
-variabili che saturano su più fattori.</p>
+<p>Nella pratica, si cerca di massimizzare il numero di saturazioni nulle o quasi nulle nella matrice <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> per ottenere la struttura semplice. Uno dei vantaggi principali è la facilitazione nell’interpretazione dei fattori (Cattell, 1978).</p>
+<p>L’esame delle saturazioni fattoriali nella matrice ruotata <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}^*\)</span> consente di fornire un’interpretazione ai fattori. Per interpretare un fattore, dobbiamo considerare quali variabili sono maggiormente associate con esso e quanto forti sono questi legami. Se i coefficienti di impatto di un fattore sono positivi e elevati su un sottoinsieme di variabili osservate, deduciamo che il fattore rappresenta ciò che hanno in comune le variabili che saturano sul fattore. L’interpretazione si complica nel caso di variabili che saturano su più fattori.</p>
 </section>
 </section>
 <section id="rotazione-nello-spazio-geometrico">
@@ -671,20 +626,7 @@ grado di riprodurre la matrice di varianze-covarianze allo stesso modo
 di <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>. La matrice <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span>
 è pertanto determinata a meno della moltiplicazione per una matrice
 ortonormale.</p>
-<p>Geometricamente, i pesi fattoriali costituiscono le coordinate di un
-punto (ci sono tanti punti quante sono le <span class="math notranslate nohighlight">\(p\)</span> variabili manifeste) in
-uno spazio avente un numero di dimensioni pari al numero <span class="math notranslate nohighlight">\(m\)</span> dei
-fattori.</p>
-<p>Dal punto di vista geometrico, il problema dell’indeterminazione
-fattoriale si può descrivere facendo riferimento alla rotazione rigida
-dei punti che rappresentano le saturazioni fattoriali attorno l’origine
-del sistema di coordinate. Tale rotazione rigida lascia invariate le
-distanze tra i punti (ed è equivalente ad una rotazione (contraria) del
-sistema di assi cartesiani) e dà luogo ad un nuovo insieme di valori per
-i pesi fattoriali. Ciascuno di questi insiemi di pesi fattoriali così
-ottenuti produce la medesima matrice di correlazioni riprodotte dal
-modello fattoriale. L’indeterminazione fattoriale nasce dal fatto che
-sono possibili infinite rotazioni diverse degli assi.</p>
+<p>Geometricamente, i pesi fattoriali rappresentano le coordinate di un punto (ci sono tanti punti quante sono le <span class="math notranslate nohighlight">\(p\)</span> variabili manifeste) in uno spazio con un numero di dimensioni pari al numero <span class="math notranslate nohighlight">\(m\)</span> dei fattori. Il problema dell’indeterminazione fattoriale può essere descritto geometricamente come una rotazione rigida dei punti che rappresentano le saturazioni fattoriali attorno all’origine del sistema di coordinate. Questa rotazione rigida mantiene invariate le distanze tra i punti (ed è equivalente a una rotazione contraria del sistema di assi cartesiani) e produce un nuovo insieme di valori per i pesi fattoriali. Ognuno di questi insiemi di pesi fattoriali produce la stessa matrice di correlazioni riprodotte dal modello fattoriale. L’indeterminazione fattoriale deriva dal fatto che sono possibili infinite rotazioni diverse degli assi.</p>
 </section>
 <section id="vincoli-alla-rotazione">
 <h3><span class="section-number">13.3.2. </span>Vincoli alla rotazione<a class="headerlink" href="#vincoli-alla-rotazione" title="Permalink to this headline">#</a></h3>
@@ -721,16 +663,7 @@ poi i metodi Quartimax e Varimax.</p>
 </section>
 <section id="metodo-grafico">
 <h3><span class="section-number">13.3.3. </span>Metodo grafico<a class="headerlink" href="#metodo-grafico" title="Permalink to this headline">#</a></h3>
-<p>Come si può ruotare il sitema degli assi? Se ci sono solo <span class="math notranslate nohighlight">\(m=2\)</span> fattori,
-per ottenere la loro rappresentazione geometrica utilizziamo un sistema
-di coordinate bidimensionale. L’ispezione visiva del diagramma delle
-saturazioni fattoriali ci può guidare alla scelta della rotazione più
-appropriata. Le righe di <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> corrispondono a
-coppie di pesi fattoriali (<span class="math notranslate nohighlight">\(\hat{\lambda}_{i1}, \hat{\lambda}_{i2}\)</span>, con
-<span class="math notranslate nohighlight">\(i=1, \dots, p\)</span>) che possono essere interpretate come le coordinate di
-<span class="math notranslate nohighlight">\(p\)</span> punti (tanti quanti le variabili manifeste). Gli assi del diagramma
-vengono ruotati di un angolo <span class="math notranslate nohighlight">\(\phi\)</span> in modo tale da portarli il più
-vicino possibile ai punti presenti nel grafico. Le nuove coordinate
+<p>Per ruotare il sistema degli assi, se ci sono solo <span class="math notranslate nohighlight">\(m=2\)</span> fattori, utilizziamo un sistema di coordinate bidimensionale per ottenere la loro rappresentazione geometrica. L’ispezione visiva del diagramma delle saturazioni fattoriali può guidare nella scelta della rotazione più appropriata. Le righe di <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}\)</span> corrispondono a coppie di pesi fattoriali (<span class="math notranslate nohighlight">\(\hat{\lambda}_{i1}, \hat{\lambda}_{i2}\)</span>, con <span class="math notranslate nohighlight">\(i=1, \dots, p\)</span>) che possono essere interpretate come le coordinate di <span class="math notranslate nohighlight">\(p\)</span> punti (tanti quanti le variabili manifeste). Gli assi del diagramma vengono ruotati di un angolo <span class="math notranslate nohighlight">\(\phi\)</span> per avvicinarli il più possibile ai punti presenti nel grafico. Le nuove coordinate
 (<span class="math notranslate nohighlight">\(\hat{\lambda}_{i1}^*, \hat{\lambda}_{i2}^*\)</span>) vengono calcolate come
 <span class="math notranslate nohighlight">\(\hat{\boldsymbol{\Lambda}}^* = \hat{\boldsymbol{\Lambda}} \textbf{T}\)</span>,
 dove</p>
