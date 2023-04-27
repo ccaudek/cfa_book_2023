@@ -37,7 +37,7 @@ parts:
       - file: 310_refine_solution
       - file: 315_mmm
       - file: 500_cat_data
-  - caption: Curve di crescita latente
+  - caption: Modelli di equazioni strutturali
     numbered: True
     chapters:
       - file: 316_sem_intro
