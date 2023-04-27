@@ -188,23 +188,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="300_gof.html">16. Indici di bontà dell’adattamento</a></li>
 <li class="toctree-l1"><a class="reference internal" href="310_refine_solution.html">17. La revisione del modello</a></li>
 <li class="toctree-l1"><a class="reference internal" href="315_mmm.html">18. CFA per matrici multi-tratto multi-metodo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="500_cat_data.html">19. Dati non gaussiani e categoriali</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">19. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">20. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">21. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">22. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">23. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">24. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">25. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">26. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">27. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">28. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="316_sem_intro.html">20. Modelli di equazioni strutturali</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">21. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">22. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">23. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">24. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">25. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">26. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">27. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">28. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">29. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">30. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">31. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">29. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">32. Bibliografia</a></li>
 </ul>
 
     </div>
@@ -612,12 +618,12 @@ uguale a</p>
 \[
 \binom{100}{20} = 5.36 \times 10^{20}.
 \]</div>
-<p>È dunque necessario trovare metodi alternativi che evitino una tale esplosione combinatoria. A questo fine, ovvero per procedere alla selezione del sottoinsieme dei  “migliori” item, <span id="id1">McDonald [<a class="reference internal" href="z_biblio.html#id30" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> suggerisce di calcolare la <em>quantità di informazione</em> di ciascun item. La quantità di informazione di un item è definita come rapporto tra segnale/rumore, in relazione alla scomposizione della varianza dell’item:</p>
+<p>È dunque necessario trovare metodi alternativi che evitino una tale esplosione combinatoria. A questo fine, ovvero per procedere alla selezione del sottoinsieme dei  “migliori” item, <span id="id1">McDonald [<a class="reference internal" href="z_biblio.html#id31" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> suggerisce di calcolare la <em>quantità di informazione</em> di ciascun item. La quantità di informazione di un item è definita come rapporto tra segnale/rumore, in relazione alla scomposizione della varianza dell’item:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\lambda_i^2}{\psi_{ii}}.
 \]</div>
-<p><span id="id2">McDonald [<a class="reference internal" href="z_biblio.html#id30" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> mostra come l’omissione di uno o più item produce sempre una riduzione dell’attendibilità del test (ovvero, una riduzione nel valore del coefficiente <span class="math notranslate nohighlight">\(\omega\)</span>). Tuttavia, tale riduzione è tanto più piccola quanto più piccola è la quantità di informazione degli item omessi. Il processo di selezione degli item può dunque essere guidato da un semplice principio:
+<p><span id="id2">McDonald [<a class="reference internal" href="z_biblio.html#id31" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> mostra come l’omissione di uno o più item produce sempre una riduzione dell’attendibilità del test (ovvero, una riduzione nel valore del coefficiente <span class="math notranslate nohighlight">\(\omega\)</span>). Tuttavia, tale riduzione è tanto più piccola quanto più piccola è la quantità di informazione degli item omessi. Il processo di selezione degli item può dunque essere guidato da un semplice principio:
 si selezionano gli item aventi la quantità di informazione maggiore. Ovvero, in altre parole, si rimuovono gli item aventi la quantità di informazione più bassa.</p>
 <p><strong>Esempio.</strong> Per fare un esempio, consideriamo nuovamente la matrice di varianze e di covarianze della scala SWLS.</p>
 <div class="cell docutils container">
@@ -1272,12 +1278,12 @@ che andranno a costituire la versione finale di un test è la massimizzazione de
 \[\alpha = \frac{p}{p-1}\left[1- \frac{\sum \sigma^2_{Y_i}}{\sigma^2_T} \right],\]</div>
 <p>la scelta di massimizzare il rapporto definito in precedenza avrà anche
 la conseguenza di massimizzare <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
-<p><span id="id3">McDonald [<a class="reference internal" href="z_biblio.html#id30" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> fa notare che una procedura di selezione degli item
+<p><span id="id3">McDonald [<a class="reference internal" href="z_biblio.html#id31" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> fa notare che una procedura di selezione degli item
 basata sul principio della massimizzazione di <span class="math notranslate nohighlight">\(\alpha\)</span> ha però dei
 limiti. In primo luogo, tale procedura è appropriata solo quando
 l’insieme di item è troppo grande per selezionare gli item in base
 all’esame delle saturazioni fattoriali ottenute applicando il modello
-mono-fattoriale. In secondo luogo, <span id="id4">McDonald [<a class="reference internal" href="z_biblio.html#id30" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> nota che la procedura di selezione basata sulla massimizzazione di <span class="math notranslate nohighlight">\(\alpha\)</span> è adeguata solo nel caso di una struttura mono-fattoriale. La selezione degli item basata sulla massimizzazione di <span class="math notranslate nohighlight">\(\alpha\)</span>  deve dunque essere accompagnata da considerazione relative al contenuto e alla struttura del costrutto.</p>
+mono-fattoriale. In secondo luogo, <span id="id4">McDonald [<a class="reference internal" href="z_biblio.html#id31" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span> nota che la procedura di selezione basata sulla massimizzazione di <span class="math notranslate nohighlight">\(\alpha\)</span> è adeguata solo nel caso di una struttura mono-fattoriale. La selezione degli item basata sulla massimizzazione di <span class="math notranslate nohighlight">\(\alpha\)</span>  deve dunque essere accompagnata da considerazione relative al contenuto e alla struttura del costrutto.</p>
 </section>
 <section id="indice-di-affidabilita-dell-item">
 <h3><span class="section-number">14.4.9. </span>Indice di affidabilità dell’item<a class="headerlink" href="#indice-di-affidabilita-dell-item" title="Permalink to this headline">#</a></h3>
