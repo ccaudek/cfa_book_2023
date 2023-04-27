@@ -40,6 +40,10 @@ parts:
   - caption: Curve di crescita latente
     numbered: True
     chapters:
+      - file: 316_sem_intro
+  - caption: Curve di crescita latente
+    numbered: True
+    chapters:
       - file: 320_growth_models_intro
       - file: 324_lgm_mixed
       - file: 326_growth_1
