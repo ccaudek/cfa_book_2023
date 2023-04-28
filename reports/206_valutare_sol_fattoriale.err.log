@@ -26,37 +26,15 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 faT1 <- fa(r=cormat, nfactors=2, n.obs=192, rotate="oblimin")
-faT1$loadings
-
-Loadings:
-    MR1    MR2   
-i1   0.132       
-i2   0.270  0.107
-i3   0.489       
-i4   0.343  0.365
-i5   0.130  0.105
-i6   0.565 -0.497
-i7   0.527       
-i8          0.792
-i9   0.363       
-i10  0.467  0.250
-i11  0.459  0.190
-i12  0.111  0.497
-i13  0.401       
-i14  0.511  0.173
-i15  0.206  0.252
-i16  0.247  0.365
+print(faT1$loadings)
 ------------------
 
-Error in parse(text = x, srcfile = src): <text>:5:12: unexpected symbol
-4: Loadings:
-5:     MR1    MR2
-              ^
+Error in eval(expr, envir, enclos): object 'cormat' not found
 Traceback:
 
-ERROR: Error in parse(text = x, srcfile = src): <text>:5:12: unexpected symbol
-4: Loadings:
-5:     MR1    MR2
-              ^
+1. fa(r = cormat, nfactors = 2, n.obs = 192, rotate = "oblimin")
+2. isCorrelation(r)
+3. NROW(x)
+ERROR: Error in eval(expr, envir, enclos): object 'cormat' not found
 
 

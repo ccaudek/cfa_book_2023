@@ -25,22 +25,36 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-sds <- '2.610  2.660  2.590  1.940  2.030  2.050'
+source("_common.R")
+suppressPackageStartupMessages({
+    library("psych")
+    library("lavaan")
+    library("semPlot")
+})
 
-cors <-'
-  1.000
-  0.661  1.000
-  0.630  0.643  1.000
-  0.270  0.300  0.268  1.000
-  0.297  0.265  0.225  0.805  1.000
-  0.290  0.287  0.248  0.796  0.779  1.000'
-
-covs <- getCov(cors, sds = sds, names = paste("x", 1:6, sep = ""))
+set.seed(42)
 ------------------
 
-Error in getCov(cors, sds = sds, names = paste("x", 1:6, sep = "")): could not find function "getCov"
+Error in library("patchwork"): there is no package called ‘patchwork’
 Traceback:
 
-ERROR: Error in getCov(cors, sds = sds, names = paste("x", 1:6, sep = "")): could not find function "getCov"
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. suppressPackageStartupMessages({
+ .     library("here")
+ .     library("tidyverse")
+ .     library("scales")
+ .     library("patchwork")
+ .     library("bayesplot")
+ .     library("ggExtra")
+ .     library("ggpubr")
+ .     library("viridis")
+ .     library("ggokabeito")
+ . })
+6. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
+7. library("patchwork")
+ERROR: Error in library("patchwork"): there is no package called ‘patchwork’
 
 
