@@ -25,42 +25,37 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-source("_common.R")
-suppressPackageStartupMessages({
-    library("lavaan")
-    library("semPlot")
-    library("knitr")
-    library("markdown")
-    library("patchwork")
-    library("psych")
-    library("DT")
-    library("kableExtra")
-    library("lme4")
-})
-
-set.seed(42)
+nice_lavaanPlot(lg_math_ticZERO_lavaan_fit, stand = TRUE, stars= FALSE)
 ------------------
 
-Error in library("patchwork"): there is no package called ‘patchwork’
+Error in `$<-.data.frame`(`*tmp*`, "lhs", value = c("eta1", "eta1", "eta1", : replacement has 48 rows, data has 42
 Traceback:
 
-1. source("_common.R")
-2. withVisible(eval(ei, envir))
-3. eval(ei, envir)
-4. eval(ei, envir)
-5. suppressPackageStartupMessages({
- .     library("here")
- .     library("tidyverse")
- .     library("scales")
- .     library("patchwork")
- .     library("bayesplot")
- .     library("ggExtra")
- .     library("ggpubr")
- .     library("viridis")
- .     library("ggokabeito")
- . })
-6. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
-7. library("patchwork")
-ERROR: Error in library("patchwork"): there is no package called ‘patchwork’
+1. nice_lavaanPlot(lg_math_ticZERO_lavaan_fit, stand = TRUE, stars = FALSE)
+2. lavaanPlot::lavaanPlot(model = model, node_options = node_options, 
+ .     edge_options = edge_options, coefs = coefs, stand = stand, 
+ .     covs = covs, stars = stars, graph_options = graph_options, 
+ .     sig = sig, ...)
+3. buildCall(name = name, model = model, labels = labels, ...)
+4. paste(string, buildPaths(model, ...))
+5. buildPaths(model, ...)
+6. `$<-`(`*tmp*`, "lhs", value = c("eta1", "eta1", "eta1", "eta1", 
+ . "eta1", "eta1", "eta1", "eta2", "eta2", "eta2", "eta2", "eta2", 
+ . "eta2", "eta2", "eta1", "eta2", "eta1", "math2", "math3", "math4", 
+ . "math5", "math6", "math7", "math8", "eta1", "eta2", "math2", 
+ . "math3", "math4", "math5", "math6", "math7", "math8", "eta1", 
+ . "eta1", "eta2", "eta2", "lb_wght", "anti_k1", "lb_wght", "lb_wght", 
+ . "anti_k1", "p18", "p18", "p18", "p18", "p18", "p18"))
+7. `$<-.data.frame`(`*tmp*`, "lhs", value = c("eta1", "eta1", "eta1", 
+ . "eta1", "eta1", "eta1", "eta1", "eta2", "eta2", "eta2", "eta2", 
+ . "eta2", "eta2", "eta2", "eta1", "eta2", "eta1", "math2", "math3", 
+ . "math4", "math5", "math6", "math7", "math8", "eta1", "eta2", 
+ . "math2", "math3", "math4", "math5", "math6", "math7", "math8", 
+ . "eta1", "eta1", "eta2", "eta2", "lb_wght", "anti_k1", "lb_wght", 
+ . "lb_wght", "anti_k1", "p18", "p18", "p18", "p18", "p18", "p18"
+ . ))
+8. stop(sprintf(ngettext(N, "replacement has %d row, data has %d", 
+ .     "replacement has %d rows, data has %d"), N, nrows), domain = NA)
+ERROR: Error in `$<-.data.frame`(`*tmp*`, "lhs", value = c("eta1", "eta1", "eta1", : replacement has 48 rows, data has 42
 
 
