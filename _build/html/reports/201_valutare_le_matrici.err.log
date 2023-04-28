@@ -26,13 +26,36 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 source("_common.R")
+suppressPackageStartupMessages({
+    library(tidyverse)
+    library(corrr)
+    library(psych)
+    library(lavaan)
+})
+
+set.seed(42)
 ------------------
 
-[0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-Cell [0;32mIn[1], line 1[0m
-[0;32m----> 1[0m [43msource[49m([38;5;124m"[39m[38;5;124m_common.R[39m[38;5;124m"[39m)
+Error in library("patchwork"): there is no package called ‘patchwork’
+Traceback:
 
-[0;31mNameError[0m: name 'source' is not defined
-NameError: name 'source' is not defined
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. suppressPackageStartupMessages({
+ .     library("here")
+ .     library("tidyverse")
+ .     library("scales")
+ .     library("patchwork")
+ .     library("bayesplot")
+ .     library("ggExtra")
+ .     library("ggpubr")
+ .     library("viridis")
+ .     library("ggokabeito")
+ . })
+6. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
+7. library("patchwork")
+ERROR: Error in library("patchwork"): there is no package called ‘patchwork’
+
 

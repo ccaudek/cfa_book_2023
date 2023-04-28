@@ -20,6 +20,7 @@ parts:
   - caption: Analisi fattoriale
     numbered: True
     chapters:
+      - file: 055_analisi_fattoriale_1
       - file: 060_path_analysis
       - file: 062_constraints_on_parms
       - file: 070_cfa_mod_comp

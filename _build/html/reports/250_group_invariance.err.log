@@ -32,7 +32,7 @@ fit <- cfa(
 )
 ------------------
 
-Error in lavaan::lavaan(model = mod2, data = d, meanstructure = TRUE, : object 'd' not found
+Error in eval(mc, parent.frame()): object 'd' not found
 Traceback:
 
 1. cfa(mod2, data = d, meanstructure = TRUE)
@@ -43,6 +43,6 @@ Traceback:
  .     auto.fix.first = TRUE, auto.fix.single = TRUE, auto.var = TRUE, 
  .     auto.cov.lv.x = TRUE, auto.cov.y = TRUE, auto.th = TRUE, 
  .     auto.delta = TRUE, auto.efa = TRUE)
-ERROR: Error in lavaan::lavaan(model = mod2, data = d, meanstructure = TRUE, : object 'd' not found
+ERROR: Error in eval(mc, parent.frame()): object 'd' not found
 
 
