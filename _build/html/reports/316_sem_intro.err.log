@@ -25,37 +25,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-suppressPackageStartupMessages({
-    library("lavaan")
-    library("lavaanExtra")
-    library("lavaanPlot")
-    library("psych")
-    library("dplyr") 
-    library("tidyr")
-    library("knitr")
-    library("mvnormalTest")
-    library("semPlot")
-})
-
-set.seed(42)
+nice_lavaanPlot(fit, stand = TRUE, stars= FALSE)
 ------------------
 
-Error in library("lavaanExtra"): there is no package called ‘lavaanExtra’
+[1m[33mError[39m in `nice_lavaanPlot()`:[22m
+[1m[22m[33m![39m The packages "DiagrammeRsvg" and "rsvg" are required for this function.
 Traceback:
 
-1. suppressPackageStartupMessages({
- .     library("lavaan")
- .     library("lavaanExtra")
- .     library("lavaanPlot")
- .     library("psych")
- .     library("dplyr")
- .     library("tidyr")
- .     library("knitr")
- .     library("mvnormalTest")
- .     library("semPlot")
- . })
-2. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
-3. library("lavaanExtra")   # at line 3 of file <text>
-ERROR: Error in library("lavaanExtra"): there is no package called ‘lavaanExtra’
+1. nice_lavaanPlot(fit, stand = TRUE, stars = FALSE)
+2. rlang::check_installed(c("lavaanPlot", "DiagrammeRsvg", "rsvg", 
+ .     "png", "webshot"), reason = "for this function.")
+ERROR: [1m[33mError[39m in `nice_lavaanPlot()`:[22m
+[1m[22m[33m![39m The packages "DiagrammeRsvg" and "rsvg" are required for this function.
 
 

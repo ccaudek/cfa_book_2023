@@ -17,10 +17,15 @@ parts:
       - file: 035_ctt
       - file: 037_err_std_mis
       - file: 038_err_std_stima
+      - file: 040_exercises_ctt
   - caption: Analisi fattoriale
     numbered: True
     chapters:
+      - file: 050_sviluppo_strumento
       - file: 055_analisi_fattoriale_1
+      - file: 056_analisi_fattoriale_2
+      - file: 057_analisi_fattoriale_3
+      - file: 058_factor_scores
       - file: 060_path_analysis
       - file: 062_constraints_on_parms
       - file: 070_cfa_mod_comp
@@ -60,4 +65,9 @@ parts:
     numbered: True
     chapters:
       - file: z_biblio
+  - caption: Appendici
+    numbered: True
+    chapters:
+      - file: 900_lin_alg
+
 
