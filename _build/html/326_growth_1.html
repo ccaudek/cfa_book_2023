@@ -440,7 +440,8 @@ document.write(`
 <span id="lgm1-notebook"></span><h1><span class="section-number">30. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
 <section id="una-applicazione-concreta">
 <h2><span class="section-number">30.1. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
-<p>Esaminiamo l’adattamento di un modello LGM ad un campione di dati reali. In questo tutorial, considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA <span id="id1">[<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Iniziamo a leggere i dati.</p>
+<p>Esaminiamo l’adattamento di un modello LGM ad un campione di dati reali. In questo tutorial, considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA <span id="id1">[<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>.</p>
+<p>Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set filepath for data file</span>
@@ -549,7 +550,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6bdf6edc0a920d596831efb29f233795681b47b98137baf885ea16838bee12b3.png" src="_images/6bdf6edc0a920d596831efb29f233795681b47b98137baf885ea16838bee12b3.png" />
+<img alt="_images/f99534c9483c2a2f7414d62c7e97863a1fd16052159967e807b3f64d6a39ad81.png" src="_images/f99534c9483c2a2f7414d62c7e97863a1fd16052159967e807b3f64d6a39ad81.png" />
 </div>
 </div>
 <p>Aggiungiamo al grafico le retta dei minimi quadrati calcolata su tutti i dati (ignorando il ragruppamento dei dati in funzine degli individui).</p>
@@ -578,7 +579,7 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
 </pre></div>
 </div>
-<img alt="_images/194078fa6d351dd3f42d1deb4a633d33fc4397510663430d3757e59942ad78c6.png" src="_images/194078fa6d351dd3f42d1deb4a633d33fc4397510663430d3757e59942ad78c6.png" />
+<img alt="_images/80de3ad55645b6f9f709847af5000bdcba398c0d5e4838a0c5e3c9caea7705c6.png" src="_images/80de3ad55645b6f9f709847af5000bdcba398c0d5e4838a0c5e3c9caea7705c6.png" />
 </div>
 </div>
 <p>Esaminiamo ora le traiettorie intraindividuali di cambiamento.</p>
@@ -607,7 +608,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/70b4a55a3a9b83b781c7bab559d014ab116d18abcd0071f724552779d7a56156.png" src="_images/70b4a55a3a9b83b781c7bab559d014ab116d18abcd0071f724552779d7a56156.png" />
+<img alt="_images/6799d5acae8fdf0782a6ea5a3bc6adfa02d223cd759e183ac4a8e43e082828be.png" src="_images/6799d5acae8fdf0782a6ea5a3bc6adfa02d223cd759e183ac4a8e43e082828be.png" />
 </div>
 </div>
 </section>
@@ -676,11 +677,15 @@ document.write(`
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -894,7 +899,7 @@ Variances:
 “Removed 7 rows containing missing values (`geom_line()`).”
 </pre></div>
 </div>
-<img alt="_images/f1883c6f3a6c017b3d3f0205167a6d02740a2cb11167e94408b537c280dea956.png" src="_images/f1883c6f3a6c017b3d3f0205167a6d02740a2cb11167e94408b537c280dea956.png" />
+<img alt="_images/f9a5da4e9a69aca20a7cb1349369956d08372f6044926cc26278373d13d5bdfd.png" src="_images/f9a5da4e9a69aca20a7cb1349369956d08372f6044926cc26278373d13d5bdfd.png" />
 </div>
 </div>
 <p>Vediamo dal grafico che, come richiesto, il modello produce una traiettoria di crescita piatta per ciascun individuo.</p>
@@ -973,11 +978,15 @@ Variances:
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1203,7 +1212,7 @@ Variances:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6ce455732ac9da4b119f1fb17dfda72b4df21260050e94362d1ed7d2053b5f91.png" src="_images/6ce455732ac9da4b119f1fb17dfda72b4df21260050e94362d1ed7d2053b5f91.png" />
+<img alt="_images/612f8271f9383f7bcae899318260b4ffa9e6f08a96119b2ad2a6759666788f64.png" src="_images/612f8271f9383f7bcae899318260b4ffa9e6f08a96119b2ad2a6759666788f64.png" />
 </div>
 </div>
 <p>Dal grafico si può notare che questo modello rappresenta la traiettoria di ogni bambino come una linea retta, con alcune differenze interindividuali nella velocità del cambiamento intraindividuale.</p>
@@ -1238,6 +1247,26 @@ Variances:
 <span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_wide</span><span class="p">,</span><span class="w"> </span>
 <span class="w">  </span><span class="n">estimator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ML&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="n">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fiml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+“lavaan WARNING: some cases are empty and will be ignored:
+  741”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+“lavaan WARNING:
+    due to missing values, some pairwise combinations have less than
+    10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+“lavaan WARNING:
+    Maximum number of iterations reached when computing the sample
+    moments using EM; use the em.h1.iter.max= argument to increase the
+    number of iterations”
 </pre></div>
 </div>
 </div>
@@ -1375,7 +1404,7 @@ grade_c2 -0.555
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/ed3fcef1e58110f4ef61258383fc5b0fbe27fa9dcdce927bb4a058541b622701.png" src="_images/ed3fcef1e58110f4ef61258383fc5b0fbe27fa9dcdce927bb4a058541b622701.png" />
+<img alt="_images/dacd6b6daa027a3f51794cb49484bb951ac2e2fe93a1b72b9c7098c387beb972.png" src="_images/dacd6b6daa027a3f51794cb49484bb951ac2e2fe93a1b72b9c7098c387beb972.png" />
 </div>
 </div>
 <p>Questi risultati, ottenuti escludendo tutte le osservazioni con dati mancanti, sono molto simili ai risultati ottenuti usando lavaan (si veda la figura con le traiettorie di crescita del modello LGM).</p>
@@ -1415,11 +1444,15 @@ grade_c2 -0.555
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1650,16 +1683,27 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 </div>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+<span class=" -Color -Color-Cyan">ℹ</span> Please use `linewidth` instead.”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 7 rows containing non-finite values (`stat_summary()`).”
-Warning message:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 7 rows containing non-finite values (`stat_summary()`).”
-Warning message:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 7 rows containing non-finite values (`stat_summary()`).”
-Warning message:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 7 rows containing missing values (`geom_line()`).”
 </pre></div>
 </div>
-<img alt="_images/d3762429f365ba1d54519c0501b81c041c39dc5de0ce05a413e2e9d7d9da5bd9.png" src="_images/d3762429f365ba1d54519c0501b81c041c39dc5de0ce05a413e2e9d7d9da5bd9.png" />
+<img alt="_images/d86740bc40cc98c4700b80a994f59a1544fb63f1eab41caa501ef469f03aa525.png" src="_images/d86740bc40cc98c4700b80a994f59a1544fb63f1eab41caa501ef469f03aa525.png" />
 </div>
 </div>
 </section>

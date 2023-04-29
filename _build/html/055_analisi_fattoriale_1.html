@@ -515,6 +515,19 @@ r_{1,2 \mid F} = \frac{r_{12} - r_{1F}r_{2F}}{\sqrt{(1-r_{1F}^2)(1-r_{2F}^2)}}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>y1</th><th scope=col>y2</th><th scope=col>f</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>y1</th><td>1.000</td><td>0.380</td><td>0.867</td></tr>
+	<tr><th scope=row>y2</th><td>0.380</td><td>1.000</td><td>0.423</td></tr>
+	<tr><th scope=row>f</th><td>0.867</td><td>0.423</td><td>1.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Eseguiamo le regressioni di <span class="math notranslate nohighlight">\(y_1\)</span> su <span class="math notranslate nohighlight">\(f\)</span> e di <span class="math notranslate nohighlight">\(y_2\)</span> su <span class="math notranslate nohighlight">\(F\)</span>:</p>
 <div class="cell docutils container">
@@ -532,6 +545,22 @@ r_{1,2 \mid F} = \frac{r_{12} - r_{1F}r_{2F}}{\sqrt{(1-r_{1F}^2)(1-r_{2F}^2)}}
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 4 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>y1</th><th scope=col>y1.hat</th><th scope=col>e</th><th scope=col></th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td> 81.130</td><td>130.505</td><td> -49.375</td><td> 81.130</td></tr>
+	<tr><th scope=row>2</th><td>106.667</td><td>159.704</td><td> -53.037</td><td>106.667</td></tr>
+	<tr><th scope=row>3</th><td>308.032</td><td>317.846</td><td>  -9.813</td><td>308.032</td></tr>
+	<tr><th scope=row>4</th><td>177.314</td><td>186.285</td><td>  -8.971</td><td>177.314</td></tr>
+	<tr><th scope=row>5</th><td> 61.393</td><td>191.482</td><td>-130.089</td><td> 61.393</td></tr>
+	<tr><th scope=row>6</th><td>374.094</td><td>331.668</td><td>  42.426</td><td>374.094</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Lo stesso può dirsi di <span class="math notranslate nohighlight">\(y_2\)</span>. La correlazione parziale <span class="math notranslate nohighlight">\(r_{12 \mid f}\)</span>
 tra <span class="math notranslate nohighlight">\(y_1\)</span> e <span class="math notranslate nohighlight">\(y_2\)</span> dato <span class="math notranslate nohighlight">\(f\)</span> è uguale alla correlazione di Pearson tra i
@@ -543,6 +572,8 @@ descritti sopra:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.0282861771586006</div></div>
 </div>
 <p>La correlazione parziale tra <span class="math notranslate nohighlight">\(y_1\)</span> e <span class="math notranslate nohighlight">\(y_2\)</span> al netto di <span class="math notranslate nohighlight">\(f\)</span> è .02829.</p>
 <p>Per i dati esaminati sopra, dunque, la correlazione parziale tra le
@@ -568,6 +599,8 @@ applicando l’eq. <a class="reference internal" href="#equation-eq-corr-parz">(
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.0282751285315647</div></div>
 </div>
 <p>In conclusione, possiamo attribuire all’eq. <a class="reference internal" href="#equation-eq-corr-parz">(8.3)</a> la seguente interpretazione: la correlazione parziale tra le variabili <span class="math notranslate nohighlight">\(y_1\)</span> e <span class="math notranslate nohighlight">\(y_2\)</span> condizionata alla variabile <span class="math notranslate nohighlight">\(f\)</span> rappresenta la correlazione tra le componenti di <span class="math notranslate nohighlight">\(y_1\)</span> e <span class="math notranslate nohighlight">\(y_2\)</span> da cui è stato rimosso l’effetto lineare di <span class="math notranslate nohighlight">\(f\)</span>. Ricordiamo il ragionamento che abbiamo svolto in precedenza per fornire un’interpretazione al coefficiente parziale del modello di regressione.</p>
 </section>
@@ -907,15 +940,19 @@ saturazioni fattoriali trovate mediante il metodo del centroide sono:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is lavaan 0.6-15
+lavaan is FREE software! Please report any bugs.
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘kableExtra’
-
-
-The following object is masked from ‘package:dplyr’:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:dplyr’:
 
     group_rows
-
-
-corrplot 0.92 loaded
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>corrplot 0.92 loaded
 </pre></div>
 </div>
 </div>
@@ -1215,7 +1252,7 @@ Music     0.005  0.001 -0.017  0.024 -0.050  0.000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/07f84cc04e2ede17194a61e051540f94dfb41adc21a435567cf6d531d6178929.png" src="_images/07f84cc04e2ede17194a61e051540f94dfb41adc21a435567cf6d531d6178929.png" />
+<img alt="_images/8493d4f020d5df80aee65ae1b29de578044de0f97f9b8cecfb09c060d1e54e6a.png" src="_images/8493d4f020d5df80aee65ae1b29de578044de0f97f9b8cecfb09c060d1e54e6a.png" />
 </div>
 </div>
 </section>
@@ -1235,7 +1272,7 @@ Music     0.005  0.001 -0.017  0.024 -0.050  0.000
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/c6a85836138e7113486a54c648016db2c879a6afba98a4878d207aeeabd5cce4.png" src="_images/c6a85836138e7113486a54c648016db2c879a6afba98a4878d207aeeabd5cce4.png" />
+<img alt="_images/bc12dce42c124c112d79099b54f70c44e54e996182e68be6d9bee083b8b80b15.png" src="_images/bc12dce42c124c112d79099b54f70c44e54e996182e68be6d9bee083b8b80b15.png" />
 </div>
 </div>
 <p>Il calcolo delle saturazioni fattoriali con il metodo del centroide aveva prodotto il seguente risultato:</p>

@@ -718,6 +718,34 @@ quadrato della correlazione tra punteggio osservato <span class="math notranslat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘MASS’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:patchwork’:
+
+    area
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:dplyr’:
+
+    select
+</pre></div>
+</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 2 × 2 of type dbl</caption>
+<tbody>
+	<tr><td>6</td><td>0</td></tr>
+	<tr><td>0</td><td>3</td></tr>
+</tbody>
+</table>
+</div><div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>12</li><li>0</li></ol>
+</div></div>
 </div>
 <p>Le istruzioni precedenti (<code class="docutils literal notranslate"><span class="pre">empirical</span> <span class="pre">=</span> <span class="pre">TRUE</span></code>) creano un campione di valori nei quali  le medie e la matrice di covarianze assumono esattamente i valori richiesti. Possiamo dunque immaginare tale insieme di dati come la “popolazione”.</p>
 <p>Secondo la CTT, il punteggio osservato è <span class="math notranslate nohighlight">\(X = T + E\)</span>. Simuliamo dunque
@@ -736,6 +764,22 @@ il punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> c
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 6 × 3 of type dbl</caption>
+<thead>
+	<tr><th scope=col>T</th><th scope=col>E</th><th scope=col>X</th></tr>
+</thead>
+<tbody>
+	<tr><td>12.825569</td><td>-0.05019948</td><td>12.775370</td></tr>
+	<tr><td>11.888097</td><td> 2.26138690</td><td>14.149484</td></tr>
+	<tr><td>11.622652</td><td>-0.85584361</td><td>10.766808</td></tr>
+	<tr><td> 9.445738</td><td> 1.72023175</td><td>11.165970</td></tr>
+	<tr><td>12.794828</td><td> 0.09757963</td><td>12.892407</td></tr>
+	<tr><td> 7.425294</td><td>-0.50493930</td><td> 6.920355</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Un diagramma di dispersione è fornito nella figura seguente:</p>
 <div class="cell docutils container">
@@ -745,6 +789,9 @@ il punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> c
 <span class="w">  </span><span class="nf">geom_point</span><span class="p">()</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/36de510aa33431d8fa8f6c77c9e22cc00cc0152eea2d84ea628c26a2a1f1232c.png" src="_images/36de510aa33431d8fa8f6c77c9e22cc00cc0152eea2d84ea628c26a2a1f1232c.png" />
 </div>
 </div>
 <p>Secondo la CTT, il valore atteso di <span class="math notranslate nohighlight">\(T\)</span> è uguale al valore atteso di
@@ -756,6 +803,8 @@ il punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> c
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">12</div><div class="output text_html">12</div></div>
 </div>
 <p>L’errore deve avere media zero, varianza <span class="math notranslate nohighlight">\(\sigma_E^2\)</span> e deve essere
 incorrelato con <span class="math notranslate nohighlight">\(T\)</span>:</p>
@@ -767,6 +816,8 @@ incorrelato con <span class="math notranslate nohighlight">\(T\)</span>:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">9.27394012278926e-17</div><div class="output text_html">3</div><div class="output text_html">-1.53436207573137e-16</div></div>
 </div>
 <p>Ricordiamo che la radice quadrata della varianza degli errori è l’errore standard della misurazione, <span class="math notranslate nohighlight">\(\sigma_E\)</span>. La quantità <span class="math notranslate nohighlight">\(\sqrt{\sigma_E^2}\)</span> fornisce una misura della dispersione del punteggio osservato attorno al valore vero, nella condizione ipotetica di ripetute somministrazioni del test:</p>
 <div class="cell docutils container">
@@ -775,6 +826,8 @@ incorrelato con <span class="math notranslate nohighlight">\(T\)</span>:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">1.73205080756888</div></div>
 </div>
 <p>Dato che <span class="math notranslate nohighlight">\(T\)</span> e <span class="math notranslate nohighlight">\(E\)</span> sono incorrelati, ne segue che la varianza del punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> è uguale alla somma della varianza del punteggio vero <span class="math notranslate nohighlight">\(T\)</span> e della varianza degli errori <span class="math notranslate nohighlight">\(E\)</span>:</p>
 <div class="cell docutils container">
@@ -784,6 +837,8 @@ incorrelato con <span class="math notranslate nohighlight">\(T\)</span>:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">9</div><div class="output text_html">9</div></div>
 </div>
 <p>La varianza del punteggio vero <span class="math notranslate nohighlight">\(T\)</span> è uguale alla covarianza tra il
 punteggio vero <span class="math notranslate nohighlight">\(T\)</span> e il punteggio osservato <span class="math notranslate nohighlight">\(X\)</span>:</p>
@@ -794,6 +849,8 @@ punteggio vero <span class="math notranslate nohighlight">\(T\)</span> e il punt
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">6</div><div class="output text_html">6</div></div>
 </div>
 <p>La correlazione tra punteggio osservato e punteggio vero è uguale al rapporto tra la deviazione standard del punteggio vero e la deviazione standard del punteggio osservato:</p>
 <div class="cell docutils container">
@@ -803,6 +860,8 @@ punteggio vero <span class="math notranslate nohighlight">\(T\)</span> e il punt
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.816496580927726</div><div class="output text_html">0.816496580927726</div></div>
 </div>
 <p>Per la CTT, l’attendibilità è uguale al quadrato del coefficiente di correlazione tra il punteggio vero <span class="math notranslate nohighlight">\(T\)</span> e il punteggio osservato <span class="math notranslate nohighlight">\(X\)</span>, ovvero:</p>
 <div class="cell docutils container">
@@ -811,6 +870,8 @@ punteggio vero <span class="math notranslate nohighlight">\(T\)</span> e il punt
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.666666666666666</div></div>
 </div>
 <p>La motivazione di questa simulazione è quella di mettere in relazione il
 coefficiente di attendibilità, calcolato con la formula della CTT (come abbiamo fatto sopra), con il modello di regressione lineare. Analizziamo dunque i dati della
@@ -827,6 +888,27 @@ X = a + b T + E.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = X ~ T)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.2022 -1.0875 -0.0178  1.1394  3.7528 
+
+Coefficients:
+             Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) 2.842e-15  8.746e-01       0        1    
+T           1.000e+00  7.143e-02      14   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.741 on 98 degrees of freedom
+Multiple R-squared:  0.6667,	Adjusted R-squared:  0.6633 
+F-statistic:   196 on 1 and 98 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
 </div>
 <p>Si noti che la retta di regressione ha intercetta 0 e pendenza 1. Questo è coerente con l’assunzione <span class="math notranslate nohighlight">\(\mathbb{E}(X) = \mathbb{E}(T)\)</span>. Ma il risultato più importante di questa simulazione è che il coefficiente di determinazione (<span class="math notranslate nohighlight">\(R^2\)</span> = 0.67) del modello di regressione <span class="math notranslate nohighlight">\(X = 0 + 1 \times T + E\)</span> è identico al coefficiente di attendibilità calcolato con la formula <span class="math notranslate nohighlight">\(\rho_{XT}^2 = \frac{\sigma_{T}^2}{\sigma_X^2}\)</span>:</p>
 <div class="cell docutils container">
@@ -835,6 +917,8 @@ X = a + b T + E.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.666666666666667</div></div>
 </div>
 <p>Ciò ci consente di interpretare il coefficiente di attendibilità nel modo
 seguente: l’attendibilità di un test non è altro che la quota di varianza del punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> che viene spiegata dalla regressione di <span class="math notranslate nohighlight">\(X\)</span> sul punteggio vero <span class="math notranslate nohighlight">\(T\)</span> in un modello di regressione lineare dove <span class="math notranslate nohighlight">\(\alpha\)</span> = 0 e <span class="math notranslate nohighlight">\(\beta\)</span> = 1.</p>

@@ -523,15 +523,15 @@ manifeste <span class="math notranslate nohighlight">\(Y_i\)</span>, con <span c
 Pertanto, per semplicità si assume che abbiano media zero,
 <span class="math notranslate nohighlight">\(\mathbb{E}(\xi_j)=0\)</span>, abbiano varianza unitaria,
 <span class="math notranslate nohighlight">\(\mathbb{V} (\xi_j)= \mathbb{E}(\xi_j^2) - [\mathbb{E}(\xi_j)]^2=1\)</span>, e siano incorrelate
-tra loro, <span class="math notranslate nohighlight">\(\mbox{Cov}(\xi_j, \xi_h)=0\)</span>, con <span class="math notranslate nohighlight">\(j, h = 1, \dots, m; \;j \neq h\)</span>.
+tra loro, <span class="math notranslate nohighlight">\(Cov(\xi_j, \xi_h)=0\)</span>, con <span class="math notranslate nohighlight">\(j, h = 1, \dots, m; \;j \neq h\)</span>.
 Si assume inoltre che le variabili a fattore specifico <span class="math notranslate nohighlight">\(\delta_i\)</span> siano
-tra loro incorrelate, <span class="math notranslate nohighlight">\(\mbox{Cov}(\delta_i,\delta_k)=0\)</span>, con
+tra loro incorrelate, <span class="math notranslate nohighlight">\(Cov(\delta_i,\delta_k)=0\)</span>, con
 <span class="math notranslate nohighlight">\(i, k = 1, \dots, p, \; i \neq k\)</span>, abbiano media zero,
 <span class="math notranslate nohighlight">\(\mathbb{E}(\delta_i)=0\)</span>, e varianza uguale a <span class="math notranslate nohighlight">\(\mathbb{V} (\delta_i) = \psi_{ii}\)</span>.
 La varianza <span class="math notranslate nohighlight">\(\psi_{ii}\)</span> è detta <em>varianza specifica</em> o <em>unicità</em> della
 <span class="math notranslate nohighlight">\(i\)</span>-esima variabile manifesta <span class="math notranslate nohighlight">\(Y_i\)</span>. Si assume infine che i fattori
 specifici siano linearmente incorrelati con i fattori comuni, ovvero
-<span class="math notranslate nohighlight">\(\mbox{Cov}(\xi_j, \delta_i)=0\)</span> per ogni <span class="math notranslate nohighlight">\(j=1, \dots, m\)</span> e per ogni
+<span class="math notranslate nohighlight">\(Cov(\xi_j, \delta_i)=0\)</span> per ogni <span class="math notranslate nohighlight">\(j=1, \dots, m\)</span> e per ogni
 <span class="math notranslate nohighlight">\(i=1\dots,p\)</span>.</p>
 </section>
 <section id="interpretazione-dei-parametri-del-modello">
@@ -544,7 +544,7 @@ tra <span class="math notranslate nohighlight">\(Y_i\)</span> e <span class="mat
 \[\begin{split}
 \begin{equation}
 \begin{aligned}
-  \mbox{Cov}(Y_i, \xi_j) &amp;= \mathbb{E}(Y_i \xi_j)\notag\\
+  Cov(Y_i, \xi_j) &amp;= \mathbb{E}(Y_i \xi_j)\notag\\
   &amp;=\mathbb{E}\left[(\lambda_{i1} \xi_1 + \dots + \lambda_{im} \xi_m + \delta_i)\xi_j \right]\notag\\
   &amp;= \lambda_{i1}\underbrace{\mathbb{E}(\xi_1\xi_j)}_{=0} + \dots + 
 \lambda_{ij}\underbrace{\mathbb{E}(\xi_j^2)}_{=1} + \dots \notag\\
@@ -557,7 +557,7 @@ tra <span class="math notranslate nohighlight">\(Y_i\)</span> e <span class="mat
 <p>Anche nel modello multifattoriale, dunque, le saturazioni fattoriali rappresentano le covarianze tra le variabili e i fattori:</p>
 <div class="math notranslate nohighlight">
 \[
-\mbox{Cov}(Y_i, \xi_j) = \lambda_{ij} \qquad i=1, \dots, p; \quad j= 1, \dots, m. 
+Cov(Y_i, \xi_j) = \lambda_{ij} \qquad i=1, \dots, p; \quad j= 1, \dots, m. 
 \]</div>
 <p>Naturalmente, se le variabili sono standardizzate, le saturazioni fattoriali diventano correlazioni:</p>
 <div class="math notranslate nohighlight">
@@ -636,7 +636,7 @@ covarianza tra <span class="math notranslate nohighlight">\(Y_1\)</span> e <span
 \[\begin{split}
 \begin{equation}
 \begin{aligned}
-  \mbox{Cov}(Y_1, Y_2) &amp;= \mathbb{E}\left( Y_1 Y_2\right) \notag\\
+  Cov(Y_1, Y_2) &amp;= \mathbb{E}\left( Y_1 Y_2\right) \notag\\
   &amp;= \mathbb{E}\left[ 
   (\lambda_{11} \xi_1 + \lambda_{12} \xi_2 + \delta_1)
    (\lambda_{21} \xi_1 + \lambda_{22} \xi_2 +  \delta_2)
@@ -709,6 +709,25 @@ riprodotta dal modello è data dalla somma dei prodotti delle saturazioni
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loadings:
+   Factor1 Factor2
+N1  0.854  -0.228 
+N2  0.826  -0.194 
+N3  0.811  -0.233 
+N4  0.865  -0.186 
+E1 -0.202   0.773 
+E2 -0.139   0.829 
+E3 -0.158   0.771 
+E4 -0.147   0.684 
+
+               Factor1 Factor2
+SS loadings      2.923   2.526
+Proportion Var   0.365   0.316
+Cumulative Var   0.365   0.681
+</pre></div>
+</div>
+</div>
 </div>
 <p>La soluzione fattoriale conferma la presenza di due fattori: il primo fattore satura sulle scale di neutoricismo, il secono sulle scale di estroversione.</p>
 <p>La correlazione riprodotta <span class="math notranslate nohighlight">\(r_{12}\)</span> è uguale a <span class="math notranslate nohighlight">\(\lambda_{11}\lambda_{21} + \lambda_{12}\lambda_{22}\)</span></p>
@@ -718,6 +737,8 @@ riprodotta dal modello è data dalla somma dei prodotti delle saturazioni
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.74928439937518</div></div>
 </div>
 <p>e corrisponde da vicino alla correlazione osservata 0.767.</p>
 <p>L’intera matrice di correlazioni riprodotte è
@@ -730,6 +751,24 @@ riprodotta dal modello è data dalla somma dei prodotti delle saturazioni
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 8 × 8 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N1</th><th scope=col>N2</th><th scope=col>N3</th><th scope=col>N4</th><th scope=col>E1</th><th scope=col>E2</th><th scope=col>E3</th><th scope=col>E4</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N1</th><td> 1.000</td><td> 0.749</td><td> 0.745</td><td> 0.781</td><td>-0.348</td><td>-0.307</td><td>-0.311</td><td>-0.281</td></tr>
+	<tr><th scope=row>N2</th><td> 0.749</td><td> 1.000</td><td> 0.715</td><td> 0.751</td><td>-0.317</td><td>-0.276</td><td>-0.281</td><td>-0.254</td></tr>
+	<tr><th scope=row>N3</th><td> 0.745</td><td> 0.715</td><td> 1.000</td><td> 0.745</td><td>-0.344</td><td>-0.306</td><td>-0.308</td><td>-0.279</td></tr>
+	<tr><th scope=row>N4</th><td> 0.781</td><td> 0.751</td><td> 0.745</td><td> 1.000</td><td>-0.318</td><td>-0.274</td><td>-0.280</td><td>-0.254</td></tr>
+	<tr><th scope=row>E1</th><td>-0.348</td><td>-0.317</td><td>-0.344</td><td>-0.318</td><td> 1.000</td><td> 0.669</td><td> 0.628</td><td> 0.558</td></tr>
+	<tr><th scope=row>E2</th><td>-0.307</td><td>-0.276</td><td>-0.306</td><td>-0.274</td><td> 0.669</td><td> 1.000</td><td> 0.661</td><td> 0.587</td></tr>
+	<tr><th scope=row>E3</th><td>-0.311</td><td>-0.281</td><td>-0.308</td><td>-0.280</td><td> 0.628</td><td> 0.661</td><td> 1.000</td><td> 0.550</td></tr>
+	<tr><th scope=row>E4</th><td>-0.281</td><td>-0.254</td><td>-0.279</td><td>-0.254</td><td> 0.558</td><td> 0.587</td><td> 0.550</td><td> 1.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>La differenza tra la matrice di correlazioni riprodotte e la matrice di
 correlazioni osservate è uguale a:</p>
@@ -740,6 +779,24 @@ correlazioni osservate è uguale a:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 8 × 8 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N1</th><th scope=col>N2</th><th scope=col>N3</th><th scope=col>N4</th><th scope=col>E1</th><th scope=col>E2</th><th scope=col>E3</th><th scope=col>E4</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N1</th><td> 0.000</td><td> 0.018</td><td>-0.014</td><td>-0.003</td><td>-0.003</td><td>-0.009</td><td> 0.015</td><td>-0.001</td></tr>
+	<tr><th scope=row>N2</th><td> 0.018</td><td> 0.000</td><td>-0.006</td><td>-0.013</td><td> 0.015</td><td>-0.004</td><td>-0.008</td><td> 0.000</td></tr>
+	<tr><th scope=row>N3</th><td>-0.014</td><td>-0.006</td><td> 0.000</td><td> 0.017</td><td>-0.012</td><td> 0.006</td><td> 0.011</td><td>-0.013</td></tr>
+	<tr><th scope=row>N4</th><td>-0.003</td><td>-0.013</td><td> 0.017</td><td> 0.000</td><td> 0.000</td><td> 0.007</td><td>-0.016</td><td> 0.009</td></tr>
+	<tr><th scope=row>E1</th><td>-0.003</td><td> 0.015</td><td>-0.012</td><td> 0.000</td><td> 0.000</td><td> 0.006</td><td> 0.006</td><td>-0.024</td></tr>
+	<tr><th scope=row>E2</th><td>-0.009</td><td>-0.004</td><td> 0.006</td><td> 0.007</td><td> 0.006</td><td> 0.000</td><td>-0.010</td><td> 0.006</td></tr>
+	<tr><th scope=row>E3</th><td> 0.015</td><td>-0.008</td><td> 0.011</td><td>-0.016</td><td> 0.006</td><td>-0.010</td><td> 0.000</td><td> 0.016</td></tr>
+	<tr><th scope=row>E4</th><td>-0.001</td><td> 0.000</td><td>-0.013</td><td> 0.009</td><td>-0.024</td><td> 0.006</td><td> 0.016</td><td> 0.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p><strong>Esempio.</strong> Consideriamo nuovamente i dati precedenti ma, in questo caso, eseguiamo un’analisi fattoriale confermativa. Usando <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> il modello diventa:</p>
 <div class="cell docutils container">
@@ -778,6 +835,9 @@ correlazioni osservate è uguale a:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/fe5b381ef79d47fcadec6f590084c1acd31300224fba1606b326b1cae7bd4bab.png" src="_images/fe5b381ef79d47fcadec6f590084c1acd31300224fba1606b326b1cae7bd4bab.png" />
+</div>
 </div>
 <p>Esaminiamo le saturazioni fattoriali:</p>
 <div class="cell docutils container">
@@ -797,6 +857,22 @@ correlazioni osservate è uguale a:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table: Factor Loadings
+
+|Latent Factor |Indicator |     B|    SE|      Z| p-value|  Beta|
+|:-------------|:---------|-----:|-----:|------:|-------:|-----:|
+|N             |N1        | 0.882| 0.051| 17.422|       0| 0.884|
+|N             |N2        | 0.847| 0.052| 16.340|       0| 0.849|
+|N             |N3        | 0.840| 0.052| 16.134|       0| 0.842|
+|N             |N4        | 0.882| 0.051| 17.432|       0| 0.884|
+|E             |E1        | 0.795| 0.056| 14.276|       0| 0.796|
+|E             |E2        | 0.838| 0.054| 15.369|       0| 0.839|
+|E             |E3        | 0.788| 0.056| 14.097|       0| 0.789|
+|E             |E4        | 0.697| 0.058| 11.942|       0| 0.699|
+</pre></div>
+</div>
+</div>
 </div>
 <p>Il risultato sembra sensato: le saturazioni su ciascun fattore sono molto alte. Tuttavia, la matrice delle correlazioni residue</p>
 <div class="cell docutils container">
@@ -808,6 +884,20 @@ correlazioni osservate è uguale a:</p>
 <span class="w">  </span><span class="n">format</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;markdown&quot;</span><span class="p">,</span><span class="w"> </span>
 <span class="w">  </span><span class="n">booktabs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|   |     N1|     N2|     N3|     N4|     E1|     E2|     E3|     E4|
+|:--|------:|------:|------:|------:|------:|------:|------:|------:|
+|N1 |  0.000|  0.017| -0.013| -0.003| -0.351| -0.316| -0.296| -0.282|
+|N2 |  0.017|  0.000| -0.006| -0.012| -0.302| -0.280| -0.289| -0.254|
+|N3 | -0.013| -0.006|  0.000|  0.018| -0.356| -0.300| -0.297| -0.292|
+|N4 | -0.003| -0.012|  0.018|  0.000| -0.318| -0.267| -0.296| -0.245|
+|E1 | -0.351| -0.302| -0.356| -0.318|  0.000|  0.007|  0.006| -0.022|
+|E2 | -0.316| -0.280| -0.300| -0.267|  0.007|  0.000| -0.011|  0.007|
+|E3 | -0.296| -0.289| -0.297| -0.296|  0.006| -0.011|  0.000|  0.015|
+|E4 | -0.282| -0.254| -0.292| -0.245| -0.022|  0.007|  0.015|  0.000|
 </pre></div>
 </div>
 </div>
@@ -854,7 +944,7 @@ covarianza teorica tra la variabile manifesta <span class="math notranslate nohi
 covarianza tra <span class="math notranslate nohighlight">\(Y_1\)</span> e <span class="math notranslate nohighlight">\(\xi_{1}\)</span> diventa</p>
 <div class="math notranslate nohighlight">
 \[
-\lambda_{11} + \lambda_{12}Cov(\xi_1, \xi_2) + \lambda_{13}\mbox{Cov}(\xi_1, \xi_3).
+\lambda_{11} + \lambda_{12}Cov(\xi_1, \xi_2) + \lambda_{13}Cov(\xi_1, \xi_3).
 \]</div>
 </section>
 <section id="id2">
@@ -876,7 +966,7 @@ l’espressione</p>
 \begin{equation}
 \begin{split}
 \mathbb{V}(Y_i) &amp;= \lambda_{i1}^2 + \lambda_{i2}^2 + \dots + \lambda_{im}^2  + \\
-&amp;\quad 2 \lambda_{i1} \lambda_{i2} \mbox{Cov}(\xi_1, \xi_2) + \dots + 2 \lambda_{i,m-1} \lambda_{im} \mbox{Cov}(\xi_{m-1}, \xi_m) + \\
+&amp;\quad 2 \lambda_{i1} \lambda_{i2} Cov(\xi_1, \xi_2) + \dots + 2 \lambda_{i,m-1} \lambda_{im} Cov(\xi_{m-1}, \xi_m) + \\
 &amp;\quad \psi_{ii}.\notag
 \end{split}
 \end{equation}
@@ -888,9 +978,9 @@ varianza di <span class="math notranslate nohighlight">\(Y_1\)</span> è</p>
 \begin{equation}
 \begin{split}
 \mathbb{V}(Y_1) = &amp;\lambda_{11}^2 + \lambda_{12}^2 + \lambda_{13}^2 +\\ 
-&amp;\quad 2 \lambda_{11} \lambda_{12} \mbox{Cov}(\xi_1, \xi_2) + \\ 
-&amp;\quad 2 \lambda_{11} \lambda_{13} \mbox{Cov}(\xi_1, \xi_3) + \\ 
-&amp;\quad 2 \lambda_{12} \lambda_{13} \mbox{Cov}(\xi_2, \xi_3) + \\ 
+&amp;\quad 2 \lambda_{11} \lambda_{12} Cov(\xi_1, \xi_2) + \\ 
+&amp;\quad 2 \lambda_{11} \lambda_{13} Cov(\xi_1, \xi_3) + \\ 
+&amp;\quad 2 \lambda_{12} \lambda_{13} Cov(\xi_2, \xi_3) + \\ 
 &amp;\quad \psi_{11}. \notag
 \end{split}
 \end{equation}
@@ -921,8 +1011,8 @@ correlati e calcoliamo la covarianza tra <span class="math notranslate nohighlig
 <p>Distribuendo l’operatore di valore atteso, dato che <span class="math notranslate nohighlight">\(\mathbb{E}(\xi^2)=1\)</span> e <span class="math notranslate nohighlight">\(\mathbb{E}(\xi \delta)=0\)</span>, otteniamo</p>
 <div class="math notranslate nohighlight">
 \[
-\mbox{Cov}(Y_1, Y_2) = \lambda_{11} \lambda_{21} + \lambda_{12} \lambda_{22} + 
-\lambda_{12} \lambda_{21}\mbox{Cov}(\xi_1, \xi_2) +\lambda_{11} \lambda_{22}\mbox{Cov}(\xi_1, \xi_2).
+Cov(Y_1, Y_2) = \lambda_{11} \lambda_{21} + \lambda_{12} \lambda_{22} + 
+\lambda_{12} \lambda_{21}Cov(\xi_1, \xi_2) +\lambda_{11} \lambda_{22}Cov(\xi_1, \xi_2).
 \]</div>
 <p>In termini matriciali si scrive</p>
 <div class="math notranslate nohighlight">
@@ -959,6 +1049,9 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/a6e43cfd33d1ae1810922b47184727bce80d3721a66f3280d054c11c0e6962d1.png" src="_images/a6e43cfd33d1ae1810922b47184727bce80d3721a66f3280d054c11c0e6962d1.png" />
+</div>
 </div>
 <p>Esaminiamo le saturazioni fattoriali:</p>
 <div class="cell docutils container">
@@ -978,6 +1071,22 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table: Factor Loadings
+
+|Latent Factor |Indicator |     B|    SE|      Z| p-value|  Beta|
+|:-------------|:---------|-----:|-----:|------:|-------:|-----:|
+|N             |N1        | 0.883| 0.051| 17.472|       0| 0.885|
+|N             |N2        | 0.847| 0.052| 16.337|       0| 0.849|
+|N             |N3        | 0.842| 0.052| 16.190|       0| 0.844|
+|N             |N4        | 0.880| 0.051| 17.381|       0| 0.882|
+|E             |E1        | 0.800| 0.055| 14.465|       0| 0.802|
+|E             |E2        | 0.832| 0.054| 15.294|       0| 0.834|
+|E             |E3        | 0.788| 0.056| 14.150|       0| 0.789|
+|E             |E4        | 0.698| 0.058| 11.974|       0| 0.699|
+</pre></div>
+</div>
+</div>
 </div>
 <p>Le saturazioni sono simili a quelle che abbiamo trovato in precedenza, In questo caso, però, la matrice delle correlazioni residue è adeguata:</p>
 <div class="cell docutils container">
@@ -992,6 +1101,20 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>|   |     N1|     N2|     N3|     N4|     E1|     E2|     E3|     E4|
+|:--|------:|------:|------:|------:|------:|------:|------:|------:|
+|N1 |  0.000|  0.016| -0.015| -0.002| -0.042|  0.005|  0.008| -0.013|
+|N2 |  0.016|  0.000| -0.007| -0.010| -0.006|  0.028|  0.002|  0.004|
+|N3 | -0.015| -0.007|  0.000|  0.018| -0.062|  0.006| -0.007| -0.035|
+|N4 | -0.002| -0.010|  0.018|  0.000| -0.010|  0.053|  0.007|  0.023|
+|E1 | -0.042| -0.006| -0.062| -0.010|  0.000|  0.006|  0.001| -0.027|
+|E2 |  0.005|  0.028|  0.006|  0.053|  0.006|  0.000| -0.007|  0.010|
+|E3 |  0.008|  0.002| -0.007|  0.007|  0.001| -0.007|  0.000|  0.014|
+|E4 | -0.013|  0.004| -0.035|  0.023| -0.027|  0.010|  0.014|  0.000|
+</pre></div>
+</div>
+</div>
 </div>
 <p><strong>Esempio.</strong> Esaminiamo più da vicino la matrice di correlazioni riprodotta dal modello, nel caso di fattori obliqui. Le saturazioni fattoriali sono:</p>
 <div class="cell docutils container">
@@ -1001,6 +1124,24 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A lavaan.matrix: 8 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N</th><th scope=col>E</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N1</th><td>0.8848214</td><td>0.0000000</td></tr>
+	<tr><th scope=row>N2</th><td>0.8485128</td><td>0.0000000</td></tr>
+	<tr><th scope=row>N3</th><td>0.8436432</td><td>0.0000000</td></tr>
+	<tr><th scope=row>N4</th><td>0.8819736</td><td>0.0000000</td></tr>
+	<tr><th scope=row>E1</th><td>0.0000000</td><td>0.8018485</td></tr>
+	<tr><th scope=row>E2</th><td>0.0000000</td><td>0.8337599</td></tr>
+	<tr><th scope=row>E3</th><td>0.0000000</td><td>0.7894530</td></tr>
+	<tr><th scope=row>E4</th><td>0.0000000</td><td>0.6990366</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>La matrice di intercorrelazoni fattoriali è</p>
 <div class="cell docutils container">
@@ -1010,6 +1151,18 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A lavaan.matrix.symmetric: 2 × 2 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N</th><th scope=col>E</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N</th><td> 1.000000</td><td>-0.434962</td></tr>
+	<tr><th scope=row>E</th><td>-0.434962</td><td> 1.000000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Le varianze residue sono:</p>
 <div class="cell docutils container">
@@ -1019,6 +1172,24 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A lavaan.matrix.symmetric: 8 × 8 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N1</th><th scope=col>N2</th><th scope=col>N3</th><th scope=col>N4</th><th scope=col>E1</th><th scope=col>E2</th><th scope=col>E3</th><th scope=col>E4</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N1</th><td>0.217091</td><td>0.0000000</td><td>0.0000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td></tr>
+	<tr><th scope=row>N2</th><td>0.000000</td><td>0.2800261</td><td>0.0000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td></tr>
+	<tr><th scope=row>N3</th><td>0.000000</td><td>0.0000000</td><td>0.2882661</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td></tr>
+	<tr><th scope=row>N4</th><td>0.000000</td><td>0.0000000</td><td>0.0000000</td><td>0.2221225</td><td>0.000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td></tr>
+	<tr><th scope=row>E1</th><td>0.000000</td><td>0.0000000</td><td>0.0000000</td><td>0.0000000</td><td>0.357039</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td></tr>
+	<tr><th scope=row>E2</th><td>0.000000</td><td>0.0000000</td><td>0.0000000</td><td>0.0000000</td><td>0.000000</td><td>0.3048445</td><td>0.000000</td><td>0.0000000</td></tr>
+	<tr><th scope=row>E3</th><td>0.000000</td><td>0.0000000</td><td>0.0000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td><td>0.376764</td><td>0.0000000</td></tr>
+	<tr><th scope=row>E4</th><td>0.000000</td><td>0.0000000</td><td>0.0000000</td><td>0.0000000</td><td>0.000000</td><td>0.0000000</td><td>0.000000</td><td>0.5113478</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Mediante i parametri del modello  la matrice di correlazione si riproduce nel modo seguente:</p>
 <div class="math notranslate nohighlight">
@@ -1034,6 +1205,24 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A lavaan.matrix.symmetric: 8 × 8 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N1</th><th scope=col>N2</th><th scope=col>N3</th><th scope=col>N4</th><th scope=col>E1</th><th scope=col>E2</th><th scope=col>E3</th><th scope=col>E4</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N1</th><td> 1.000</td><td> 0.751</td><td> 0.746</td><td> 0.780</td><td>-0.309</td><td>-0.321</td><td>-0.304</td><td>-0.269</td></tr>
+	<tr><th scope=row>N2</th><td> 0.751</td><td> 1.000</td><td> 0.716</td><td> 0.748</td><td>-0.296</td><td>-0.308</td><td>-0.291</td><td>-0.258</td></tr>
+	<tr><th scope=row>N3</th><td> 0.746</td><td> 0.716</td><td> 1.000</td><td> 0.744</td><td>-0.294</td><td>-0.306</td><td>-0.290</td><td>-0.257</td></tr>
+	<tr><th scope=row>N4</th><td> 0.780</td><td> 0.748</td><td> 0.744</td><td> 1.000</td><td>-0.308</td><td>-0.320</td><td>-0.303</td><td>-0.268</td></tr>
+	<tr><th scope=row>E1</th><td>-0.309</td><td>-0.296</td><td>-0.294</td><td>-0.308</td><td> 1.000</td><td> 0.669</td><td> 0.633</td><td> 0.561</td></tr>
+	<tr><th scope=row>E2</th><td>-0.321</td><td>-0.308</td><td>-0.306</td><td>-0.320</td><td> 0.669</td><td> 1.000</td><td> 0.658</td><td> 0.583</td></tr>
+	<tr><th scope=row>E3</th><td>-0.304</td><td>-0.291</td><td>-0.290</td><td>-0.303</td><td> 0.633</td><td> 0.658</td><td> 1.000</td><td> 0.552</td></tr>
+	<tr><th scope=row>E4</th><td>-0.269</td><td>-0.258</td><td>-0.257</td><td>-0.268</td><td> 0.561</td><td> 0.583</td><td> 0.552</td><td> 1.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Le correlazioni residue sono:</p>
 <div class="cell docutils container">
@@ -1043,6 +1232,24 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A lavaan.matrix.symmetric: 8 × 8 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>N1</th><th scope=col>N2</th><th scope=col>N3</th><th scope=col>N4</th><th scope=col>E1</th><th scope=col>E2</th><th scope=col>E3</th><th scope=col>E4</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>N1</th><td> 0.000</td><td> 0.016</td><td>-0.015</td><td>-0.002</td><td>-0.042</td><td> 0.005</td><td> 0.008</td><td>-0.013</td></tr>
+	<tr><th scope=row>N2</th><td> 0.016</td><td> 0.000</td><td>-0.007</td><td>-0.010</td><td>-0.006</td><td> 0.028</td><td> 0.002</td><td> 0.004</td></tr>
+	<tr><th scope=row>N3</th><td>-0.015</td><td>-0.007</td><td> 0.000</td><td> 0.018</td><td>-0.062</td><td> 0.006</td><td>-0.007</td><td>-0.035</td></tr>
+	<tr><th scope=row>N4</th><td>-0.002</td><td>-0.010</td><td> 0.018</td><td> 0.000</td><td>-0.010</td><td> 0.053</td><td> 0.007</td><td> 0.023</td></tr>
+	<tr><th scope=row>E1</th><td>-0.042</td><td>-0.006</td><td>-0.062</td><td>-0.010</td><td> 0.000</td><td> 0.006</td><td> 0.001</td><td>-0.027</td></tr>
+	<tr><th scope=row>E2</th><td> 0.005</td><td> 0.028</td><td> 0.006</td><td> 0.053</td><td> 0.006</td><td> 0.000</td><td>-0.007</td><td> 0.010</td></tr>
+	<tr><th scope=row>E3</th><td> 0.008</td><td> 0.002</td><td>-0.007</td><td> 0.007</td><td> 0.001</td><td>-0.007</td><td> 0.000</td><td> 0.014</td></tr>
+	<tr><th scope=row>E4</th><td>-0.013</td><td> 0.004</td><td>-0.035</td><td> 0.023</td><td>-0.027</td><td> 0.010</td><td> 0.014</td><td> 0.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Questo risultato riproduce ciò che abbiamo trovato estraendo la matrice di correlazioni residue dall’oggetto creato dal <code class="docutils literal notranslate"><span class="pre">lavaan::cfa</span></code> mediante l’istruzione <code class="docutils literal notranslate"><span class="pre">residuals(fit2_cfa,</span> <span class="pre">type</span> <span class="pre">=</span> <span class="pre">&quot;cor&quot;)$cov</span></code>.</p>
 <p>Per fare un esempio relativo alla correlazione tra due indicatori, calcoliamo la correlazione predetta dal modello tra le variabili <span class="math notranslate nohighlight">\(Y_1\)</span> e <span class="math notranslate nohighlight">\(Y_2\)</span>:</p>
@@ -1054,6 +1261,8 @@ diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.750782309575684</div></div>
 </div>
 <p>Questo valore si avvicina al valore contenuto dell’elemento (1, 2) della
 matrice di correlazioni osservate:</p>
@@ -1063,12 +1272,27 @@ matrice di correlazioni osservate:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.767</div></div>
 </div>
 <p>Usando le funzonalità di <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> la matrice di correlazione predetta si ottiene con:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">fitted</span><span class="p">(</span><span class="n">fit2_cfa</span><span class="p">)</span><span class="o">$</span><span class="n">cov</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       N1     N2     N3     N4     E1     E2     E3     E4
+N1  0.996                                                 
+N2  0.748  0.996                                          
+N3  0.743  0.713  0.996                                   
+N4  0.777  0.745  0.741  0.996                            
+E1 -0.307 -0.295 -0.293 -0.306  0.996                     
+E2 -0.320 -0.306 -0.305 -0.319  0.666  0.996              
+E3 -0.303 -0.290 -0.289 -0.302  0.630  0.656  0.996       
+E4 -0.268 -0.257 -0.255 -0.267  0.558  0.580  0.550  0.996
 </pre></div>
 </div>
 </div>
@@ -1081,12 +1305,38 @@ matrice di correlazioni osservate:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       N1     N2     N3     N4     E1     E2     E3     E4
+N1  0.000                                                 
+N2  0.016  0.000                                          
+N3 -0.015 -0.007  0.000                                   
+N4 -0.002 -0.010  0.018  0.000                            
+E1 -0.042 -0.006 -0.062 -0.010  0.000                     
+E2  0.005  0.028  0.006  0.053  0.006  0.000              
+E3  0.008  0.002 -0.007  0.007  0.001 -0.007  0.000       
+E4 -0.013  0.004 -0.035  0.023 -0.026  0.010  0.014  0.000
+</pre></div>
+</div>
+</div>
 </div>
 <p>La matrice dei residui standardizzati è</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">resid</span><span class="p">(</span><span class="n">fit2_cfa</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;standardized&quot;</span><span class="p">)</span><span class="o">$</span><span class="n">cov</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       N1     N2     N3     N4     E1     E2     E3     E4
+N1  0.000                                                 
+N2  1.674  0.000                                          
+N3 -1.769 -0.569  0.000                                   
+N4 -0.350 -1.152  1.746  0.000                            
+E1 -1.214 -0.161 -1.646 -0.294  0.000                     
+E2  0.154  0.794  0.168  1.626  0.637  0.000              
+E3  0.219  0.062 -0.191  0.193  0.075 -0.693  0.000       
+E4 -0.314  0.092 -0.824  0.552 -1.481  0.624  0.690  0.000
 </pre></div>
 </div>
 </div>
@@ -1149,6 +1399,102 @@ Definiamo un modello ad un solo fattore comune.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 2 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        16
+
+  Rotation method                      OBLIMIN OBLIQUE
+  Oblimin gamma                                      0
+  Rotation algorithm (rstarts)                GPA (30)
+  Standardized metric                             TRUE
+  Row weights                                     None
+
+  Number of observations                           250
+
+Model Test User Model:
+                                                      
+  Test statistic                               375.327
+  Degrees of freedom                                20
+  P-value (Chi-square)                           0.000
+
+Model Test Baseline Model:
+
+  Test statistic                              1253.791
+  Degrees of freedom                                28
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.710
+  Tucker-Lewis Index (TLI)                       0.594
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)              -2394.637
+  Loglikelihood unrestricted model (H1)      -2206.974
+                                                      
+  Akaike (AIC)                                4821.275
+  Bayesian (BIC)                              4877.618
+  Sample-size adjusted Bayesian (SABIC)       4826.897
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.267
+  90 Percent confidence interval - lower         0.243
+  90 Percent confidence interval - upper         0.291
+  P-value H_0: RMSEA &lt;= 0.050                    0.000
+  P-value H_0: RMSEA &gt;= 0.080                    1.000
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.187
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  f1 =~ efa                                                             
+    N1                0.879    0.051   17.333    0.000    0.879    0.880
+    N2                0.841    0.052   16.154    0.000    0.841    0.842
+    N3                0.841    0.052   16.175    0.000    0.841    0.843
+    N4                0.870    0.051   17.065    0.000    0.870    0.872
+    E1               -0.438    0.062   -7.041    0.000   -0.438   -0.439
+    E2               -0.398    0.063   -6.327    0.000   -0.398   -0.398
+    E3               -0.398    0.063   -6.342    0.000   -0.398   -0.399
+    E4               -0.364    0.063   -5.746    0.000   -0.364   -0.364
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .N1                0.224    0.028    7.915    0.000    0.224    0.225
+   .N2                0.289    0.033    8.880    0.000    0.289    0.290
+   .N3                0.288    0.032    8.866    0.000    0.288    0.289
+   .N4                0.239    0.029    8.174    0.000    0.239    0.240
+   .E1                0.804    0.073   10.963    0.000    0.804    0.807
+   .E2                0.838    0.076   11.008    0.000    0.838    0.841
+   .E3                0.837    0.076   11.007    0.000    0.837    0.841
+   .E4                0.864    0.078   11.041    0.000    0.864    0.867
+    f1                1.000                               1.000    1.000
+
+R-Square:
+                   Estimate
+    N1                0.775
+    N2                0.710
+    N3                0.711
+    N4                0.760
+    E1                0.193
+    E2                0.159
+    E3                0.159
+    E4                0.133
+</pre></div>
+</div>
+</div>
 </div>
 <p>Adattiamo ai dati il modello a due fattori comuni.</p>
 <div class="cell docutils container">
@@ -1174,6 +1520,117 @@ Definiamo un modello ad un solo fattore comune.
 <span class="w">  </span><span class="n">rsquare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span>
 <span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">  </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        23
+
+  Rotation method                      OBLIMIN OBLIQUE
+  Oblimin gamma                                      0
+  Rotation algorithm (rstarts)                GPA (30)
+  Standardized metric                             TRUE
+  Row weights                                     None
+
+  Number of observations                           250
+
+Model Test User Model:
+                                                      
+  Test statistic                                 9.811
+  Degrees of freedom                                13
+  P-value (Chi-square)                           0.709
+
+Model Test Baseline Model:
+
+  Test statistic                              1253.791
+  Degrees of freedom                                28
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    1.000
+  Tucker-Lewis Index (TLI)                       1.006
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)              -2211.879
+  Loglikelihood unrestricted model (H1)      -2206.974
+                                                      
+  Akaike (AIC)                                4469.758
+  Bayesian (BIC)                              4550.752
+  Sample-size adjusted Bayesian (SABIC)       4477.840
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.000
+  90 Percent confidence interval - lower         0.000
+  90 Percent confidence interval - upper         0.048
+  P-value H_0: RMSEA &lt;= 0.050                    0.957
+  P-value H_0: RMSEA &gt;= 0.080                    0.001
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.010
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  f1 =~ efa                                                             
+    N1                0.874    0.053   16.592    0.000    0.874    0.876
+    N2                0.851    0.055   15.551    0.000    0.851    0.853
+    N3                0.826    0.054   15.179    0.000    0.826    0.828
+    N4                0.896    0.053   16.802    0.000    0.896    0.898
+    E1               -0.046    0.040   -1.138    0.255   -0.046   -0.046
+    E2                0.035    0.034    1.030    0.303    0.035    0.035
+    E3                0.000    0.040    0.010    0.992    0.000    0.000
+    E4               -0.006    0.049   -0.131    0.896   -0.006   -0.006
+  f2 =~ efa                                                             
+    N1               -0.017    0.032   -0.539    0.590   -0.017   -0.017
+    N2                0.011    0.035    0.322    0.748    0.011    0.011
+    N3               -0.035    0.036   -0.949    0.343   -0.035   -0.035
+    N4                0.031    0.031    0.994    0.320    0.031    0.031
+    E1                0.776    0.059   13.125    0.000    0.776    0.778
+    E2                0.854    0.058   14.677    0.000    0.854    0.855
+    E3                0.785    0.060   13.106    0.000    0.785    0.787
+    E4                0.695    0.063   10.955    0.000    0.695    0.697
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  f1 ~~                                                                 
+    f2               -0.432    0.059   -7.345    0.000   -0.432   -0.432
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .N1                0.218    0.028    7.790    0.000    0.218    0.219
+   .N2                0.279    0.032    8.693    0.000    0.279    0.280
+   .N3                0.287    0.032    8.907    0.000    0.287    0.289
+   .N4                0.216    0.029    7.578    0.000    0.216    0.217
+   .E1                0.361    0.044    8.226    0.000    0.361    0.362
+   .E2                0.292    0.043    6.787    0.000    0.292    0.293
+   .E3                0.379    0.046    8.315    0.000    0.379    0.381
+   .E4                0.509    0.053    9.554    0.000    0.509    0.511
+    f1                1.000                               1.000    1.000
+    f2                1.000                               1.000    1.000
+
+R-Square:
+                   Estimate
+    N1                0.781
+    N2                0.720
+    N3                0.711
+    N4                0.783
+    E1                0.638
+    E2                0.707
+    E3                0.619
+    E4                0.489
 </pre></div>
 </div>
 </div>
@@ -1209,6 +1666,19 @@ Definiamo un modello ad un solo fattore comune.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 2 × 6</caption>
+<thead>
+	<tr><th scope=col>chisq</th><th scope=col>df</th><th scope=col>pvalue</th><th scope=col>cfi</th><th scope=col>rmsea</th><th scope=col>srmr</th></tr>
+	<tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><td>375</td><td>20</td><td><span style=white-space:pre-wrap>&lt; .001           </span></td><td>0.71</td><td>0.267</td><td>0.187</td></tr>
+	<tr><td> 10</td><td>13</td><td>0.709310449320098</td><td>1.00</td><td>0.000</td><td>0.010</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>L’evidenza empirica supporta la superiorità del modello a due fattori rispetto a quello ad un solo fattore comune. In particolare, l’analisi fattoriale esplorativa svolta mediante la funzione <code class="docutils literal notranslate"><span class="pre">efa()</span></code> evidenzia la capacità del modello a due fattori di fornire una descrizione adeguata della struttura dei dati e di distinguere in modo sensato tra i due fattori ipotizzati.</p>
 <p><strong>Esercizio.</strong> Si utilizzino i dati <code class="docutils literal notranslate"><span class="pre">dass21.txt</span></code> che corrispondono alla somministrazione del test DASS-21 a 334 partecipanti. Lo schema di codifica si può trovare seguendo questo <a class="reference external" href="https://maic.qld.gov.au/wp-content/uploads/2016/07/DASS-21.pdf">link</a>. Si adatti ai dati un modello a tre fattori usando l’analisi fattoriale esplorativa con la funzione <code class="docutils literal notranslate"><span class="pre">lavaan::efa()</span></code>. Usando le saturazioni fattoriali e la matrice di inter-correlazioni fattoriali, si trovi la matrice di correlazioni riprodotta dal modello. Senza usare l’albebra matriciale, si trovi la correlazione predetta tra gli indicatori DASS-1 e DASS-2.</p>

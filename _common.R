@@ -14,7 +14,7 @@ suppressPackageStartupMessages({
 set.seed(42)
 SEED <- 42 # set random seed for reproducibility
 
-theme_set(bayesplot::theme_default(theme_minimal()))
+theme_set(bayesplot::theme_default(base_family = "sans"))
 # bayesplot::color_scheme_set("gray")
 
 # knitr chunk options ----------------------------------------------------------
