@@ -414,10 +414,14 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">29.1. LGM e SEM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">29.2. Una applicazione concreta</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">29.3. Modello di assenza di crescita</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">29.4. Modello di crescita lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">29.1. Una applicazione concreta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">29.2. Modello di assenza di crescita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">29.3. Modello di crescita lineare</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintassi-alternativa">29.3.1. Sintassi alternativa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretazione-dei-parametri">29.3.2. Interpretazione dei parametri</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-con-il-modello-misto">29.4. Confronto con il modello misto</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">29.5. Considerazioni conclusive</a></li>
 </ul>
             </nav>
@@ -432,42 +436,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
 <span id="lgm1-notebook"></span><h1><span class="section-number">29. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
-<section id="lgm-e-sem">
-<h2><span class="section-number">29.1. </span>LGM e SEM<a class="headerlink" href="#lgm-e-sem" title="Permalink to this headline">#</a></h2>
-<p>Nei termni del framework delle equazioni strutturali, il modello di crescita latente viene inteso come un modello a fattore comune vincolato, con variabili latenti per l’intercetta e la pendenza.</p>
-<figure class="align-default" id="lgm-fig">
-<a class="reference internal image-reference" href="_images/lgm.png"><img alt="_images/lgm.png" src="_images/lgm.png" style="height: 400px;" /></a>
-<figcaption>
-<p><span class="caption-number">Fig. 29.1 </span><span class="caption-text">Modello di crescita latente.</span><a class="headerlink" href="#lgm-fig" title="Permalink to this image">#</a></p>
-</figcaption>
-</figure>
-<p>Un tale modello a fattore comune vincolato, corrispondente al modello di crescita latente, può essere scritto nel modo seguente:</p>
-<div class="math notranslate nohighlight">
-\[
-\boldsymbol{y}_i = \boldsymbol{Λη}_i + \boldsymbol{u}_i,
-\]</div>
-<p>dove <span class="math notranslate nohighlight">\(\boldsymbol{y}_i\)</span> è un vettore T × 1 dei punteggi osservati misurati ripetutamente per l’individuo <span class="math notranslate nohighlight">\(i\)</span>, dove T rappresenta il numero di valutazioni ripetute basate sulla metrica del tempo scelta, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × R di saturazioni fattoriali che definiscono i fattori di crescita (variabili latenti), dove R è il numero di fattori di crescita (R = 1 per il modello senza crescita, R = 2 per il modello di crescita lineare), <span class="math notranslate nohighlight">\(\boldsymbol{η}_i\)</span> è un vettore R × 1 dei punteggi fattoriali per l’individuo <span class="math notranslate nohighlight">\(i\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{u}_i\)</span> è un vettore T × 1 dei punteggi residui o unici per l’individuo <span class="math notranslate nohighlight">\(i\)</span>.</p>
-<p>I punteggi fattoriali possono essere scritti come deviazioni dalle medie a livello del campione, in modo tale che</p>
-<div class="math notranslate nohighlight">
-\[
-\boldsymbol{η}_i = \boldsymbol{α} + \boldsymbol{\xi},
-\]</div>
-<p>dove <span class="math notranslate nohighlight">\(\boldsymbol{α}\)</span> è un vettore R × 1 delle medie dei fattori e <span class="math notranslate nohighlight">\(\boldsymbol{\xi}\)</span> è un vettore R × 1 delle deviazioni medie per per l’individuo <span class="math notranslate nohighlight">\(i\)</span>.</p>
-<p>Il modello di crescita latente definito dalle due equazioni precedenti porta a una serie di previsioni sulla struttura delle medie e delle covarianze dei dati osservati. Queste previsioni del modello vengono utilizzate nel contesto della modellizzazione delle equazioni strutturali per calcolare le stime dei parametri e gli indici di adattamento del modello. La struttura delle media (<span class="math notranslate nohighlight">\(\boldsymbol{\mu}\)</span>) prevista dal modello di crescita latente è</p>
-<div class="math notranslate nohighlight">
-\[
-\boldsymbol{\mu} = \boldsymbol{\lambda} \boldsymbol{\alpha}.
-\]</div>
-<p>La struttura delle covarianze (<span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span>) prevista dal modello di crescita latente è</p>
-<div class="math notranslate nohighlight">
-\[
-\boldsymbol{\Sigma} = \boldsymbol{\Lambda} \boldsymbol{\Psi} \boldsymbol{\Lambda}' +  \boldsymbol{\Theta}.
-\]</div>
-<p>Diversi tipi di modelli di crescita latente possono essere specificati cambiando le dimensioni e i valori contenuti nella matrice <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span>. Per il modello senza crescita, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × 1 (colonna) perché c’è solo una variabile latente nel modello senza crescita. Per il modello a crescita lineare, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × k, con k rilevazioni temporali, dove le saturazioni fattoriali sono fisse e uguali alla separazione temporale tra le rilevazioni.  Per esempio, con tre misurazioni temporali, le saturazioni fattoriali saranno specificate ai valori 0, 1, 2. Si noti che, in questo modo, si assume che tutte le unità di osservazione siano state misurate nella stessa occasione temporale.</p>
-</section>
 <section id="una-applicazione-concreta">
-<h2><span class="section-number">29.2. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
-<p>In questo tutorial esamineremo il modello di base LGM utilizzando un set di dati reali. Considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA <span id="id1">[<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Iniziamo a leggere i dati.</p>
+<h2><span class="section-number">29.1. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
+<p>Esaminiamo l’adattamento di un modello LGM ad un campione di dati reali. In questo tutorial, considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA <span id="id1">[<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#set filepath for data file</span>
@@ -518,16 +489,19 @@ document.write(`
 </div></div>
 </div>
 <p>Il nostro interesse specifico riguarda il cambiamento relativo alle misure ripetute di matematica, da <code class="docutils literal notranslate"><span class="pre">math2</span></code> a <code class="docutils literal notranslate"><span class="pre">math8</span></code>.</p>
-<p>Esaminiamo i dati.</p>
+<p>Selezioniamo le variabili di interesse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># subsetting to variables of interest</span>
-<span class="n">nlsy_math_sub</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_wide</span><span class="p">[,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
-<span class="w">  </span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math4&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="s">&quot;math5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math7&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math8&quot;</span>
-<span class="p">)]</span>
-<span class="c1"># reshaping wide to long</span>
-<span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">reshape</span><span class="p">(</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_sub</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_wide</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="n">dplyr</span><span class="o">::</span><span class="nf">select</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math7&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math8&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trasformiamo i dati in formato <em>long</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">reshape</span><span class="p">(</span>
 <span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_sub</span><span class="p">,</span>
 <span class="w">  </span><span class="n">timevar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;grade&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="n">idvar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id&quot;</span><span class="p">,</span>
@@ -537,17 +511,84 @@ document.write(`
 <span class="w">  </span><span class="p">),</span>
 <span class="w">  </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;long&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="p">)</span>
-<span class="c1"># sorting for easy viewing</span>
-<span class="c1"># order by id and time</span>
-<span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">grade</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
-<span class="c1"># remove rows with NA for math (needed to get trajoctory lines connected)</span>
-<span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">[</span><span class="nf">which</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">math</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
-
-<span class="c1"># intraindividual change trajetories</span>
-<span class="nf">ggplot</span><span class="p">(</span>
-<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">,</span><span class="w"> </span><span class="c1"># data set</span>
-<span class="w">  </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
-<span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ordiniamo i dati in base alle variabili <code class="docutils literal notranslate"><span class="pre">id</span></code> e <code class="docutils literal notranslate"><span class="pre">grade</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">grade</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rimuoviamo gli NA dalla variabile <code class="docutils literal notranslate"><span class="pre">math</span></code> per potere generare il grafico con le traiettorie individuali di sviluppo</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">[</span><span class="nf">which</span><span class="p">(</span><span class="nf">is.na</span><span class="p">(</span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">math</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Guardiamo prima i dati grezzi.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span>
+<span class="w">    </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.2</span><span class="p">,</span>
+<span class="w">    </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">8</span><span class="p">,</span>
+<span class="w">    </span><span class="c1"># to add some random noise for plotting purposes</span>
+<span class="w">    </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;jitter&quot;</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">  </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PAT Mathematics as a function of Grade&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6bdf6edc0a920d596831efb29f233795681b47b98137baf885ea16838bee12b3.png" src="_images/6bdf6edc0a920d596831efb29f233795681b47b98137baf885ea16838bee12b3.png" />
+</div>
+</div>
+<p>Aggiungiamo al grafico le retta dei minimi quadrati calcolata su tutti i dati (ignorando il ragruppamento dei dati in funzine degli individui).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_point</span><span class="p">(</span>
+<span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">1.2</span><span class="p">,</span>
+<span class="w">        </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">8</span><span class="p">,</span>
+<span class="w">        </span><span class="c1"># to add some random noise for plotting purposes</span>
+<span class="w">        </span><span class="n">position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;jitter&quot;</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">geom_smooth</span><span class="p">(</span>
+<span class="w">        </span><span class="n">method</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lm</span><span class="p">,</span>
+<span class="w">        </span><span class="n">se</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span>
+<span class="w">        </span><span class="n">col</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;black&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="n">linewidth</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">5</span><span class="p">,</span>
+<span class="w">        </span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">8</span>
+<span class="w">    </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># to add regression line</span>
+<span class="w">    </span><span class="nf">theme_minimal</span><span class="p">()</span><span class="w"> </span><span class="o">+</span>
+<span class="w">    </span><span class="nf">labs</span><span class="p">(</span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;PAT Mathematics as a function of Grade&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using formula = &#39;y ~ x&#39;
+</pre></div>
+</div>
+<img alt="_images/194078fa6d351dd3f42d1deb4a633d33fc4397510663430d3757e59942ad78c6.png" src="_images/194078fa6d351dd3f42d1deb4a633d33fc4397510663430d3757e59942ad78c6.png" />
+</div>
+</div>
+<p>Esaminiamo ora le traiettorie intraindividuali di cambiamento.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># intraindividual change trajetories</span>
+<span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">ggplot</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
+<span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
 <span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding points to plot</span>
 <span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
 <span class="w">  </span><span class="nf">theme_bw</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># changing style/background</span>
@@ -572,10 +613,11 @@ document.write(`
 </div>
 </section>
 <section id="modello-di-assenza-di-crescita">
-<h2><span class="section-number">29.3. </span>Modello di assenza di crescita<a class="headerlink" href="#modello-di-assenza-di-crescita" title="Permalink to this headline">#</a></h2>
-<p>Come mostrato nel grafico precedente, sembra esserci una crescita sistematica nei punteggi di matematica nel tempo. Per iniziare l’analisi, adatteremo un modello senza crescita che agirà come il nostro modello “nullo” per confrontare i modelli successivi.</p>
-<p>Il modello senza crescita prevede che i punteggi non cambino con l’aumentare del tempo e quindi è un modello che spesso vogliamo respingere. Questo modello ha una variabile latente, un’intercetta, che rappresenta il livello complessivo di prestazione nel tempo.</p>
-<p>Per impostare il modello senza crescita, utilizzeremo la sintassi di lavaan.</p>
+<h2><span class="section-number">29.2. </span>Modello di assenza di crescita<a class="headerlink" href="#modello-di-assenza-di-crescita" title="Permalink to this headline">#</a></h2>
+<p>Come mostrato nel grafico precedente, sembra esserci una crescita sistematica nei punteggi di matematica nel tempo. Per iniziare l’analisi, adatteremo un modello senza crescita che agirà come un  modello “baseline” con cui confrontare i modelli successivi.</p>
+<p>Questo modello ipotizza un livello costante dei punteggi di matematica degli individui nel tempo e si limita a stimare, per ciascun invididuo, il “valore vero” dei punteggi di matematica (senza errore di misura) indipendente dal tempo. Non prevedendo che i punteggi cambino in funzione del tempo, il modello descrive un caso di poco interesse e, quindi, solitamente  questo è un modello che vogliamo respingere.</p>
+<p>Questo modello include una variabile latente e un’intercetta che rappresenta il livello complessivo di prestazione invariante nel tempo.</p>
+<p>Per impostare il modello senza crescita, utilizzeremo la seguente sintassi di lavaan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ng_math_lavaan_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39; </span>
@@ -764,7 +806,7 @@ Variances:
 <p>Otteniamo il diagramma di percorso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">semPaths</span><span class="p">(</span><span class="n">ng_math_lavaan_fit</span><span class="p">,</span><span class="n">what</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">whatLabels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;par&quot;</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">semPaths</span><span class="p">(</span><span class="n">ng_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">whatLabels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;par&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -806,7 +848,7 @@ Variances:
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#calculating implied manifest scores</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculating implied manifest scores</span>
 <span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">math2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_1</span>
 <span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">math3</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_1</span>
 <span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">math4</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_1</span>
@@ -861,10 +903,10 @@ Variances:
 <img alt="_images/f1883c6f3a6c017b3d3f0205167a6d02740a2cb11167e94408b537c280dea956.png" src="_images/f1883c6f3a6c017b3d3f0205167a6d02740a2cb11167e94408b537c280dea956.png" />
 </div>
 </div>
-<p>Vediamo dal grafico che il modello, come richiesto, produce una traiettoria di crescita piatta per ciascun individuo.</p>
+<p>Vediamo dal grafico che, come richiesto, il modello produce una traiettoria di crescita piatta per ciascun individuo.</p>
 </section>
 <section id="modello-di-crescita-lineare">
-<h2><span class="section-number">29.4. </span>Modello di crescita lineare<a class="headerlink" href="#modello-di-crescita-lineare" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.3. </span>Modello di crescita lineare<a class="headerlink" href="#modello-di-crescita-lineare" title="Permalink to this headline">#</a></h2>
 <p>Nella discussione dei modelli di crescita, dopo il modello di assenza di crescita, si esamina sempre il modello di crescita lineare a causa della sua semplicità. Inoltre, i modelli di crescita lineare sono spesso un punto di partenza quando si cerca di comprendere il cambiamento all’interno della persona.</p>
 <p>Implementiamo dunque un modello di crescita latente lineare.</p>
 <div class="cell docutils container">
@@ -897,8 +939,8 @@ Variances:
 <span class="s">      eta_1 ~~ eta_2</span>
 
 <span class="s">  # factor means </span>
-<span class="s">      eta_1 ~ start(35)*1</span>
-<span class="s">      eta_2 ~ start(4)*1</span>
+<span class="s">      eta_1 ~ 1</span>
+<span class="s">      eta_2 ~ 1</span>
 
 <span class="s">  # manifest variances (made equivalent by naming theta)</span>
 <span class="s">      math2 ~~ theta*math2</span>
@@ -957,13 +999,13 @@ Variances:
 <p>Esaminiamo il risultato ottenuto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 27 iterations
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 38 iterations
 
   Estimator                                         ML
   Optimization method                           NLMINB
@@ -1092,7 +1134,9 @@ Variances:
 <p>Esaminiamo le traiettorie di crescita.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_predicted</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span><span class="nf">cbind</span><span class="p">(</span><span class="n">nlsy_math_wide</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="nf">lavPredict</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">)))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_predicted</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">as.data.frame</span><span class="p">(</span>
+<span class="w">    </span><span class="nf">cbind</span><span class="p">(</span><span class="n">nlsy_math_wide</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="nf">lavPredict</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">))</span>
+<span class="p">)</span>
 
 <span class="c1">#naming columns</span>
 <span class="nf">names</span><span class="p">(</span><span class="n">nlsy_math_predicted</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;eta_1&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;eta_2&quot;</span><span class="p">)</span>
@@ -1111,10 +1155,10 @@ Variances:
 <tbody>
 	<tr><th scope=row>1</th><td> 201</td><td>36.94675</td><td>4.534084</td></tr>
 	<tr><th scope=row>2</th><td> 303</td><td>26.03589</td><td>4.050780</td></tr>
-	<tr><th scope=row>3</th><td>2702</td><td>49.70187</td><td>4.594148</td></tr>
-	<tr><th scope=row>4</th><td>4303</td><td>41.04200</td><td>4.548063</td></tr>
-	<tr><th scope=row>5</th><td>5002</td><td>37.01241</td><td>4.496745</td></tr>
-	<tr><th scope=row>6</th><td>5005</td><td>37.68809</td><td>4.324197</td></tr>
+	<tr><th scope=row>3</th><td>2702</td><td>49.70187</td><td>4.594149</td></tr>
+	<tr><th scope=row>4</th><td>4303</td><td>41.04200</td><td>4.548064</td></tr>
+	<tr><th scope=row>5</th><td>5002</td><td>37.01240</td><td>4.496746</td></tr>
+	<tr><th scope=row>6</th><td>5005</td><td>37.68809</td><td>4.324198</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1143,7 +1187,8 @@ Variances:
 <span class="p">)</span>
 <span class="c1"># sorting for easy viewing</span>
 <span class="c1"># order by id and time</span>
-<span class="n">nlsy_math_predicted_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_predicted_long</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">grade</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
+<span class="n">nlsy_math_predicted_long</span><span class="w"> </span><span class="o">&lt;-</span>
+<span class="w">  </span><span class="n">nlsy_math_predicted_long</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">grade</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
 
 <span class="c1"># intraindividual change trajetories</span>
 <span class="nf">ggplot</span><span class="p">(</span>
@@ -1169,16 +1214,232 @@ Variances:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/5fc8d4767326ce6abedcff2c1eb53b50b29a68a872cc28900e21e300fb56cd32.png" src="_images/5fc8d4767326ce6abedcff2c1eb53b50b29a68a872cc28900e21e300fb56cd32.png" />
+<img alt="_images/6ce455732ac9da4b119f1fb17dfda72b4df21260050e94362d1ed7d2053b5f91.png" src="_images/6ce455732ac9da4b119f1fb17dfda72b4df21260050e94362d1ed7d2053b5f91.png" />
 </div>
 </div>
-<p>Dal grafico si può notare che questo modello rappresenta la traiettoria di ogni bambino come una linea retta, con alcune differenze interindividuali nella velocità del cambiamento intraindividuale. Questo tutorial ha dunque illustrato come impostare e adattare modelli di crescita lineare nel framework di modellizzazione SEM utilizzando il pacchetto lavaan in R, nonché come calcolare e rappresentare graficamente le traiettorie di crescita previste dal modello.</p>
+<p>Dal grafico si può notare che questo modello rappresenta la traiettoria di ogni bambino come una linea retta, con alcune differenze interindividuali nella velocità del cambiamento intraindividuale.</p>
+<p>Dal grafico vediamo come, ad un aumento di un anno nel grado scolastico, il punteggio “vero” di matematica aumenta circa di 5 punti.</p>
+<section id="sintassi-alternativa">
+<h3><span class="section-number">29.3.1. </span>Sintassi alternativa<a class="headerlink" href="#sintassi-alternativa" title="Permalink to this headline">#</a></h3>
+<p>È possibile semplificare la scrittura del modello usando la funzione <code class="docutils literal notranslate"><span class="pre">growth</span></code>. Rispetto ai default di <code class="docutils literal notranslate"><span class="pre">growth</span></code> è necessario specificare, per il modello discusso in precedenza, il fatto vogliamo che le varianze residue di <code class="docutils literal notranslate"><span class="pre">math</span></code> siano costanti nel tempo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">   </span><span class="s">&#39;</span>
+<span class="s">  i =~ 1*math2 + 1*math3 + 1*math4 + 1*math5 + 1*math6 + 1*math7 + 1*math8  </span>
+<span class="s">  s =~ 0 * math2 + 1 * math3 + 2 * math4 + 3 * math5 + 4 * math6 + 5 * math7 + 6 * math8</span>
+<span class="s">  </span>
+<span class="s">  # manifest variances (made equivalent by naming theta)</span>
+<span class="s">  math2 ~~ theta*math2</span>
+<span class="s">  math3 ~~ theta*math3</span>
+<span class="s">  math4 ~~ theta*math4</span>
+<span class="s">  math5 ~~ theta*math5</span>
+<span class="s">  math6 ~~ theta*math6</span>
+<span class="s">  math7 ~~ theta*math7</span>
+<span class="s">  math8 ~~ theta*math8</span>
+<span class="s">&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adattiamo il  modello.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit_m1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">growth</span><span class="p">(</span>
+<span class="w">  </span><span class="n">m1</span><span class="p">,</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_wide</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">estimator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ML&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="n">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fiml&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+“lavaan WARNING: some cases are empty and will be ignored:
+  741”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+“lavaan WARNING:
+    due to missing values, some pairwise combinations have less than
+    10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+“lavaan WARNING:
+    Maximum number of iterations reached when computing the sample
+    moments using EM; use the em.h1.iter.max= argument to increase the
+    number of iterations”
+</pre></div>
+</div>
+</div>
+</div>
+<p>Otteniamo lo stesso risultato trovato con <code class="docutils literal notranslate"><span class="pre">sem</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">fitMeasures</span><span class="p">(</span><span class="n">fit_m1</span><span class="p">,</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;chisq&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;df&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;pvalue&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;cfi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;rmsea&quot;</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  chisq      df  pvalue     cfi   rmsea 
+204.484  29.000   0.000   0.791   0.081 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="interpretazione-dei-parametri">
+<h3><span class="section-number">29.3.2. </span>Interpretazione dei parametri<a class="headerlink" href="#interpretazione-dei-parametri" title="Permalink to this headline">#</a></h3>
+<p>Nell’output relativo ad <code class="docutils literal notranslate"><span class="pre">Intercepts</span></code>, il valore <code class="docutils literal notranslate"><span class="pre">eta_1</span></code>  uguale a 35.267 indica il valore predetto di matematica al tempo <span class="math notranslate nohighlight">\(t_0\)</span>. Il parametro <code class="docutils literal notranslate"><span class="pre">eta_2</span></code> specifica che, per ogni incremento di un’unità sulla metrica utilizzata del tempo, ci si aspetto che il valore predetto di matematica aumenti di 4.339 punti. Nell’output relativo ad <code class="docutils literal notranslate"><span class="pre">Variances</span></code>, il parametro <code class="docutils literal notranslate"><span class="pre">eta_1</span></code> uguale a 64.562 indica la varianza delle intercette tra gli studenti; il parametro <code class="docutils literal notranslate"><span class="pre">eta_2</span></code> uguale a 0.733 indica la varianza delle pendenze tra gli studenti. Prendendo la radice quadrata e assumendo la normalità, l’intervallo <span class="math notranslate nohighlight">\(35.267 \pm 1.96 \sqrt(64.562)\)</span> fornisce una stima dell’intervallo al 95% dei valori plausibili delle medie dei punteggi di matematica tra gli studenti – non l’intervallo di fiducia frequentista, in quanto l’intervallo è calcolato attorno alla stima del valore vero.  In maniera corrispondente, l’intervallo <span class="math notranslate nohighlight">\(4.339 \pm 1.96 \sqrt(0.733)\)</span> fornisce una stima dell’intervallo al 95% dei valori plausibili delle pendenze dei punteggi di matematica tra gli studenti.</p>
+<p>La covarianza stimata di -0.181 (<em>SE</em> = 1.150) indica che non vi è covarianza tra intercette e pendenze. Se l’effetto fosse positivo, potremmo dire che c’è una relazione positiva tra l’intercetta e la pendenza: più alto è il valore iniziale di matematica, più forte è la crescita dei punteggi di matematica nel tempo. Una covarianza negativa tra intercetta e pendenza implicherebbe che più alto è il punteggio iniziale di matematica, più debole è l’aumento dei puneggi di matematica nel tempo.</p>
+</section>
+</section>
+<section id="confronto-con-il-modello-misto">
+<h2><span class="section-number">29.4. </span>Confronto con il modello misto<a class="headerlink" href="#confronto-con-il-modello-misto" title="Permalink to this headline">#</a></h2>
+<p>Facciamo nuovamente l’analisi usando un modello misto. Nel caso di questo esempio, non possiamo ottenere gli stessi risulati a causa dei valori mancanti. Usando <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>, per stimare i parametri del modello abbiamo usato la procedura di stima di massima verosimiglianza (ML) e abbiamo affrontato il problema dei dati mancanti usando la procedura <code class="docutils literal notranslate"><span class="pre">fiml</span></code>. Questo metodo non imputa alcun dato, ma piuttosto utilizza i dati disponibili di ogni caso per calcolare le stime di massima verosimiglianza dei parametri.  Nel caso dei modelli misti, invece, la strategia di stima di Full Information Maximum Likelihood (FIML) non è disponibile.  Pertanto procederemo semplicemente eliminando tutti i casi nei quali vi sono dei dati mancanti.</p>
+<p>In formato <em>long</em>, i dati sono i seguenti.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 3</caption>
+<thead>
+	<tr><th></th><th scope=col>id</th><th scope=col>grade</th><th scope=col>math</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>201.3</th><td> 201</td><td>3</td><td>38</td></tr>
+	<tr><th scope=row>201.5</th><td> 201</td><td>5</td><td>55</td></tr>
+	<tr><th scope=row>303.2</th><td> 303</td><td>2</td><td>26</td></tr>
+	<tr><th scope=row>303.5</th><td> 303</td><td>5</td><td>33</td></tr>
+	<tr><th scope=row>2702.2</th><td>2702</td><td>2</td><td>56</td></tr>
+	<tr><th scope=row>2702.4</th><td>2702</td><td>4</td><td>58</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>Sottraiamo 2 dalla variabile <code class="docutils literal notranslate"><span class="pre">grade</span></code> in modo tale che 0 corrisponda alla prima rilevazione temporale. In queste circostanze, l’intercetta corrisponderà al valore atteso del punteggio di matematica per la prima rilevazione temporale (<code class="docutils literal notranslate"><span class="pre">grade</span></code> uguale a 2).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">grade_c2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">grade</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Adattiamo il modello misto usando <code class="docutils literal notranslate"><span class="pre">lmer</span></code>. Si noti che il modello è ad intercetta casuale, ovvero assume la stessa pendenza per ciascun individuo (lo stesso tasso di crescita). Ciò corrisponde alla situazione illustrata dalla figura precedente che mostra le traiettorie di crescita.</p>
+<p>L’argomento <code class="docutils literal notranslate"><span class="pre">REML</span> <span class="pre">=</span> <span class="pre">FALSE</span></code> indica che useremo la stima di massima verosimiglianza, anziché la procedura di default. L’argomento <code class="docutils literal notranslate"><span class="pre">na.action</span> <span class="pre">=</span> <span class="pre">na.exclude</span></code> rende esplicito il fatto che escluderemo le osservazioni con dati mancanti.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit_lmer</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lmer</span><span class="p">(</span>
+<span class="w">    </span><span class="n">math</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">grade_c2</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="m">1</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">id</span><span class="p">),</span>
+<span class="w">    </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="p">,</span>
+<span class="w">    </span><span class="n">REML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">,</span>
+<span class="w">    </span><span class="n">na.action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">na.exclude</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit_lmer</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Linear mixed model fit by maximum likelihood  [&#39;lmerMod&#39;]
+Formula: math ~ 1 + grade_c2 + (1 | id)
+   Data: nlsy_math_long
+
+     AIC      BIC   logLik deviance df.resid 
+ 15957.7  15980.5  -7974.8  15949.7     2217 
+
+Scaled residuals: 
+    Min      1Q  Median      3Q     Max 
+-3.2082 -0.5265  0.0081  0.5456  2.5651 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ id       (Intercept) 67.30    8.204   
+ Residual             39.31    6.270   
+Number of obs: 2221, groups:  id, 932
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept) 35.33081    0.36264   97.43
+grade_c2     4.29352    0.08266   51.94
+
+Correlation of Fixed Effects:
+         (Intr)
+grade_c2 -0.555
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dall’output vediamo che il punteggio di matematica in corrispondenza del secondo grado scolastico (codificato qui con 0) è uguale a 35.33 (0.36). Il tasso di crescita, ovvero l’aumento atteso dei punteggi di matematica per ciascun grado scolastico è uguale a 4.29 (0.08).</p>
+<p>Una rappresentazione grafica dei punteggi predetti dal modello misto può essere ottenuta nel modo seguente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">gr</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">emmeans</span><span class="o">::</span><span class="nf">ref_grid</span><span class="p">(</span><span class="n">fit_lmer</span><span class="p">,</span><span class="w"> </span><span class="n">cov.keep</span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;grade_c2&#39;</span><span class="p">))</span>
+<span class="n">emm</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">emmeans</span><span class="p">(</span><span class="n">gr</span><span class="p">,</span><span class="w"> </span><span class="n">spec</span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&#39;grade_c2&#39;</span><span class="p">),</span><span class="w"> </span><span class="n">level</span><span class="o">=</span><span class="w"> </span><span class="m">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="w"> </span><span class="n">grade_c2</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">        </span><span class="nf">geom_ribbon</span><span class="p">(</span>
+<span class="w">            </span><span class="n">data</span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">emm</span><span class="p">),</span><span class="w"> </span>
+<span class="w">            </span><span class="nf">aes</span><span class="p">(</span><span class="n">ymin</span><span class="o">=</span><span class="w"> </span><span class="n">lower.CL</span><span class="p">,</span><span class="w"> </span><span class="n">ymax</span><span class="o">=</span><span class="w"> </span><span class="n">upper.CL</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="o">=</span><span class="w"> </span><span class="kc">NULL</span><span class="p">),</span><span class="w"> </span><span class="n">fill</span><span class="o">=</span><span class="w"> </span><span class="s">&#39;grey80&#39;</span>
+<span class="w">        </span><span class="p">)</span><span class="w"> </span><span class="o">+</span>
+<span class="w">        </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="w"> </span><span class="nf">data.frame</span><span class="p">(</span><span class="n">emm</span><span class="p">),</span><span class="w"> </span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="w"> </span><span class="n">emmean</span><span class="p">))</span><span class="w"> </span><span class="o">+</span>
+<span class="w">        </span><span class="nf">geom_point</span><span class="p">()</span><span class="w"> </span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ed3fcef1e58110f4ef61258383fc5b0fbe27fa9dcdce927bb4a058541b622701.png" src="_images/ed3fcef1e58110f4ef61258383fc5b0fbe27fa9dcdce927bb4a058541b622701.png" />
+</div>
+</div>
+<p>Questi risultati, ottenuti escludendo tutte le osservazioni con dati mancanti, sono molto simili ai risultati ottenuti usando lavaan (si veda la figura con le traiettorie di crescita del modello LGM).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">modindices</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">maximum.number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A lavaan.data.frame: 5 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>lhs</th><th scope=col>op</th><th scope=col>rhs</th><th scope=col>mi</th><th scope=col>epc</th><th scope=col>sepc.lv</th><th scope=col>sepc.all</th><th scope=col>sepc.nox</th></tr>
+	<tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>8</th><td>eta_2</td><td>=~</td><td>math2</td><td>101.79708</td><td>-1.2308189</td><td>-1.0534557</td><td>-0.10493110</td><td>-0.10493110</td></tr>
+	<tr><th scope=row>27</th><td>math2</td><td>~1</td><td>     </td><td>101.22277</td><td>-5.3459823</td><td>-5.3459823</td><td>-0.53249490</td><td>-0.53249490</td></tr>
+	<tr><th scope=row>1</th><td>eta_1</td><td>=~</td><td>math2</td><td> 93.95874</td><td>-0.1429373</td><td>-1.1485065</td><td>-0.11439878</td><td>-0.11439878</td></tr>
+	<tr><th scope=row>10</th><td>eta_2</td><td>=~</td><td>math4</td><td> 57.13412</td><td> 0.6947744</td><td> 0.5946562</td><td> 0.05859438</td><td> 0.05859438</td></tr>
+	<tr><th scope=row>29</th><td>math4</td><td>~1</td><td>     </td><td> 56.12575</td><td> 2.9968768</td><td> 2.9968768</td><td> 0.29529690</td><td> 0.29529690</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
 </section>
 <section id="considerazioni-conclusive">
 <h2><span class="section-number">29.5. </span>Considerazioni conclusive<a class="headerlink" href="#considerazioni-conclusive" title="Permalink to this headline">#</a></h2>
-<p>I modelli di crescita lineare sono un punto di partenza appropriato per qualsiasi studio sul cambiamento individuale. In molti casi, questi modelli sono in grado di catturare bene il processo di cambiamento osservato; tuttavia, ci sono numerose volte in cui questo non è il caso. Pertanto, è sempre utile adattare e confrontare modelli aggiuntivi e considerare le differenze di gruppo nel cambiamento. Come abbiamo notato, l’adattamento dei modelli di crescita nei framework di modellizzazione multilivello e delle equazioni strutturali ha vantaggi e limitazioni, e uno dei vantaggi del framework delle equazioni strutturali è evidente in questo tutorial poiché sono disponibili gli indici di adattamento globale per valutare l’adattamento del modello ai dati osservati (ad esempio, utilizzando RMSEA, CFI e TLI), mentre l’approccio dei modelli misti può usare solo gli indici AIC e BIC e le diagnostiche del modello (ad esempio, grafico dei residui).</p>
-<p>Indipendentemente dal framework utilizzato per adattare i modelli di crescita lineare, ci sono alcune considerazioni importanti da tenere a mente. La prima è la metrica del tempo. Nell’esempio attuale, abbiamo utilizzato il grado al momento del test come metrica del tempo, ma ovviamente sono possibili altre metriche. In particolare, l’età al momento del test potrebbe essere più rilevante, poiché questa metrica del tempo può catturare meglio lo spazio tra le valutazioni. Inoltre, potrebbero esserci alcune limitazioni nell’utilizzo del grado, come gli studenti che ripetono o saltano un grado. Pertanto, gli anni trascorsi dalla seconda elementare potrebbero essere una metrica del tempo più appropriata.</p>
-<p>Una terza considerazione riguarda la posizione dell’intercetta. Nel nostro esempio illustrativo, l’intercetta era centrata sulla valutazione della seconda elementare perché questa era l’occasione di misurazione più precoce e gli studiosi sono spesso interessati alle differenze individuali in un punto iniziale nel tempo. L’intercetta potrebbe essere posizionata in qualsiasi punto temporale, ma scegliere un punto temporale rilevante, uno con dati osservati e con significato al di fuori dello studio specifico, è l’ideale. Ad esempio, centrare un’intercetta alla fine dell’ottava elementare potrebbe essere importante con i dati di matematica se fossimo interessati alla preparazione per la scuola superiore.</p>
+<p>Questo tutorial ha illustrato come impostare e adattare modelli di crescita lineare nel framework di modellizzazione SEM utilizzando il pacchetto lavaan in R, nonché come calcolare e rappresentare graficamente le traiettorie di crescita previste dal modello.</p>
+<p>I modelli di crescita lineare sono un punto di partenza per studiare il cambiamento individuale. Tuttavia, non sempre catturano bene il processo di cambiamento. Pertanto, è utile confrontare modelli aggiuntivi e considerare le differenze di gruppo. L’adattamento dei modelli di crescita nei framework di modellizzazione multilivello e delle equazioni strutturali ha vantaggi e limitazioni. Ad esempio, il framework delle equazioni strutturali fornisce indici di adattamento globale come RMSEA, CFI e TLI, mentre l’approccio dei modelli misti può usare solo AIC e BIC e le diagnostiche del modello come il grafico dei residui.”</p>
+<p>Quando si adattano i modelli di crescita lineare, è importante considerare la metrica del tempo. Nel nostro esempio, abbiamo usato il grado scolastico come metrica temporale, ma altre metriche sono possibili. Ad esempio, l’età al momento del test potrebbe essere più rilevante perché cattura meglio la distanza tra le rilevazioni. Inoltre, ci possono essere limitazioni nell’utilizzo del grado scolastico, come nel caso di studenti che ripetono o saltano un anno.</p>
+<p>L’intercetta può essere posizionata in qualsiasi punto temporale. Nel nostro esempio, l’abbiamo centrata sulla valutazione della seconda elementare perché era la prima misurazione disponibile. Tuttavia, è importante scegliere un punto di origine significativo per lo studio. Ad esempio, centrare l’intercetta alla fine dell’ottava elementare potrebbe essere importante per valutare la preparazione per la scuola superiore.</p>
 </section>
 </section>
 
@@ -1243,10 +1504,14 @@ Variances:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lgm-e-sem">29.1. LGM e SEM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">29.2. Una applicazione concreta</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">29.3. Modello di assenza di crescita</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">29.4. Modello di crescita lineare</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#una-applicazione-concreta">29.1. Una applicazione concreta</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-assenza-di-crescita">29.2. Modello di assenza di crescita</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-lineare">29.3. Modello di crescita lineare</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sintassi-alternativa">29.3.1. Sintassi alternativa</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interpretazione-dei-parametri">29.3.2. Interpretazione dei parametri</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-con-il-modello-misto">29.4. Confronto con il modello misto</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#considerazioni-conclusive">29.5. Considerazioni conclusive</a></li>
 </ul>
   </nav></div>

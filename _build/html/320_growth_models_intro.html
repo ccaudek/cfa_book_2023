@@ -414,14 +414,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">27.1. Preliminari</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">27.1.1. Strutture dei dati</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-dei-dati-longitudinali">27.1.2. Visualizzazione dei dati longitudinali</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">27.1.3. Data screening</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">27.1.4. Attendibilità</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-con-lmer">27.1.5. Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-del-modello">27.1.6. Formulazione del modello</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">27.1.7. Invarianza di misurazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misurare-il-cambiamento">27.1. Misurare il cambiamento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domande-della-ricerca">27.1.1. Domande della ricerca</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">27.2. Preliminari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">27.2.1. Strutture dei dati</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-dei-dati-longitudinali">27.2.2. Visualizzazione dei dati longitudinali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">27.2.3. Data screening</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">27.2.4. Attendibilità</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-con-lmer">27.2.5. Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-del-modello">27.2.6. Formulazione del modello</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">27.2.7. Invarianza di misurazione</a></li>
 </ul>
 </li>
 </ul>
@@ -437,9 +441,77 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
 <span id="lgm-intro-notebook"></span><h1><span class="section-number">27. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
-<p>Negli ultimi decenni, il framework SEM è stato esteso per adattarsi ai dati longitudinali e alle misure ripetute (McArdle, 2009). A differenza delle tecniche tradizionali come l’ANOVA a misure ripetute, che spesso non tengono conto della complessa struttura degli errori dei dati longitudinali, il framework SEM longitudinale consente di descrivere tale complessità. Questo approccio è strettamente associato ai modelli misti (Bernal-Rusiel et al., 2013; Rovine e Molenaar, 2001) e può essere considerato come un caso generale di cui molte procedure statistiche come i test t di Student, la regressione lineare e le analisi per misure ripetute di tipo (M)ANOVA sono casi speciali (Voelkle, 2007). Esempi di SEM longitudinale includono i growth curve models, i latent change score models, i growth mixture models, i latent class growth curve modelling e i continuous time models (Driver et al., 2016; McArdle, 2009).</p>
-<p>Una classe importante di modelli SEM longitudinali sono i latent growth models (LGM), utilizzati per analizzare i dati longitudinali in cui una misura di esito viene raccolta in diversi momenti nel tempo per studiare il cambiamento nel tempo.</p>
-<p><span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> elencano cinque motivi per usare i modelli LGM.</p>
+<p>Quando si studiano le differenze inter-individuali nel senso tradizionale, si effettuano confronti tra individui. Tuttavia, quando l’attenzione è rivolta al confronto dei cambiamenti intra-individuali piuttosto che alle differenze tra le medie dei punteggi di diversi individui, sono necessarie informazioni longitudinali per descrivere le traiettorie di cambiamento inter-individuale. Per descrivere le trasformazioni all’interno dell’individuo, è necessario un modello statistico in grado di tenere conto sia delle differenze tra individui sia delle trasformazioni inter-individuali. Per risolvere il problema descritto sopra, sono stati proposti due framework statistici: i modelli misti e un’estensione del framework SEM per dati longitudinali. Nell’ultima parte della dispensa verrà fornita un’introduzione a questi metodi statistici, con particolare attenzione al framework SEM per dati longitudinali.</p>
+<section id="misurare-il-cambiamento">
+<h2><span class="section-number">27.1. </span>Misurare il cambiamento<a class="headerlink" href="#misurare-il-cambiamento" title="Permalink to this headline">#</a></h2>
+<p>Il modo più ovvio per misurare il cambiamento individuale tra due occasioni è quello di calcolare la differenza tra i punteggi ottenuti nelle due rilevazioni temporali. Tuttavia, questo approccio presenta un problema: non disponiamo del punteggio vero dell’individuo nei due momenti temporali, ma solo di un punteggio influenzato dall’errore di misurazione. L’errore di misura può ridurre drasticamente la determinazione delle differenze individuali nel cambiamento.</p>
+<p>Il problema di descrivere il cambiamento al di là delle distorsioni derivanti dall’errore di misura è stato affrontato introducendo una classe di modelli SEM per dati longitudinali chiamati <em>Latent Growth Models</em> (LGM). I modelli LCM assumeno che vi è una traiettoria individuale di cambiamento latente per ciascun individuo. Da ciò deriva che i dati in qualsiasi punto temporale sono assunti come la somma di (a) punteggi non osservati o latenti che rappresentano il livello dell’individuo in quel punto del tempo, (b) punteggi latenti che rappresentano il cambiamento individuale nel tempo e (c) caratteristiche uniche non osservate ma indipendenti delle misurazioni.</p>
+<p>Questa descrizione del cambiamento conduce alla formulazione di un modello SEM nel quale vengono ipotizzati tre tipi di fattori latenti:</p>
+<ul class="simple">
+<li><p>un fattore latente comune che rappresenta al livello latente dell’individuo in un momento temporale (punto <em>a</em>),</p></li>
+<li><p>un fattore latente comune che rappresenta il cambiamento latente del livello dell’individuo tra <span class="math notranslate nohighlight">\(t-1\)</span> e <span class="math notranslate nohighlight">\(t\)</span> (punto <em>b</em>),</p></li>
+<li><p>un un fattore latente specifico che rappresenta l’errore di misura in ciascun punto <span class="math notranslate nohighlight">\(t\)</span> (punto <em>c</em>).</p></li>
+</ul>
+<p>Il punteggio osservato della persona <span class="math notranslate nohighlight">\(i\)</span> nel momento <span class="math notranslate nohighlight">\(t\)</span> è uguale a</p>
+<div class="math notranslate nohighlight">
+\[
+x_{it} = \tau_i + (1)\xi_1 + (t)\xi_2 + \delta_{it}
+\]</div>
+<p>dove</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\xi_1\)</span> corrisponde al fattore comune che descrive le intercette in funzione del tempo, con saturazioni fattoriali uguali a 1. I punteggi fattoriali su <span class="math notranslate nohighlight">\(\xi_1\)</span> corrispondono dunque al punteggio vero di ciascun individuo indipendente dal tempo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi_2\)</span> corrisponde al fattore comune che descrive il cambiamento in funzione del tempo, con saturazioni fattoriali uguali a 0, 1, 2, …, T. I punteggi fattoriali su <span class="math notranslate nohighlight">\(\xi_e\)</span> corrispondono al cambiamento del punteggio vero di ciascun individuo in corrispondenza dell’aumento di un’unità nella metrica del tempo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{it}\)</span> rappresenta l’errore di misura dell’individuo <span class="math notranslate nohighlight">\(i\)</span> nel tempo <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+<p>Vedremo che, nel modello, le intercette osservate sono vincolate ad essere 0, per cui <span class="math notranslate nohighlight">\(\tau_i = 0\)</span>. Se ci sono cinque misurazioni temporali, per esempio, il modello diventa</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+x_{1} &amp;= 0 + (1)\xi_{1} + (0)\xi_{2} + \delta_{1} \notag\\
+x_{2} &amp;= 0 + (1)\xi_{1} + (1)\xi_{2} + \delta_{2} \notag\\
+x_{3} &amp;= 0 + (1)\xi_{1} + (2)\xi_{2} + \delta_{3} \notag\\
+x_{4} &amp;= 0 + (1)\xi_{1} + (3)\xi_{2} + \delta_{4} \notag\\
+x_{5} &amp;= 0 + (1)\xi_{1} + (4)\xi_{2} + \delta_{5} \notag
+\end{align}
+\end{split}\]</div>
+<p>Inoltre, il modello ipotizza che <span class="math notranslate nohighlight">\(\xi_1\)</span> e <span class="math notranslate nohighlight">\(\xi_e\)</span> siano correlati, come indicato nella matrice di inter-correlazione fattoriale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{\Phi} =
+\begin{bmatrix}
+\phi_{11} &amp; \\
+\phi_{21} &amp; \phi_{22}
+\end{bmatrix}
+\end{split}\]</div>
+<p>dove <span class="math notranslate nohighlight">\(\phi_{11}\)</span> è la varianza dell’intercetta latente, <span class="math notranslate nohighlight">\(\phi_{22}\)</span> è la varianza della pendenza latente e <span class="math notranslate nohighlight">\(\phi_{21}\)</span> è la covarianza dell’intercetta e della pendenza.</p>
+<p>La figura <a class="reference internal" href="#lgm-fig"><span class="std std-ref">Modello di crescita latente</span></a> mostra il diagramma di percorso che rappresenta il modello LGM che stiamo discutendo:</p>
+<figure class="align-default" id="lgm-fig">
+<a class="reference internal image-reference" href="_images/lgm_stat_mod.png"><img alt="_images/lgm_stat_mod.png" src="_images/lgm_stat_mod.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27.1 </span><span class="caption-text">Modello di crescita latente</span><a class="headerlink" href="#lgm-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Il modello di crescita latente definito dalle equazioni precedenti porta a una serie di previsioni sulla struttura delle medie e delle covarianze dei dati osservati. Queste previsioni del modello vengono utilizzate nel contesto della modellizzazione delle equazioni strutturali per calcolare le stime dei parametri e gli indici di adattamento del modello. La struttura delle covarianze (<span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span>) prevista dal modello di crescita latente è</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{\Sigma} = \boldsymbol{\Lambda} \boldsymbol{\Phi} \boldsymbol{\Lambda}' + \boldsymbol{\Theta}.
+\]</div>
+<p>Diversi tipi di modelli di crescita latente possono essere specificati cambiando le dimensioni e i valori contenuti nella matrice <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span>. Per il modello senza crescita, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × 1 (colonna) perché c’è solo una variabile latente nel modello senza crescita. Per il modello a crescita lineare, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × k, con k rilevazioni temporali, dove le saturazioni fattoriali sono fisse e uguali alla separazione temporale tra le rilevazioni. Per esempio, con cinque misurazioni temporali, le saturazioni fattoriali saranno specificate ai valori 0, 1, 2, 3, 4. Si noti che, in questo modo, si assume che tutte le unità di osservazione siano state misurate nella stessa occasione temporale. A differenza dei modelli CFA tradizionali in cui l’interpretazione si concentra sulle saturazioni fattoriali, nei modelli di crescita latente le saturazioni fattoriali sono fisse</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Lambda =
+\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 1 \\
+1 &amp; 2 \\
+1 &amp; 3 \\
+1 &amp; 4 \\
+\end{pmatrix}
+\end{split}\]</div>
+<p>il che implica che l’attenzione è rivolta all’intercetta latente e al fattore di pendenza latente.</p>
+<section id="domande-della-ricerca">
+<h3><span class="section-number">27.1.1. </span>Domande della ricerca<a class="headerlink" href="#domande-della-ricerca" title="Permalink to this headline">#</a></h3>
+<p>I modelli LGM possono dunque essere usati per per studiare il cambiamento nel tempo tramite l’analisi dei dati longitudinali in cui una misura di esito viene osservata in diversi momenti nel tempo. <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> elencano cinque motivi per usare i modelli LGM.</p>
 <ol class="arabic simple">
 <li><p>L’identificazione diretta del cambiamento e della stabilità intra-individuale. Misurando lo stesso individuo ripetutamente, i ricercatori possono identificare se e come specifici attributi dell’individuo cambiano o rimangono gli stessi nel tempo. Le teorie dello sviluppo spesso descrivono il cambiamento come un processo incrementale o trasformazionale. Il cambiamento incrementale viene identificato come un cambiamento nella grandezza di un costrutto lungo un continuum durante un intervallo di tempo specifico. Il cambiamento trasformazionale viene identificato come una transizione tra stati discreti durante un intervallo di tempo specifico (ad esempio, la teoria dello sviluppo a stadi di Piaget; Piaget, 1952). L’obiettivo principale è ottenere una descrizione accurata e parsimoniosa di come e quando gli attributi dell’individuo cambiano nel tempo. La stabilità e la costanza nel tempo sono casi speciali di cambiamento intra-individuale.</p></li>
 <li><p>Una volta identificato il modello di cambiamento intra-individuale, una domanda logica successiva è se diversi individui cambiano in modi diversi. Pertanto, il secondo motivo per la ricerca longitudinale è l’identificazione delle differenze interindividuali nel cambiamento intra-individuale. Ci si chiede se i diversi individui cambino in quantità o direzioni diverse o se passino da uno stadio all’altro in momenti diversi.</p></li>
@@ -447,12 +519,14 @@ document.write(`
 <li><p>Il quarto motivo è l’analisi delle cause del cambiamento intra-individuale. L’obiettivo è identificare i fattori e/o i meccanismi variabili nel tempo che influenzano i cambiamenti intra-individuali. Si assume che i cambiamenti procedano a ritmi diversi in periodi di tempo diversi.</p></li>
 <li><p>Il quinto motivo per la ricerca longitudinale è l’analisi delle cause delle differenze interindividuali nel cambiamento intra-individuale. Poiché gli individui differiscono nel modo in cui cambiano nel tempo, i ricercatori sono interessati a identificare i fattori che possono spiegare queste differenze. L’obiettivo è identificare le variabili invarianti nel tempo che sono correlate a specifici aspetti del cambiamento all’interno della persona. Ad esempio, le caratteristiche demografiche, gli interventi sperimentali e le caratteristiche dei contesti degli individui possono influenzare come e quando il cambiamento avviene. Le domande di ricerca derivanti dal quinto motivo sono spesso esaminate attraverso l’inclusione di covariate invarianti nel tempo.</p></li>
 </ol>
+</section>
+</section>
 <section id="preliminari">
-<h2><span class="section-number">27.1. </span>Preliminari<a class="headerlink" href="#preliminari" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.2. </span>Preliminari<a class="headerlink" href="#preliminari" title="Permalink to this headline">#</a></h2>
 <p>I modelli di crescita sono applicati a dati ottenuti da studi in cui sono state ottenute diverse misure ripetute da più individui. Un problema comune nella ricerca psicologica è lo studio di come le persone differiscono nei loro sentimenti, pensieri e comportamenti nel tempo e nello spazio. L’obiettivo è capire se queste differenze sono sistematiche e come descriverle al meglio.</p>
 <p>Tradizionalmente, gli studi longitudinali erano progettati in modo tale che il numero di valutazioni ripetute fosse relativamente basso (cioè &lt;8) e il numero di individui fosse relativamente elevato (cioè &gt;200). Tuttavia, i progressi sia nelle considerazioni teoriche del cambiamento (ad esempio, la non linearità) sia nella tecnologia per la raccolta dei dati (ad esempio, sondaggi basati sul web, smartphone) hanno notevolmente ampliato le possibilità di raccolta e analisi dei dati longitudinali: <span id="id2">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> discutono applicazioni di modelli di crescita a dati longitudinali ottenuti fino a 50.000 persone e fino a 1.000 valutazioni ripetute.</p>
 <section id="strutture-dei-dati">
-<h3><span class="section-number">27.1.1. </span>Strutture dei dati<a class="headerlink" href="#strutture-dei-dati" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.1. </span>Strutture dei dati<a class="headerlink" href="#strutture-dei-dati" title="Permalink to this headline">#</a></h3>
 <p>I dati longitudinali tipicamente si presentano in due forme: long e wide. Nel formato long, la descrizione del tempo è sulle righe; nel formato wide le variabili relative ad ogni occasione temporale sono organizzate in colonne. È possibile trasformere i dati dal formato long in formato wide e viceversa usando le funzioni R <code class="docutils literal notranslate"><span class="pre">pivot_wider()</span></code> e <code class="docutils literal notranslate"><span class="pre">pivot_longer()</span></code>. La sintassi è spiegata nella pagina web <a class="reference external" href="https://tidyr.tidyverse.org/reference/pivot_wider.html">tidyr</a>.</p>
 <p>Per fare un esempio, esaminiamo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [i dati sono presentati nel capitolo 3 del libro di <span id="id3">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
@@ -552,7 +626,7 @@ document.write(`
 </div>
 </section>
 <section id="visualizzazione-dei-dati-longitudinali">
-<h3><span class="section-number">27.1.2. </span>Visualizzazione dei dati longitudinali<a class="headerlink" href="#visualizzazione-dei-dati-longitudinali" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.2. </span>Visualizzazione dei dati longitudinali<a class="headerlink" href="#visualizzazione-dei-dati-longitudinali" title="Permalink to this headline">#</a></h3>
 <p>Come in qualsiasi analisi statistica, è importante esaminare attentamente i dati. Ciò include la produzione di sia riepiloghi quantitativi che visualizzazioni.</p>
 <p>Per fare un esempio di visualizzazione di dati longitudinali, esaminiamo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA [i dati sono presentati nel capitolo 3 del libro di <span id="id4">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Selezioniamo solo il grado scolastico, il codice identificativo e il punteggio di matematica.</p>
 <div class="cell docutils container">
@@ -612,7 +686,7 @@ document.write(`
 </div>
 </section>
 <section id="data-screening">
-<h3><span class="section-number">27.1.3. </span>Data screening<a class="headerlink" href="#data-screening" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.3. </span>Data screening<a class="headerlink" href="#data-screening" title="Permalink to this headline">#</a></h3>
 <p>Prima di adattare i modelli di crescita, è importante esaminare i dati e ottenere informazioni di base sulle variabili da utilizzare nell’analisi. La selezione preliminare dovrebbe includere l’esame della distribuzione dei punteggi per ogni variabile. Come al solito, le principali statistiche descrittive univariate includono la media, la mediana, la varianza (deviazione standard), l’asimmetria, la curtosi, il minimo, il massimo, l’intervallo e il numero di osservazioni per ogni variabile in base alla metrica del tempo scelta. Le statistiche descrittive bivariate includono correlazioni/covarianze e tabelle di frequenza bivariate per variabili nominali o ordinali. Tutte queste statistiche possono essere esaminate per individuare schemi e relazioni non lineari, così come potenziali valori anomali e codici errati.</p>
 <p>I dati longitudinali sono speciali perché sono ordinati, il che può essere indicizzato lungo una o più metriche del tempo (variabili come occasione di misurazione, età, data, tempo dall’evento, numero di esposizioni, ecc.). Ad esempio, è immediatamente informativo esaminare come la media, la varianza e il numero di casi disponibili cambiano attraverso le misure ripetute (ad esempio wght5, wght6, wght7). Si noti che la selezione della metrica del tempo influenza notevolmente come i risultati di qualsiasi modello di crescita specifico possono essere interpretati. Pertanto, nella fase di selezione dei dati è importante considerare come varie proprietà dei dati longitudinali differiscano quando i dati sono organizzati in relazione a diverse metriche del tempo.</p>
 <p>Per i dati dell’esempio, le statistiche descrittive possono essere ottenute nel modo seguente.</p>
@@ -727,7 +801,7 @@ anti          8  0.98     0.64    0.03
 <p>Per l’eliminazione degli outlier, si</p>
 </section>
 <section id="attendibilita">
-<h3><span class="section-number">27.1.4. </span>Attendibilità<a class="headerlink" href="#attendibilita" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.4. </span>Attendibilità<a class="headerlink" href="#attendibilita" title="Permalink to this headline">#</a></h3>
 <p>Come in tutte le analisi, i ricercatori dovrebbero esaminare l’affidabilità dei loro strumenti di misurazione. Un modo semplice per calcolare l’attendibilità dello strumento usato è quello di trovare, ad esempio, <span class="math notranslate nohighlight">\(\omega\)</span> di McDonald in ciascuna rilevazione temporale.</p>
 <p>Questo indice però è distinto da quelle che sono le misure di affidabilità degli indici del cambiamento. In generale, la misura dell’affidabilità degli indici di cambiamento risulta particolarmente difficile da affrontare nel caso dei disegni longitudinali intensivi.</p>
 <p>L’affidabilità è definita come la proporzione di varianza nei punteggi osservati tra gli individui che può essere attribuita alla varianza nei punteggi veri piuttosto che alla varianza dell’errore.</p>
@@ -853,7 +927,7 @@ ICC = \frac{\text{varianza di interesse}}{\text{varianza di interesse} + \text{v
 <p>Per esempio, prendiamo in considerazione le variazioni dell’umore di una persona. La varianza affettiva intra-personale può essere indicizzata in due modi: variazione stocastica e sistematica. La varianza stocastica si riferisce alla volatilità nei livelli di affetto e può essere misurata utilizzando un indice come la deviazione standard intra-individuale. La varianza sistematica si riferisce a variazioni ordinate nel tempo e può essere rappresentata da coefficienti di regressione che riflettono costrutti come l’inerzia emotiva o la reattività allo stress. Tuttavia, per quanto sia importante, la misurazione dell’affidabilità della componente sistematica della variazione intra-individuale non trova una semplice soluzione ed è un argomento oggetto di dibattito nella letteratura metodologica corrente.</p>
 </section>
 <section id="analisi-con-lmer">
-<h3><span class="section-number">27.1.5. </span>Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code><a class="headerlink" href="#analisi-con-lmer" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.5. </span>Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code><a class="headerlink" href="#analisi-con-lmer" title="Permalink to this headline">#</a></h3>
 <p>L’adattamento di modelli lineari misti in R si ottiene mediante la funzione <code class="docutils literal notranslate"><span class="pre">lmer()</span></code> nel pacchetto <code class="docutils literal notranslate"><span class="pre">lme4</span></code>. Questa funzione accetta i seguenti argomenti:</p>
 <ul class="simple">
 <li><p>formula: una formula lineare a due lati che descrive sia gli effetti fissi che gli effetti casuali del modello, con la risposta a sinistra dell’operatore <code class="docutils literal notranslate"><span class="pre">~</span></code> e i predittori e gli effetti casuali sulla destra dell’operatore <code class="docutils literal notranslate"><span class="pre">~</span></code>.</p></li>
@@ -921,7 +995,7 @@ ICC = \frac{\text{varianza di interesse}}{\text{varianza di interesse} + \text{v
 </table>
 </section>
 <section id="formulazione-del-modello">
-<h3><span class="section-number">27.1.6. </span>Formulazione del modello<a class="headerlink" href="#formulazione-del-modello" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.6. </span>Formulazione del modello<a class="headerlink" href="#formulazione-del-modello" title="Permalink to this headline">#</a></h3>
 <p>In precedenza abbiamo descritto la variazione media tra gli individui mediante un modello misto ad intercetta casuale. È possibile estendere questo modello a casi più complessi, per esempio quello che assume una retta di regressione con pendenza ed intercetta diversa per ciascun soggetto. Per i dati esaminati sopra possiamo specificare un tale modello in <code class="docutils literal notranslate"><span class="pre">lmer</span></code> usando la sintassi seguente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1051,7 +1125,7 @@ attr(,&quot;class&quot;)
 </div>
 </section>
 <section id="invarianza-di-misurazione">
-<h3><span class="section-number">27.1.7. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">27.2.7. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h3>
 <p>Quando si lavora con dati di misure ripetute, la comparabilità dei punteggi tra le occasioni di misurazione richiede un certo livello di invarianza di misurazione. Lo strumento di misurazione misura lo stesso costrutto nella stessa metrica in ogni occasione? Formalmente, l’invarianza di misurazione garantisce che i punteggi siano confrontabili sia tra le persone che tra le occasioni di misurazione. Ad esempio, l’invarianza di misurazione tra le misure ripetute del peso degli individui è facilitata dall’uso dello stesso dispositivo di misurazione (bilancia) ogni anno, a condizione che la bilancia sia tarata nello stesso modo ogni anno. Se la bilancia è tarata in modo diverso in occasioni diverse o se vengono utilizzate unità di misura diverse, i punteggi risultanti non possono essere confrontati quantitativamente: lo strumento di misurazione è non invariante. Quando si lavora con dispositivi fisici, l’invarianza di misurazione viene testata e garantita attraverso la taratura. Quando si lavora con scale psicologiche, l’invarianza di misurazione viene o assunta (il che non ideale) o testata utilizzando modelli di misurazione formali.</p>
 </section>
 </section>
@@ -1118,14 +1192,18 @@ attr(,&quot;class&quot;)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">27.1. Preliminari</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">27.1.1. Strutture dei dati</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-dei-dati-longitudinali">27.1.2. Visualizzazione dei dati longitudinali</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">27.1.3. Data screening</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">27.1.4. Attendibilità</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-con-lmer">27.1.5. Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code></a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-del-modello">27.1.6. Formulazione del modello</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">27.1.7. Invarianza di misurazione</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misurare-il-cambiamento">27.1. Misurare il cambiamento</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#domande-della-ricerca">27.1.1. Domande della ricerca</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminari">27.2. Preliminari</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#strutture-dei-dati">27.2.1. Strutture dei dati</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#visualizzazione-dei-dati-longitudinali">27.2.2. Visualizzazione dei dati longitudinali</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#data-screening">27.2.3. Data screening</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#attendibilita">27.2.4. Attendibilità</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analisi-con-lmer">27.2.5. Analisi con <code class="docutils literal notranslate"><span class="pre">lmer</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#formulazione-del-modello">27.2.6. Formulazione del modello</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#invarianza-di-misurazione">27.2.7. Invarianza di misurazione</a></li>
 </ul>
 </li>
 </ul>

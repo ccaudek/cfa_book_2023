@@ -25,39 +25,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-source("_common.R")
-suppressPackageStartupMessages({
-    library("lavaan")
-    library("semPlot")
-    library("psych")
-    library("DT")
-    library("kableExtra")
-    library("lme4")
-})
-
-set.seed(42)
+summary(lavaan.fit1, fit.measures = TRUE) |>
+    print()
 ------------------
 
-Error in library("patchwork"): there is no package called ‘patchwork’
+Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'print': error in evaluating the argument 'object' in selecting a method for function 'summary': object 'lavaan.fit1' not found
 Traceback:
 
-1. source("_common.R")
-2. withVisible(eval(ei, envir))
-3. eval(ei, envir)
-4. eval(ei, envir)
-5. suppressPackageStartupMessages({
- .     library("here")
- .     library("tidyverse")
- .     library("scales")
- .     library("patchwork")
- .     library("bayesplot")
- .     library("ggExtra")
- .     library("ggpubr")
- .     library("viridis")
- .     library("ggokabeito")
- . })
-6. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
-7. library("patchwork")
-ERROR: Error in library("patchwork"): there is no package called ‘patchwork’
+1. print(summary(lavaan.fit1, fit.measures = TRUE))
+2. summary(lavaan.fit1, fit.measures = TRUE)
+3. .handleSimpleError(function (cond) 
+ . .Internal(C_tryCatchHelper(addr, 1L, cond)), "object 'lavaan.fit1' not found", 
+ .     base::quote(eval(expr, envir, enclos)))
+4. h(simpleError(msg, call))
+5. .handleSimpleError(function (cond) 
+ . .Internal(C_tryCatchHelper(addr, 1L, cond)), "error in evaluating the argument 'object' in selecting a method for function 'summary': object 'lavaan.fit1' not found", 
+ .     base::quote(h(simpleError(msg, call))))
+6. h(simpleError(msg, call))
+ERROR: Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'print': error in evaluating the argument 'object' in selecting a method for function 'summary': object 'lavaan.fit1' not found
 
 
