@@ -11,11 +11,11 @@ suppressPackageStartupMessages({
   library("ggokabeito")
 })
 
-set.seed(84735)
-SEED <- 84735 # set random seed for reproducibility
+set.seed(42)
+SEED <- 42 # set random seed for reproducibility
 
-theme_set(bayesplot::theme_default(base_size = 12))
-bayesplot::color_scheme_set("gray")
+theme_set(bayesplot::theme_default(theme_minimal()))
+# bayesplot::color_scheme_set("gray")
 
 # knitr chunk options ----------------------------------------------------------
 

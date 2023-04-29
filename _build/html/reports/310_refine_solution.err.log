@@ -30,30 +30,18 @@ suppressPackageStartupMessages({
     library("lavaan")
     library("effectsize")
 })
-
+options(repr.plot.width=6, repr.plot.height=6)
 set.seed(42)
 ------------------
 
-Error in library("patchwork"): there is no package called ‘patchwork’
+Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 Traceback:
 
 1. source("_common.R")
 2. withVisible(eval(ei, envir))
 3. eval(ei, envir)
 4. eval(ei, envir)
-5. suppressPackageStartupMessages({
- .     library("here")
- .     library("tidyverse")
- .     library("scales")
- .     library("patchwork")
- .     library("bayesplot")
- .     library("ggExtra")
- .     library("ggpubr")
- .     library("viridis")
- .     library("ggokabeito")
- . })
-6. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
-7. library("patchwork")
-ERROR: Error in library("patchwork"): there is no package called ‘patchwork’
+5. theme_set(bayesplot::theme_default(size = 12, family = "sans"))
+ERROR: Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 
 

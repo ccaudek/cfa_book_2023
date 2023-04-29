@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>35. Modello LCS univariato &#8212; cfa_book</title>
+    <title>36. Modello LCS univariato &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="36. Modello LCS bivariato" href="333_biv_change.html" />
-    <link rel="prev" title="34. Invarianza di misurazione" href="331_inv_measurement.html" />
+    <link rel="next" title="37. Modello LCS bivariato" href="333_biv_change.html" />
+    <link rel="prev" title="35. Invarianza di misurazione" href="331_inv_measurement.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -202,25 +202,26 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">27. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">28. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">29. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">30. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">31. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">32. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">33. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">34. Invarianza di misurazione</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">35. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">36. Modello LCS bivariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">37. Invarianza fattoriale nei modelli LGM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_lgm_intro.html">27. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="321_lgm_prelims.html">28. Dati longitudinali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">29. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">30. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">31. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">32. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">33. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">34. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">35. Invarianza di misurazione</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">36. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">37. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">38. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">38. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">39. Bibliografia</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendici</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="900_lin_alg.html">39. Elementi di algebra lineare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="900_lin_alg.html">40. Elementi di algebra lineare</a></li>
 </ul>
 
     </div>
@@ -414,9 +415,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-singolo-indicatore-in-due-rilevazioni-temporali">35.1. Un singolo indicatore in due rilevazioni temporali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-multipli-in-due-rilevazioni-temporali">35.2. Indicatori multipli in due rilevazioni temporali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-cambiamento-duale">35.3. Modello di cambiamento duale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-singolo-indicatore-in-due-rilevazioni-temporali">36.1. Un singolo indicatore in due rilevazioni temporali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-multipli-in-due-rilevazioni-temporali">36.2. Indicatori multipli in due rilevazioni temporali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-cambiamento-duale">36.3. Modello di cambiamento duale</a></li>
 </ul>
             </nav>
         </div>
@@ -429,7 +430,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modello-lcs-univariato">
-<span id="latent-change-notebook"></span><h1><span class="section-number">35. </span>Modello LCS univariato<a class="headerlink" href="#modello-lcs-univariato" title="Permalink to this headline">#</a></h1>
+<span id="latent-change-notebook"></span><h1><span class="section-number">36. </span>Modello LCS univariato<a class="headerlink" href="#modello-lcs-univariato" title="Permalink to this headline">#</a></h1>
 <p>I <em>Latent Growth Model</em> descrivono la variabile <span class="math notranslate nohighlight">\(Y\)</span> al tempo <span class="math notranslate nohighlight">\(t\)</span>. I <em>Latent Change Score Models</em> (LCSM; McArdle, 2001, 2009; McArdle &amp; Hamagami, 2001) rendono esplicito il cambiamento di <span class="math notranslate nohighlight">\(Y\)</span> da <span class="math notranslate nohighlight">\(t-1\)</span> a <span class="math notranslate nohighlight">\(t\)</span>. Questo cambiamento nel paradigma dell’analisi statistica costringe l’analista a focalizzarsi sull’aspettativa del cambiamento in <span class="math notranslate nohighlight">\(Y\)</span>. I modelli LCS vengono utilizzati per studiare come i costrutti cambiano nel tempo e possono essere usati per stimare la traiettoria di sviluppo di un costrutto o per indagare l’associazione tra i cambiamenti di due costrutti nel tempo.</p>
 <p>I modelli LCS sono stati utilizzati nella psicologia dello sviluppo per mostrare diversi effetti. Ad esempio, che il vocabolario influisce sulla comprensione della lettura, che le persone con dislessia mostrano minori benefici intellettuali dalla lettura, che l’addestramento cognitivo si generalizza oltre il livello degli elementi all’abilità cognitiva e che le abilità cognitive di base come il ragionamento e il vocabolario mostrano mutui benefici nel tempo.</p>
 <p>In termini statistici, i modelli di cambiamento latente (LCS) si concentrano sul cambiamento nei costrutti dipendenti dal tempo piuttosto che sui punteggi osservati. Questo approccio consente di studiare direttamente il cambiamento intra-individuale attraverso una modellizzazione statistica adeguata. Analogamente a un test t per dati accoppiati, nei modelli LCS il punteggio di cambiamento latente rimuove la varianza dovuta alle differenze inter-individuali e fornisce una misura del cambiamento all’interno dell’individuo tra diverse rilevazioni temporali <span id="id1">[<a class="reference internal" href="z_biblio.html#id4" title="Emil N Coman, Katherine Picho, John J McArdle, Victor Villagra, Lisa Dierker, and Eugen Iordache. The paired t-test as a simple latent change score model. 2013.">CPM+13</a>]</span>.</p>
@@ -463,9 +464,21 @@ X_{ti} = lx_{ti} + u_{ti}.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="nn">Error</span> in <span class="ni">bayesplot::theme_default(size = 12, family = &quot;sans&quot;): unused arguments </span><span class="nt">(size = 12, family = &quot;sans&quot;)</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">source</span><span class="p">(</span><span class="s2">&quot;_common.R&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">withVisible</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="n">envir</span><span class="p">))</span>
+<span class="mi">3</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="n">envir</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="n">envir</span><span class="p">)</span>
+<span class="mi">5</span><span class="o">.</span> <span class="n">theme_set</span><span class="p">(</span><span class="n">bayesplot</span><span class="p">::</span><span class="n">theme_default</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="s2">&quot;sans&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </div>
 <section id="un-singolo-indicatore-in-due-rilevazioni-temporali">
-<h2><span class="section-number">35.1. </span>Un singolo indicatore in due rilevazioni temporali<a class="headerlink" href="#un-singolo-indicatore-in-due-rilevazioni-temporali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">36.1. </span>Un singolo indicatore in due rilevazioni temporali<a class="headerlink" href="#un-singolo-indicatore-in-due-rilevazioni-temporali" title="Permalink to this headline">#</a></h2>
 <p>Iniziamo con il caso più semplice, ovvero quello di una singola misura osservata in due momenti nel tempo per un campione di individui. Verrà qui discusso un esempio presentato da <span id="id2">Kievit <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id3" title="Rogier A Kievit, Andreas M Brandmaier, Gabriel Ziegler, Anne-Laura van Harmelen, Susanne MM de Mooij, Michael Moutoussis, Ian M Goodyer, Ed Bullmore, Peter B Jones, Peter Fonagy, and others. Developmental cognitive neuroscience using latent change score models: a tutorial and applications. Developmental Cognitive Neuroscience, 33:99–117, 2018.">KBZ+18</a>]</span>. Supponiamo dunque che un ricercatore studi una variabile psicologica la quale viene osservata in due momenti del tempo (T1 e T2) in una popolazione di interesse. Il modo tradizionale con cui si indaga se i punteggi di un gruppo di individui sono aumentati o diminuiti tra T1 e T2 è quello di eseguire un test t di Student per dati appaiati. Con poche modifiche, il modello LCS ci consente di andare oltre questo quadro di analisi tradizionale.</p>
 <p>Iniziamo a simulare i dati usando lo script fornito da <span id="id3">Kievit <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id3" title="Rogier A Kievit, Andreas M Brandmaier, Gabriel Ziegler, Anne-Laura van Harmelen, Susanne MM de Mooij, Michael Moutoussis, Ian M Goodyer, Ed Bullmore, Peter B Jones, Peter Fonagy, and others. Developmental cognitive neuroscience using latent change score models: a tutorial and applications. Developmental Cognitive Neuroscience, 33:99–117, 2018.">KBZ+18</a>]</span>.</p>
 <div class="cell docutils container">
@@ -540,7 +553,7 @@ X_{ti} = lx_{ti} + u_{ti}.
 <figure class="align-default" id="kevit1-fig">
 <a class="reference internal image-reference" href="_images/kevit_1.png"><img alt="_images/kevit_1.png" src="_images/kevit_1.png" style="height: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 35.1 </span><span class="caption-text"><strong>Diagramma di percorso semplificato di un LCSM univariato.</strong> La variabile COG viene misurata in due momenti (COG_T1 e COG_T2). Il cambiamento (ΔCOG1) tra i due momenti viene modellato come una variabile latente.</span><a class="headerlink" href="#kevit1-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36.1 </span><span class="caption-text"><strong>Diagramma di percorso semplificato di un LCSM univariato.</strong> La variabile COG viene misurata in due momenti (COG_T1 e COG_T2). Il cambiamento (ΔCOG1) tra i due momenti viene modellato come una variabile latente.</span><a class="headerlink" href="#kevit1-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p><code class="docutils literal notranslate"><span class="pre">COG_T1</span></code> e <code class="docutils literal notranslate"><span class="pre">COG_T2</span></code> sono i punteggi osservati nei due momenti temporali; <span class="math notranslate nohighlight">\(\delta\)</span><code class="docutils literal notranslate"><span class="pre">COG1</span></code> rappresenta la differenza tra i punteggi latenti nei due momenti temporali.</p>
@@ -677,7 +690,7 @@ R-Square:
 </div>
 </section>
 <section id="indicatori-multipli-in-due-rilevazioni-temporali">
-<h2><span class="section-number">35.2. </span>Indicatori multipli in due rilevazioni temporali<a class="headerlink" href="#indicatori-multipli-in-due-rilevazioni-temporali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">36.2. </span>Indicatori multipli in due rilevazioni temporali<a class="headerlink" href="#indicatori-multipli-in-due-rilevazioni-temporali" title="Permalink to this headline">#</a></h2>
 <p>Consideriamo ora il caso in cui abbiamo indicatori multipli in due momenti nel tempo. Iniziamo con simulare i dati usando lo script fornito dagli autori.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -986,13 +999,13 @@ R-Square:
 </div>
 </section>
 <section id="modello-di-cambiamento-duale">
-<h2><span class="section-number">35.3. </span>Modello di cambiamento duale<a class="headerlink" href="#modello-di-cambiamento-duale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">36.3. </span>Modello di cambiamento duale<a class="headerlink" href="#modello-di-cambiamento-duale" title="Permalink to this headline">#</a></h2>
 <p>In questo secondo esempio fornito da <span id="id6">[<a class="reference internal" href="z_biblio.html#id5" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span> estenderemo l’approccio illustrato in precedenza. Useremo inoltre le funzionalità del pacchetto R <code class="docutils literal notranslate"><span class="pre">lcsm</span></code> fornito dagli stessi autori per specificare il modello LCS univariato in un caso più complesso di quello esaminato nel primo esempio.</p>
 <p>Il modello LCS univariato descritto ora si pone il problema di descrivere i cambiamenti degli individui (<span class="math notranslate nohighlight">\(i\)</span>) in un costrutto (<span class="math notranslate nohighlight">\(X\)</span>) in una serie di momenti del tempo (<span class="math notranslate nohighlight">\(t\)</span>). La figura successiva riporta il diagramma di percorso fornito da <span id="id7">Wiedemann <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span>.</p>
 <figure class="align-default" id="lcsm1-fig">
 <a class="reference internal image-reference" href="_images/lcsm_1.png"><img alt="_images/lcsm_1.png" src="_images/lcsm_1.png" style="height: 450px;" /></a>
 <figcaption>
-<p><span class="caption-number">Fig. 35.2 </span><span class="caption-text"><strong>Diagramma di percorso semplificato di LCSM univariato.</strong> Quadrati bianchi = punteggi osservati sulla variabile <span class="math notranslate nohighlight">\(x\)</span> nei punti temporali da 1 a 5; cerchi verdi = punteggi veri latenti (prefisso ‘l’); cerchi blu = punteggi di cambiamento latenti (prefisso ‘d’); cerchio giallo = fattore di cambiamento latente costante. Frecce direzionali = regressioni; frecce bidirezionali = covarianze. Parametro <code class="docutils literal notranslate"><span class="pre">beta_x</span></code> = fattore di cambiamento proporzionale; parametro <code class="docutils literal notranslate"><span class="pre">phi_x</span></code> = autoregressione dei punteggi di cambiamento; parametro <code class="docutils literal notranslate"><span class="pre">sigma_g2lx1</span></code> = covarianza del fattore di cambiamento (<code class="docutils literal notranslate"><span class="pre">g2</span></code>) con il punteggio vero iniziale (<code class="docutils literal notranslate"><span class="pre">lx1</span></code>). I punteggi unici (<span class="math notranslate nohighlight">\(ux_t\)</span>) e le varianze uniche (<span class="math notranslate nohighlight">\(σ^2_{ux}\)</span>) non sono mostrati nella figura per semplicità.</span><a class="headerlink" href="#lcsm1-fig" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 36.2 </span><span class="caption-text"><strong>Diagramma di percorso semplificato di LCSM univariato.</strong> Quadrati bianchi = punteggi osservati sulla variabile <span class="math notranslate nohighlight">\(x\)</span> nei punti temporali da 1 a 5; cerchi verdi = punteggi veri latenti (prefisso ‘l’); cerchi blu = punteggi di cambiamento latenti (prefisso ‘d’); cerchio giallo = fattore di cambiamento latente costante. Frecce direzionali = regressioni; frecce bidirezionali = covarianze. Parametro <code class="docutils literal notranslate"><span class="pre">beta_x</span></code> = fattore di cambiamento proporzionale; parametro <code class="docutils literal notranslate"><span class="pre">phi_x</span></code> = autoregressione dei punteggi di cambiamento; parametro <code class="docutils literal notranslate"><span class="pre">sigma_g2lx1</span></code> = covarianza del fattore di cambiamento (<code class="docutils literal notranslate"><span class="pre">g2</span></code>) con il punteggio vero iniziale (<code class="docutils literal notranslate"><span class="pre">lx1</span></code>). I punteggi unici (<span class="math notranslate nohighlight">\(ux_t\)</span>) e le varianze uniche (<span class="math notranslate nohighlight">\(σ^2_{ux}\)</span>) non sono mostrati nella figura per semplicità.</span><a class="headerlink" href="#lcsm1-fig" title="Permalink to this image">#</a></p>
 </figcaption>
 </figure>
 <p>Come indicato in precedenza, i modelli  LCS descrivono il cambiamento di un costrutto nel tempo mediante tre parametri:</p>
@@ -1095,9 +1108,7 @@ math8      55  0.16    -0.52     0.97
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 2787 rows containing missing values (`geom_line()`).”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+Warning message:
 “Removed 4310 rows containing missing values (`geom_point()`).”
 </pre></div>
 </div>
@@ -1143,15 +1154,11 @@ math8      55  0.16    -0.52     0.97
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1655,15 +1662,11 @@ NULL
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1969,9 +1972,7 @@ Variances:
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 7 rows containing missing values (`geom_line()`).”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+Warning message:
 “Removed 7 rows containing missing values (`geom_point()`).”
 </pre></div>
 </div>
@@ -2020,7 +2021,7 @@ Variances:
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">34. </span>Invarianza di misurazione</p>
+        <p class="prev-next-title"><span class="section-number">35. </span>Invarianza di misurazione</p>
       </div>
     </a>
     <a class="right-next"
@@ -2028,7 +2029,7 @@ Variances:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">36. </span>Modello LCS bivariato</p>
+        <p class="prev-next-title"><span class="section-number">37. </span>Modello LCS bivariato</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2047,9 +2048,9 @@ Variances:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-singolo-indicatore-in-due-rilevazioni-temporali">35.1. Un singolo indicatore in due rilevazioni temporali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-multipli-in-due-rilevazioni-temporali">35.2. Indicatori multipli in due rilevazioni temporali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-cambiamento-duale">35.3. Modello di cambiamento duale</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#un-singolo-indicatore-in-due-rilevazioni-temporali">36.1. Un singolo indicatore in due rilevazioni temporali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indicatori-multipli-in-due-rilevazioni-temporali">36.2. Indicatori multipli in due rilevazioni temporali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-cambiamento-duale">36.3. Modello di cambiamento duale</a></li>
 </ul>
   </nav></div>
 

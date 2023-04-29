@@ -25,18 +25,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-psych::omega(d[, 1:6])
+source("_common.R")
+suppressPackageStartupMessages({
+    library("psych")
+    library("lavaan")
+})
+options(repr.plot.width=6, repr.plot.height=6)
+set.seed(42)
 ------------------
 
-Error in omegah(m = m, nfactors = nfactors, fm = fm, key = key, flip = flip, : I am sorry, you need to have the  GPArotation package installed
+Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 Traceback:
 
-1. psych::omega(d[, 1:6])
-2. omegah(m = m, nfactors = nfactors, fm = fm, key = key, flip = flip, 
- .     digits = digits, title = title, sl = sl, labels = labels, 
- .     plot = plot, n.obs = n.obs, rotate = rotate, Phi = Phi, option = option, 
- .     covar = covar, ...)
-3. stop("I am sorry, you need to have the  GPArotation package installed")
-ERROR: Error in omegah(m = m, nfactors = nfactors, fm = fm, key = key, flip = flip, : I am sorry, you need to have the  GPArotation package installed
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. theme_set(bayesplot::theme_default(size = 12, family = "sans"))
+ERROR: Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 
 

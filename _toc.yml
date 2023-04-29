@@ -50,7 +50,8 @@ parts:
   - caption: Curve di crescita latente
     numbered: True
     chapters:
-      - file: 320_growth_models_intro
+      - file: 320_lgm_intro
+      - file: 321_lgm_prelims
       - file: 324_lgm_mixed
       - file: 326_growth_1
       - file: 327_growth_cont

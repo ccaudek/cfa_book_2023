@@ -25,16 +25,27 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-lavaanPlot(model = fit_alt, labels = labels2, coefs = TRUE, covs = TRUE, stars = FALSE)
+source("_common.R")
+suppressPackageStartupMessages({
+    library("lavaan")
+    library("semPlot")
+    library("lavaanPlot")
+    library("DiagrammeRsvg")
+    library("rsvg")
+})
 
+set.seed(42)
+options(repr.plot.width=6, repr.plot.height=6)
 ------------------
 
-Error in eval(expr, envir, enclos): object 'labels2' not found
+Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 Traceback:
 
-1. lavaanPlot(model = fit_alt, labels = labels2, coefs = TRUE, covs = TRUE, 
- .     stars = FALSE)
-2. buildCall(name = name, model = model, labels = labels, ...)
-ERROR: Error in eval(expr, envir, enclos): object 'labels2' not found
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. theme_set(bayesplot::theme_default(size = 12, family = "sans"))
+ERROR: Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 
 
