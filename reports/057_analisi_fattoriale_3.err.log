@@ -30,12 +30,13 @@ suppressPackageStartupMessages({
     library("lavaan")
     library("semPlot")
     library("knitr")
-    library("markdown")
-    library("patchwork")
-    library("here")
+    library("kableExtra")
+    library("tidyr")
+    library("corrplot")
 })
-
+options(repr.plot.width=6, repr.plot.height=6)
 set.seed(42)
+
 ------------------
 
 Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")

@@ -26,15 +26,8 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 source("_common.R")
-suppressPackageStartupMessages({
-    library("lavaan")
-    library("semPlot")
-    library("knitr")
-    library("markdown")
-    library("patchwork")
-    library("here")
-})
-
+suppressPackageStartupMessages(library("hemp"))
+options(repr.plot.width=6, repr.plot.height=6)
 set.seed(42)
 ------------------
 

@@ -202,21 +202,26 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">27. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">28. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">29. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">30. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">31. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">32. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">33. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">34. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">35. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">36. Modello LCS bivariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">37. Invarianza fattoriale nei modelli LGM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_lgm_intro.html">27. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="321_lgm_prelims.html">28. Dati longitudinali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">29. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">30. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">31. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">32. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">33. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">34. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">35. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">36. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">37. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">38. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">38. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">39. Bibliografia</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendici</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="900_lin_alg.html">40. Elementi di algebra lineare</a></li>
 </ul>
 
     </div>
@@ -809,18 +814,6 @@ utilizza solo 5.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 5 of type dbl</caption>
-<tbody>
-	<tr><td>2.565</td><td>1.424</td><td>1.481</td><td>1.328</td><td>1.529</td></tr>
-	<tr><td>1.424</td><td>2.493</td><td>1.267</td><td>1.051</td><td>1.308</td></tr>
-	<tr><td>1.481</td><td>1.267</td><td>2.462</td><td>1.093</td><td>1.360</td></tr>
-	<tr><td>1.328</td><td>1.051</td><td>1.093</td><td>2.769</td><td>1.128</td></tr>
-	<tr><td>1.529</td><td>1.308</td><td>1.360</td><td>1.128</td><td>3.355</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Eseguiamo l’analisi fattoriale con il metodo della massima
 verosimiglianza:</p>
@@ -838,21 +831,6 @@ verosimiglianza:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loadings:
-     Factor1
-[1,] 0.817  
-[2,] 0.694  
-[3,] 0.726  
-[4,] 0.591  
-[5,] 0.643  
-
-               Factor1
-SS loadings      2.438
-Proportion Var   0.488
-</pre></div>
-</div>
-</div>
 </div>
 <p>Le specificità sono uguali a</p>
 <div class="cell docutils container">
@@ -861,14 +839,6 @@ Proportion Var   0.488
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>0.333008655228646</li><li>0.518170116026116</li><li>0.473239886593545</li><li>0.651215124917442</li><li>0.586664002068541</li></ol>
-</div></div>
 </div>
 <p>Il coefficiente <span class="math notranslate nohighlight">\(\omega\)</span></p>
 <div class="math notranslate nohighlight">
@@ -882,8 +852,6 @@ Proportion Var   0.488
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.824547701274471</div></div>
 </div>
 <p>Nel caso presente, il coefficiente di attendibilità <span class="math notranslate nohighlight">\(\omega=0.82\)</span> ci
 dice che l’<span class="math notranslate nohighlight">\(82\)</span>% della varianza del punteggio totale <span class="math notranslate nohighlight">\(Y\)</span> del test viene
@@ -1013,43 +981,12 @@ a</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.81912232833106</div></div>
 </div>
 <p>Lo stesso risultato si ottiene utilizzando la funzione <code class="docutils literal notranslate"><span class="pre">alpha()</span></code>
 contenuta nel pacchetto <code class="docutils literal notranslate"><span class="pre">psych</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">alpha</span><span class="p">(</span><span class="n">SWLS</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Reliability analysis   
-Call: alpha(x = SWLS)
-
-  raw_alpha std.alpha G6(smc) average_r S/N median_r
-      0.82      0.82    0.79      0.48 4.6     0.49
-
-    95% confidence boundaries 
-      lower alpha upper
-Feldt  0.33  0.82  0.98
-
- Reliability if an item is dropped:
-   raw_alpha std.alpha G6(smc) average_r S/N  var.r med.r
-V1      0.75      0.76    0.70      0.44 3.1 0.0027  0.44
-V2      0.78      0.79    0.74      0.48 3.7 0.0060  0.49
-V3      0.78      0.78    0.73      0.47 3.5 0.0055  0.48
-V4      0.81      0.81    0.77      0.52 4.3 0.0027  0.52
-V5      0.80      0.80    0.75      0.50 3.9 0.0057  0.50
-
- Item statistics 
-      r r.cor r.drop
-V1 0.83  0.79   0.71
-V2 0.77  0.68   0.62
-V3 0.78  0.71   0.64
-V4 0.70  0.58   0.53
-V5 0.74  0.63   0.57
 </pre></div>
 </div>
 </div>
@@ -1154,18 +1091,6 @@ del modello di misurazione su cui si basa.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 5 of type dbl</caption>
-<tbody>
-	<tr><td>1.000</td><td>0.563</td><td>0.589</td><td>0.498</td><td>0.521</td></tr>
-	<tr><td>0.563</td><td>1.000</td><td>0.511</td><td>0.400</td><td>0.452</td></tr>
-	<tr><td>0.589</td><td>0.511</td><td>1.000</td><td>0.419</td><td>0.473</td></tr>
-	<tr><td>0.498</td><td>0.400</td><td>0.419</td><td>1.000</td><td>0.370</td></tr>
-	<tr><td>0.521</td><td>0.452</td><td>0.473</td><td>0.370</td><td>1.000</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Seguendo <span id="id3">McDonald [<a class="reference internal" href="z_biblio.html#id31" title="Roderick P McDonald. Test theory: A unified treatment. Psychology Press, 2013.">McD13</a>]</span>, supponiamo di calcolare l’attendibilità di un singolo item (<span class="math notranslate nohighlight">\(\rho_1\)</span>) come la correlazione media tra gli item:</p>
 <div class="cell docutils container">
@@ -1186,8 +1111,6 @@ del modello di misurazione su cui si basa.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.479759331457527</div></div>
 </div>
 <p>Applicando la formula di Spearman-Brown, la stima dell’attendibilità del
 test diventa pari a</p>
@@ -1197,8 +1120,6 @@ test diventa pari a</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.821776630281859</div></div>
 </div>
 </section>
 </section>
@@ -1288,9 +1209,6 @@ test diventa pari a</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/b1c09045f234d787a1ad097ae528f180ddfbfce9faf389ceb495b3071d7abbd1.png" src="_images/b1c09045f234d787a1ad097ae528f180ddfbfce9faf389ceb495b3071d7abbd1.png" />
-</div>
 </div>
 <p>Tuttavia, questa conclusione è valida solo se il modello parallelo è giustificato per i dati.  Se esaminiamo l’output di lavaan vediamo che, nel caso presente, questo non è vero.</p>
 <div class="cell docutils container">
@@ -1298,82 +1216,6 @@ test diventa pari a</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># report output with fit measures and standardized estimates</span>
 <span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">fit_parallel</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 13 iterations
-
-  Estimator                                         ML
-  Optimization method                           NLMINB
-  Number of model parameters                         7
-  Number of equality constraints                     5
-
-  Number of observations                           301
-
-Model Test User Model:
-                                                      
-  Test statistic                               325.899
-  Degrees of freedom                                19
-  P-value (Chi-square)                           0.000
-
-Model Test Baseline Model:
-
-  Test statistic                               568.519
-  Degrees of freedom                                15
-  P-value                                        0.000
-
-User Model versus Baseline Model:
-
-  Comparative Fit Index (CFI)                    0.446
-  Tucker-Lewis Index (TLI)                       0.562
-
-Loglikelihood and Information Criteria:
-
-  Loglikelihood user model (H0)              -2680.931
-  Loglikelihood unrestricted model (H1)      -2517.981
-                                                      
-  Akaike (AIC)                                5365.862
-  Bayesian (BIC)                              5373.276
-  Sample-size adjusted Bayesian (SABIC)       5366.933
-
-Root Mean Square Error of Approximation:
-
-  RMSEA                                          0.232
-  90 Percent confidence interval - lower         0.210
-  90 Percent confidence interval - upper         0.254
-  P-value H_0: RMSEA &lt;= 0.050                    0.000
-  P-value H_0: RMSEA &gt;= 0.080                    1.000
-
-Standardized Root Mean Square Residual:
-
-  SRMR                                           0.206
-
-Parameter Estimates:
-
-  Standard errors                             Standard
-  Information                                 Expected
-  Information saturated (h1) model          Structured
-
-Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-  f1 =~                                                                 
-    X4                1.000                               0.633    0.551
-    X5                1.000                               0.633    0.551
-    X6                1.000                               0.633    0.551
-    X7                1.000                               0.633    0.551
-    X8                1.000                               0.633    0.551
-    X9                1.000                               0.633    0.551
-
-Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-   .X4      (thet)    0.920    0.034   27.432    0.000    0.920    0.697
-   .X5      (thet)    0.920    0.034   27.432    0.000    0.920    0.697
-   .X6      (thet)    0.920    0.034   27.432    0.000    0.920    0.697
-   .X7      (thet)    0.920    0.034   27.432    0.000    0.920    0.697
-   .X8      (thet)    0.920    0.034   27.432    0.000    0.920    0.697
-   .X9      (thet)    0.920    0.034   27.432    0.000    0.920    0.697
-    f1                0.400    0.045    8.803    0.000    1.000    1.000
 </pre></div>
 </div>
 </div>
@@ -1421,20 +1263,6 @@ Variances:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Table: Factor Loadings
-
-|Latent Factor |Indicator |     B|    SE|      Z| p-value|  Beta|
-|:-------------|:---------|-----:|-----:|------:|-------:|-----:|
-|f1            |X4        | 0.963| 0.059| 16.274|   0.000| 0.824|
-|f1            |X5        | 1.121| 0.067| 16.835|   0.000| 0.846|
-|f1            |X6        | 0.894| 0.058| 15.450|   0.000| 0.792|
-|f1            |X7        | 0.195| 0.071|  2.767|   0.006| 0.170|
-|f1            |X8        | 0.185| 0.063|  2.938|   0.003| 0.180|
-|f1            |X9        | 0.278| 0.065|  4.245|   0.000| 0.258|
-</pre></div>
-</div>
-</div>
 </div>
 <p>Si noti che le saturazioni fattoriali standardizzate sono molto diverse tra loro, suggerendo che il punteggio del costrutto si relaziona in modo diverso con ciascun item e che sarebbe inappropriato stimare il punteggio del costrutto assegnando un peso unitario agli item.</p>
 <p>McNeish e Wolf (2020) calcolano poi i punteggi fattoriali del modello congenerico.</p>
@@ -1455,9 +1283,6 @@ Variances:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/14eade3c297b000907f1af881baefc519146de83014acc8eede95654fa8be854.png" src="_images/14eade3c297b000907f1af881baefc519146de83014acc8eede95654fa8be854.png" />
-</div>
 </div>
 <p>Nel caso presente, il coefficiente di determinazione tra punteggio totale e punteggi fattoriali è 0.77.</p>
 <div class="cell docutils container">
@@ -1466,8 +1291,6 @@ Variances:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.765992021080727</div></div>
 </div>
 <p>Secondo gli autori, ciò significa che due persone con un punteggio totale identico potrebbero avere punteggi di modello congenerico potenzialmente diversi perché hanno raggiunto il loro particolare punteggio totale approvando item diversi. Poiché il modello congenerico assegna pesi diversi agli item, ciascun item contribuisce in modo diverso al punteggio fattoriale del modello congenerico, il che non è vero per il punteggio totale.</p>
 <p>Si noti che, per i dati di Holzinger and Swineford (1939), neppure un modello congenerico ad un fattore si dimostra adeguato.</p>
@@ -1478,81 +1301,6 @@ Variances:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 16 iterations
-
-  Estimator                                         ML
-  Optimization method                           NLMINB
-  Number of model parameters                        12
-
-  Number of observations                           301
-
-Model Test User Model:
-                                                      
-  Test statistic                               115.366
-  Degrees of freedom                                 9
-  P-value (Chi-square)                           0.000
-
-Model Test Baseline Model:
-
-  Test statistic                               568.519
-  Degrees of freedom                                15
-  P-value                                        0.000
-
-User Model versus Baseline Model:
-
-  Comparative Fit Index (CFI)                    0.808
-  Tucker-Lewis Index (TLI)                       0.680
-
-Loglikelihood and Information Criteria:
-
-  Loglikelihood user model (H0)              -2575.664
-  Loglikelihood unrestricted model (H1)      -2517.981
-                                                      
-  Akaike (AIC)                                5175.328
-  Bayesian (BIC)                              5219.813
-  Sample-size adjusted Bayesian (SABIC)       5181.756
-
-Root Mean Square Error of Approximation:
-
-  RMSEA                                          0.198
-  90 Percent confidence interval - lower         0.167
-  90 Percent confidence interval - upper         0.231
-  P-value H_0: RMSEA &lt;= 0.050                    0.000
-  P-value H_0: RMSEA &gt;= 0.080                    1.000
-
-Standardized Root Mean Square Residual:
-
-  SRMR                                           0.129
-
-Parameter Estimates:
-
-  Standard errors                             Standard
-  Information                                 Expected
-  Information saturated (h1) model          Structured
-
-Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-  f1 =~                                                                 
-    X4                0.963    0.059   16.274    0.000    0.963    0.824
-    X5                1.121    0.067   16.835    0.000    1.121    0.846
-    X6                0.894    0.058   15.450    0.000    0.894    0.792
-    X7                0.195    0.071    2.767    0.006    0.195    0.170
-    X8                0.185    0.063    2.938    0.003    0.185    0.180
-    X9                0.278    0.065    4.245    0.000    0.278    0.258
-
-Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-    f1                1.000                               1.000    1.000
-   .X4                0.437    0.056    7.775    0.000    0.437    0.320
-   .X5                0.500    0.071    6.998    0.000    0.500    0.285
-   .X6                0.474    0.054    8.777    0.000    0.474    0.372
-   .X7                1.278    0.105   12.211    0.000    1.278    0.971
-   .X8                1.023    0.084   12.204    0.000    1.023    0.967
-   .X9                1.080    0.089   12.132    0.000    1.080    0.933
-</pre></div>
-</div>
-</div>
 </div>
 <p>Trascurando le considerazioni sulla struttura fattoriale e esaminando, per esempio, unicamente il coefficiente omega, finiamo per trovare una risposta accettabile, ma sbagliata.</p>
 <div class="cell docutils container">
@@ -1560,67 +1308,6 @@ Variances:
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">psych</span><span class="o">::</span><span class="nf">omega</span><span class="p">(</span><span class="n">d</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">6</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required namespace: GPArotation
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Omega 
-Call: omegah(m = m, nfactors = nfactors, fm = fm, key = key, flip = flip, 
-    digits = digits, title = title, sl = sl, labels = labels, 
-    plot = plot, n.obs = n.obs, rotate = rotate, Phi = Phi, option = option, 
-    covar = covar)
-Alpha:                 0.72 
-G.6:                   0.76 
-Omega Hierarchical:    0.55 
-Omega H asymptotic:    0.65 
-Omega Total            0.84 
-
-Schmid Leiman Factor loadings greater than  0.2 
-      g  F1*  F2*   F3*   h2   u2   p2
-X4 0.73            0.68 1.00 0.00 0.53
-X5 0.96                 0.92 0.08 1.00
-X6 0.69            0.22 0.54 0.46 0.90
-X7           0.56       0.33 0.67 0.03
-X8           0.75       0.59 0.41 0.05
-X9 0.22      0.49       0.29 0.71 0.16
-
-With Sums of squares  of:
-   g  F1*  F2*  F3* 
-2.02 0.00 1.11 0.54 
-
-general/max  1.82   max/min =   257.39
-mean percent general =  0.44    with sd =  0.43 and cv of  0.97 
-Explained Common Variance of the general factor =  0.55 
-
-The degrees of freedom are 0  and the fit is  0 
-The number of observations was  301  with Chi Square =  0.03  with prob &lt;  NA
-The root mean square of the residuals is  0 
-The df corrected root mean square of the residuals is  NA
-
-Compare this with the adequacy of just a general factor and no group factors
-The degrees of freedom for just the general factor are 9  and the fit is  0.48 
-The number of observations was  301  with Chi Square =  142.26  with prob &lt;  3.5e-26
-The root mean square of the residuals is  0.17 
-The df corrected root mean square of the residuals is  0.21 
-
-RMSEA index =  0.222  and the 10 % confidence intervals are  0.191 0.255
-BIC =  90.9 
-
-Measures of factor score adequacy             
-                                                 g   F1*  F2*  F3*
-Correlation of scores with factors            0.96  0.08 0.83 0.96
-Multiple R square of scores with factors      0.93  0.01 0.68 0.91
-Minimum correlation of factor score estimates 0.86 -0.99 0.36 0.83
-
- Total, General and Subset omega for each subset
-                                                 g  F1*  F2*  F3*
-Omega total for total scores and subscales    0.84 0.92 0.66 0.86
-Omega general for total scores and subscales  0.55 0.92 0.04 0.61
-Omega group for total scores and subscales    0.27 0.00 0.61 0.25
-</pre></div>
-</div>
-<img alt="_images/ee4a6b5a1069f974ec181a55f08a9661c39fbbd794c4073340e4c2d0623ec884.png" src="_images/ee4a6b5a1069f974ec181a55f08a9661c39fbbd794c4073340e4c2d0623ec884.png" />
 </div>
 </div>
 <p>È invece necessario ipotizzare un modello congenerico a due fattori.</p>
@@ -1655,88 +1342,6 @@ Omega group for total scores and subscales    0.27 0.00 0.61 0.25
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">out</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">summary</span><span class="p">(</span><span class="n">fit_2f_congeneric</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 18 iterations
-
-  Estimator                                         ML
-  Optimization method                           NLMINB
-  Number of model parameters                        13
-
-  Number of observations                           301
-
-Model Test User Model:
-                                                      
-  Test statistic                                14.736
-  Degrees of freedom                                 8
-  P-value (Chi-square)                           0.064
-
-Model Test Baseline Model:
-
-  Test statistic                               568.519
-  Degrees of freedom                                15
-  P-value                                        0.000
-
-User Model versus Baseline Model:
-
-  Comparative Fit Index (CFI)                    0.988
-  Tucker-Lewis Index (TLI)                       0.977
-
-Loglikelihood and Information Criteria:
-
-  Loglikelihood user model (H0)              -2525.349
-  Loglikelihood unrestricted model (H1)      -2517.981
-                                                      
-  Akaike (AIC)                                5076.698
-  Bayesian (BIC)                              5124.891
-  Sample-size adjusted Bayesian (SABIC)       5083.662
-
-Root Mean Square Error of Approximation:
-
-  RMSEA                                          0.053
-  90 Percent confidence interval - lower         0.000
-  90 Percent confidence interval - upper         0.095
-  P-value H_0: RMSEA &lt;= 0.050                    0.402
-  P-value H_0: RMSEA &gt;= 0.080                    0.159
-
-Standardized Root Mean Square Residual:
-
-  SRMR                                           0.035
-
-Parameter Estimates:
-
-  Standard errors                             Standard
-  Information                                 Expected
-  Information saturated (h1) model          Structured
-
-Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-  f1 =~                                                                 
-    X4                0.965    0.059   16.296    0.000    0.965    0.826
-    X5                1.123    0.067   16.845    0.000    1.123    0.847
-    X6                0.895    0.058   15.465    0.000    0.895    0.793
-  f2 =~                                                                 
-    X7                0.659    0.080    8.218    0.000    0.659    0.575
-    X8                0.733    0.077    9.532    0.000    0.733    0.712
-    X9                0.599    0.075    8.025    0.000    0.599    0.557
-
-Covariances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-  f1 ~~                                                                 
-    f2                0.275    0.072    3.813    0.000    0.275    0.275
-
-Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
-    f1                1.000                               1.000    1.000
-    f2                1.000                               1.000    1.000
-   .X4                0.433    0.056    7.679    0.000    0.433    0.318
-   .X5                0.496    0.072    6.892    0.000    0.496    0.282
-   .X6                0.472    0.054    8.732    0.000    0.472    0.371
-   .X7                0.881    0.100    8.807    0.000    0.881    0.670
-   .X8                0.521    0.094    5.534    0.000    0.521    0.492
-   .X9                0.798    0.087    9.162    0.000    0.798    0.689
 </pre></div>
 </div>
 </div>

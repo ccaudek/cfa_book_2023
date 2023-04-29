@@ -25,24 +25,23 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-fit <- cfa(
-  mod2,
-  data = d,
-  meanstructure = TRUE
-)
+source("_common.R")
+suppressPackageStartupMessages({
+    library("lavaan")
+    library("semTools")
+})
+options(repr.plot.width = 6, repr.plot.height = 6)
+set.seed(42)
 ------------------
 
-Error in eval(mc, parent.frame()): object 'd' not found
+Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 Traceback:
 
-1. cfa(mod2, data = d, meanstructure = TRUE)
-2. eval(mc, parent.frame())
-3. eval(mc, parent.frame())
-4. lavaan::lavaan(model = mod2, data = d, meanstructure = TRUE, 
- .     model.type = "cfa", int.ov.free = TRUE, int.lv.free = FALSE, 
- .     auto.fix.first = TRUE, auto.fix.single = TRUE, auto.var = TRUE, 
- .     auto.cov.lv.x = TRUE, auto.cov.y = TRUE, auto.th = TRUE, 
- .     auto.delta = TRUE, auto.efa = TRUE)
-ERROR: Error in eval(mc, parent.frame()): object 'd' not found
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. theme_set(bayesplot::theme_default(size = 12, family = "sans"))
+ERROR: Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 
 

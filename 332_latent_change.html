@@ -464,6 +464,18 @@ X_{ti} = lx_{ti} + u_{ti}.
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="nn">Error</span> in <span class="ni">bayesplot::theme_default(size = 12, family = &quot;sans&quot;): unused arguments </span><span class="nt">(size = 12, family = &quot;sans&quot;)</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">source</span><span class="p">(</span><span class="s2">&quot;_common.R&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">withVisible</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="n">envir</span><span class="p">))</span>
+<span class="mi">3</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="n">envir</span><span class="p">)</span>
+<span class="mi">4</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">ei</span><span class="p">,</span> <span class="n">envir</span><span class="p">)</span>
+<span class="mi">5</span><span class="o">.</span> <span class="n">theme_set</span><span class="p">(</span><span class="n">bayesplot</span><span class="p">::</span><span class="n">theme_default</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="mi">12</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="s2">&quot;sans&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </div>
 <section id="un-singolo-indicatore-in-due-rilevazioni-temporali">
 <h2><span class="section-number">36.1. </span>Un singolo indicatore in due rilevazioni temporali<a class="headerlink" href="#un-singolo-indicatore-in-due-rilevazioni-temporali" title="Permalink to this headline">#</a></h2>
@@ -1096,9 +1108,7 @@ math8      55  0.16    -0.52     0.97
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 2787 rows containing missing values (`geom_line()`).”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+Warning message:
 “Removed 4310 rows containing missing values (`geom_point()`).”
 </pre></div>
 </div>
@@ -1144,15 +1154,11 @@ math8      55  0.16    -0.52     0.97
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1656,15 +1662,11 @@ NULL
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some cases are empty and will be ignored:
   741”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1970,9 +1972,7 @@ Variances:
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
 “Removed 7 rows containing missing values (`geom_line()`).”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+Warning message:
 “Removed 7 rows containing missing values (`geom_point()`).”
 </pre></div>
 </div>

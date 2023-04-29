@@ -25,23 +25,41 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-summary(lavaan.fit1, fit.measures = TRUE) |>
-    print()
+source("_common.R")
+suppressPackageStartupMessages({
+    library("tidyverse")
+    library("lavaan")
+    library("semPlot")
+    library("psych")
+    library("DT")
+    library("kableExtra")
+    library("lme4")
+    library("emmeans")
+})
+set.seed(42)
 ------------------
 
-Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'print': error in evaluating the argument 'object' in selecting a method for function 'summary': object 'lavaan.fit1' not found
+Error in base_size/2: non-numeric argument to binary operator
 Traceback:
 
-1. print(summary(lavaan.fit1, fit.measures = TRUE))
-2. summary(lavaan.fit1, fit.measures = TRUE)
-3. .handleSimpleError(function (cond) 
- . .Internal(C_tryCatchHelper(addr, 1L, cond)), "object 'lavaan.fit1' not found", 
- .     base::quote(eval(expr, envir, enclos)))
-4. h(simpleError(msg, call))
-5. .handleSimpleError(function (cond) 
- . .Internal(C_tryCatchHelper(addr, 1L, cond)), "error in evaluating the argument 'object' in selecting a method for function 'summary': object 'lavaan.fit1' not found", 
- .     base::quote(h(simpleError(msg, call))))
-6. h(simpleError(msg, call))
-ERROR: Error in h(simpleError(msg, call)): error in evaluating the argument 'x' in selecting a method for function 'print': error in evaluating the argument 'object' in selecting a method for function 'summary': object 'lavaan.fit1' not found
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. theme_set(bayesplot::theme_default(theme_minimal()))
+6. bayesplot::theme_default(theme_minimal())
+7. theme_bw(base_family = base_family, base_size = base_size)
+8. theme_grey(base_size = base_size, base_family = base_family, 
+ .     base_line_size = base_line_size, base_rect_size = base_rect_size) %+replace% 
+ .     theme(panel.background = element_rect(fill = "white", colour = NA), 
+ .         panel.border = element_rect(fill = NA, colour = "grey20"), 
+ .         panel.grid = element_line(colour = "grey92"), panel.grid.minor = element_line(linewidth = rel(0.5)), 
+ .         strip.background = element_rect(fill = "grey85", colour = "grey20"), 
+ .         legend.key = element_rect(fill = "white", colour = NA), 
+ .         complete = TRUE)
+9. is.theme(e1)
+10. theme_grey(base_size = base_size, base_family = base_family, 
+  .     base_line_size = base_line_size, base_rect_size = base_rect_size)
+ERROR: Error in base_size/2: non-numeric argument to binary operator
 
 

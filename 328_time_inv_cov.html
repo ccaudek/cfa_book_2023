@@ -499,7 +499,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/3f692e4cdf7ad0de7ca7093eb54cb367c92974a473d2a3d414f64aca86c71424.png" src="_images/3f692e4cdf7ad0de7ca7093eb54cb367c92974a473d2a3d414f64aca86c71424.png" />
+<img alt="_images/ac27e749f5b997c16c85d9e5df7ec45abb762f2b29ed4714028c2a6fbc43e245.png" src="_images/ac27e749f5b997c16c85d9e5df7ec45abb762f2b29ed4714028c2a6fbc43e245.png" />
 </div>
 </div>
 <p>Per vedere il cambiamento a livello individuale, possiamo campionare 20 individui e rappresentare per ognuno il loro cambiamento nel punteggio di matematica.</p>
@@ -518,15 +518,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_line()`: Each group consists of only one observation.
-<span class=" -Color -Color-Cyan">ℹ</span> Do you need to adjust the <span class=" -Color -Color-Green">group</span> aesthetic?
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_line()`: Each group consists of only one observation.
-<span class=" -Color -Color-Cyan">ℹ</span> Do you need to adjust the <span class=" -Color -Color-Green">group</span> aesthetic?
-</pre></div>
-</div>
-<img alt="_images/30d25564b64a5caa716bf169c9283c3a0e27f24db827bbcc661e0281899f5460.png" src="_images/30d25564b64a5caa716bf169c9283c3a0e27f24db827bbcc661e0281899f5460.png" />
+<img alt="_images/b90c3ed2f5e578e3b03f44ada4dd316583e56f052addd3b6221cae16906fd281.png" src="_images/b90c3ed2f5e578e3b03f44ada4dd316583e56f052addd3b6221cae16906fd281.png" />
 </div>
 </div>
 <p>Per semplicità, leggiamo gli stessi dati in formato wide da un file.</p>
@@ -667,15 +659,11 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some observed variances are (at least) a factor 1000 times larger than others; use varTable(fit) to investigate”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -835,7 +823,7 @@ Variances:
 </div>
 <section id="valutare-il-contributo-delle-covariate">
 <h2><span class="section-number">32.1. </span>Valutare il contributo delle covariate<a class="headerlink" href="#valutare-il-contributo-delle-covariate" title="Permalink to this headline">#</a></h2>
-<p>Per valutare se le covariate considerate forniscono un contributo sostanziale al modello confronteremo il modello precedente con un modello vincolato in cui l’effetto delle covariate viene fissato come uguale a zero.</p>
+<p>Per valutare se le covariate considerate migliorano l’adattamento del modello, confronteremo il modello precedente con un modello vincolato in cui l’effetto delle covariate viene fissato a zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#writing out linear growth model with tic in full SEM way </span>
@@ -923,15 +911,11 @@ Variances:
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some observed variances are (at least) a factor 1000 times larger than others; use varTable(fit) to investigate”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the

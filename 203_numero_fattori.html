@@ -202,21 +202,26 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">27. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">28. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">29. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">30. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">31. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">32. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">33. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">34. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">35. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">36. Modello LCS bivariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">37. Invarianza fattoriale nei modelli LGM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_lgm_intro.html">27. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="321_lgm_prelims.html">28. Dati longitudinali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">29. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">30. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">31. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">32. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">33. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">34. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">35. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">36. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">37. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">38. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">38. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">39. Bibliografia</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendici</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="900_lin_alg.html">40. Elementi di algebra lineare</a></li>
 </ul>
 
     </div>
@@ -555,8 +560,6 @@ costituita da <span class="math notranslate nohighlight">\(n=20\)</span> osserva
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">3.34528401303821</div></div>
 </div>
 <p>Per i dati di questa simulazione, l’autovalore maggiore ha un valore
 pari a <span class="math notranslate nohighlight">\(3.53\)</span>, anche se i dati sono del tutto casuali. La Parallel
@@ -743,7 +746,7 @@ al valore medio degli autovalori (che, nel caso di <strong>R</strong> è uguale 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/f9346b418ba92d173f5a5935b064b92f98c8389c94204630d6aa97a61cf85f5e.png" src="_images/f9346b418ba92d173f5a5935b064b92f98c8389c94204630d6aa97a61cf85f5e.png" />
+<img alt="_images/f8174a60931662827ff0d1ffddbbadc46ea5751880587110baf06a49cba2ec81.png" src="_images/f8174a60931662827ff0d1ffddbbadc46ea5751880587110baf06a49cba2ec81.png" />
 </div>
 </div>
 <p>Lo scree test suggerisce la presenza di un unico fattore comune.</p>
@@ -754,27 +757,6 @@ fattore.</p>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">paran</span><span class="p">(</span><span class="n">wais_cor</span><span class="p">,</span><span class="w"> </span><span class="n">graph</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Using eigendecomposition of correlation matrix.
-Computing: 10%  20%  30%  40%  50%  60%  70%  80%  90%  100%
-
-
-Results of Horn&#39;s Parallel Analysis for component retention
-330 iterations, using the mean estimate
-
--------------------------------------------------- 
-Component   Adjusted    Unadjusted    Estimated 
-            Eigenvalue  Eigenvalue    Bias 
--------------------------------------------------- 
-1           1.647667    3.765744      2.118077
--------------------------------------------------- 
-
-Adjusted eigenvalues &gt; 1 indicate dimensions to retain.
-(1 components retained)
-</pre></div>
-</div>
-<img alt="_images/d7724821f66504cab59ad627ea4b4c8c2a8150f5b3c9333029a74d5976565c27.png" src="_images/d7724821f66504cab59ad627ea4b4c8c2a8150f5b3c9333029a74d5976565c27.png" />
 </div>
 </div>
 <p>Il quarto metodo consiste nell’applicazione di un test inferenziale
@@ -870,34 +852,10 @@ The p-value is 0.256
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |                                                                      |   0%
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |----------------------------------------------------------------------| 100%
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Loading required namespace: GPArotation
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |-------                                                               |  10%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |--------------                                                        |  20%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |---------------------                                                 |  30%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |----------------------------                                          |  40%
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  |                                                                            
-  |-----------------------------------                                   |  50%
-</pre></div>
-</div>
-</div>
+<div class="output text_html">4</div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

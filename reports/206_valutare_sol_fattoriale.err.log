@@ -25,16 +25,26 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-faT1 <- fa(r=cormat, nfactors=2, n.obs=192, rotate="oblimin")
-print(faT1$loadings)
+source("_common.R")
+# install.packages("devtools")
+# devtools::install_github("cddesja/hemp")
+suppressPackageStartupMessages({
+    library("lavaan")
+    library("hemp")
+})
+options(repr.plot.width = 6, repr.plot.height = 6)
+set.seed(42)
+
 ------------------
 
-Error in eval(expr, envir, enclos): object 'cormat' not found
+Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 Traceback:
 
-1. fa(r = cormat, nfactors = 2, n.obs = 192, rotate = "oblimin")
-2. isCorrelation(r)
-3. NROW(x)
-ERROR: Error in eval(expr, envir, enclos): object 'cormat' not found
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. theme_set(bayesplot::theme_default(size = 12, family = "sans"))
+ERROR: Error in bayesplot::theme_default(size = 12, family = "sans"): unused arguments (size = 12, family = "sans")
 
 
