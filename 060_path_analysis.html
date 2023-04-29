@@ -824,6 +824,14 @@ correlazione <span class="math notranslate nohighlight">\(&gt; 0\)</span> tra le
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.53462708572352</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       y    x1    x2
+y  1.000 0.831 0.786
+x1 0.831 1.000 0.535
+x2 0.786 0.535 1.000
+</pre></div>
+</div>
+</div>
 </div>
 <p>Per fare un esempio, immaginiamo che queste correlazioni siano state ricavate da qualche fonte e dunque le leggiamo nella memoria di lavoro di <span class="math notranslate nohighlight">\(\mathsf{R}\)</span> nel modo seguente.</p>
 <div class="cell docutils container">
@@ -838,6 +846,19 @@ correlazione <span class="math notranslate nohighlight">\(&gt; 0\)</span> tra le
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>y</th><th scope=col>x1</th><th scope=col>x2</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>y</th><td>1.000</td><td>0.831</td><td>0.786</td></tr>
+	<tr><th scope=row>x1</th><td>0.831</td><td>1.000</td><td>0.535</td></tr>
+	<tr><th scope=row>x2</th><td>0.786</td><td>0.535</td><td>1.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Data una matrice di correlazioni e data la specificazione delle
 relazioni tra le variabili, la funzione <code class="docutils literal notranslate"><span class="pre">sem()</span></code> contenuta nel pacchetto
@@ -858,12 +879,66 @@ relazioni tra le variabili, la funzione <code class="docutils literal notranslat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         3
+
+  Number of observations                           100
+
+Model Test User Model:
+                                                      
+  Test statistic                                 0.000
+  Degrees of freedom                                 0
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  y ~                                                                   
+    x1                0.575    0.045   12.710    0.000    0.575    0.575
+    x2                0.478    0.045   10.571    0.000    0.478    0.478
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .y                 0.145    0.020    7.071    0.000    0.145    0.146
+</pre></div>
+</div>
+</div>
 </div>
 <p>Ora calcoliamo i coefficienti del modello di regressione multipla usando i dati grezzi (standardizzati). Si noti che i risultati ottenuti da <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> sono identici a quelli prodotti dal modello di regressione multipla – nel caso presente, infatti, il modello statistico esaminato da <code class="docutils literal notranslate"><span class="pre">sem()</span></code> non era altro che il modello di regressione multipla.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="nf">lm</span><span class="p">(</span><span class="nf">scale</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="o">~</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">x1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nf">scale</span><span class="p">(</span><span class="n">x2</span><span class="p">)))</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = scale(y) ~ scale(x1) + scale(x2))
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.87200 -0.24623  0.01628  0.25714  0.90382 
+
+Coefficients:
+              Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -7.472e-16  3.867e-02     0.0        1    
+scale(x1)    5.748e-01  4.599e-02    12.5   &lt;2e-16 ***
+scale(x2)    4.785e-01  4.599e-02    10.4   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.3867 on 97 degrees of freedom
+Multiple R-squared:  0.8535,	Adjusted R-squared:  0.8505 
+F-statistic: 282.6 on 2 and 97 DF,  p-value: &lt; 2.2e-16
 </pre></div>
 </div>
 </div>
@@ -875,6 +950,8 @@ relazioni tra le variabili, la funzione <code class="docutils literal notranslat
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.855</div></div>
 </div>
 </section>
 <section id="oltre-la-regressione-multipla">
@@ -1081,6 +1158,8 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.548</div></div>
 </div>
 <p>La correlazione tra BFLX e END è</p>
 <div class="cell docutils container">
@@ -1089,6 +1168,8 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.438</div></div>
 </div>
 <p>L’output di lavaan fornisce anche la porzione di varianza che viene spiegata dalle variabili esogene per le due variabili endogene nel modello.</p>
 <p>Per esempio, la varianza spiegata di <code class="docutils literal notranslate"><span class="pre">END</span></code> è</p>
@@ -1098,6 +1179,8 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.2025</div></div>
 </div>
 <p>come riportato dall’output di lavaan.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
@@ -1141,6 +1224,85 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 1 iteration
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                         9
+
+  Number of observations                           192
+
+Model Test User Model:
+                                                      
+  Test statistic                                 8.229
+  Degrees of freedom                                 3
+  P-value (Chi-square)                           0.042
+
+Model Test Baseline Model:
+
+  Test statistic                               239.501
+  Degrees of freedom                                 9
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.977
+  Tucker-Lewis Index (TLI)                       0.932
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)               -700.169
+  Loglikelihood unrestricted model (H1)       -696.054
+                                                      
+  Akaike (AIC)                                1418.338
+  Bayesian (BIC)                              1447.655
+  Sample-size adjusted Bayesian (SABIC)       1419.146
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.095
+  90 Percent confidence interval - lower         0.017
+  90 Percent confidence interval - upper         0.176
+  P-value H_0: RMSEA &lt;= 0.050                    0.130
+  P-value H_0: RMSEA &gt;= 0.080                    0.696
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.035
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  BULS ~                                                                
+    MNF               0.177    0.066    2.688    0.007    0.177    0.177
+    BFLX              0.533    0.066    8.085    0.000    0.533    0.533
+  BFLX ~                                                                
+    END               0.241    0.065    3.702    0.000    0.241    0.241
+    MNF               0.441    0.065    6.769    0.000    0.441    0.441
+  END ~                                                                 
+    MNS              -0.102    0.091   -1.116    0.264   -0.102   -0.102
+    MNF               0.378    0.091    4.140    0.000    0.378    0.378
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .BULS              0.578    0.059    9.798    0.000    0.578    0.581
+   .BFLX              0.648    0.066    9.798    0.000    0.648    0.651
+   .END               0.788    0.080    9.798    0.000    0.788    0.792
+
+R-Square:
+                   Estimate
+    BULS              0.419
+    BFLX              0.349
+    END               0.208
+</pre></div>
+</div>
+</div>
 </div>
 <p>Generiamo il diagramma di percorso.</p>
 <div class="cell docutils container">
@@ -1154,6 +1316,9 @@ Defined Parameters:
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/b0b28620abfed03b3f65fb99af9dd9ffe5128a0b4505dd37234a176dcd394d82.png" src="_images/b0b28620abfed03b3f65fb99af9dd9ffe5128a0b4505dd37234a176dcd394d82.png" />
 </div>
 </div>
 <p>Anche in questo caso i coefficienti di percorso sono simili, ma non identici, a quelli riportati da Barbeau et al. (2019). Gli autori riportano una varianza spiegata di END pari a 0.209; con lavaan si ottiene 0.208.  Per BFLX gli autori riportano 0.292; lavaan ottiene 0.349. Per BULS gli autori riportano 0.478; con lavaan si ottiene 0.419.</p>
@@ -1188,6 +1353,23 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 7 × 7 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>dmis</th><th scope=col>con</th><th scope=col>dep</th><th scope=col>consu</th><th scope=col>acc</th><th scope=col>goal</th><th scope=col>imp</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>dmis</th><td>1.00</td><td>0.38</td><td>0.41</td><td>0.34</td><td>0.29</td><td>0.29</td><td>0.30</td></tr>
+	<tr><th scope=row>con</th><td>0.38</td><td>1.00</td><td>0.64</td><td>0.44</td><td>0.12</td><td>0.22</td><td>0.15</td></tr>
+	<tr><th scope=row>dep</th><td>0.41</td><td>0.64</td><td>1.00</td><td>0.30</td><td>0.27</td><td>0.20</td><td>0.23</td></tr>
+	<tr><th scope=row>consu</th><td>0.34</td><td>0.44</td><td>0.30</td><td>1.00</td><td>0.06</td><td>0.17</td><td>0.09</td></tr>
+	<tr><th scope=row>acc</th><td>0.29</td><td>0.12</td><td>0.27</td><td>0.06</td><td>1.00</td><td>0.54</td><td>0.73</td></tr>
+	<tr><th scope=row>goal</th><td>0.29</td><td>0.22</td><td>0.20</td><td>0.17</td><td>0.54</td><td>1.00</td><td>0.69</td></tr>
+	<tr><th scope=row>imp</th><td>0.30</td><td>0.15</td><td>0.23</td><td>0.09</td><td>0.73</td><td>0.69</td><td>1.00</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>I dati vengono analizzati con due modelli di path analysis. Nel primo modello si ipotizza che la difficoltà di regolare le emozioni positive sia una variabile esogena che influenza sia l’abuso di sostanze sia l’abuso di alcol. Si ipotizza inoltre che abuso di sostanze e abuso di alcol siano correlate.</p>
 <p>La difficoltà di regolare le emozioni positive è indicata da <code class="docutils literal notranslate"><span class="pre">drpe</span></code>; l’abuso di alcolo è denotato da <code class="docutils literal notranslate"><span class="pre">amis</span></code>; l’abuso di sostanze è denotato da <code class="docutils literal notranslate"><span class="pre">dmis</span></code>.</p>
@@ -1222,6 +1404,107 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 18 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        16
+
+  Number of observations                           284
+
+Model Test User Model:
+                                                      
+  Test statistic                                38.211
+  Degrees of freedom                                12
+  P-value (Chi-square)                           0.000
+
+Model Test Baseline Model:
+
+  Test statistic                               741.324
+  Degrees of freedom                                21
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.964
+  Tucker-Lewis Index (TLI)                       0.936
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)              -2465.787
+  Loglikelihood unrestricted model (H1)      -2446.682
+                                                      
+  Akaike (AIC)                                4963.574
+  Bayesian (BIC)                              5021.958
+  Sample-size adjusted Bayesian (SABIC)       4971.221
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.088
+  90 Percent confidence interval - lower         0.057
+  90 Percent confidence interval - upper         0.120
+  P-value H_0: RMSEA &lt;= 0.050                    0.023
+  P-value H_0: RMSEA &gt;= 0.080                    0.688
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.046
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  drpe =~                                                               
+    acc               0.769    0.053   14.440    0.000    0.769    0.770
+    goal              0.727    0.054   13.473    0.000    0.727    0.728
+    imp               0.943    0.050   18.956    0.000    0.943    0.945
+  amis =~                                                               
+    con               0.808    0.058   13.855    0.000    0.835    0.837
+    dep               0.730    0.058   12.607    0.000    0.755    0.756
+    consu             0.477    0.060    7.973    0.000    0.493    0.494
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  amis ~                                                                
+    drpe              0.263    0.073    3.614    0.000    0.254    0.254
+  dmis ~                                                                
+    drpe              0.333    0.060    5.534    0.000    0.333    0.334
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+ .amis ~~                                                               
+   .dmis              0.431    0.060    7.216    0.000    0.431    0.458
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+    drpe              1.000                               1.000    1.000
+   .amis              1.000                               0.936    0.936
+   .acc               0.406    0.045    9.020    0.000    0.406    0.407
+   .goal              0.468    0.047    9.876    0.000    0.468    0.470
+   .imp               0.106    0.045    2.385    0.017    0.106    0.107
+   .con               0.299    0.064    4.690    0.000    0.299    0.300
+   .dep               0.427    0.060    7.072    0.000    0.427    0.428
+   .consu             0.753    0.069   10.979    0.000    0.753    0.756
+   .dmis              0.886    0.075   11.771    0.000    0.886    0.889
+
+R-Square:
+                   Estimate
+    amis              0.064
+    acc               0.593
+    goal              0.530
+    imp               0.893
+    con               0.700
+    dep               0.572
+    consu             0.244
+    dmis              0.111
+</pre></div>
+</div>
+</div>
 </div>
 <p>Creiamo un path diagram.</p>
 <div class="cell docutils container">
@@ -1235,6 +1518,9 @@ Defined Parameters:
 <span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/5f29a13f46103b7848ce27467c0548bed9516ca11516822cf7f88d9fe45f84a3.png" src="_images/5f29a13f46103b7848ce27467c0548bed9516ca11516822cf7f88d9fe45f84a3.png" />
 </div>
 </div>
 <p>Gli autori esplorano un modello alternativo nel quale le relazioni causali vengono rovesciate: in questo caso è la difficoltà di regolazione delle emozioni positive ad essere la variabile esogena, e l’abuso di sostanze e l’abuso di alcol sono le variabili esogene.</p>
@@ -1259,27 +1545,111 @@ Defined Parameters:
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">()):</span> <span class="nb">object</span> <span class="s1">&#39;mod_alt&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">sem</span><span class="p">(</span><span class="n">mod_alt</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">dat_cov</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">311</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">())</span>
-<span class="mi">3</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mc</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">())</span>
-<span class="mi">4</span><span class="o">.</span> <span class="n">lavaan</span><span class="p">::</span><span class="n">lavaan</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">mod_alt</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">cov</span> <span class="o">=</span> <span class="n">dat_cov</span><span class="p">,</span> <span class="n">sample</span><span class="o">.</span><span class="n">nobs</span> <span class="o">=</span> <span class="mi">311</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">model</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;sem&quot;</span><span class="p">,</span> <span class="nb">int</span><span class="o">.</span><span class="n">ov</span><span class="o">.</span><span class="n">free</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="nb">int</span><span class="o">.</span><span class="n">lv</span><span class="o">.</span><span class="n">free</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">auto</span><span class="o">.</span><span class="n">fix</span><span class="o">.</span><span class="n">first</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">fix</span><span class="o">.</span><span class="n">single</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">var</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">auto</span><span class="o">.</span><span class="n">cov</span><span class="o">.</span><span class="n">lv</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">cov</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">th</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">auto</span><span class="o">.</span><span class="n">delta</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">auto</span><span class="o">.</span><span class="n">efa</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
 </div>
 <p>Esaminiamo i risultati.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit_alt</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">rsquare</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lavaan 0.6.15 ended normally after 19 iterations
+
+  Estimator                                         ML
+  Optimization method                           NLMINB
+  Number of model parameters                        16
+
+  Number of observations                           311
+
+Model Test User Model:
+                                                      
+  Test statistic                                41.844
+  Degrees of freedom                                12
+  P-value (Chi-square)                           0.000
+
+Model Test Baseline Model:
+
+  Test statistic                               811.802
+  Degrees of freedom                                21
+  P-value                                        0.000
+
+User Model versus Baseline Model:
+
+  Comparative Fit Index (CFI)                    0.962
+  Tucker-Lewis Index (TLI)                       0.934
+
+Loglikelihood and Information Criteria:
+
+  Loglikelihood user model (H0)              -2700.544
+  Loglikelihood unrestricted model (H1)      -2679.623
+                                                      
+  Akaike (AIC)                                5433.089
+  Bayesian (BIC)                              5492.925
+  Sample-size adjusted Bayesian (SABIC)       5442.179
+
+Root Mean Square Error of Approximation:
+
+  RMSEA                                          0.089
+  90 Percent confidence interval - lower         0.061
+  90 Percent confidence interval - upper         0.120
+  P-value H_0: RMSEA &lt;= 0.050                    0.014
+  P-value H_0: RMSEA &gt;= 0.080                    0.727
+
+Standardized Root Mean Square Residual:
+
+  SRMR                                           0.046
+
+Parameter Estimates:
+
+  Standard errors                             Standard
+  Information                                 Expected
+  Information saturated (h1) model          Structured
+
+Latent Variables:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  drpe =~                                                               
+    acc               0.721    0.048   15.117    0.000    0.769    0.770
+    goal              0.682    0.048   14.097    0.000    0.727    0.728
+    imp               0.885    0.046   19.287    0.000    0.944    0.945
+  amis =~                                                               
+    con               0.835    0.057   14.742    0.000    0.835    0.837
+    dep               0.755    0.057   13.273    0.000    0.755    0.756
+    consu             0.494    0.059    8.366    0.000    0.494    0.494
+
+Regressions:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  drpe ~                                                                
+    amis              0.123    0.080    1.532    0.125    0.115    0.115
+    dmis              0.294    0.073    4.030    0.000    0.276    0.276
+
+Covariances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  amis ~~                                                               
+    dmis              0.502    0.059    8.521    0.000    0.502    0.503
+
+Variances:
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .drpe              1.000                               0.879    0.879
+    amis              1.000                               1.000    1.000
+   .acc               0.406    0.043    9.439    0.000    0.406    0.407
+   .goal              0.468    0.045   10.335    0.000    0.468    0.470
+   .imp               0.106    0.043    2.496    0.013    0.106    0.107
+   .con               0.299    0.061    4.908    0.000    0.299    0.300
+   .dep               0.427    0.058    7.401    0.000    0.427    0.428
+   .consu             0.753    0.066   11.489    0.000    0.753    0.756
+    dmis              0.997    0.080   12.470    0.000    0.997    1.000
+
+R-Square:
+                   Estimate
+    drpe              0.121
+    acc               0.593
+    goal              0.530
+    imp               0.893
+    con               0.700
+    dep               0.572
+    consu             0.244
 </pre></div>
 </div>
 </div>
@@ -1298,18 +1668,22 @@ Defined Parameters:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;lg_math_ticZERO_lavaan_fit&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">semPaths</span><span class="p">(</span><span class="n">lg_math_ticZERO_lavaan_fit</span><span class="p">,</span> <span class="s2">&quot;std&quot;</span><span class="p">,</span> <span class="n">what</span> <span class="o">=</span> <span class="s2">&quot;path&quot;</span><span class="p">,</span> <span class="n">whatLabels</span> <span class="o">=</span> <span class="s2">&quot;par&quot;</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="s2">&quot;semPlotModel&quot;</span> <span class="o">%</span><span class="k">in</span>% class(object)
-</pre></div>
-</div>
+<img alt="_images/0fceb141f6ef5579cd30ce4a58964cc1ae369e2f0dba2489a08e340434fb179d.png" src="_images/0fceb141f6ef5579cd30ce4a58964cc1ae369e2f0dba2489a08e340434fb179d.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavaanPlot</span><span class="p">(</span><span class="n">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fit_alt</span><span class="p">,</span><span class="w"> </span><span class="n">labels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">labels2</span><span class="p">,</span><span class="w"> </span><span class="n">coefs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">covs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">stars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">FALSE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;labels2&#39;</span> <span class="ow">not</span> <span class="n">found</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">lavaanPlot</span><span class="p">(</span><span class="n">model</span> <span class="o">=</span> <span class="n">fit_alt</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">labels2</span><span class="p">,</span> <span class="n">coefs</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> <span class="n">covs</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">stars</span> <span class="o">=</span> <span class="n">FALSE</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">buildCall</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span><span class="p">,</span> <span class="n">model</span> <span class="o">=</span> <span class="n">model</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

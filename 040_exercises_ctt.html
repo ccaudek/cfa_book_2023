@@ -450,6 +450,33 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 16 × 2</caption>
+<thead>
+	<tr><th></th><th scope=col>num_miss</th><th scope=col>perc_miss</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>reason.4</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>reason.16</th><td>1</td><td>0.07</td></tr>
+	<tr><th scope=row>reason.17</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>reason.19</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>letter.7</th><td>1</td><td>0.07</td></tr>
+	<tr><th scope=row>letter.33</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>letter.34</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>letter.58</th><td>0</td><td>0.00</td></tr>
+	<tr><th scope=row>matrix.45</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>matrix.46</th><td>1</td><td>0.07</td></tr>
+	<tr><th scope=row>matrix.47</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>matrix.55</th><td>1</td><td>0.07</td></tr>
+	<tr><th scope=row>rotate.3</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>rotate.4</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>rotate.6</th><td>2</td><td>0.13</td></tr>
+	<tr><th scope=row>rotate.8</th><td>1</td><td>0.07</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Una semplice misura di coerenza interna è la affidabilità <em>split-half</em>. Una stima dell’affidabilità <em>split-half</em> può essere ottenuta dividendo un test in due parti equivalenti, calcolando i punteggi totali delle due parti e correlandoli. Ci sono molti modi per creare la suddivisione (ad esempio, selezionando gli item pari e quelli dispari, oppure in modo casuale, ecc.). Di seguito calcoliamo l’affidabilità <em>split-half</em> selezionando gli item pari e quelli dispari.</p>
 <div class="cell docutils container">
@@ -458,6 +485,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.758</div></div>
 </div>
 <p>In questo secondo caso, l’affidabilità <em>split-half</em> è calcolata selezionando due sottoinsiemi casuali di item della stessa numerosità.</p>
 <div class="cell docutils container">
@@ -467,6 +496,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.723</div></div>
 </div>
 <p>È noto che la stima dell’affidabilità split-half è distorta verso il basso (R. J. Cohen, Swerdlik e Sturman, 2013). La correzione Spearman-Brown può essere applicata per superare questo problema. Per fare ciò, basta passare l’argomento <code class="docutils literal notranslate"><span class="pre">sb</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> alla funzione <code class="docutils literal notranslate"><span class="pre">split_half()</span></code>.</p>
 <div class="cell docutils container">
@@ -475,6 +506,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.862343572241183</div></div>
 </div>
 <p>Dopo aver applicato la correzione di Spearman-Brown, l’affidabilità split-half è ora stimata a 0.862, che è un po’ più alta.</p>
 <p>Data la nostra attuale stima di affidabilità, possiamo anche determinare la lunghezza di un test per ottenere l’affidabilità desiderata. Possiamo farlo usando la funzione <code class="docutils literal notranslate"><span class="pre">test_length()</span></code> in <code class="docutils literal notranslate"><span class="pre">hemp</span></code>. Supponendo di volere un’affidabilità di 0.95, possiamo determinare di quanti item dovrebbe essere costituito il test. Nella chiamata a <code class="docutils literal notranslate"><span class="pre">test_length()</span></code>, specifichiamo <code class="docutils literal notranslate"><span class="pre">r_type</span> <span class="pre">=</span> <span class="pre">&quot;split&quot;</span></code> in modo che l’affidabilità attuale venga calcolata utilizzando l’affidabilità split-half con la correzione di Spearman-Brown.</p>
@@ -484,6 +517,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">49</div></div>
 </div>
 <p>Se vogliamo un test con un’affidabilità di 0.95, dato che il nostro test attuale ha un’affidabilità di 0.862 basata su 16 item, avremmo bisogno di un test che consiste di almeno 49 item.</p>
 <p>La misura più comune della consistenza interna è il coefficiente alfa (Cronbach, 1951). Il coefficiente alfa rappresenta la media di tutte le possibili correlazioni split-half. Può essere calcolato utilizzando la funzione <code class="docutils literal notranslate"><span class="pre">coef_alpha()</span></code> in <code class="docutils literal notranslate"><span class="pre">hemp</span></code>.</p>
@@ -493,6 +528,8 @@ document.write(`
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.841</div></div>
 </div>
 <p>Anche se le stime puntuali di affidabilità possono essere utili, è generalmente utile calcolare un intervallo di confidenza. Quando la dimensione del campione è piccola, le ipotesi dei modelli statistici non sono soddisfatte o la distribuzione campionaria di un parametro è sconosciuta, allora il bootstrap può essere utilizzato per costruire una distribuzione campionaria empirica, che possiamo quindi utilizzare per creare intervalli di confidenza (Efron &amp; Tibshirani, 1986 ).</p>
 <p>La nostra motivazione per l’introduzione del bootstrapping è che consente la creazione di intervalli di confidenza e incertezza indipendentemente dal parametro stimato. Pertanto, mentre illustriamo l’uso del bootstrap per il coefficiente alfa, questo può essere facilmente applicato per l’affidabilità split-half di cui sopra, la validità o le statistiche dell’analisi degli item presentati più avanti e in molti altri contesti.
@@ -520,6 +557,20 @@ Per eseguire il bootstrap per il coefficiente alfa, possiamo usare, ad esempio, 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ORDINARY NONPARAMETRIC BOOTSTRAP
+
+
+Call:
+boot(data = SAPA, statistic = alpha_fun, R = 1000)
+
+
+Bootstrap Statistics :
+    original   bias    std. error
+t1*    0.841 -0.00026 0.005432487
+</pre></div>
+</div>
+</div>
 </div>
 <p>La figura seguente mostra un istogramma e un Q-Q plot della distribuzione empirica per il coefficiente alfa basato sui 1000 campioni.</p>
 <div class="cell docutils container">
@@ -528,11 +579,28 @@ Per eseguire il bootstrap per il coefficiente alfa, possiamo usare, ad esempio, 
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<img alt="_images/3d7d93f92d177d53846e14b4bff7527356a4d09372f981c81bf1b40de91af650.png" src="_images/3d7d93f92d177d53846e14b4bff7527356a4d09372f981c81bf1b40de91af650.png" />
+</div>
 </div>
 <p>Utilizziamo la funzione <code class="docutils literal notranslate"><span class="pre">boot.ci()</span></code> per calcolare gli intervalli di confidenza al 95% utilizzando gli intervalli <code class="docutils literal notranslate"><span class="pre">norm</span></code>, <code class="docutils literal notranslate"><span class="pre">basic</span></code> e <code class="docutils literal notranslate"><span class="pre">perc</span></code>. In breve, gli intervalli <code class="docutils literal notranslate"><span class="pre">basic</span></code> e <code class="docutils literal notranslate"><span class="pre">perc</span></code> fanno meno assunzioni rispetto agli intervalli <code class="docutils literal notranslate"><span class="pre">norm</span></code> (ovvero, nessuna assunzione di normalità asintotica). Se la distribuzione empirica si discosta dalla normalità, allora gli intervalli <code class="docutils literal notranslate"><span class="pre">basic</span></code> e <code class="docutils literal notranslate"><span class="pre">perc</span></code> sono una scelta migliore.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">boot.ci</span><span class="p">(</span><span class="n">alpha_boot</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;norm&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;basic&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;perc&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
+Based on 1000 bootstrap replicates
+
+CALL : 
+boot.ci(boot.out = alpha_boot, type = c(&quot;norm&quot;, &quot;basic&quot;, &quot;perc&quot;))
+
+Intervals : 
+Level      Normal              Basic              Percentile     
+95%   ( 0.8306,  0.8519 )   ( 0.8310,  0.8520 )   ( 0.8300,  0.8510 )  
+Calculations and Intervals on Original Scale
 </pre></div>
 </div>
 </div>
@@ -553,6 +621,8 @@ CVR = \frac{n_e - (N/2)}{N/2},
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.7</div></div>
 </div>
 <p>Scopriamo che il CVR è 0.70 per questo particolare item, ma non sappiamo se 0.70 sia abbastanza grande da mantenere l’item nello strumento. La tabella 1 in Lawshe (1975) fornisce valori soglia di CVR dato un determinato numero di esperti. Per 20 esperti, il CVR minimo è 0.42 e per cui potremmo concludere che gli esperti ritengono che questo item sia utile e potremmo mantenere questo item nel nostro strumento.</p>
 <p>Altre forme di prova di validità valutano la misura in cui i punteggi del test si riferiscono a qualche criterio esterno (validità di criterio). Il supporto statistico per questa forma di validità può comportare il calcolo di correlazioni semplici o l’uso della regressione.</p>
@@ -563,6 +633,19 @@ CVR = \frac{n_e - (N/2)}{N/2},
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+	<tr><th></th><th scope=col>vocab</th><th scope=col>reading</th><th scope=col>sentcomp</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>vocab</th><td>1.0000000</td><td>0.8030912</td><td>0.8132765</td></tr>
+	<tr><th scope=row>reading</th><td>0.8030912</td><td>1.0000000</td><td>0.7252155</td></tr>
+	<tr><th scope=row>sentcomp</th><td>0.8132765</td><td>0.7252155</td><td>1.0000000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>La correlazione di Pearson tra <code class="docutils literal notranslate"><span class="pre">vocab</span></code> e <code class="docutils literal notranslate"><span class="pre">reading</span></code> è 0.803, mentre la correlazione tra <code class="docutils literal notranslate"><span class="pre">vocab</span></code> e <code class="docutils literal notranslate"><span class="pre">sentcomp</span></code> è 0.813. Ciò rappresenterebbe una prova di validità concorrente se i test di vocabolario fossero somministrati al momento della valutazione della lettura e del completamento della frase. Se il test del vocabolario precede i test di lettura e di completamento della frase, allora la correlazione di Pearson rappresenta una prova a sostegno della validità predittiva.</p>
 <p>mmaginiamo di voler determinare se la comprensione della lettura può fornire informazioni aggiuntive sulla predisposizione di qualcuno a diventare un insegnante, oltre alla sola misura della personalità del dominio sociale. In altre parole, stiamo cercando di capire se la comprensione della lettura ha un valore predittivo incrementale rispetto alla misura della personalità.</p>
@@ -584,6 +667,19 @@ CVR = \frac{n_e - (N/2)}{N/2},
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.0912597881235074</div><div class="output text_html"><table class="dataframe">
+<caption>A anova: 2 × 6</caption>
+<thead>
+	<tr><th></th><th scope=col>Res.Df</th><th scope=col>RSS</th><th scope=col>Df</th><th scope=col>Sum of Sq</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>1</th><td>248</td><td>244.9772</td><td>NA</td><td>      NA</td><td>     NA</td><td>          NA</td></tr>
+	<tr><th scope=row>2</th><td>247</td><td>221.0262</td><td> 1</td><td>23.95093</td><td>26.7655</td><td>4.753606e-07</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Dall’output sopra, vediamo che la valutazione della comprensione della lettura ha una validità incrementale oltre la sola misura di dominanza sociale (p &lt;.001) e che spiega circa il 9% in più di variabilità nell’interesse per la professione di insegnante.</p>
 <div class="cell docutils container">
@@ -593,11 +689,54 @@ CVR = \frac{n_e - (N/2)}{N/2},
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = teacher ~ socdom, data = interest)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.0679 -0.6690  0.0823  0.6271  2.6064 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -0.03279    0.06318  -0.519    0.604    
+socdom       0.26392    0.06276   4.205 3.64e-05 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9939 on 248 degrees of freedom
+Multiple R-squared:  0.06657,	Adjusted R-squared:  0.0628 
+F-statistic: 17.69 on 1 and 248 DF,  p-value: 3.641e-05
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">mod_new</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = teacher ~ socdom + reading, data = interest)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.3686 -0.6218  0.0592  0.6590  2.3245 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept) -0.07399    0.06066  -1.220    0.224    
+socdom       0.25320    0.05977   4.237 3.21e-05 ***
+reading      0.31329    0.06056   5.174 4.75e-07 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.946 on 247 degrees of freedom
+Multiple R-squared:  0.1578,	Adjusted R-squared:  0.151 
+F-statistic: 23.14 on 2 and 247 DF,  p-value: 6.124e-10
 </pre></div>
 </div>
 </div>

@@ -545,6 +545,41 @@ e una rotazione Varimax:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Principal Components Analysis
+Call: psych::principal(r = wisc_III_cov, nfactors = 3, rotate = &quot;varimax&quot;)
+Standardized loadings (pattern matrix) based upon correlation matrix
+          RC1  RC3  RC2   h2   u2 com
+INFO     0.80 0.25 0.09 0.72 0.28 1.2
+SIM      0.81 0.25 0.08 0.72 0.28 1.2
+ARITH    0.65 0.26 0.28 0.57 0.43 1.7
+VOC      0.83 0.19 0.13 0.75 0.25 1.2
+COMP     0.75 0.14 0.16 0.60 0.40 1.2
+DIGIT    0.45 0.06 0.36 0.34 0.66 2.0
+PICTCOM  0.43 0.61 0.02 0.56 0.44 1.8
+CODING   0.10 0.09 0.88 0.79 0.21 1.0
+PICTARG  0.34 0.45 0.27 0.39 0.61 2.6
+BLOCK    0.41 0.66 0.22 0.66 0.34 1.9
+OBJECT   0.31 0.71 0.14 0.62 0.38 1.5
+SYMBOL   0.23 0.32 0.74 0.70 0.30 1.6
+MAZES   -0.06 0.71 0.11 0.51 0.49 1.1
+
+                       RC1  RC3  RC2
+SS loadings           3.80 2.37 1.74
+Proportion Var        0.29 0.18 0.13
+Cumulative Var        0.29 0.47 0.61
+Proportion Explained  0.48 0.30 0.22
+Cumulative Proportion 0.48 0.78 1.00
+
+Mean item complexity =  1.5
+Test of the hypothesis that 3 components are sufficient.
+
+The root mean square of the residuals (RMSR) is  0.07 
+
+Fit based upon off diagonal values = 0.97
+</pre></div>
+</div>
+</div>
 </div>
 <p>Si noti che i primi cinque subtest possiedono saturazioni maggiori di
 <span class="math notranslate nohighlight">\(0.6\)</span> sul primo fattore. Dato che questi test sono tutti presentati
@@ -574,6 +609,14 @@ dunque</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.72</li><li>0.72</li><li>0.57</li><li>0.75</li><li>0.6</li><li>0.34</li><li>0.56</li><li>0.79</li><li>0.39</li><li>0.66</li><li>0.62</li><li>0.7</li><li>0.51</li></ol>
+</div></div>
 </div>
 <p>Questi risultati replicano quelli riportati nel manuale del test
 WISC-III.</p>
@@ -692,6 +735,16 @@ risultano ovviamente incorrelati:</p>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<tbody>
+	<tr><td> 1.000</td><td>0.002</td><td>-0.001</td></tr>
+	<tr><td> 0.002</td><td>1.000</td><td> 0.005</td></tr>
+	<tr><td>-0.001</td><td>0.005</td><td> 1.000</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Generiamo ora i diagrammi di dispersione che mettono in relazione le
 dimensioni originarie delle scatole (<span class="math notranslate nohighlight">\(x, y, z\)</span>) con i punteggi
@@ -740,6 +793,9 @@ sola delle dimensioni delle scatole <span class="math notranslate nohighlight">\
 <span class="p">(</span><span class="n">p7</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">p8</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">p9</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/938fc77be42bc734aae3a0ef19f543a8a10f6ef0735226ce39e9383c7705821a.png" src="_images/938fc77be42bc734aae3a0ef19f543a8a10f6ef0735226ce39e9383c7705821a.png" />
 </div>
 </div>
 <p>I risultati riportati nella figura confermano le aspettative.</p>
