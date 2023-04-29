@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Benvenuti &#8212; cfa_book</title>
+    <title>27. Curve di crescita latente &#8212; cfa_book</title>
   
   
   
@@ -61,11 +61,14 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '320_lgm_intro';</script>
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="1. Linguaggio di programmazione R" href="05_intro_r.html" />
+    <link rel="next" title="28. Dati longitudinali" href="321_lgm_prelims.html" />
+    <link rel="prev" title="26. Introduzione ai modelli di equazioni struttural" href="316_sem_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -131,7 +134,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
   
 
-<a class="navbar-brand logo" href="#">
+<a class="navbar-brand logo" href="intro.html">
   
   
   
@@ -150,8 +153,8 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
                     Benvenuti
                 </a>
             </li>
@@ -198,8 +201,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="316_sem_intro.html">26. Introduzione ai modelli di equazioni struttural</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_lgm_intro.html">27. Curve di crescita latente</a></li>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">27. Curve di crescita latente</a></li>
 <li class="toctree-l1"><a class="reference internal" href="321_lgm_prelims.html">28. Dati longitudinali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="324_lgm_mixed.html">29. LGM e modelli misti</a></li>
 <li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">30. Curve di crescita latente</a></li>
@@ -290,7 +293,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/ccaudek/cfa_book_2023/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ccaudek/cfa_book_2023/issues/new?title=Issue%20on%20page%20%2F320_lgm_intro.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -320,7 +323,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/intro.md" target="_blank"
+      <li><a href="_sources/320_lgm_intro.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +333,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -402,7 +405,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Benvenuti</h1>
+    <h1>Curve di crescita latente</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -412,7 +415,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misurare-il-cambiamento">27.1. Misurare il cambiamento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domande-della-ricerca">27.2. Domande della ricerca</a></li>
 </ul>
             </nav>
         </div>
@@ -424,36 +428,88 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <div align="center">
-<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/ccaudek/cfa_book_2023"></a></p>
-</div>
-<section class="tex2jax_ignore mathjax_ignore" id="benvenuti">
-<h1>Benvenuti<a class="headerlink" href="#benvenuti" title="Permalink to this headline">#</a></h1>
-<div class="admonition-work-in-progress admonition">
-<p class="admonition-title">Work in Progress</p>
-<p>Coming Soon – Sito in costruzione</p>
-</div>
-<p>Questo sito web presenta il materiale didattico dell’insegnamento di <a class="reference external" href="https://www.unifi.it/index.php?module=ofform2&amp;mode=1&amp;cmd=3&amp;AA=2022&amp;afId=600381">Costruzione e validazione di strumenti di misura dell’efficacia dell’intervento psicologico in neuropsicologia</a> (A.A. 2022/2023) rivolto agli studenti del Corso di Laurea Magistrale in PSICOLOGIA CLINICA E DELLA SALUTE E NEUROPSICOLOGIA dell’Università degli Studi di Firenze.</p>
-<section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this headline">#</a></h2>
-<p><a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" alt="Creative Commons License" style="border-width:0"/></a><br />This book was created by Corrado Caudek and is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
+<span id="lgm-intro-notebook"></span><h1><span class="section-number">27. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
+<p>Quando si studiano le differenze inter-individuali nel senso tradizionale, si effettuano confronti tra individui. Tuttavia, quando l’attenzione è rivolta al confronto dei cambiamenti intra-individuali piuttosto che alle differenze tra le medie dei punteggi di diversi individui, sono necessarie informazioni longitudinali per descrivere le traiettorie di cambiamento inter-individuale. Per descrivere le trasformazioni all’interno dell’individuo, è necessario un modello statistico in grado di tenere conto sia delle differenze tra individui sia delle trasformazioni inter-individuali. Per risolvere il problema descritto sopra, sono stati proposti due framework statistici: i modelli misti e un’estensione del framework SEM per dati longitudinali. Nell’ultima parte della dispensa verrà fornita un’introduzione a questi metodi statistici, con particolare attenzione al framework SEM per dati longitudinali.</p>
+<section id="misurare-il-cambiamento">
+<h2><span class="section-number">27.1. </span>Misurare il cambiamento<a class="headerlink" href="#misurare-il-cambiamento" title="Permalink to this headline">#</a></h2>
+<p>Il modo più ovvio per misurare il cambiamento individuale tra due occasioni è quello di calcolare la differenza tra i punteggi ottenuti nelle due rilevazioni temporali. Tuttavia, questo approccio presenta un problema: non disponiamo del punteggio vero dell’individuo nei due momenti temporali, ma solo di un punteggio influenzato dall’errore di misurazione. L’errore di misura può ridurre drasticamente la determinazione delle differenze individuali nel cambiamento.</p>
+<p>Il problema di descrivere il cambiamento al di là delle distorsioni derivanti dall’errore di misura è stato affrontato introducendo una classe di modelli SEM per dati longitudinali chiamati <em>Latent Growth Models</em> (LGM). I modelli LCM assumeno che vi è una traiettoria individuale di cambiamento latente per ciascun individuo. Da ciò deriva che i dati in qualsiasi punto temporale sono assunti come la somma di (a) punteggi non osservati o latenti che rappresentano il livello dell’individuo in quel punto del tempo, (b) punteggi latenti che rappresentano il cambiamento individuale nel tempo e (c) caratteristiche uniche non osservate ma indipendenti delle misurazioni.</p>
+<p>Questa descrizione del cambiamento conduce alla formulazione di un modello SEM nel quale vengono ipotizzati tre tipi di fattori latenti:</p>
+<ul class="simple">
+<li><p>un fattore latente comune che rappresenta al livello latente dell’individuo in un momento temporale (punto <em>a</em>),</p></li>
+<li><p>un fattore latente comune che rappresenta il cambiamento latente del livello dell’individuo tra <span class="math notranslate nohighlight">\(t-1\)</span> e <span class="math notranslate nohighlight">\(t\)</span> (punto <em>b</em>),</p></li>
+<li><p>un un fattore latente specifico che rappresenta l’errore di misura in ciascun punto <span class="math notranslate nohighlight">\(t\)</span> (punto <em>c</em>).</p></li>
+</ul>
+<p>Il punteggio osservato della persona <span class="math notranslate nohighlight">\(i\)</span> nel momento <span class="math notranslate nohighlight">\(t\)</span> è uguale a</p>
+<div class="math notranslate nohighlight">
+\[
+x_{it} = \tau_i + (1)\xi_1 + (t)\xi_2 + \delta_{it}
+\]</div>
+<p>dove</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\xi_1\)</span> corrisponde al fattore comune che descrive le intercette in funzione del tempo, con saturazioni fattoriali uguali a 1. I punteggi fattoriali su <span class="math notranslate nohighlight">\(\xi_1\)</span> corrispondono dunque al punteggio vero di ciascun individuo indipendente dal tempo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\xi_2\)</span> corrisponde al fattore comune che descrive il cambiamento in funzione del tempo, con saturazioni fattoriali uguali a 0, 1, 2, …, T. I punteggi fattoriali su <span class="math notranslate nohighlight">\(\xi_e\)</span> corrispondono al cambiamento del punteggio vero di ciascun individuo in corrispondenza dell’aumento di un’unità nella metrica del tempo.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\delta_{it}\)</span> rappresenta l’errore di misura dell’individuo <span class="math notranslate nohighlight">\(i\)</span> nel tempo <span class="math notranslate nohighlight">\(t\)</span>.</p></li>
+</ul>
+<p>Vedremo che, nel modello, le intercette osservate sono vincolate ad essere 0, per cui <span class="math notranslate nohighlight">\(\tau_i = 0\)</span>. Se ci sono cinque misurazioni temporali, per esempio, il modello diventa</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+x_{1} &amp;= 0 + (1)\xi_{1} + (0)\xi_{2} + \delta_{1} \notag\\
+x_{2} &amp;= 0 + (1)\xi_{1} + (1)\xi_{2} + \delta_{2} \notag\\
+x_{3} &amp;= 0 + (1)\xi_{1} + (2)\xi_{2} + \delta_{3} \notag\\
+x_{4} &amp;= 0 + (1)\xi_{1} + (3)\xi_{2} + \delta_{4} \notag\\
+x_{5} &amp;= 0 + (1)\xi_{1} + (4)\xi_{2} + \delta_{5} \notag
+\end{align}
+\end{split}\]</div>
+<p>Inoltre, il modello ipotizza che <span class="math notranslate nohighlight">\(\xi_1\)</span> e <span class="math notranslate nohighlight">\(\xi_e\)</span> siano correlati, come indicato nella matrice di inter-correlazione fattoriale</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathbf{\Phi} =
+\begin{bmatrix}
+\phi_{11} &amp; \\
+\phi_{21} &amp; \phi_{22}
+\end{bmatrix}
+\end{split}\]</div>
+<p>dove <span class="math notranslate nohighlight">\(\phi_{11}\)</span> è la varianza dell’intercetta latente, <span class="math notranslate nohighlight">\(\phi_{22}\)</span> è la varianza della pendenza latente e <span class="math notranslate nohighlight">\(\phi_{21}\)</span> è la covarianza dell’intercetta e della pendenza.</p>
+<p>La figura <a class="reference internal" href="#lgm-fig"><span class="std std-ref">Modello di crescita latente</span></a> mostra il diagramma di percorso che rappresenta il modello LGM che stiamo discutendo:</p>
+<figure class="align-default" id="lgm-fig">
+<a class="reference internal image-reference" href="_images/lgm_stat_mod.png"><img alt="_images/lgm_stat_mod.png" src="_images/lgm_stat_mod.png" style="height: 400px;" /></a>
+<figcaption>
+<p><span class="caption-number">Fig. 27.1 </span><span class="caption-text">Modello di crescita latente</span><a class="headerlink" href="#lgm-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Il modello di crescita latente definito dalle equazioni precedenti porta a una serie di previsioni sulla struttura delle medie e delle covarianze dei dati osservati. Queste previsioni del modello vengono utilizzate nel contesto della modellizzazione delle equazioni strutturali per calcolare le stime dei parametri e gli indici di adattamento del modello. La struttura delle covarianze (<span class="math notranslate nohighlight">\(\boldsymbol{\Sigma}\)</span>) prevista dal modello di crescita latente è</p>
+<div class="math notranslate nohighlight">
+\[
+\boldsymbol{\Sigma} = \boldsymbol{\Lambda} \boldsymbol{\Phi} \boldsymbol{\Lambda}' + \boldsymbol{\Theta}.
+\]</div>
+<p>Diversi tipi di modelli di crescita latente possono essere specificati cambiando le dimensioni e i valori contenuti nella matrice <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span>. Per il modello senza crescita, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × 1 (colonna) perché c’è solo una variabile latente nel modello senza crescita. Per il modello a crescita lineare, <span class="math notranslate nohighlight">\(\boldsymbol{Λ}\)</span> è una matrice T × k, con k rilevazioni temporali, dove le saturazioni fattoriali sono fisse e uguali alla separazione temporale tra le rilevazioni. Per esempio, con cinque misurazioni temporali, le saturazioni fattoriali saranno specificate ai valori 0, 1, 2, 3, 4. Si noti che, in questo modo, si assume che tutte le unità di osservazione siano state misurate nella stessa occasione temporale. A differenza dei modelli CFA tradizionali in cui l’interpretazione si concentra sulle saturazioni fattoriali, nei modelli di crescita latente le saturazioni fattoriali sono fisse</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\Lambda =
+\begin{pmatrix}
+1 &amp; 0 \\
+1 &amp; 1 \\
+1 &amp; 2 \\
+1 &amp; 3 \\
+1 &amp; 4 \\
+\end{pmatrix}
+\end{split}\]</div>
+<p>il che implica che l’attenzione è rivolta all’intercetta latente e al fattore di pendenza latente.</p>
 </section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
+<section id="domande-della-ricerca">
+<h2><span class="section-number">27.2. </span>Domande della ricerca<a class="headerlink" href="#domande-della-ricerca" title="Permalink to this headline">#</a></h2>
+<p>I modelli LGM possono dunque essere usati per per studiare il cambiamento nel tempo tramite l’analisi dei dati longitudinali in cui una misura di esito viene osservata in diversi momenti nel tempo. <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> elencano cinque motivi per usare i modelli LGM.</p>
+<ol class="arabic simple">
+<li><p>L’identificazione diretta del cambiamento e della stabilità intra-individuale. Misurando lo stesso individuo ripetutamente, i ricercatori possono identificare se e come specifici attributi dell’individuo cambiano o rimangono gli stessi nel tempo. Le teorie dello sviluppo spesso descrivono il cambiamento come un processo incrementale o trasformazionale. Il cambiamento incrementale viene identificato come un cambiamento nella grandezza di un costrutto lungo un continuum durante un intervallo di tempo specifico. Il cambiamento trasformazionale viene identificato come una transizione tra stati discreti durante un intervallo di tempo specifico (ad esempio, la teoria dello sviluppo a stadi di Piaget; Piaget, 1952). L’obiettivo principale è ottenere una descrizione accurata e parsimoniosa di come e quando gli attributi dell’individuo cambiano nel tempo. La stabilità e la costanza nel tempo sono casi speciali di cambiamento intra-individuale.</p></li>
+<li><p>Una volta identificato il modello di cambiamento intra-individuale, una domanda logica successiva è se diversi individui cambiano in modi diversi. Pertanto, il secondo motivo per la ricerca longitudinale è l’identificazione delle differenze interindividuali nel cambiamento intra-individuale. Ci si chiede se i diversi individui cambino in quantità o direzioni diverse o se passino da uno stadio all’altro in momenti diversi.</p></li>
+<li><p>Il terzo motivo per la ricerca longitudinale è l’analisi delle interrelazioni nel cambiamento comportamentale. Questo approccio si basa sull’idea che ci sono cambiamenti simultanei e/o sequenziali in più costrutti. L’analisi richiede l’analisi simultanea di più variabili e la valutazione di come i cambiamenti in una variabile influenzino i cambiamenti in un’altra variabile.</p></li>
+<li><p>Il quarto motivo è l’analisi delle cause del cambiamento intra-individuale. L’obiettivo è identificare i fattori e/o i meccanismi variabili nel tempo che influenzano i cambiamenti intra-individuali. Si assume che i cambiamenti procedano a ritmi diversi in periodi di tempo diversi.</p></li>
+<li><p>Il quinto motivo per la ricerca longitudinale è l’analisi delle cause delle differenze interindividuali nel cambiamento intra-individuale. Poiché gli individui differiscono nel modo in cui cambiano nel tempo, i ricercatori sono interessati a identificare i fattori che possono spiegare queste differenze. L’obiettivo è identificare le variabili invarianti nel tempo che sono correlate a specifici aspetti del cambiamento all’interno della persona. Ad esempio, le caratteristiche demografiche, gli interventi sperimentali e le caratteristiche dei contesti degli individui possono influenzare come e quando il cambiamento avviene. Le domande di ricerca derivanti dal quinto motivo sono spesso esaminate attraverso l’inclusione di covariate invarianti nel tempo.</p></li>
+</ol>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -465,16 +521,16 @@ document.write(`
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "r"
         },
         kernelOptions: {
-            name: "python3",
+            name: "ir",
             path: "./."
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'ir'</script>
 
                 </article>
               
@@ -484,12 +540,21 @@ document.write(`
                 <footer class="bd-footer-article">
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="316_sem_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">26. </span>Introduzione ai modelli di equazioni struttural</p>
+      </div>
+    </a>
     <a class="right-next"
-       href="05_intro_r.html"
+       href="321_lgm_prelims.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1. </span>Linguaggio di programmazione R</p>
+        <p class="prev-next-title"><span class="section-number">28. </span>Dati longitudinali</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -508,7 +573,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#license">License</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misurare-il-cambiamento">27.1. Misurare il cambiamento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#domande-della-ricerca">27.2. Domande della ricerca</a></li>
 </ul>
   </nav></div>
 

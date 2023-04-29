@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>28. LGM e modelli misti &#8212; cfa_book</title>
+    <title>29. LGM e modelli misti &#8212; cfa_book</title>
   
   
   
@@ -67,8 +67,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="_static/increasing.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="29. Curve di crescita latente" href="326_growth_1.html" />
-    <link rel="prev" title="27. Curve di crescita latente" href="320_growth_models_intro.html" />
+    <link rel="next" title="30. Curve di crescita latente" href="326_growth_1.html" />
+    <link rel="prev" title="28. Dati longitudinali" href="321_lgm_prelims.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
   </head>
@@ -202,25 +202,26 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Curve di crescita latente</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="320_growth_models_intro.html">27. Curve di crescita latente</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">28. LGM e modelli misti</a></li>
-<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">29. Curve di crescita latente</a></li>
-<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">30. Il tempo su una metrica continua</a></li>
-<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">31. Covariate indipendenti dal tempo</a></li>
-<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">32. Modelli di crescita latenti a gruppi multipli</a></li>
-<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">33. Modelli di crescita latenti bivariati</a></li>
-<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">34. Invarianza di misurazione</a></li>
-<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">35. Modello LCS univariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">36. Modello LCS bivariato</a></li>
-<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">37. Invarianza fattoriale nei modelli LGM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="320_lgm_intro.html">27. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="321_lgm_prelims.html">28. Dati longitudinali</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">29. LGM e modelli misti</a></li>
+<li class="toctree-l1"><a class="reference internal" href="326_growth_1.html">30. Curve di crescita latente</a></li>
+<li class="toctree-l1"><a class="reference internal" href="327_growth_cont.html">31. Il tempo su una metrica continua</a></li>
+<li class="toctree-l1"><a class="reference internal" href="328_time_inv_cov.html">32. Covariate indipendenti dal tempo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="329_growth_groups.html">33. Modelli di crescita latenti a gruppi multipli</a></li>
+<li class="toctree-l1"><a class="reference internal" href="330_bivariate_growth_models.html">34. Modelli di crescita latenti bivariati</a></li>
+<li class="toctree-l1"><a class="reference internal" href="331_inv_measurement.html">35. Invarianza di misurazione</a></li>
+<li class="toctree-l1"><a class="reference internal" href="332_latent_change.html">36. Modello LCS univariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="333_biv_change.html">37. Modello LCS bivariato</a></li>
+<li class="toctree-l1"><a class="reference internal" href="351_lgm_meas_inv.html">38. Invarianza fattoriale nei modelli LGM</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Bibliografia</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">38. Bibliografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="z_biblio.html">39. Bibliografia</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Appendici</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="900_lin_alg.html">39. Elementi di algebra lineare</a></li>
+<li class="toctree-l1"><a class="reference internal" href="900_lin_alg.html">40. Elementi di algebra lineare</a></li>
 </ul>
 
     </div>
@@ -414,11 +415,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelli-misti">28.1. Modelli misti</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulare-effetti-casuali">28.2. Simulare effetti casuali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-latente">28.3. Modello di crescita latente</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli-misti-e-lgm">28.4. Confronto tra modelli misti e LGM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusioni">28.5. Conclusioni</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelli-misti">29.1. Modelli misti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulare-effetti-casuali">29.2. Simulare effetti casuali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-latente">29.3. Modello di crescita latente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli-misti-e-lgm">29.4. Confronto tra modelli misti e LGM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusioni">29.5. Conclusioni</a></li>
 </ul>
             </nav>
         </div>
@@ -431,12 +432,12 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lgm-e-modelli-misti">
-<span id="lgm-mixed-notebook"></span><h1><span class="section-number">28. </span>LGM e modelli misti<a class="headerlink" href="#lgm-e-modelli-misti" title="Permalink to this headline">#</a></h1>
+<span id="lgm-mixed-notebook"></span><h1><span class="section-number">29. </span>LGM e modelli misti<a class="headerlink" href="#lgm-e-modelli-misti" title="Permalink to this headline">#</a></h1>
 <p>I modelli di crescita latente (LGM) sono un caso speciale di analisi fattoriale confermativa (CFA) e corrispondono a un modello CFA a due fattori in cui le saturazioni fattoriali sono fissate a valori predefiniti. Nella loro forma più semplice, i modelli LGM sono equivalenti ai modelli a effetti misti nell’analisi di regressione. Pertanto, descrivere i modelli misti ci aiuterà a comprendere meglio i modelli LGM.</p>
 <p>In molti casi, la traiettoria nel tempo può essere modellata come una semplice funzione lineare o quadratica. Le differenze individuali vengono catturate dagli <em>effetti random</em> che sono convenientemente rappresentati da variabili latenti (continue), spesso chiamate <em>fattori di crescita</em> (<em>growth factors</em>).</p>
 <p>In questo capitolo introdurremo i modelli LGM mediante un confronto con i modelli misti.</p>
 <section id="modelli-misti">
-<h2><span class="section-number">28.1. </span>Modelli misti<a class="headerlink" href="#modelli-misti" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.1. </span>Modelli misti<a class="headerlink" href="#modelli-misti" title="Permalink to this headline">#</a></h2>
 <p>Il modello lineare standard presuppone l’indipendenza delle osservazioni. Tuttavia, i modelli misti considerano la presenza di cluster di osservazioni, come ad esempio misure ripetute per lo stesso individuo nel tempo.</p>
 <p>Per gestire la correlazione tra le osservazioni raggruppate, si possono utilizzare i modelli a effetti misti. Questi modelli sono impiegati quando si hanno dati raccolti da più cluster, ognuno con caratteristiche uniche ma anche condivise. Un esempio comune di modello misto è quello utilizzato per analizzare dati longitudinali. In questo caso, il modello può includere un effetto fisso per il tempo e un effetto casuale per ogni unità.</p>
 <p>I modelli misti rappresentano un compromesso tra la modellizzazione pooled e quella separata. La modellizzazione pooled combina tutti i dati in un unico dataset, ma può portare a una perdita di informazioni sulle differenze tra i gruppi di osservazioni. La modellizzazione separata adatta un modello per ogni gruppo di osservazioni, ma può portare a problemi di sovrapparametrizzazione e scarsa generalizzazione ai nuovi dati.</p>
@@ -470,7 +471,7 @@ between) della varianza esistente tra i gruppi, il rapporto</p>
 unità di secondo livello.</p>
 </section>
 <section id="simulare-effetti-casuali">
-<h2><span class="section-number">28.2. </span>Simulare effetti casuali<a class="headerlink" href="#simulare-effetti-casuali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.2. </span>Simulare effetti casuali<a class="headerlink" href="#simulare-effetti-casuali" title="Permalink to this headline">#</a></h2>
 <p>Possiamo fornire una dimostrazione del funzionamento dei modelli misti con una simulazione. Ciò ci permetterà di meglio comprendere i modelli a crescita latente. Simuleremo dei dati bilanciati, con punteggi su quattro rilevazioni temporali per 500 individui (soggetti). Esamineremo il tasso di crescita (‘growth’) e consentiremo la presenza di intercette e pendenze specifiche per i diversi soggetti.</p>
 <p>Le istruzioni seguenti generano i dati (per i nostri scopi, non è importante capire i dettagli di questa porzione di codice).</p>
 <div class="cell docutils container">
@@ -752,7 +753,7 @@ time 0.072
 <p>Le varianze degli effetti casuali stimati (<span class="math notranslate nohighlight">\(1.0122^2\)</span>, <span class="math notranslate nohighlight">\(1.0149^2\)</span>) sono molto simili al valore impostato di 1, la correlazione (0.15) è simile al valore impostato di 0.2 e la deviazione standard dei residui (0.4911) è simile al valore impostato di 0.5.</p>
 </section>
 <section id="modello-di-crescita-latente">
-<h2><span class="section-number">28.3. </span>Modello di crescita latente<a class="headerlink" href="#modello-di-crescita-latente" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.3. </span>Modello di crescita latente<a class="headerlink" href="#modello-di-crescita-latente" title="Permalink to this headline">#</a></h2>
 <!-- https://github.com/m-clark/sem/blob/master/growth-curves.Rmd -->
 <p>Analizziamo ora gli stessi dati con un modello LGM. Possiamo pensare ai modelli LGM come ad un’estensione del modello CFA nel quale ipotizziamo la presenza di due fattori latenti: una variabile latente per le intercette casuali (ovvero, per la variazione delle intercette dei partecipanti) e una seconda variabile latente le pendenze casuali (ovvero, per la variazione delle pendenze dei partecipanti). Le intercette e le pendenze si riferiscono alla retta di regressione che, per ciascun partecipante, descrive la relazione tra la variabile esaminata e il tempo.</p>
 <p>Dato che il modello deve spiegare la relazione tra <em>le medie</em> dei punteggi dei partecipanti in funzione del tempo, non possiamo usare in input la matrice di covarianza campionaria, ma dobbiamo invece utilizzare i dati grezzi (ovvero, le singole osservazioni per ciascun partecipante).</p>
@@ -895,7 +896,7 @@ Variances:
 </div>
 </section>
 <section id="confronto-tra-modelli-misti-e-lgm">
-<h2><span class="section-number">28.4. </span>Confronto tra modelli misti e LGM<a class="headerlink" href="#confronto-tra-modelli-misti-e-lgm" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.4. </span>Confronto tra modelli misti e LGM<a class="headerlink" href="#confronto-tra-modelli-misti-e-lgm" title="Permalink to this headline">#</a></h2>
 <p>Nell’output, <code class="docutils literal notranslate"><span class="pre">Intercepts</span></code> corrisponde agli effetti fissi:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Intercepts</span><span class="p">:</span>
                    <span class="n">Estimate</span>  <span class="n">Std</span><span class="o">.</span><span class="n">Err</span>  <span class="n">z</span><span class="o">-</span><span class="n">value</span>  <span class="n">P</span><span class="p">(</span><span class="o">&gt;|</span><span class="n">z</span><span class="o">|</span><span class="p">)</span>
@@ -1130,7 +1131,7 @@ Variances:
 </div>
 </section>
 <section id="conclusioni">
-<h2><span class="section-number">28.5. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.5. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
 <p>In conclusione, abbiamo visto che, nel caso più semplice, i modelli LGM producono risultati identici ai modelli misti. Tuttavia, la concettualizzazione del cambiamento nei termini di un modello a crescita latente offre molti vantaggi rispetto alla descrizione dei dati nei termini dei modelli misti in quanto i modelli LGM sono più flessibili e consentono la verifica di ipotesi statistiche che non possono essere esaminate nel constesto dei modelli misti.</p>
 </section>
 </section>
@@ -1164,12 +1165,12 @@ Variances:
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="320_growth_models_intro.html"
+       href="321_lgm_prelims.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">27. </span>Curve di crescita latente</p>
+        <p class="prev-next-title"><span class="section-number">28. </span>Dati longitudinali</p>
       </div>
     </a>
     <a class="right-next"
@@ -1177,7 +1178,7 @@ Variances:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">29. </span>Curve di crescita latente</p>
+        <p class="prev-next-title"><span class="section-number">30. </span>Curve di crescita latente</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1196,11 +1197,11 @@ Variances:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelli-misti">28.1. Modelli misti</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulare-effetti-casuali">28.2. Simulare effetti casuali</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-latente">28.3. Modello di crescita latente</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli-misti-e-lgm">28.4. Confronto tra modelli misti e LGM</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusioni">28.5. Conclusioni</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelli-misti">29.1. Modelli misti</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulare-effetti-casuali">29.2. Simulare effetti casuali</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modello-di-crescita-latente">29.3. Modello di crescita latente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#confronto-tra-modelli-misti-e-lgm">29.4. Confronto tra modelli misti e LGM</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusioni">29.5. Conclusioni</a></li>
 </ul>
   </nav></div>
 
