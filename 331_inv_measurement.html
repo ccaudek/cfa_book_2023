@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -442,7 +442,7 @@ document.write(`
 <span id="inv-meas-lgm-notebook"></span><h1><span class="section-number">35. </span>Invarianza di misurazione<a class="headerlink" href="#invarianza-di-misurazione" title="Permalink to this headline">#</a></h1>
 <p>In questo capitolo, esaminiamo come il modello a fattore comune possa essere utilizzato per studiare i cambiamenti nei fattori comuni attraverso l’uso di modelli di crescita latente. Ci concentriamo sui fattori comuni misurati da variabili osservate con punteggio continuo.</p>
 <p>Un concetto chiave è stabilire una metrica comune per le variabili latenti nel tempo. A differenza delle variabili osservate, le variabili latenti non hanno una scala intrinseca e longitudinalmente è necessario che quella scala sia la stessa nel tempo. Questo viene fatto testando l’invarianza fattoriale.</p>
-<p>In questo tutorial, introduciamo il test di invarianza di misura nel contesto di un modello a fattore longitudinale e come un modello di crescita latente di secondo ordine possa essere utilizzato per descrivere il cambiamento in un fattore latente. Questo tutorial segue l’esempio fornito nel Capitolo 14 <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Utilizzando dati con tre misurazioni temporali succesive dall’ECLS-K, testiamo l’invarianza fattoriale e quindi utilizziamo un modello di crescita di secondo ordine per descrivere il cambiamento nei punteggi del fattore nel tempo.</p>
+<p>In questo tutorial, introduciamo il test di invarianza di misura nel contesto di un modello a fattore longitudinale e come un modello di crescita latente di secondo ordine possa essere utilizzato per descrivere il cambiamento in un fattore latente. Questo tutorial segue l’esempio fornito nel Capitolo 14 <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id7" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Utilizzando dati con tre misurazioni temporali succesive dall’ECLS-K, testiamo l’invarianza fattoriale e quindi utilizziamo un modello di crescita di secondo ordine per descrivere il cambiamento nei punteggi del fattore nel tempo.</p>
 <section id="invarianza-fattoriale-longitudinale">
 <h2><span class="section-number">35.1. </span>Invarianza fattoriale longitudinale<a class="headerlink" href="#invarianza-fattoriale-longitudinale" title="Permalink to this headline">#</a></h2>
 <p>L’invarianza fattoriale longitudinale si riferisce all’equivalenza di alcuni parametri del modello a fattore comune nel tempo. Avere una struttura fattoriale invariante è importante per l’utilizzo dell’analisi fattoriale come strumento di indagine scientifica. I fattori non hanno un’unità di misura o un significato intrinseco e la loro interpretazione deriva dalle loro relazioni con le variabili osservate. Se un fattore deve essere trattato come lo stesso in diverse occasioni temporali di misurazione, l’associazione di quel fattore con altre variabili deve rimanere costante nel tempo.</p>
@@ -455,7 +455,7 @@ document.write(`
 </section>
 <section id="un-esempio-concreto">
 <h2><span class="section-number">35.2. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h2>
-<p>Questo tutorial segue l’esempio del Capitolo 14 di <span id="id2">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Utilizzando dati relativi a 3 misurazioni dell’ECLS-K, testiamo l’invarianza fattoriale e poi usiamo un modello di crescita latente di secondo ordine per descrivere il cambiamento nei punteggi fattoriali nel tempo.</p>
+<p>Questo tutorial segue l’esempio del Capitolo 14 di <span id="id2">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id7" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. Utilizzando dati relativi a 3 misurazioni dell’ECLS-K, testiamo l’invarianza fattoriale e poi usiamo un modello di crescita latente di secondo ordine per descrivere il cambiamento nei punteggi fattoriali nel tempo.</p>
 <p>Carichiamo i pacchetti necessari.</p>
 <p>Leggiamo i dati.</p>
 <div class="cell docutils container">
@@ -1636,63 +1636,60 @@ Variances:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chi-square difference test for nested models</span>
-<span class="nf">anova</span><span class="p">(</span><span class="n">fit_configural</span><span class="p">,</span><span class="w"> </span><span class="n">fit_weak</span><span class="p">)</span>
+<span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit_configural</span><span class="p">,</span><span class="w"> </span><span class="n">fit_weak</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A anova: 2 × 8</caption>
-<thead>
-	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>RMSEA</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>fit_configural</th><td>15</td><td>83914.19</td><td>84120.83</td><td> 35.52179</td><td>      NA</td><td>       NA</td><td>NA</td><td>          NA</td></tr>
-	<tr><th scope=row>fit_weak</th><td>19</td><td>83987.49</td><td>84172.94</td><td>116.82627</td><td>81.30448</td><td>0.1143497</td><td> 4</td><td>9.217096e-17</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-Squared Difference Test
+
+               Df   AIC   BIC   Chisq Chisq diff   RMSEA Df diff Pr(&gt;Chisq)    
+fit_configural 15 83914 84121  35.522                                          
+fit_weak       19 83987 84173 116.826     81.304 0.11435       4  &lt; 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit_weak</span><span class="p">,</span><span class="w"> </span><span class="n">fit_strong</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit_weak</span><span class="p">,</span><span class="w"> </span><span class="n">fit_strong</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A anova: 2 × 8</caption>
-<thead>
-	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>RMSEA</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>fit_weak</th><td>19</td><td>83987.49</td><td>84172.94</td><td>116.8263</td><td>      NA</td><td>       NA</td><td>NA</td><td>          NA</td></tr>
-	<tr><th scope=row>fit_strong</th><td>23</td><td>84403.42</td><td>84567.67</td><td>540.7503</td><td>423.9241</td><td>0.2665129</td><td> 4</td><td>1.880876e-90</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-Squared Difference Test
+
+           Df   AIC   BIC  Chisq Chisq diff   RMSEA Df diff Pr(&gt;Chisq)    
+fit_weak   19 83987 84173 116.83                                          
+fit_strong 23 84403 84568 540.75     423.92 0.26651       4  &lt; 2.2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit_strong</span><span class="p">,</span><span class="w"> </span><span class="n">fit_strict</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit_strong</span><span class="p">,</span><span class="w"> </span><span class="n">fit_strict</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A anova: 2 × 8</caption>
-<thead>
-	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>RMSEA</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>fit_strong</th><td>23</td><td>84403.42</td><td>84567.67</td><td>540.7503</td><td>      NA</td><td>       NA</td><td>NA</td><td>          NA</td></tr>
-	<tr><th scope=row>fit_strict</th><td>29</td><td>84451.28</td><td>84583.74</td><td>600.6135</td><td>59.86317</td><td>0.0779351</td><td> 6</td><td>4.798497e-11</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-Squared Difference Test
+
+           Df   AIC   BIC  Chisq Chisq diff    RMSEA Df diff Pr(&gt;Chisq)    
+fit_strong 23 84403 84568 540.75                                           
+fit_strict 29 84451 84584 600.61     59.863 0.077935       6  4.798e-11 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre></div>
+</div>
+</div>
 </div>
 <p>Nel caso presente, solo l’invarianza configurale è giustificata dal test di verosimiglianze. L’esame degli indici di bontà di adattamento, comunque, suggerisce che l’invarianza debole sembra giustificata per questi dati. &#64;grimm2016growth concludono invece che anche l’invarianza forte è giustificata per questi dati.</p>
 </section>

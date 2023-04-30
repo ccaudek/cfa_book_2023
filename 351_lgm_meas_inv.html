@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -1106,10 +1106,30 @@ document.write(`
 <span class="w">  </span><span class="n">scalar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">inspect</span><span class="p">(</span><span class="n">scalar.fit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;fit.measures&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="n">residual</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">inspect</span><span class="p">(</span><span class="n">residual.fit</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;fit.measures&quot;</span><span class="p">)</span>
 <span class="p">),</span><span class="w"> </span><span class="m">3</span><span class="p">)</span>
-
-<span class="nf">anova</span><span class="p">(</span><span class="n">configural.fit</span><span class="p">,</span><span class="w"> </span><span class="n">metric.fit</span><span class="p">)</span>
-<span class="nf">anova</span><span class="p">(</span><span class="n">metric.fit</span><span class="p">,</span><span class="w"> </span><span class="n">scalar.fit</span><span class="p">)</span>
-<span class="nf">anova</span><span class="p">(</span><span class="n">scalar.fit</span><span class="p">,</span><span class="w"> </span><span class="n">residual.fit</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">configural.fit</span><span class="p">,</span><span class="w"> </span><span class="n">metric.fit</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">metric.fit</span><span class="p">,</span><span class="w"> </span><span class="n">scalar.fit</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">scalar.fit</span><span class="p">,</span><span class="w"> </span><span class="n">residual.fit</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">  </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
