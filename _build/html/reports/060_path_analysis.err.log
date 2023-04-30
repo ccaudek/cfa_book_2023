@@ -25,16 +25,17 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-lavaanPlot(model = fit_alt, labels = labels2, coefs = TRUE, covs = TRUE, stars = FALSE)
+lavaanPlot(model = fit_alt, labels = coefs = TRUE, covs = TRUE, stars = FALSE)
 
 ------------------
 
-Error in eval(expr, envir, enclos): object 'labels2' not found
+Error in parse(text = x, srcfile = src): <text>:1:44: unexpected '='
+1: lavaanPlot(model = fit_alt, labels = coefs =
+                                               ^
 Traceback:
 
-1. lavaanPlot(model = fit_alt, labels = labels2, coefs = TRUE, covs = TRUE, 
- .     stars = FALSE)
-2. buildCall(name = name, model = model, labels = labels, ...)
-ERROR: Error in eval(expr, envir, enclos): object 'labels2' not found
+ERROR: Error in parse(text = x, srcfile = src): <text>:1:44: unexpected '='
+1: lavaanPlot(model = fit_alt, labels = coefs =
+                                               ^
 
 
