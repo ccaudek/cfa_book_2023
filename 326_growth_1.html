@@ -591,7 +591,7 @@ document.write(`
 <span class="w">    </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
 <span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
 <span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding points to plot</span>
-<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.15</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.2</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
 <span class="w">  </span><span class="c1"># setting the x-axis with breaks and labels</span>
 <span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span>
 <span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
@@ -608,7 +608,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/010a22551186a27f468823a8244b3c041398fcdc6d0b4ca4b45ec573febd0a16.png" src="_images/010a22551186a27f468823a8244b3c041398fcdc6d0b4ca4b45ec573febd0a16.png" />
+<img alt="_images/303ddbc1a81e292178c3197fe0e23ecb014dfaaa4c7e8279bb2b75515f958f5b.png" src="_images/303ddbc1a81e292178c3197fe0e23ecb014dfaaa4c7e8279bb2b75515f958f5b.png" />
 </div>
 </div>
 </section>
@@ -1172,30 +1172,92 @@ Variances:
 <span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">math6</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">4</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_2</span>
 <span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">math7</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_2</span>
 <span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">math8</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="m">6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="o">$</span><span class="n">eta_2</span>
-
-<span class="c1"># reshaping wide to long</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># reshaping wide to long</span>
 <span class="n">nlsy_math_predicted_long</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">reshape</span><span class="p">(</span>
 <span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_predicted</span><span class="p">,</span>
 <span class="w">  </span><span class="n">timevar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;grade&quot;</span><span class="p">),</span>
 <span class="w">  </span><span class="n">idvar</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="n">varying</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span>
-<span class="w">    </span><span class="s">&quot;math2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math4&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="s">&quot;math5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math7&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math8&quot;</span>
+<span class="w">    </span><span class="s">&quot;math2&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math3&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math4&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math6&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math7&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;math8&quot;</span>
 <span class="w">  </span><span class="p">),</span>
 <span class="w">  </span><span class="n">direction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;long&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">sep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;&quot;</span>
 <span class="p">)</span>
-<span class="c1"># sorting for easy viewing</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">nlsy_math_predicted_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 5</caption>
+<thead>
+	<tr><th></th><th scope=col>id</th><th scope=col>eta_1</th><th scope=col>eta_2</th><th scope=col>grade</th><th scope=col>math</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>201.2</th><td> 201</td><td>36.94675</td><td>4.534084</td><td>2</td><td>36.94675</td></tr>
+	<tr><th scope=row>303.2</th><td> 303</td><td>26.03589</td><td>4.050780</td><td>2</td><td>26.03589</td></tr>
+	<tr><th scope=row>2702.2</th><td>2702</td><td>49.70187</td><td>4.594149</td><td>2</td><td>49.70187</td></tr>
+	<tr><th scope=row>4303.2</th><td>4303</td><td>41.04200</td><td>4.548064</td><td>2</td><td>41.04200</td></tr>
+	<tr><th scope=row>5002.2</th><td>5002</td><td>37.01240</td><td>4.496746</td><td>2</td><td>37.01240</td></tr>
+	<tr><th scope=row>5005.2</th><td>5005</td><td>37.68809</td><td>4.324198</td><td>2</td><td>37.68809</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># sorting for easy viewing</span>
 <span class="c1"># order by id and time</span>
 <span class="n">nlsy_math_predicted_long</span><span class="w"> </span><span class="o">&lt;-</span>
 <span class="w">  </span><span class="n">nlsy_math_predicted_long</span><span class="p">[</span><span class="nf">order</span><span class="p">(</span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">grade</span><span class="p">),</span><span class="w"> </span><span class="p">]</span>
-
-<span class="c1"># intraindividual change trajetories</span>
-<span class="nf">ggplot</span><span class="p">(</span>
-<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_predicted_long</span><span class="p">[</span><span class="nf">which</span><span class="p">(</span><span class="n">nlsy_math_predicted_long</span><span class="o">$</span><span class="n">id</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="m">80000</span><span class="p">),</span><span class="w"> </span><span class="p">],</span><span class="w"> </span><span class="c1"># data set</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">head</span><span class="p">(</span><span class="n">nlsy_math_predicted_long</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 5</caption>
+<thead>
+	<tr><th></th><th scope=col>id</th><th scope=col>eta_1</th><th scope=col>eta_2</th><th scope=col>grade</th><th scope=col>math</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>201.2</th><td>201</td><td>36.94675</td><td>4.534084</td><td>2</td><td>36.94675</td></tr>
+	<tr><th scope=row>201.3</th><td>201</td><td>36.94675</td><td>4.534084</td><td>3</td><td>41.48083</td></tr>
+	<tr><th scope=row>201.4</th><td>201</td><td>36.94675</td><td>4.534084</td><td>4</td><td>46.01492</td></tr>
+	<tr><th scope=row>201.5</th><td>201</td><td>36.94675</td><td>4.534084</td><td>5</td><td>50.54900</td></tr>
+	<tr><th scope=row>201.6</th><td>201</td><td>36.94675</td><td>4.534084</td><td>6</td><td>55.08309</td></tr>
+	<tr><th scope=row>201.7</th><td>201</td><td>36.94675</td><td>4.534084</td><td>7</td><td>59.61717</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">ggplot</span><span class="p">(</span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_predicted_long</span><span class="p">,</span><span class="w"> </span><span class="c1"># data set</span>
 <span class="w">  </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
 <span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
 <span class="w">  </span><span class="c1"># geom_point(size=.5) + #adding points to plot</span>
-<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.75</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.15</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
 <span class="w">  </span><span class="c1"># setting the x-axis with breaks and labels</span>
 <span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span>
 <span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
@@ -1212,10 +1274,14 @@ Variances:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/1bb87a87fdd45d55e24a21a3c97d674c3071e8650a634d78d285b3922046eaa7.png" src="_images/1bb87a87fdd45d55e24a21a3c97d674c3071e8650a634d78d285b3922046eaa7.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“Removed 7 rows containing missing values (`geom_line()`).”
+</pre></div>
+</div>
+<img alt="_images/ba691dabb8b10a59f2a46605e874471d151609680e4409e518248a0d75af55db.png" src="_images/ba691dabb8b10a59f2a46605e874471d151609680e4409e518248a0d75af55db.png" />
 </div>
 </div>
-<p>Il modello di crescita latente lineare rappresenta la traiettoria di ogni bambino come una linea retta, evidenziando le differenze tra le abilità matematiche individuali nel tempo. Come mostrato dal grafico, per tutti i bambini, l’abilità matematica “vero” aumenta di circa 5 punti per ogni anno scolastico.</p>
+<p>Il modello di crescita latente lineare rappresenta la traiettoria di ogni bambino come una linea retta, evidenziando le differenze tra le abilità matematiche individuali nel tempo. Come mostrato dal grafico, per tutti i bambini, l’abilità matematica “vera” aumenta di circa 5 punti per ogni anno scolastico.</p>
 <section id="sintassi-alternativa">
 <h3><span class="section-number">30.3.1. </span>Sintassi alternativa<a class="headerlink" href="#sintassi-alternativa" title="Permalink to this headline">#</a></h3>
 <p>Per semplificare la scrittura del modello possiamo usare la funzione <code class="docutils literal notranslate"><span class="pre">growth</span></code>. Tuttavia, per il modello discusso in precedenza, è necessario specificare un parametro aggiuntivo rispetto ai default di <code class="docutils literal notranslate"><span class="pre">growth</span></code>: vogliamo che le varianze residue di <code class="docutils literal notranslate"><span class="pre">math</span></code> siano costanti nel tempo.</p>
@@ -1243,9 +1309,10 @@ Variances:
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit_m1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">growth</span><span class="p">(</span>
 <span class="w">  </span><span class="n">m1</span><span class="p">,</span>
-<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_wide</span><span class="p">,</span><span class="w"> </span>
+<span class="w">  </span><span class="n">data</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">nlsy_math_wide</span><span class="p">,</span>
 <span class="w">  </span><span class="n">estimator</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;ML&quot;</span><span class="p">,</span>
-<span class="w">  </span><span class="n">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fiml&quot;</span><span class="p">)</span>
+<span class="w">  </span><span class="n">missing</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;fiml&quot;</span>
+<span class="p">)</span>
 </pre></div>
 </div>
 </div>
