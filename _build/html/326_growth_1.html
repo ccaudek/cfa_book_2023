@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -440,7 +440,7 @@ document.write(`
 <span id="lgm1-notebook"></span><h1><span class="section-number">30. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
 <section id="una-applicazione-concreta">
 <h2><span class="section-number">30.1. </span>Una applicazione concreta<a class="headerlink" href="#una-applicazione-concreta" title="Permalink to this headline">#</a></h2>
-<p>Esaminiamo l’adattamento di un modello LGM ad un campione di dati reali. In questo tutorial, considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA <span id="id1">[<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>.</p>
+<p>Esaminiamo l’adattamento di un modello LGM ad un campione di dati reali. In questo tutorial, considereremo il cambiamento nel rendimento in matematica dei bambini durante la scuola elementare e media utilizzando il set di dati NLSY-CYA <span id="id1">[<a class="reference internal" href="z_biblio.html#id7" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>.</p>
 <p>Iniziamo a leggere i dati.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,7 +553,7 @@ document.write(`
 <img alt="_images/f99534c9483c2a2f7414d62c7e97863a1fd16052159967e807b3f64d6a39ad81.png" src="_images/f99534c9483c2a2f7414d62c7e97863a1fd16052159967e807b3f64d6a39ad81.png" />
 </div>
 </div>
-<p>Aggiungiamo al grafico le retta dei minimi quadrati calcolata su tutti i dati (ignorando il ragruppamento dei dati in funzine degli individui).</p>
+<p>Aggiungiamo al grafico le retta dei minimi quadrati calcolata su tutti i dati (ignorando il ragruppamento dei dati in funzione dei partecipanti).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="w"> </span><span class="o">|&gt;</span>
@@ -582,7 +582,7 @@ document.write(`
 <img alt="_images/80de3ad55645b6f9f709847af5000bdcba398c0d5e4838a0c5e3c9caea7705c6.png" src="_images/80de3ad55645b6f9f709847af5000bdcba398c0d5e4838a0c5e3c9caea7705c6.png" />
 </div>
 </div>
-<p>Esaminiamo ora le traiettorie intraindividuali di cambiamento.</p>
+<p>Esaminiamo le traiettorie di cambiamento intra-individuale.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># intraindividual change trajetories</span>
@@ -591,7 +591,7 @@ document.write(`
 <span class="w">    </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
 <span class="w">  </span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
 <span class="w">  </span><span class="nf">geom_point</span><span class="p">(</span><span class="n">size</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">.</span><span class="m">5</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding points to plot</span>
-<span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.15</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
 <span class="w">  </span><span class="c1"># setting the x-axis with breaks and labels</span>
 <span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span>
 <span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
@@ -608,16 +608,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/6799d5acae8fdf0782a6ea5a3bc6adfa02d223cd759e183ac4a8e43e082828be.png" src="_images/6799d5acae8fdf0782a6ea5a3bc6adfa02d223cd759e183ac4a8e43e082828be.png" />
+<img alt="_images/010a22551186a27f468823a8244b3c041398fcdc6d0b4ca4b45ec573febd0a16.png" src="_images/010a22551186a27f468823a8244b3c041398fcdc6d0b4ca4b45ec573febd0a16.png" />
 </div>
 </div>
 </section>
 <section id="modello-di-assenza-di-crescita">
 <h2><span class="section-number">30.2. </span>Modello di assenza di crescita<a class="headerlink" href="#modello-di-assenza-di-crescita" title="Permalink to this headline">#</a></h2>
-<p>Come mostrato nel grafico precedente, sembra esserci una crescita sistematica nei punteggi di matematica nel tempo. Per iniziare l’analisi, adatteremo un modello senza crescita che agirà come un  modello “baseline” con cui confrontare i modelli successivi.</p>
-<p>Questo modello ipotizza un livello costante dei punteggi di matematica degli individui nel tempo e si limita a stimare, per ciascun invididuo, il “valore vero” dei punteggi di matematica (senza errore di misura) indipendente dal tempo. Non prevedendo che i punteggi cambino in funzione del tempo, il modello descrive un caso di poco interesse e, quindi, solitamente  questo è un modello che vogliamo respingere.</p>
-<p>Questo modello include una variabile latente e un’intercetta che rappresenta il livello complessivo di prestazione invariante nel tempo.</p>
-<p>Per impostare il modello senza crescita, utilizzeremo la seguente sintassi di lavaan.</p>
+<p>Come si può vedere dal grafico precedente, i punteggi di matematica sembrano aumentare nel tempo in modo sistematico. Per cominciare l’analisi, useremo un modello senza crescita come punto di riferimento con cui confrontare i modelli successivi.</p>
+<p>Questo modello ipotizza che i punteggi di matematica degli individui siano costanti nel tempo e stima, per ogni individuo, il “valore vero” dei punteggi di matematica, senza considerare la variazione temporale. Non essendo in grado di prevedere la variazione temporale dei punteggi, questo modello descrive un caso di poco interesse e quindi è generalmente scartato.</p>
+<p>Il modello senza crescita include una variabile latente e un’intercetta che rappresenta il livello generale di prestazione costante nel tempo.</p>
+<p>Per definire il modello senza crescita, utilizzeremo la seguente sintassi di lavaan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ng_math_lavaan_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39; </span>
@@ -697,7 +697,7 @@ document.write(`
 <p>Esaminiamo la soluzione.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">ng_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">ng_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -768,42 +768,42 @@ Parameter Estimates:
   Observed information based on                Hessian
 
 Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-  eta_1 =~                                            
-    math2             1.000                           
-    math3             1.000                           
-    math4             1.000                           
-    math5             1.000                           
-    math6             1.000                           
-    math7             1.000                           
-    math8             1.000                           
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  eta_1 =~                                                              
+    math2             1.000                               6.850    0.536
+    math3             1.000                               6.850    0.536
+    math4             1.000                               6.850    0.536
+    math5             1.000                               6.850    0.536
+    math6             1.000                               6.850    0.536
+    math7             1.000                               6.850    0.536
+    math8             1.000                               6.850    0.536
 
 Intercepts:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-    eta_1            45.915    0.324  141.721    0.000
-   .math2             0.000                           
-   .math3             0.000                           
-   .math4             0.000                           
-   .math5             0.000                           
-   .math6             0.000                           
-   .math7             0.000                           
-   .math8             0.000                           
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+    eta_1            45.915    0.324  141.721    0.000    6.703    6.703
+   .math2             0.000                               0.000    0.000
+   .math3             0.000                               0.000    0.000
+   .math4             0.000                               0.000    0.000
+   .math5             0.000                               0.000    0.000
+   .math6             0.000                               0.000    0.000
+   .math7             0.000                               0.000    0.000
+   .math8             0.000                               0.000    0.000
 
 Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-    eta_1            46.917    4.832    9.709    0.000
-   .math2   (thet)  116.682    4.548   25.656    0.000
-   .math3   (thet)  116.682    4.548   25.656    0.000
-   .math4   (thet)  116.682    4.548   25.656    0.000
-   .math5   (thet)  116.682    4.548   25.656    0.000
-   .math6   (thet)  116.682    4.548   25.656    0.000
-   .math7   (thet)  116.682    4.548   25.656    0.000
-   .math8   (thet)  116.682    4.548   25.656    0.000
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+    eta_1            46.917    4.832    9.709    0.000    1.000    1.000
+   .math2   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
+   .math3   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
+   .math4   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
+   .math5   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
+   .math6   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
+   .math7   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
+   .math8   (thet)  116.682    4.548   25.656    0.000  116.682    0.713
 </pre></div>
 </div>
 </div>
 </div>
-<p>Otteniamo il diagramma di percorso.</p>
+<p>Generiamo il diagramma di percorso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">semPaths</span><span class="p">(</span><span class="n">ng_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">what</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;path&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">whatLabels</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;par&quot;</span><span class="p">)</span>
@@ -878,7 +878,7 @@ Variances:
 <span class="w">  </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
 <span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
 <span class="w">  </span><span class="c1"># geom_point(size=.5) + #adding points to plot</span>
-<span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.1</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
 <span class="w">  </span><span class="c1"># setting the x-axis with breaks and labels</span>
 <span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span>
 <span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
@@ -899,15 +899,15 @@ Variances:
 “Removed 7 rows containing missing values (`geom_line()`).”
 </pre></div>
 </div>
-<img alt="_images/f9a5da4e9a69aca20a7cb1349369956d08372f6044926cc26278373d13d5bdfd.png" src="_images/f9a5da4e9a69aca20a7cb1349369956d08372f6044926cc26278373d13d5bdfd.png" />
+<img alt="_images/bc2d51a581f18e2109d76a0da20e083b1fc0ccb2060c2b267fcf5bc0a90c01f5.png" src="_images/bc2d51a581f18e2109d76a0da20e083b1fc0ccb2060c2b267fcf5bc0a90c01f5.png" />
 </div>
 </div>
-<p>Vediamo dal grafico che, come richiesto, il modello produce una traiettoria di crescita piatta per ciascun individuo.</p>
+<p>Come si può notare dal grafico, il modello che abbiamo utilizzato produce una serie di linee orizzontali, ciascuna rappresentante la traiettoria di crescita piatta dell’abilità matematica per ogni individuo. L’intercetta di queste traiettorie rappresenta il valore vero dell’abilità matematica di ciascun bambino, e tale valore rimane costante nel tempo.</p>
 </section>
 <section id="modello-di-crescita-lineare">
 <h2><span class="section-number">30.3. </span>Modello di crescita lineare<a class="headerlink" href="#modello-di-crescita-lineare" title="Permalink to this headline">#</a></h2>
-<p>Nella discussione dei modelli di crescita, dopo il modello di assenza di crescita, si esamina sempre il modello di crescita lineare a causa della sua semplicità. Inoltre, i modelli di crescita lineare sono spesso un punto di partenza quando si cerca di comprendere il cambiamento all’interno della persona.</p>
-<p>Implementiamo dunque un modello di crescita latente lineare.</p>
+<p>Nella discussione dei modelli di crescita, il modello di assenza di crescita viene sempre seguito dall’esame del modello di crescita lineare. Infatti, i modelli di crescita lineare rappresentano spesso il punto di partenza quando si cerca di comprendere il cambiamento all’interno dell’individuo. Successivamente, possono essere considerati anche modelli di crescita non lineare.</p>
+<p>Per questo motivo, procediamo ora all’implementazione di un modello di crescita latente lineare.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">lg_math_lavaan_model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
@@ -998,7 +998,7 @@ Variances:
 <p>Esaminiamo il risultato ottenuto.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">lg_math_lavaan_fit</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1069,52 +1069,52 @@ Parameter Estimates:
   Observed information based on                Hessian
 
 Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-  eta_1 =~                                            
-    math2             1.000                           
-    math3             1.000                           
-    math4             1.000                           
-    math5             1.000                           
-    math6             1.000                           
-    math7             1.000                           
-    math8             1.000                           
-  eta_2 =~                                            
-    math2             0.000                           
-    math3             1.000                           
-    math4             2.000                           
-    math5             3.000                           
-    math6             4.000                           
-    math7             5.000                           
-    math8             6.000                           
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  eta_1 =~                                                              
+    math2             1.000                               8.035    0.800
+    math3             1.000                               8.035    0.799
+    math4             1.000                               8.035    0.792
+    math5             1.000                               8.035    0.779
+    math6             1.000                               8.035    0.762
+    math7             1.000                               8.035    0.742
+    math8             1.000                               8.035    0.719
+  eta_2 =~                                                              
+    math2             0.000                               0.000    0.000
+    math3             1.000                               0.856    0.085
+    math4             2.000                               1.712    0.169
+    math5             3.000                               2.568    0.249
+    math6             4.000                               3.424    0.325
+    math7             5.000                               4.279    0.395
+    math8             6.000                               5.135    0.459
 
 Covariances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-  eta_1 ~~                                            
-    eta_2            -0.181    1.150   -0.158    0.875
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  eta_1 ~~                                                              
+    eta_2            -0.181    1.150   -0.158    0.875   -0.026   -0.026
 
 Intercepts:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-    eta_1            35.267    0.355   99.229    0.000
-    eta_2             4.339    0.088   49.136    0.000
-   .math2             0.000                           
-   .math3             0.000                           
-   .math4             0.000                           
-   .math5             0.000                           
-   .math6             0.000                           
-   .math7             0.000                           
-   .math8             0.000                           
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+    eta_1            35.267    0.355   99.229    0.000    4.389    4.389
+    eta_2             4.339    0.088   49.136    0.000    5.070    5.070
+   .math2             0.000                               0.000    0.000
+   .math3             0.000                               0.000    0.000
+   .math4             0.000                               0.000    0.000
+   .math5             0.000                               0.000    0.000
+   .math6             0.000                               0.000    0.000
+   .math7             0.000                               0.000    0.000
+   .math8             0.000                               0.000    0.000
 
 Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-    eta_1            64.562    5.659   11.408    0.000
-    eta_2             0.733    0.327    2.238    0.025
-   .math2   (thet)   36.230    1.867   19.410    0.000
-   .math3   (thet)   36.230    1.867   19.410    0.000
-   .math4   (thet)   36.230    1.867   19.410    0.000
-   .math5   (thet)   36.230    1.867   19.410    0.000
-   .math6   (thet)   36.230    1.867   19.410    0.000
-   .math7   (thet)   36.230    1.867   19.410    0.000
-   .math8   (thet)   36.230    1.867   19.410    0.000
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+    eta_1            64.562    5.659   11.408    0.000    1.000    1.000
+    eta_2             0.733    0.327    2.238    0.025    1.000    1.000
+   .math2   (thet)   36.230    1.867   19.410    0.000   36.230    0.359
+   .math3   (thet)   36.230    1.867   19.410    0.000   36.230    0.358
+   .math4   (thet)   36.230    1.867   19.410    0.000   36.230    0.352
+   .math5   (thet)   36.230    1.867   19.410    0.000   36.230    0.341
+   .math6   (thet)   36.230    1.867   19.410    0.000   36.230    0.326
+   .math7   (thet)   36.230    1.867   19.410    0.000   36.230    0.309
+   .math8   (thet)   36.230    1.867   19.410    0.000   36.230    0.290
 </pre></div>
 </div>
 </div>
@@ -1195,7 +1195,7 @@ Variances:
 <span class="w">  </span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">grade</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">math</span><span class="p">,</span><span class="w"> </span><span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">id</span><span class="p">)</span>
 <span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># setting variables</span>
 <span class="w">  </span><span class="c1"># geom_point(size=.5) + #adding points to plot</span>
-<span class="w">  </span><span class="nf">geom_line</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
+<span class="w">  </span><span class="nf">geom_line</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.75</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="c1"># adding lines to plot</span>
 <span class="w">  </span><span class="c1"># setting the x-axis with breaks and labels</span>
 <span class="w">  </span><span class="nf">scale_x_continuous</span><span class="p">(</span>
 <span class="w">    </span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="m">8</span><span class="p">),</span>
@@ -1212,14 +1212,13 @@ Variances:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/612f8271f9383f7bcae899318260b4ffa9e6f08a96119b2ad2a6759666788f64.png" src="_images/612f8271f9383f7bcae899318260b4ffa9e6f08a96119b2ad2a6759666788f64.png" />
+<img alt="_images/1bb87a87fdd45d55e24a21a3c97d674c3071e8650a634d78d285b3922046eaa7.png" src="_images/1bb87a87fdd45d55e24a21a3c97d674c3071e8650a634d78d285b3922046eaa7.png" />
 </div>
 </div>
-<p>Dal grafico si può notare che questo modello rappresenta la traiettoria di ogni bambino come una linea retta, con alcune differenze interindividuali nella velocità del cambiamento intraindividuale.</p>
-<p>Dal grafico vediamo come, ad un aumento di un anno nel grado scolastico, il punteggio “vero” di matematica aumenta circa di 5 punti.</p>
+<p>Il modello di crescita latente lineare rappresenta la traiettoria di ogni bambino come una linea retta, evidenziando le differenze tra le abilità matematiche individuali nel tempo. Come mostrato dal grafico, per tutti i bambini, l’abilità matematica “vero” aumenta di circa 5 punti per ogni anno scolastico.</p>
 <section id="sintassi-alternativa">
 <h3><span class="section-number">30.3.1. </span>Sintassi alternativa<a class="headerlink" href="#sintassi-alternativa" title="Permalink to this headline">#</a></h3>
-<p>È possibile semplificare la scrittura del modello usando la funzione <code class="docutils literal notranslate"><span class="pre">growth</span></code>. Rispetto ai default di <code class="docutils literal notranslate"><span class="pre">growth</span></code> è necessario specificare, per il modello discusso in precedenza, il fatto vogliamo che le varianze residue di <code class="docutils literal notranslate"><span class="pre">math</span></code> siano costanti nel tempo.</p>
+<p>Per semplificare la scrittura del modello possiamo usare la funzione <code class="docutils literal notranslate"><span class="pre">growth</span></code>. Tuttavia, per il modello discusso in precedenza, è necessario specificare un parametro aggiuntivo rispetto ai default di <code class="docutils literal notranslate"><span class="pre">growth</span></code>: vogliamo che le varianze residue di <code class="docutils literal notranslate"><span class="pre">math</span></code> siano costanti nel tempo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">m1</span><span class="w"> </span><span class="o">&lt;-</span><span class="w">   </span><span class="s">&#39;</span>
@@ -1294,7 +1293,7 @@ Variances:
 </section>
 <section id="confronto-con-il-modello-misto">
 <h2><span class="section-number">30.4. </span>Confronto con il modello misto<a class="headerlink" href="#confronto-con-il-modello-misto" title="Permalink to this headline">#</a></h2>
-<p>Facciamo nuovamente l’analisi usando un modello misto. Nel caso di questo esempio, non possiamo ottenere gli stessi risulati a causa dei valori mancanti. Usando <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>, per stimare i parametri del modello abbiamo usato la procedura di stima di massima verosimiglianza (ML) e abbiamo affrontato il problema dei dati mancanti usando la procedura <code class="docutils literal notranslate"><span class="pre">fiml</span></code>. Questo metodo non imputa alcun dato, ma piuttosto utilizza i dati disponibili di ogni caso per calcolare le stime di massima verosimiglianza dei parametri.  Nel caso dei modelli misti, invece, la strategia di stima di Full Information Maximum Likelihood (FIML) non è disponibile.  Pertanto procederemo semplicemente eliminando tutti i casi nei quali vi sono dei dati mancanti.</p>
+<p>Effettueremo un’ulteriore analisi utilizzando un modello misto. Tuttavia, in questo caso non possiamo ottenere gli stessi risultati a causa dei dati mancanti. Per stimare i parametri del modello, abbiamo utilizzato la procedura di massima verosimiglianza (ML) e abbiamo gestito i dati mancanti utilizzando la procedura <code class="docutils literal notranslate"><span class="pre">fiml</span></code> in <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>. Questo metodo non imputa dati mancanti, ma utilizza i dati disponibili di ogni caso per stimare i parametri di massima verosimiglianza. Tuttavia, nel caso dei modelli misti, la strategia FIML non è disponibile. Pertanto, elimineremo semplicemente tutti i casi con dati mancanti per procedere con l’analisi.</p>
 <p>In formato <em>long</em>, i dati sono i seguenti.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1321,7 +1320,7 @@ Variances:
 </table>
 </div></div>
 </div>
-<p>Sottraiamo 2 dalla variabile <code class="docutils literal notranslate"><span class="pre">grade</span></code> in modo tale che 0 corrisponda alla prima rilevazione temporale. In queste circostanze, l’intercetta corrisponderà al valore atteso del punteggio di matematica per la prima rilevazione temporale (<code class="docutils literal notranslate"><span class="pre">grade</span></code> uguale a 2).</p>
+<p>Sottraiamo 2 dalla variabile <code class="docutils literal notranslate"><span class="pre">grade</span></code> in modo che il valore 0 corrisponda alla prima rilevazione temporale. In questo modo, l’intercetta rappresenterà il valore atteso del punteggio di matematica per la prima rilevazione temporale (quando <code class="docutils literal notranslate"><span class="pre">grade</span></code> è pari a 2).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">grade_c2</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">nlsy_math_long</span><span class="o">$</span><span class="n">grade</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="m">2</span>
@@ -1329,8 +1328,8 @@ Variances:
 </div>
 </div>
 </div>
-<p>Adattiamo il modello misto usando <code class="docutils literal notranslate"><span class="pre">lmer</span></code>. Si noti che il modello è ad intercetta casuale, ovvero assume la stessa pendenza per ciascun individuo (lo stesso tasso di crescita). Ciò corrisponde alla situazione illustrata dalla figura precedente che mostra le traiettorie di crescita.</p>
-<p>L’argomento <code class="docutils literal notranslate"><span class="pre">REML</span> <span class="pre">=</span> <span class="pre">FALSE</span></code> indica che useremo la stima di massima verosimiglianza, anziché la procedura di default. L’argomento <code class="docutils literal notranslate"><span class="pre">na.action</span> <span class="pre">=</span> <span class="pre">na.exclude</span></code> rende esplicito il fatto che escluderemo le osservazioni con dati mancanti.</p>
+<p>Il modello misto è adattato utilizzando la funzione <code class="docutils literal notranslate"><span class="pre">lmer</span></code>. È importante notare che il modello presenta un’intercetta casuale, il che significa che assume la stessa pendenza per ogni individuo (ovvero lo stesso tasso di crescita). Questo è in linea con quanto mostrato nella figura precedente, che illustra le traiettorie di crescita.</p>
+<p>L’argomento <code class="docutils literal notranslate"><span class="pre">REML</span> <span class="pre">=</span> <span class="pre">FALSE</span></code> indica che stiamo utilizzando la stima di massima verosimiglianza invece della procedura predefinita. Inoltre, l’argomento <code class="docutils literal notranslate"><span class="pre">na.action</span> <span class="pre">=</span> <span class="pre">na.exclude</span></code> specifica che le osservazioni con dati mancanti saranno escluse.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">fit_lmer</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">lmer</span><span class="p">(</span>
@@ -1411,7 +1410,7 @@ grade_c2 -0.555
 </section>
 <section id="crescita-non-lineare">
 <h2><span class="section-number">30.5. </span>Crescita non lineare<a class="headerlink" href="#crescita-non-lineare" title="Permalink to this headline">#</a></h2>
-<p>È possibile testare l’ipotesi che il cambiamento sia non lineare. Il metodo utilizzato per costruire questo modello è simile all’inclusione di variabili dummy in un modello di regressione. L’unica modifica necessaria rispetto alla sintassi precedente è quella di regolare i carichi fattoriali per la variabile latente del pendio. Ora, solo il primo e l’ultimo carico fattoriale saranno fissati rispettivamente a 0 e 1. I restanti carichi fattoriali saranno liberamente stimati. In queste circostanze, l’interpretazione della pendenza sarà relativa all’ammontare totale del cambiamento dal primo all’ultimo punto temporale. I nuovi carichi fattoriali stimati indicheranno la proporzione di cambiamento avvenuto dall’inizio fino a quel punto rispetto al cambiamento totale osservato.</p>
+<p>È possibile verificare se il cambiamento ha una forma non lineare. Il metodo utilizzato per costruire questo modello è simile all’aggiunta di variabili dummy in un modello di regressione. Tuttavia, è necessario modificare i carichi fattoriali per la variabile latente del pendio in modo che solo il primo e l’ultimo carico fattoriale siano fissati rispettivamente a 0 e 1, mentre i restanti carichi fattoriali saranno liberamente stimati. In questo modo, la pendenza rappresenterà l’ammontare totale del cambiamento dall’inizio alla fine dell’intervallo di tempo. I nuovi carichi fattoriali stimati rappresenteranno la proporzione di cambiamento avvenuto dall’inizio fino a quel punto rispetto al cambiamento totale osservato.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mod_nl</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&quot;</span>
@@ -1464,7 +1463,7 @@ grade_c2 -0.555
 <p>Esaminiamo la soluzione.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit_nl</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">fit_nl</span><span class="p">,</span><span class="w"> </span><span class="n">fit.measures</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">,</span><span class="w"> </span><span class="n">standardized</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">TRUE</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1535,60 +1534,60 @@ Parameter Estimates:
   Observed information based on                Hessian
 
 Latent Variables:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-  i =~                                                
-    math2             1.000                           
-    math3             1.000                           
-    math4             1.000                           
-    math5             1.000                           
-    math6             1.000                           
-    math7             1.000                           
-    math8             1.000                           
-  s =~                                                
-    math2             0.000                           
-    math3             0.295    0.019   15.783    0.000
-    math4             0.533    0.019   28.588    0.000
-    math5             0.664    0.021   31.083    0.000
-    math6             0.799    0.022   36.470    0.000
-    math7             0.901    0.030   30.314    0.000
-    math8             1.000                           
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  i =~                                                                  
+    math2             1.000                               8.509    0.839
+    math3             1.000                               8.509    0.857
+    math4             1.000                               8.509    0.851
+    math5             1.000                               8.509    0.840
+    math6             1.000                               8.509    0.823
+    math7             1.000                               8.509    0.808
+    math8             1.000                               8.509    0.791
+  s =~                                                                  
+    math2             0.000                               0.000    0.000
+    math3             0.295    0.019   15.783    0.000    1.849    0.186
+    math4             0.533    0.019   28.588    0.000    3.346    0.335
+    math5             0.664    0.021   31.083    0.000    4.167    0.411
+    math6             0.799    0.022   36.470    0.000    5.016    0.485
+    math7             0.901    0.030   30.314    0.000    5.656    0.537
+    math8             1.000                               6.276    0.583
 
 Covariances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-  i ~~                                                
-    s               -13.303    7.281   -1.827    0.068
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+  i ~~                                                                  
+    s               -13.303    7.281   -1.827    0.068   -0.249   -0.249
 
 Intercepts:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-   .math2             0.000                           
-   .math3             0.000                           
-   .math4             0.000                           
-   .math5             0.000                           
-   .math6             0.000                           
-   .math7             0.000                           
-   .math8             0.000                           
-    i                32.400    0.474   68.399    0.000
-    s                25.539    0.731   34.916    0.000
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .math2             0.000                               0.000    0.000
+   .math3             0.000                               0.000    0.000
+   .math4             0.000                               0.000    0.000
+   .math5             0.000                               0.000    0.000
+   .math6             0.000                               0.000    0.000
+   .math7             0.000                               0.000    0.000
+   .math8             0.000                               0.000    0.000
+    i                32.400    0.474   68.399    0.000    3.808    3.808
+    s                25.539    0.731   34.916    0.000    4.070    4.070
 
 Variances:
-                   Estimate  Std.Err  z-value  P(&gt;|z|)
-   .math2   (thet)   30.502    1.678   18.182    0.000
-   .math3   (thet)   30.502    1.678   18.182    0.000
-   .math4   (thet)   30.502    1.678   18.182    0.000
-   .math5   (thet)   30.502    1.678   18.182    0.000
-   .math6   (thet)   30.502    1.678   18.182    0.000
-   .math7   (thet)   30.502    1.678   18.182    0.000
-   .math8   (thet)   30.502    1.678   18.182    0.000
-    i                72.408    6.590   10.988    0.000
-    s                39.385   11.371    3.464    0.001
+                   Estimate  Std.Err  z-value  P(&gt;|z|)   Std.lv  Std.all
+   .math2   (thet)   30.502    1.678   18.182    0.000   30.502    0.296
+   .math3   (thet)   30.502    1.678   18.182    0.000   30.502    0.310
+   .math4   (thet)   30.502    1.678   18.182    0.000   30.502    0.305
+   .math5   (thet)   30.502    1.678   18.182    0.000   30.502    0.297
+   .math6   (thet)   30.502    1.678   18.182    0.000   30.502    0.286
+   .math7   (thet)   30.502    1.678   18.182    0.000   30.502    0.275
+   .math8   (thet)   30.502    1.678   18.182    0.000   30.502    0.264
+    i                72.408    6.590   10.988    0.000    1.000    1.000
+    s                39.385   11.371    3.464    0.001    1.000    1.000
 </pre></div>
 </div>
 </div>
 </div>
-<p>Confrontiamo la crescita lineare con la crescita non lineare.</p>
+<p>Effettuiamo un test del rapporto di verosimiglianza per confrontare il modello di crescita lineare con quello che assume una crescita non lineare.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">fit_m1</span><span class="p">,</span><span class="w"> </span><span class="n">fit_nl</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">fit_m1</span><span class="p">,</span><span class="w"> </span><span class="n">fit_nl</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
 <span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -1605,7 +1604,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 </div>
 </div>
 </div>
-<p>Il risultato indica chiaramente che il cambiamento è non lineare. Possiamo visualizzare il cambiamento nel modo seguente.</p>
+<p>Il risultato indica che il cambiamento è non lineare. Possiamo visualizzare il cambiamento nel modo seguente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># extract just th eloadings of the slopes</span>

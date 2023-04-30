@@ -178,7 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -432,7 +432,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modello-lcs-bivariato">
 <span id="lcsm-bivariate-notebook"></span><h1><span class="section-number">37. </span>Modello LCS bivariato<a class="headerlink" href="#modello-lcs-bivariato" title="Permalink to this headline">#</a></h1>
-<p>I modelli LCSM sono stati sviluppati principalmente per studiare le associazioni sequenziali nel tempo tra due o più processi che cambiano nel tempo. In altre parole, le equazioni di cambiamento latente possono essere estese per includere effetti derivanti da variabili aggiuntive per modellare congiuntamente processi multipli di sviluppo in corso (McArdle, 2001; McArdle &amp; Hamagami, 2001). Considereremo qui un modello LCS bivariato con parametri di accoppiamento cambiamento-cambiamento ritardati. Il seguene path diagram è fornito da <span id="id1">Wiedemann <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id5" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span>.</p>
+<p>I modelli LCSM sono stati sviluppati principalmente per studiare le associazioni sequenziali nel tempo tra due o più processi che cambiano nel tempo. In altre parole, le equazioni di cambiamento latente possono essere estese per includere effetti derivanti da variabili aggiuntive per modellare congiuntamente processi multipli di sviluppo in corso (McArdle, 2001; McArdle &amp; Hamagami, 2001). Considereremo qui un modello LCS bivariato con parametri di accoppiamento cambiamento-cambiamento ritardati. Il seguene path diagram è fornito da <span id="id1">Wiedemann <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span>.</p>
 <figure class="align-default" id="lcsm1-fig">
 <a class="reference internal image-reference" href="_images/lcsm_bivariato.png"><img alt="_images/lcsm_bivariato.png" src="_images/lcsm_bivariato.png" style="height: 450px;" /></a>
 <figcaption>
@@ -442,7 +442,7 @@ document.write(`
 <p>Come in precedenza per il caso del modello univariato, il modello LCSM bivariato include, per ciascuna di due variabili misurate nel tempo, un fattore di cambiamento costante (alpha_constant), un fattore di cambiamento proporzionale (beta) e l’autoregressione dei punteggi di cambiamento (phi). L’aspetto nuovo riguarda i parametri di “accoppiamento”. Per i modelli LCSM bivariati, tali parametri modellano le interazioni tra le variabili <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span>. I test su tali parametri consentono di affrontare la seguente domanda della ricerca: le variazioni della variabile Y al momento (t) sono determinate dalle variazioni della variabile X al momento precedente (t-1)? E viceversa.  Oppure tutte e due le condizioni insieme. I test statistici sui parametri di accoppiamento consentono di rispondere alle domande precedenti.</p>
 <section id="illustrazione">
 <h2><span class="section-number">37.1. </span>Illustrazione<a class="headerlink" href="#illustrazione" title="Permalink to this headline">#</a></h2>
-<p>Per illustrare l’adattamento e l’interpretazione dei modelli LCS bivariati, analizziamo i dati longitudinali di matematica che sono stati utilizzati nel Capitolo 17 di <span id="id2">[<a class="reference internal" href="z_biblio.html#id6" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. I dati longitudinali di matematica sono stati raccolti dall’NLSY-CYA (Center for Human Resource Research, 2009) e i punteggi di matematica provengono dal PIAT (Dunn &amp; Markwardt, 1970). Vengono anche misurati i punteggi di comprensione nella lettura dal secondo all’ottavo grado scolastico.
+<p>Per illustrare l’adattamento e l’interpretazione dei modelli LCS bivariati, analizziamo i dati longitudinali di matematica che sono stati utilizzati nel Capitolo 17 di <span id="id2">[<a class="reference internal" href="z_biblio.html#id7" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. I dati longitudinali di matematica sono stati raccolti dall’NLSY-CYA (Center for Human Resource Research, 2009) e i punteggi di matematica provengono dal PIAT (Dunn &amp; Markwardt, 1970). Vengono anche misurati i punteggi di comprensione nella lettura dal secondo all’ottavo grado scolastico.
 Il grado scolastico al momento del test viene utilizzato come metrica temporale e varia dalla seconda elementare (grado 2) alla terza media (grado 8).</p>
 <p>Leggiamo i pacchetti necessari.</p>
 <div class="cell docutils container">
@@ -808,52 +808,59 @@ $ rec8  &lt;int&gt; NA, NA, 66, NA, 77, 78, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
 <p>Eseguiamo ora i test del rapporto tra verosimiglianze tra i vari modelli.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">multi1_lavaan_results</span><span class="p">,</span><span class="w"> </span><span class="n">multi2_lavaan_results</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">multi1_lavaan_results</span><span class="p">,</span><span class="w"> </span><span class="n">multi2_lavaan_results</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A anova: 2 × 7</caption>
-<thead>
-	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>multi2_lavaan_results</th><td>97</td><td>31418.01</td><td>31524.44</td><td>179.1446</td><td>      NA</td><td>NA</td><td>        NA</td></tr>
-	<tr><th scope=row>multi1_lavaan_results</th><td>98</td><td>31417.33</td><td>31518.91</td><td>180.4602</td><td>3.435372</td><td> 1</td><td>0.06381423</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scaled Chi-Squared Difference Test (method = “satorra.bentler.2001”)
+
+lavaan NOTE:
+    The “Chisq” column contains standard test statistics, not the
+    robust test that should be reported per model. A robust difference
+    test is a function of two standard (not robust) statistics.
+ 
+                      Df   AIC   BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)  
+multi2_lavaan_results 97 31418 31524 179.14                                
+multi1_lavaan_results 98 31417 31519 180.46     3.4354       1    0.06381 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">multi1_lavaan_results</span><span class="p">,</span><span class="w"> </span><span class="n">multi3_lavaan_results</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">multi1_lavaan_results</span><span class="p">,</span><span class="w"> </span><span class="n">multi3_lavaan_results</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A anova: 2 × 7</caption>
-<thead>
-	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>multi3_lavaan_results</th><td>97</td><td>31419.29</td><td>31525.71</td><td>180.4242</td><td>       NA</td><td>NA</td><td>       NA</td></tr>
-	<tr><th scope=row>multi1_lavaan_results</th><td>98</td><td>31417.33</td><td>31518.91</td><td>180.4602</td><td>0.1380383</td><td> 1</td><td>0.7102391</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scaled Chi-Squared Difference Test (method = “satorra.bentler.2001”)
+
+lavaan NOTE:
+    The “Chisq” column contains standard test statistics, not the
+    robust test that should be reported per model. A robust difference
+    test is a function of two standard (not robust) statistics.
+ 
+                      Df   AIC   BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)
+multi3_lavaan_results 97 31419 31526 180.42                              
+multi1_lavaan_results 98 31417 31519 180.46    0.13804       1     0.7102
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">multi1_lavaan_results</span><span class="p">,</span><span class="w"> </span><span class="n">multi4_lavaan_results</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">lavTestLRT</span><span class="p">(</span><span class="n">multi1_lavaan_results</span><span class="p">,</span><span class="w"> </span><span class="n">multi4_lavaan_results</span><span class="p">)</span><span class="w"> </span><span class="o">|&gt;</span>
+<span class="w">    </span><span class="nf">print</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lavTestLRT(object = object, ..., model.names = NAMES):
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lavTestLRT(multi1_lavaan_results, multi4_lavaan_results):
 “lavaan WARNING:
     Some restricted models fit better than less restricted models;
     either these models are not nested, or the less restricted model
@@ -861,18 +868,19 @@ $ rec8  &lt;int&gt; NA, NA, 66, NA, 77, 78, NA, NA, NA, NA, NA, NA, NA, NA, NA, 
     -0.623373603392196”
 </pre></div>
 </div>
-<div class="output text_html"><table class="dataframe">
-<caption>A anova: 2 × 7</caption>
-<thead>
-	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
-	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>multi4_lavaan_results</th><td>96</td><td>31421.95</td><td>31533.21</td><td>181.0836</td><td>        NA</td><td>NA</td><td>NA</td></tr>
-	<tr><th scope=row>multi1_lavaan_results</th><td>98</td><td>31417.33</td><td>31518.91</td><td>180.4602</td><td>-0.0653541</td><td> 2</td><td> 1</td></tr>
-</tbody>
-</table>
-</div></div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scaled Chi-Squared Difference Test (method = “satorra.bentler.2001”)
+
+lavaan NOTE:
+    The “Chisq” column contains standard test statistics, not the
+    robust test that should be reported per model. A robust difference
+    test is a function of two standard (not robust) statistics.
+ 
+                      Df   AIC   BIC  Chisq Chisq diff Df diff Pr(&gt;Chisq)
+multi4_lavaan_results 96 31422 31533 181.08                              
+multi1_lavaan_results 98 31417 31519 180.46  -0.065354       2          1
+</pre></div>
+</div>
+</div>
 </div>
 <p>Anche in questo caso non vi è evidenza che la presenza dei fattori di accoppiamento migliori l’adattamento del modello ai dati.</p>
 <p>Per motivi didattici, però, proseguiamo l’analisi ipotizzando una presenza di entrambe le classi di parametri di accoppiamento (da comprensione nella lettura a matematica e viceversa).</p>
