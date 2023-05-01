@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>24. CFA per matrici multi-tratto multi-metodo &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="25. Dati non gaussiani e categoriali" href="500_cat_data.html" />
     <link rel="prev" title="23. La revisione del modello" href="310_refine_solution.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -178,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -431,7 +432,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cfa-per-matrici-multi-tratto-multi-metodo">
-<span id="mmm-notebook"></span><h1><span class="section-number">24. </span>CFA per matrici multi-tratto multi-metodo<a class="headerlink" href="#cfa-per-matrici-multi-tratto-multi-metodo" title="Permalink to this headline">#</a></h1>
+<span id="mmm-notebook"></span><h1><span class="section-number">24. </span>CFA per matrici multi-tratto multi-metodo<a class="headerlink" href="#cfa-per-matrici-multi-tratto-multi-metodo" title="Permalink to this heading">#</a></h1>
 <p>La validità rappresenta la capacità di una procedura di misurazione di misurare ciò che si intende misurare. È possibile distinguere diversi tipi di validità cui corrispondono metodi diversi di verifica.</p>
 <ul class="simple">
 <li><p><strong>validità di facciata</strong>: “il grado in con cui gli item di un test appaiono ragionevoli o sensibili, rispetto al costrutto, sia alle persone a cui è diretto il test sia a coloro che lo usano” (Anastasi, 1969); è dunque determinata dalla significatività apparente ed esteriore che una misura presenta; per valutarla si richiedono giudizi di esperti relativamente alla validità che sembrano avere le misure;</p></li>
@@ -443,11 +444,11 @@ document.write(`
 <li><p><strong>validità discriminante</strong>: è speculare alla validità convergente; essa è alta quando la misura da validare non correla con le misure di altri costrutti, teoricamente distinti dal primo.</p></li>
 </ul>
 <section id="mtmm-e-cfa">
-<h2><span class="section-number">24.1. </span>MTMM e CFA<a class="headerlink" href="#mtmm-e-cfa" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">24.1. </span>MTMM e CFA<a class="headerlink" href="#mtmm-e-cfa" title="Permalink to this heading">#</a></h2>
 <p>La Matrice Multi-Tratto Multi-Metodo (MTMM; Campbell and Fiske, 1959) è un metodo per valutare la validità di costrutto. La MTMM valuta la correlazione tra costrutti differenti misurati sia con metodi uguali, sia con metodi differenti. La ratio è che la validità di costrutto è alta quando lo strumento misura il costrutto in modo tale che lo strumento utilizzato non è essenziale alla misurazione.</p>
 <section id="un-esempio-concreto">
-<h3><span class="section-number">24.1.1. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h3>
-<p>Nell’esempio discusso da <span id="id1">Brown [<a class="reference internal" href="z_biblio.html#id35" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>, il ricercatore desidera esaminare la validità del costrutto dei disturbi di personalità del Cluster A del DSM-IV, che sono pattern persistenti di sintomi caratterizzati da comportamenti strani o eccentrici (American Psychiatric Association, 1994). Il cluster A comprende tre costrutti di disturbo della personalità:</p>
+<h3><span class="section-number">24.1.1. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this heading">#</a></h3>
+<p>Nell’esempio discusso da <span id="id1">Brown [<a class="reference internal" href="z_biblio.html#id36" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>, il ricercatore desidera esaminare la validità del costrutto dei disturbi di personalità del Cluster A del DSM-IV, che sono pattern persistenti di sintomi caratterizzati da comportamenti strani o eccentrici (American Psychiatric Association, 1994). Il cluster A comprende tre costrutti di disturbo della personalità:</p>
 <ul class="simple">
 <li><p><em>paranoico</em> (un pattern duraturo di sfiducia e sospetto tale che le motivazioni degli altri sono interpretate come malevole);</p></li>
 <li><p><em>schizoide</em> (un pattern duraturo di distacco dalle relazioni sociali e una gamma ristretta di espressioni emotive);</p></li>
@@ -493,7 +494,7 @@ document.write(`
 </ol>
 <p>Nella matrice MTMM, la validità convergente è evidenziata da forti correlazioni tra metodi che misurano lo stesso tratto (cioè, coefficienti mono-tratto/etero-metodo). Ad esempio, i risultati dell’esempio indicano che le tre diverse misure della personalità schizotipica sono fortemente correlate (valori <span class="math notranslate nohighlight">\(r\)</span> da .676 a .749). Gli elementi al di fuori della diagonale dei blocchi etero-metodo rivelano la validità discriminante: le misure di costrutti teoricamente distinti non dovrebbero essere altamente inter-correlate. La validità discriminante nella matrice MTMM è evidenziata da correlazioni deboli tra diversi tratti misurati con metodi diversi (cioè, coefficienti etero-tratto/etero-metodo) in relazione alle correlazioni sulla diagonale di validità (coefficienti mono-tratto/etero-metodo). Nei dati dell’esempio, il supporto per la validità discriminante è ottenuto dalla constatazione che le correlazioni negli elementi al di fuori della diagonale dei blocchi etero-metodo sono uniformemente inferiori (valori <span class="math notranslate nohighlight">\(r\)</span> = .126 a .290) rispetto ai coefficienti di validità (valori <span class="math notranslate nohighlight">\(r\)</span> = .557 a .749).</p>
 <p>Infine, l’evidenza degli effetti del metodo è ottenuta dall’esame degli elementi fuori dalla  diagonale dei blocchi del mono-metodo. L’entità degli effetti del metodo è riflessa dall’entità differenziale delle correlazioni tra i diversi tratti misurati con lo stesso metodo (coefficienti etero-tratto/mono-metodo) rispetto alle correlazioni tra gli stessi due tratti misurati con metodi diversi. Come mostrato nei dati dell’esempio, sebbene non estrema, è evidente una certa varianza di metodo, in particolare per le misure di valutazione dell’inventario e dell’osservatore. Ad esempio, le valutazioni dell’osservatore dei tratti della personalità paranoica e schizotipica sono più altamente correlate (r = .383) rispetto alle misure etero-metodo di questi tratti (ad esempio, la correlazione tra i tratti della personalità paranoide e schizotipica misurata rispettivamente dall’inventario e dalla valutazione dell’osservatore, è .196). Come nel presente esempio, quando i risultati complessivi indicano che la validità convergente e discriminante sono elevate e gli effetti del metodo sono trascurabili, la validità del costrutto è supportata.</p>
-<p><span id="id2">Brown [<a class="reference internal" href="z_biblio.html#id35" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span> mostra come sia possibile analizzare la matrice MTMM con un modello CFA nel quale si ipotizza che vi siano correlazioni residue tra le specificità di ciascun metodo. Il modello è dunque formulato nel modo seguente: ogni fattore comune (<code class="docutils literal notranslate"><span class="pre">paranoid</span></code>, <code class="docutils literal notranslate"><span class="pre">schizotypal</span></code>, <code class="docutils literal notranslate"><span class="pre">schizoid</span></code>) è identificato dagli item corrispondenti definiti da metodi diversi; le specificità di ciascun metodo, inoltre, sono tra loro correlate.</p>
+<p><span id="id2">Brown [<a class="reference internal" href="z_biblio.html#id36" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span> mostra come sia possibile analizzare la matrice MTMM con un modello CFA nel quale si ipotizza che vi siano correlazioni residue tra le specificità di ciascun metodo. Il modello è dunque formulato nel modo seguente: ogni fattore comune (<code class="docutils literal notranslate"><span class="pre">paranoid</span></code>, <code class="docutils literal notranslate"><span class="pre">schizotypal</span></code>, <code class="docutils literal notranslate"><span class="pre">schizoid</span></code>) è identificato dagli item corrispondenti definiti da metodi diversi; le specificità di ciascun metodo, inoltre, sono tra loro correlate.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="s">&#39;</span>
@@ -664,7 +665,7 @@ Variances:
 </div>
 </div>
 </div>
-<p>Per i dati considerati da <span id="id3">Brown [<a class="reference internal" href="z_biblio.html#id35" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>, l’adattamento del modello MTMM è eccellente. Ciò fornisce forti evidenze di validità di costrutto per i fattori Paranoico, Schizoide e Schizotipico che sono stati ipotizzati.</p>
+<p>Per i dati considerati da <span id="id3">Brown [<a class="reference internal" href="z_biblio.html#id36" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span>, l’adattamento del modello MTMM è eccellente. Ciò fornisce forti evidenze di validità di costrutto per i fattori Paranoico, Schizoide e Schizotipico che sono stati ipotizzati.</p>
 </section>
 </section>
 </section>
@@ -695,7 +696,10 @@ Variances:
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="310_refine_solution.html"
@@ -715,7 +719,10 @@ Variances:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -742,7 +749,7 @@ Variances:
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -772,7 +779,7 @@ By Corrado Caudek
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -781,8 +788,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

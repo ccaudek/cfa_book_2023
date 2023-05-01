@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>37. Modello LCS bivariato &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="38. Invarianza fattoriale nei modelli LGM" href="351_lgm_meas_inv.html" />
     <link rel="prev" title="36. Modello LCS univariato" href="332_latent_change.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -431,7 +432,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modello-lcs-bivariato">
-<span id="lcsm-bivariate-notebook"></span><h1><span class="section-number">37. </span>Modello LCS bivariato<a class="headerlink" href="#modello-lcs-bivariato" title="Permalink to this headline">#</a></h1>
+<span id="lcsm-bivariate-notebook"></span><h1><span class="section-number">37. </span>Modello LCS bivariato<a class="headerlink" href="#modello-lcs-bivariato" title="Permalink to this heading">#</a></h1>
 <p>I modelli LCSM sono stati sviluppati principalmente per studiare le associazioni sequenziali nel tempo tra due o più processi che cambiano nel tempo. In altre parole, le equazioni di cambiamento latente possono essere estese per includere effetti derivanti da variabili aggiuntive per modellare congiuntamente processi multipli di sviluppo in corso (McArdle, 2001; McArdle &amp; Hamagami, 2001). Considereremo qui un modello LCS bivariato con parametri di accoppiamento cambiamento-cambiamento ritardati. Il seguene path diagram è fornito da <span id="id1">Wiedemann <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id6" title="Milan Wiedemann, Graham Thew, Urška Košir, and Anke Ehlers. Lcsm: an r package and tutorial on latent change score modelling. Wellcome Open Research, 7(149):149, 2022.">WTKovsirE22</a>]</span>.</p>
 <figure class="align-default" id="lcsm1-fig">
 <a class="reference internal image-reference" href="_images/lcsm_bivariato.png"><img alt="_images/lcsm_bivariato.png" src="_images/lcsm_bivariato.png" style="height: 450px;" /></a>
@@ -441,7 +442,7 @@ document.write(`
 </figure>
 <p>Come in precedenza per il caso del modello univariato, il modello LCSM bivariato include, per ciascuna di due variabili misurate nel tempo, un fattore di cambiamento costante (alpha_constant), un fattore di cambiamento proporzionale (beta) e l’autoregressione dei punteggi di cambiamento (phi). L’aspetto nuovo riguarda i parametri di “accoppiamento”. Per i modelli LCSM bivariati, tali parametri modellano le interazioni tra le variabili <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span>. I test su tali parametri consentono di affrontare la seguente domanda della ricerca: le variazioni della variabile Y al momento (t) sono determinate dalle variazioni della variabile X al momento precedente (t-1)? E viceversa.  Oppure tutte e due le condizioni insieme. I test statistici sui parametri di accoppiamento consentono di rispondere alle domande precedenti.</p>
 <section id="illustrazione">
-<h2><span class="section-number">37.1. </span>Illustrazione<a class="headerlink" href="#illustrazione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">37.1. </span>Illustrazione<a class="headerlink" href="#illustrazione" title="Permalink to this heading">#</a></h2>
 <p>Per illustrare l’adattamento e l’interpretazione dei modelli LCS bivariati, analizziamo i dati longitudinali di matematica che sono stati utilizzati nel Capitolo 17 di <span id="id2">[<a class="reference internal" href="z_biblio.html#id7" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>. I dati longitudinali di matematica sono stati raccolti dall’NLSY-CYA (Center for Human Resource Research, 2009) e i punteggi di matematica provengono dal PIAT (Dunn &amp; Markwardt, 1970). Vengono anche misurati i punteggi di comprensione nella lettura dal secondo all’ottavo grado scolastico.
 Il grado scolastico al momento del test viene utilizzato come metrica temporale e varia dalla seconda elementare (grado 2) alla terza media (grado 8).</p>
 <p>Leggiamo i pacchetti necessari.</p>
@@ -1297,7 +1298,7 @@ Variances:
 </div>
 </div>
 <section id="interpretazione">
-<h3><span class="section-number">37.1.1. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">37.1.1. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this heading">#</a></h3>
 <p>Le stime dei parametri di questo modello descrivono le traiettorie medie e individuali per la matematica e la comprensione della lettura, nonché le loro associazioni nel tempo. Le traiettorie medie per la matematica e la comprensione della lettura iniziano rispettivamente a 32.27 e 33.99. Da lì, le traiettorie medie sono descritte dalle rispettive equazioni di cambiamento.</p>
 <p>Per l’equazione di cambiamento della matematica, la media della componente di cambiamento costante è 15.82 e indica l’aumento costante ogni anno. La media della componente di cambiamento proporzionale è -0.27, il che indica un effetto limitativo (il coefficiente è negativo) sul cambiamento in matematica dovuto ai punteggi precedenti di matematica. Il modello assume l’assenza di un effetto di accoppiamento (0).</p>
 <div class="math notranslate nohighlight">
@@ -1547,7 +1548,10 @@ dc_{t1} = 12.59 - 0.15 \cdot lc_{t-li} + 0
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="332_latent_change.html"
@@ -1567,7 +1571,10 @@ dc_{t1} = 12.59 - 0.15 \cdot lc_{t-li} + 0
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1594,7 +1601,7 @@ dc_{t1} = 12.59 - 0.15 \cdot lc_{t-li} + 0
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1624,7 +1631,7 @@ By Corrado Caudek
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1633,8 +1640,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

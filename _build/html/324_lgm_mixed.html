@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>29. LGM e modelli misti &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="30. Curve di crescita latente" href="326_growth_1.html" />
     <link rel="prev" title="28. Dati longitudinali" href="321_lgm_prelims.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -432,10 +433,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="lgm-e-modelli-misti">
-<span id="lgm-mixed-notebook"></span><h1><span class="section-number">29. </span>LGM e modelli misti<a class="headerlink" href="#lgm-e-modelli-misti" title="Permalink to this headline">#</a></h1>
+<span id="lgm-mixed-notebook"></span><h1><span class="section-number">29. </span>LGM e modelli misti<a class="headerlink" href="#lgm-e-modelli-misti" title="Permalink to this heading">#</a></h1>
 <p>I modelli di crescita latente (LGM) sono una particolare forma di analisi fattoriale confermativa (CFA) che prevedono la fissazione dei valori delle saturazioni fattoriali a valori predefiniti e in molti casi la traiettoria nel tempo può essere descritta come una funzione lineare o quadratica. I fattori di crescita, che rappresentano le differenze individuali nei dati, vengono rappresentati da variabili latenti continue, note come <em>growth factors</em>. Per aiutare a comprendere meglio i modelli LGM, presenteremo questi modelli attraverso un confronto con i modelli misti <span id="id1">[<a class="reference internal" href="z_biblio.html#id2" title="Lesa Hoffman and Ryan W Walters. Catching up on multilevel modeling. Annual Review of Psychology, 73:659–689, 2022.">HW22</a>]</span> in questo capitolo.</p>
 <section id="modelli-misti">
-<h2><span class="section-number">29.1. </span>Modelli misti<a class="headerlink" href="#modelli-misti" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.1. </span>Modelli misti<a class="headerlink" href="#modelli-misti" title="Permalink to this heading">#</a></h2>
 <p>I modelli lineari standard presuppongono che ogni osservazione sia indipendente dalle altre. Tuttavia, ci sono casi in cui abbiamo più misure ripetute per lo stesso individuo nel tempo, e queste osservazioni sono quindi correlate. In questi casi, si possono utilizzare i modelli a effetti misti, che tengono conto della correlazione tra le osservazioni raggruppate.</p>
 <p>I modelli misti rappresentano un compromesso tra la modellizzazione pooled e quella separata. La modellizzazione pooled combina tutti i dati in un unico dataset, ma può portare a una perdita di informazioni sulle differenze tra i gruppi di osservazioni. La modellizzazione separata adatta un modello per ogni gruppo di osservazioni, ma può portare a problemi di sovrapparametrizzazione e scarsa generalizzazione ai nuovi dati.</p>
 <p>I modelli misti risolvono questi problemi combinando la modellizzazione pooled e quella separata. In questo modo, il modello tiene conto delle differenze tra i gruppi di dati e sfrutta l’informazione comune per migliorare la precisione delle stime dei parametri. Per motivi storici, i dati entro il soggetto sono tipicamente chiamati dati di <em>livello 1</em> e i dati tra soggetti sono noti come dati di <em>livello 2</em>.</p>
@@ -467,7 +468,7 @@ between) della varianza esistente tra i gruppi, il rapporto</p>
 unità di secondo livello.</p>
 </section>
 <section id="simulare-effetti-casuali">
-<h2><span class="section-number">29.2. </span>Simulare effetti casuali<a class="headerlink" href="#simulare-effetti-casuali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.2. </span>Simulare effetti casuali<a class="headerlink" href="#simulare-effetti-casuali" title="Permalink to this heading">#</a></h2>
 <p>Possiamo fornire una dimostrazione del funzionamento dei modelli misti con una simulazione. Ciò ci permetterà di meglio comprendere i modelli a crescita latente. Simuleremo dei dati bilanciati, con punteggi su quattro rilevazioni temporali per 500 individui (soggetti). Esamineremo il tasso di crescita (‘growth’) e consentiremo la presenza di intercette e pendenze specifiche per i diversi soggetti.</p>
 <p>Le istruzioni seguenti generano i dati (per i nostri scopi, non è importante capire i dettagli di questa porzione di codice).</p>
 <div class="cell docutils container">
@@ -749,7 +750,7 @@ time 0.072
 <p>Le varianze degli effetti casuali stimati (<span class="math notranslate nohighlight">\(1.0122^2\)</span>, <span class="math notranslate nohighlight">\(1.0149^2\)</span>) sono molto simili al valore impostato di 1, la correlazione (0.15) è simile al valore impostato di 0.2 e la deviazione standard dei residui (0.4911) è simile al valore impostato di 0.5.</p>
 </section>
 <section id="modello-di-crescita-latente">
-<h2><span class="section-number">29.3. </span>Modello di crescita latente<a class="headerlink" href="#modello-di-crescita-latente" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.3. </span>Modello di crescita latente<a class="headerlink" href="#modello-di-crescita-latente" title="Permalink to this heading">#</a></h2>
 <!-- https://github.com/m-clark/sem/blob/master/growth-curves.Rmd -->
 <p>Analizziamo ora gli stessi dati con un modello LGM. Possiamo pensare ai modelli LGM come ad un’estensione del modello CFA nel quale ipotizziamo la presenza di due fattori latenti: una variabile latente per le intercette casuali (ovvero, per la variazione delle intercette dei partecipanti) e una seconda variabile latente le pendenze casuali (ovvero, per la variazione delle pendenze dei partecipanti). Le intercette e le pendenze si riferiscono alla retta di regressione che, per ciascun partecipante, descrive la relazione tra la variabile esaminata e il tempo.</p>
 <p>Dato che il modello deve spiegare la relazione tra <em>le medie</em> dei punteggi dei partecipanti in funzione del tempo, non possiamo usare in input la matrice di covarianza campionaria, ma dobbiamo invece utilizzare i dati grezzi (ovvero, le singole osservazioni per ciascun partecipante).</p>
@@ -892,7 +893,7 @@ Variances:
 </div>
 </section>
 <section id="confronto-tra-modelli-misti-e-lgm">
-<h2><span class="section-number">29.4. </span>Confronto tra modelli misti e LGM<a class="headerlink" href="#confronto-tra-modelli-misti-e-lgm" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.4. </span>Confronto tra modelli misti e LGM<a class="headerlink" href="#confronto-tra-modelli-misti-e-lgm" title="Permalink to this heading">#</a></h2>
 <p>Nell’output, <code class="docutils literal notranslate"><span class="pre">Intercepts</span></code> corrisponde agli effetti fissi:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Intercepts</span><span class="p">:</span>
                    <span class="n">Estimate</span>  <span class="n">Std</span><span class="o">.</span><span class="n">Err</span>  <span class="n">z</span><span class="o">-</span><span class="n">value</span>  <span class="n">P</span><span class="p">(</span><span class="o">&gt;|</span><span class="n">z</span><span class="o">|</span><span class="p">)</span>
@@ -1127,7 +1128,7 @@ Variances:
 </div>
 </section>
 <section id="conclusioni">
-<h2><span class="section-number">29.5. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">29.5. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this heading">#</a></h2>
 <p>In conclusione, abbiamo visto che, nel caso più semplice, i modelli LGM producono risultati identici ai modelli misti. Tuttavia, la concettualizzazione del cambiamento nei termini di un modello a crescita latente offre molti vantaggi rispetto alla descrizione dei dati nei termini dei modelli misti in quanto i modelli LGM sono più flessibili e consentono la verifica di ipotesi statistiche che non possono essere esaminate nel constesto dei modelli misti.</p>
 </section>
 </section>
@@ -1158,7 +1159,10 @@ Variances:
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="321_lgm_prelims.html"
@@ -1178,7 +1182,10 @@ Variances:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1206,7 +1213,7 @@ Variances:
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1236,7 +1243,7 @@ By Corrado Caudek
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1245,8 +1252,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
