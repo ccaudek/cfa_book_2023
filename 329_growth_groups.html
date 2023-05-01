@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>33. Modelli di crescita latenti a gruppi multipli &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="34. Modelli di crescita latenti bivariati" href="330_bivariate_growth_models.html" />
     <link rel="prev" title="32. Covariate indipendenti dal tempo" href="328_time_inv_cov.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -432,7 +433,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="modelli-di-crescita-latenti-a-gruppi-multipli">
-<span id="lgm-groups-notebook"></span><h1><span class="section-number">33. </span>Modelli di crescita latenti a gruppi multipli<a class="headerlink" href="#modelli-di-crescita-latenti-a-gruppi-multipli" title="Permalink to this headline">#</a></h1>
+<span id="lgm-groups-notebook"></span><h1><span class="section-number">33. </span>Modelli di crescita latenti a gruppi multipli<a class="headerlink" href="#modelli-di-crescita-latenti-a-gruppi-multipli" title="Permalink to this heading">#</a></h1>
 <p>Nel capitolo precedente abbiamo esaminato i modelli di crescita con covariate invarianti nel tempo. Ora considereremo un quadro alternativo per esaminare le differenze tra le persone nel cambiamento: il confronto tra gruppi (McArdle, 1989; McArdle &amp; Hamagami, 1996). I modelli di crescita con covariate invarianti nel tempo sono utili per studiare le differenze nelle traiettorie medie di crescita ma hanno una utilità limitata per esaminare le differenze in altri aspetti del processo di cambiamento intra-persona e le differenze tra le persone in quel processo. Senza estensione, tali modelli di covariate invarianti nel tempo non ci dicono nulla sulle differenze nelle varianze e covarianze tra i fattori di crescita, la variabilità residua e la struttura dei cambiamenti intra-persona. In questo capitolo illustriamo come il confronto tra gruppi possa essere utilizzato per esaminare le differenze in qualsiasi aspetto del modello di crescita. Questa flessibilità può fornire ulteriori informazioni su come e perché gli individui differiscono nel loro sviluppo.</p>
 <p>Carichiamo i pacchetti necessari.</p>
 <p>Per i nostri esempi, utilizziamo i punteggi di rendimento in matematica dai dati  NLSY-CYA [si veda <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id7" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
@@ -565,7 +566,7 @@ document.write(`
 </div></div>
 </div>
 <section id="invarianza-tra-gruppi">
-<h2><span class="section-number">33.1. </span>Invarianza tra gruppi<a class="headerlink" href="#invarianza-tra-gruppi" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.1. </span>Invarianza tra gruppi<a class="headerlink" href="#invarianza-tra-gruppi" title="Permalink to this heading">#</a></h2>
 <p>Definiamo il modello di crescita latente per i due gruppi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -874,7 +875,7 @@ Variances:
 </div>
 </section>
 <section id="vincoli-sulle-medie">
-<h2><span class="section-number">33.2. </span>Vincoli sulle medie<a class="headerlink" href="#vincoli-sulle-medie" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.2. </span>Vincoli sulle medie<a class="headerlink" href="#vincoli-sulle-medie" title="Permalink to this heading">#</a></h2>
 <p>Trasformiamo ora il modello restrittivo specificato in precedenza allentando via via i vincoli che abbiamo introdotto. In questo modello rendiamo possibile la differenza tra le medie nei due gruppi.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1139,7 +1140,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 <p>Non vi è evidenza che consentire una differenza tra medie tra gruppi migliori l’adattamento del modello.</p>
 </section>
 <section id="vincoli-sulle-varianze-covarianze">
-<h2><span class="section-number">33.3. </span>Vincoli sulle varianze/covarianze<a class="headerlink" href="#vincoli-sulle-varianze-covarianze" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.3. </span>Vincoli sulle varianze/covarianze<a class="headerlink" href="#vincoli-sulle-varianze-covarianze" title="Permalink to this heading">#</a></h2>
 <p>Nel modello M3 consentiamo che anche le varianza e le covarianza differiscano tra gruppi, oltre alle medie.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1399,7 +1400,7 @@ mg_math_lavaan_fitM2 62 15948 15987 243.91     2.7283     0       3     0.4354
 <p>Non ci sono evidenze che una differenza nelle varianze e nelle covarianze tra gruppi migliori la bontà dell’adattamento del modello ai dati.</p>
 </section>
 <section id="vincoli-sui-residui">
-<h2><span class="section-number">33.4. </span>Vincoli sui residui<a class="headerlink" href="#vincoli-sui-residui" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.4. </span>Vincoli sui residui<a class="headerlink" href="#vincoli-sui-residui" title="Permalink to this heading">#</a></h2>
 <p>Esaminiamo ora il vincolo sulle covarianze residue. Iniziamo a specificare il modello in una nuova forma.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1717,7 +1718,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
 <p>Anche in questo caso non otteniamo un risultato che fornisce evidenza di differenze tra i due gruppi.</p>
 </section>
 <section id="conclusioni">
-<h2><span class="section-number">33.5. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.5. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this heading">#</a></h2>
 <p>In conclusione, possiamo dire che le evidenze presenti suggeriscono che i modelli di crescita latente per di due gruppi hanno parametri uguali per ciò che concerne le saturazioni fattoriali, le medie, le varianze, le covarianze e i residui.</p>
 </section>
 </section>
@@ -1748,7 +1749,10 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="328_time_inv_cov.html"
@@ -1768,7 +1772,10 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1796,7 +1803,7 @@ Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1826,7 +1833,7 @@ By Corrado Caudek
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1835,8 +1842,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

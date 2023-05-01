@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>17. L’estrazione dei fattori &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="18. Il numero dei fattori" href="203_numero_fattori.html" />
     <link rel="prev" title="16. Valutazione della matrice di correlazione" href="201_valutare_le_matrici.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -178,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -434,7 +435,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="l-estrazione-dei-fattori">
-<span id="extraction-notebook"></span><h1><span class="section-number">17. </span>L’estrazione dei fattori<a class="headerlink" href="#l-estrazione-dei-fattori" title="Permalink to this headline">#</a></h1>
+<span id="extraction-notebook"></span><h1><span class="section-number">17. </span>L’estrazione dei fattori<a class="headerlink" href="#l-estrazione-dei-fattori" title="Permalink to this heading">#</a></h1>
 <p>L’analisi fattoriale mira a descrivere in modo parsimonioso le relazioni tra un grande numero di item. L’obiettivo è identificare un piccolo numero di variabili latenti che, quando controllate, rendono uguali a zero le correlazioni parziali tra gli item. Una volta determinato il numero dei fattori comuni, è possibile stimare le saturazioni fattoriali, che corrispondono alle correlazioni o covarianze tra gli item e i fattori.</p>
 <p>In termini matriciali, il modello multifattoriale si scrive</p>
 <div class="math notranslate nohighlight">
@@ -446,7 +447,7 @@ e covarianze tra i fattori comuni e <span class="math notranslate nohighlight">\
 diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con le unicità delle variabili.</p>
 <p>In questo capitolo descriveremo alcuni dei metodi che possono essere usati per stimare <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span>. Esamineremo il metodo delle componenti principali, il metodo dei fattori principali, il metodo dei fattori principali iterato e il metodo di massima verosimiglianza.</p>
 <section id="metodo-delle-componenti-principali">
-<h2><span class="section-number">17.1. </span>Metodo delle componenti principali<a class="headerlink" href="#metodo-delle-componenti-principali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.1. </span>Metodo delle componenti principali<a class="headerlink" href="#metodo-delle-componenti-principali" title="Permalink to this heading">#</a></h2>
 <p>L’analisi fattoriale eseguita mediante il metodo delle componenti
 principali, nonostante il nome, non è un’analisi delle componenti
 principali. Il metodo delle componenti principali costituisce invece
@@ -748,7 +749,7 @@ invece svolto quando la soluzione viene trovata con il metodo della
 massima verosimiglianza.</p>
 </section>
 <section id="metodo-dei-fattori-principali">
-<h2><span class="section-number">17.2. </span>Metodo dei fattori principali<a class="headerlink" href="#metodo-dei-fattori-principali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.2. </span>Metodo dei fattori principali<a class="headerlink" href="#metodo-dei-fattori-principali" title="Permalink to this heading">#</a></h2>
 <p>Il <em>metodo dei fattori principali</em> (<em>principal factor method</em>, anche
 detto <em>principal axis method</em>) è uno dei metodi maggiormente usati per
 la stima delle saturazioni fattoriali e delle comunalità. Il metodo
@@ -908,7 +909,7 @@ autovalori si ottengono le stime delle saturazioni fattoriali:</p>
 <p>Tale risultato replica quello riportato da Rencher (2002).</p>
 </section>
 <section id="metodo-dei-fattori-principali-iterato">
-<h2><span class="section-number">17.3. </span>Metodo dei fattori principali iterato<a class="headerlink" href="#metodo-dei-fattori-principali-iterato" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.3. </span>Metodo dei fattori principali iterato<a class="headerlink" href="#metodo-dei-fattori-principali-iterato" title="Permalink to this heading">#</a></h2>
 <p>Solitamente, per migliorare la stima della comunalità, la diagonale
 della matrice <span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> o
 <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> viene ottenuta per iterazione.
@@ -935,7 +936,7 @@ delle componenti principali producono risultati molto simili quando <span class=
 assume un piccolo valore (questo si verifica quando le correlazioni sono
 alte) e quando <span class="math notranslate nohighlight">\(p\)</span> (il numero delle variabili) è grande.</p>
 <section id="casi-di-heywood">
-<h3><span class="section-number">17.3.1. </span>Casi di Heywood<a class="headerlink" href="#casi-di-heywood" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">17.3.1. </span>Casi di Heywood<a class="headerlink" href="#casi-di-heywood" title="Permalink to this heading">#</a></h3>
 <p>Tra gli inconvenienti del metodo dei fattori principali iterato vi è il
 fatto che può talvolta portare a soluzioni inammissibili (quando viene
 fattorizzata la matrice <strong>R</strong>) caratterizzate da valori di comunalità
@@ -997,7 +998,7 @@ suggerisce che la soluzione è impropria.</p>
 </section>
 </section>
 <section id="metodo-di-massima-verosimiglianza">
-<h2><span class="section-number">17.4. </span>Metodo di massima verosimiglianza<a class="headerlink" href="#metodo-di-massima-verosimiglianza" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.4. </span>Metodo di massima verosimiglianza<a class="headerlink" href="#metodo-di-massima-verosimiglianza" title="Permalink to this heading">#</a></h2>
 <p>Il metodo di massima verosimiglianza è indicato quando si può assumere che le variabili manifeste seguano una distribuzione normale multivariata. In queste condizioni, il metodo produce stime dei pesi fattoriali che più verosimilmente hanno prodotto le correlazioni osservate. Gli stimatori di massima verosimiglianza sono preferibili a quelli ottenuti con altri metodi, a condizione che le premesse siano pienamente realizzate.</p>
 <p>La funzione <span class="math notranslate nohighlight">\(F\)</span> che viene minimizzata dal metodo di massima verosimiglianza rappresenta una misura di “distanza” tra la matrice di covarianza osservata e quella predetta dal modello. Uguagliando a zero le derivate di <span class="math notranslate nohighlight">\(F\)</span> rispetto ai parametri del modello <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> si
 ottengono le equazioni per le stime di massima verosimiglianza di
@@ -1072,7 +1073,10 @@ The p-value is 5.81e-143
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="201_valutare_le_matrici.html"
@@ -1092,7 +1096,10 @@ The p-value is 5.81e-143
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -1122,7 +1129,7 @@ The p-value is 5.81e-143
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1152,7 +1159,7 @@ By Corrado Caudek
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1161,8 +1168,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>

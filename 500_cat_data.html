@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>25. Dati non gaussiani e categoriali &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=12da95d707ffb74b382d" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,13 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +71,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="26. Introduzione ai modelli di equazioni struttural" href="316_sem_intro.html" />
     <link rel="prev" title="24. CFA per matrici multi-tratto multi-metodo" href="315_mmm.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -178,7 +179,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="056_analisi_fattoriale_2.html">9. Il modello statistico dell’analisi fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="057_analisi_fattoriale_3.html">10. Il modello multifattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="058_factor_scores.html">11. I punteggi fattoriali</a></li>
-<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare il modelli di equazioni strutturali</a></li>
+<li class="toctree-l1"><a class="reference internal" href="060_path_analysis.html">12. Visualizzare i modelli di equazioni strutturali</a></li>
 <li class="toctree-l1"><a class="reference internal" href="062_constraints_on_parms.html">13. Attendibilità e modello fattoriale</a></li>
 <li class="toctree-l1"><a class="reference internal" href="070_cfa_mod_comp.html">14. CFA: confronto tra modelli</a></li>
 </ul>
@@ -432,10 +433,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dati-non-gaussiani-e-categoriali">
-<span id="cat-data-notebook"></span><h1><span class="section-number">25. </span>Dati non gaussiani e categoriali<a class="headerlink" href="#dati-non-gaussiani-e-categoriali" title="Permalink to this headline">#</a></h1>
+<span id="cat-data-notebook"></span><h1><span class="section-number">25. </span>Dati non gaussiani e categoriali<a class="headerlink" href="#dati-non-gaussiani-e-categoriali" title="Permalink to this heading">#</a></h1>
 <p>Negli esempi precedenti di questa dispensa è stato utilizzato lo stimatore di massima verosimiglianza (ML). Molti dei modelli CFA e SEM riportati nella letteratura di ricerca applicata utilizzano infatti stime di ML. Tuttavia, lo stimatore ML è appropriata solo per dati multivariati normali a livello di scala a intervalli (cioè, quando la distribuzione congiunta delle variabili continue è distribuita normalmente). Quando i dati continui si discostano marcatamente dalla normalità (cioè, mostrano una forte asimmetria o curtosi), o quando alcuni degli indicatori non sono a livello di scala a intervalli (cioè, dati binari, politomici o ordinali), allora è preferibile usare uno stimatore diverso da quello di ML.</p>
 <section id="dati-non-gaussiani">
-<h2><span class="section-number">25.1. </span>Dati non gaussiani<a class="headerlink" href="#dati-non-gaussiani" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">25.1. </span>Dati non gaussiani<a class="headerlink" href="#dati-non-gaussiani" title="Permalink to this heading">#</a></h2>
 <p>La ricerca ha dimostrato che la stima di ML è robusta nel caso di piccole deviazioni nella normalità. Tuttavia, quando la non normalità è più pronunciata, è necessario utilizzare uno stimatore diverso dalla ML per ottenere risultati statistici affidabili (vale a dire, statistiche accurate sulla bontà dell’adattamento ed errori standard accurati delle stime dei parametri). La stima di ML è particolarmente sensibile ad un eccesso di curtosi.</p>
 <p>Le conseguenze dell’uso della ML in condizioni di grave non normalità includono</p>
 <ul class="simple">
@@ -450,7 +451,7 @@ document.write(`
 <li><p>minimi quadrati ponderati (WLS).</p></li>
 </ul>
 <p>L’uso di WLS non è, in generale, raccomandato, a meno che le dimensioni del campione non siano molto grandi. Al contrario, la ricerca ha dimostrato che il metodo ML robusto fornisce uno stimatore adeguato rispetto a diversi livelli di non normalità.</p>
-<p>Esaminiamo qui un esempio discusso da <span id="id1">Brown [<a class="reference internal" href="z_biblio.html#id35" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span> nelle sue tabelle 9.5 – 9.7.</p>
+<p>Esaminiamo qui un esempio discusso da <span id="id1">Brown [<a class="reference internal" href="z_biblio.html#id36" title="Timothy A Brown. Confirmatory factor analysis for applied research. Guilford publications, 2015.">Bro15</a>]</span> nelle sue tabelle 9.5 – 9.7.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">readRDS</span><span class="p">(</span><span class="n">here</span><span class="o">::</span><span class="nf">here</span><span class="p">(</span><span class="s">&quot;data&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;brown_table_9_5_data.RDS&quot;</span><span class="p">))</span>
@@ -650,7 +651,7 @@ Variances:
 </div>
 </section>
 <section id="dati-categoriali">
-<h2><span class="section-number">25.2. </span>Dati categoriali<a class="headerlink" href="#dati-categoriali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">25.2. </span>Dati categoriali<a class="headerlink" href="#dati-categoriali" title="Permalink to this heading">#</a></h2>
 <p>Quando almeno un indicatore è categoriale (cioè binario, politomico o ordinale), il metodo ML ordinario non dovrebbe essere utilizzato per stimare i modelli CFA. Vi sono molte potenziali conseguenze del trattamento delle variabili categoriali come continue in un’analisi CFA, incluso il fatto che può tale scelta può</p>
 <ul class="simple">
 <li><p>produrre stime attenuate delle relazioni tra gli indicatori, specialmente quando ci sono effetti pavimento o soffitto;</p></li>
@@ -660,7 +661,7 @@ Variances:
 </ul>
 <p>Esistono vari stimatori che possono essere utilizzati con indicatori categoriali; ad esempio, gli stimatori dei minimi quadrati ponderati (WLS), dei minimi quadrati ponderati robusti (WLSMV) e dei minimi quadrati non ponderati (ULS).</p>
 <section id="un-esempio-concreto">
-<h3><span class="section-number">25.2.1. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">25.2.1. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this heading">#</a></h3>
 <p>Nell’esempio discusso da &#64;brown2015confirmatory, i ricercatori desiderano verificare un modello uni-fattoriale di dipendenza da alcol in un campione di 750 pazienti ambulatoriali. Gli indicatori di alcolismo sono item binari che riflettono la presenza/assenza di sei criteri diagnostici per l’alcolismo (0 = criterio non soddisfatto, 1 = criterio soddisfatto). I dati sono i seguenti:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -942,7 +943,10 @@ Variances:
               
               
                 <footer class="bd-footer-article">
-                  <!-- Previous / next buttons -->
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="315_mmm.html"
@@ -962,7 +966,10 @@ Variances:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
+</div></div>
+  
 </div>
+
                 </footer>
               
             </div>
@@ -990,7 +997,7 @@ Variances:
             
           </div>
           <footer class="bd-footer-content">
-            <div class="bd-footer-content__inner">
+            
 <div class="bd-footer-content__inner container">
   
   <div class="footer-item">
@@ -1020,7 +1027,7 @@ By Corrado Caudek
     
   </div>
   
-</div></div>
+</div>
           </footer>
         
 
@@ -1029,8 +1036,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=12da95d707ffb74b382d"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=12da95d707ffb74b382d"></script>
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
   <footer class="bd-footer">
   </footer>
