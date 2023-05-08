@@ -43,6 +43,7 @@ parts:
       - file: 310_refine_solution
       - file: 315_mmm
       - file: 500_cat_data
+      - file: 501_missing_data
   - caption: Modelli di equazioni strutturali
     numbered: True
     chapters:
@@ -70,5 +71,3 @@ parts:
     numbered: True
     chapters:
       - file: 900_lin_alg
-
-
