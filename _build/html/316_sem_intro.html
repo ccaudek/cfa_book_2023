@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>27. Introduzione ai modelli di equazioni struttural &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -68,7 +70,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="28. Curve di crescita latente" href="320_lgm_intro.html" />
     <link rel="prev" title="26. Dati mancanti" href="501_missing_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -77,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -376,10 +387,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -387,7 +398,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -433,7 +444,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduzione-ai-modelli-di-equazioni-struttural">
-<span id="sem-intro-notebook"></span><h1><span class="section-number">27. </span>Introduzione ai modelli di equazioni struttural<a class="headerlink" href="#introduzione-ai-modelli-di-equazioni-struttural" title="Permalink to this headline">#</a></h1>
+<span id="sem-intro-notebook"></span><h1><span class="section-number">27. </span>Introduzione ai modelli di equazioni struttural<a class="headerlink" href="#introduzione-ai-modelli-di-equazioni-struttural" title="Permalink to this heading">#</a></h1>
 <p>Un modello di equazioni strutturali (SEM) è una classe generale di tecniche multivariate che combina l’analisi fattoriale confermativa e l’analisi dei percorsi. La modellizzazione delle equazioni strutturali comprende due componenti principali: il modello di misura e il modello strutturale. Il “modello di misurazione” descrive le relazioni tra variabili latenti e variabili osservate (ovvero, può esere rappresentato come un modello fattoriale), mentre “il modello strutturale” è un modello di analisi dei percorsi che specifica le relazioni tra le variabili latenti.</p>
 <p>Il processo di analisi SEM è composto dai seguenti passaggi e decisioni:</p>
 <ul class="simple">
@@ -460,6 +471,28 @@ document.write(`
 <span class="p">})</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6</span><span class="p">,</span><span class="w"> </span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
 <span class="nf">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">library</span><span class="p">(</span><span class="s2">&quot;lavaanExtra&quot;</span><span class="p">):</span> <span class="n">non</span> <span class="n">c</span><span class="s1">&#39;è alcun pacchetto chiamato ‘lavaanExtra’</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">suppressPackageStartupMessages</span><span class="p">({</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;lavaan&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;lavaanExtra&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;lavaanPlot&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;psych&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;dplyr&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;tidyr&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;knitr&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;mvnormalTest&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;semPlot&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;DiagrammeRsvg&quot;</span><span class="p">)</span>
+ <span class="o">.</span>     <span class="n">library</span><span class="p">(</span><span class="s2">&quot;rsvg&quot;</span><span class="p">)</span>
+ <span class="o">.</span> <span class="p">})</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">withCallingHandlers</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">packageStartupMessage</span> <span class="o">=</span> <span class="n">function</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="n">tryInvokeRestart</span><span class="p">(</span><span class="s2">&quot;muffleMessage&quot;</span><span class="p">))</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">library</span><span class="p">(</span><span class="s2">&quot;lavaanExtra&quot;</span><span class="p">)</span>   <span class="c1"># at line 3 of file &lt;text&gt;</span>
 </pre></div>
 </div>
 </div>
@@ -514,7 +547,7 @@ $ x9     &lt;dbl&gt; 6.361111, 7.916667, 4.416667, 4.861111, 5.916667, 7.500000,
 </div>
 </div>
 <section id="valutazione-delle-assunzioni">
-<h2><span class="section-number">27.1. </span>Valutazione delle assunzioni<a class="headerlink" href="#valutazione-delle-assunzioni" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.1. </span>Valutazione delle assunzioni<a class="headerlink" href="#valutazione-delle-assunzioni" title="Permalink to this heading">#</a></h2>
 <p>Un’analisi SEM inizia con una valutazione sulla distribuzione delle variabili endogene.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -586,7 +619,7 @@ x9 0.9942 0.307   Yes
 <p>I risultati dei test univariati e multivariati indicano che le misure non provengono da distribuzioni univariate o multivariate normalmente distribuite (i risultati ‘No’ nella tabella). Affronteremo questi problemi nella successiva fase di adattamento del modello ai dati.</p>
 </section>
 <section id="specificazione-del-modello">
-<h2><span class="section-number">27.2. </span>Specificazione del modello<a class="headerlink" href="#specificazione-del-modello" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.2. </span>Specificazione del modello<a class="headerlink" href="#specificazione-del-modello" title="Permalink to this heading">#</a></h2>
 <p>Definiamo il modello utilizzando la sintassi lavaan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -637,7 +670,7 @@ x9 0.9942 0.307   Yes
 </div>
 </section>
 <section id="bonta-di-adattamento">
-<h2><span class="section-number">27.3. </span>Bontà di adattamento<a class="headerlink" href="#bonta-di-adattamento" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.3. </span>Bontà di adattamento<a class="headerlink" href="#bonta-di-adattamento" title="Permalink to this heading">#</a></h2>
 <p>In genere, i ricercatori esaminano le statistiche di adattamento del modello prima di procedere all’interpretazione delle stime dei parametri. L’ipotesi nulla in un’analisi SEM è che la matrice di covarianza riprodotta dal modello sia statisticamente la stessa della matrice di covarianza di input. Contrariamente al solito test di ipotesi, desideriamo che le due matrici siano statisticamente le stesse.</p>
 <p>Iniziamo a valutare l’adattamento del modello con un test chi-quadrato ottenuto dall’output di lavaan come segue:</p>
 <div class="cell docutils container">
@@ -697,7 +730,7 @@ x9 0.9942 0.307   Yes
 <p>Sulla base di questo insieme di misure di adattamento, possiamo concludere che il modello specificato è plausibile.</p>
 </section>
 <section id="modello-di-misurazione">
-<h2><span class="section-number">27.4. </span>Modello di misurazione<a class="headerlink" href="#modello-di-misurazione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.4. </span>Modello di misurazione<a class="headerlink" href="#modello-di-misurazione" title="Permalink to this heading">#</a></h2>
 <p>Dato il modello accettabile, passiamo all’esame delle varie stime dei parametri. Concentrandoci prima sul modello di misura, abbiamo ottenuto le stime dall’output di lavaan come segue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -755,7 +788,7 @@ x9 0.9942 0.307   Yes
 <p>I valori R2 per gli item variano da 0.18 a 0.74 e suggeriscono che gli item hanno una relazione da piccola a sostanziale con una variabile latente. Si noti che non esiste un limite rigido per i valori R2 accettabili, ma valori oltre .50 sono desiderabili.</p>
 </section>
 <section id="modello-strutturale">
-<h2><span class="section-number">27.5. </span>Modello strutturale<a class="headerlink" href="#modello-strutturale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.5. </span>Modello strutturale<a class="headerlink" href="#modello-strutturale" title="Permalink to this heading">#</a></h2>
 <p>Ora ci concentriamo sul modello strutturale. Otteniamo le stime dall’output di lavaan come segue:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -783,7 +816,7 @@ x9 0.9942 0.307   Yes
 <p>Questo output presenta coefficienti di regressione standardizzati che rappresentano le relazioni tra variabili esogene e le variabili endogene, intervalli di confidenza (ci.lower, ci.upper), errori standard (SE), valori Z (test di Wald), valori p che testano l’ipotesi nulla che un coefficiente = 0. Un coefficiente di regressione rappresenta la forza della relazione tra una variabile esogena e una variabile endogena e il segno rappresenta la direzione della relazione.</p>
 </section>
 <section id="diagramma-di-percorso">
-<h2><span class="section-number">27.6. </span>Diagramma di percorso<a class="headerlink" href="#diagramma-di-percorso" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.6. </span>Diagramma di percorso<a class="headerlink" href="#diagramma-di-percorso" title="Permalink to this heading">#</a></h2>
 <p>Per generare il diagramma di percorso del modello adattato usiamo la funzione <code class="docutils literal notranslate"><span class="pre">nice_lavaanPlot</span></code> del pacchetto <code class="docutils literal notranslate"><span class="pre">lavaanExtra</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -803,14 +836,14 @@ x9 0.9942 0.307   Yes
 	</head>
 	<body>
 		<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-30e4409849e39179307f" style="width:960px;height:500px;"></div>
-<script type="application/json" data-for="htmlwidget-30e4409849e39179307f">{"x":{"diagram":" digraph plot { \n graph [ rankdir = LR ] \n node [ shape = box, fontname = Helvetica ] \n node [shape = box] \n ageyr; grade; x1; x2; x3; x4; x5; x6; x7; x8; x9 \n node [shape = oval] \n visual; textual; speed \n \n edge [ color = black ] \n visual->speed [label = \"0.38\"] visual->textual [label = \"0.37\"] ageyr->visual [label = \"-0.22\"] grade->visual [label = \"0.35\"] ageyr->speed [label = \"\"] grade->speed [label = \"0.27\"] ageyr->textual [label = \"-0.39\"] grade->textual [label = \"0.32\"] visual->x1 [label = \"0.78\"] visual->x2 [label = \"0.42\"] visual->x3 [label = \"0.58\"] textual->x4 [label = \"0.86\"] textual->x5 [label = \"0.86\"] textual->x6 [label = \"0.83\"] speed->x7 [label = \"0.6\"] speed->x8 [label = \"0.75\"] speed->x9 [label = \"0.62\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-30e4409849e39179307f">{"x":{"diagram":" digraph plot { \n graph [ rankdir = LR ] \n node [ shape = box, fontname = Helvetica ] \n node [shape = box] \n ageyr; grade; x1; x2; x3; x4; x5; x6; x7; x8; x9 \n node [shape = oval] \n visual; textual; speed \n \n edge [ color = grey ] \n visual->speed [label = \"0.38\"] visual->textual [label = \"0.37\"] ageyr->visual [label = \"-0.22\"] grade->visual [label = \"0.35\"] ageyr->speed [label = \"\"] grade->speed [label = \"0.27\"] ageyr->textual [label = \"-0.39\"] grade->textual [label = \"0.32\"] visual->x1 [label = \"0.78\"] visual->x2 [label = \"0.42\"] visual->x3 [label = \"0.58\"] textual->x4 [label = \"0.86\"] textual->x5 [label = \"0.86\"] textual->x6 [label = \"0.83\"] speed->x7 [label = \"0.6\"] speed->x8 [label = \"0.75\"] speed->x9 [label = \"0.62\"] \n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 	</body>
 </html>
 </div></div>
 </div>
 </section>
 <section id="conclusioni">
-<h2><span class="section-number">27.7. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">27.7. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this heading">#</a></h2>
 <p>È possibile interpretare i risultati ottenuti come segue. Il modello complessivo sembra plausibile sulla base di vari indici di adattamento (anche con un numero ridotto di variabili misurate). Le variabili latenti ipotizzate (<em>visual</em>, <em>speed</em>, <em>textual</em>) risultano adeguatamente misurate dagli indicatori associati considerando le saturazioni fattoriali (da piccole ad elevate) e i valori R2. Le relazioni strutturali indicano che il grado scolastico influenza in maniera positiva i punteggi delle variabili latenti <em>textual</em> e <em>speed</em>, mentre l’età ha un effetto negativo su <em>textual</em>, ma un effetto positivo su <em>speed</em>.  La variabile latente <em>visual</em> ha un effetto positivo sia su <em>textual</em> che su <em>speed</em>. Nel complesso, il modello spiega circa un terzo della varianza di <em>textual</em> e <em>speed</em>, ma solo il 9% della varianza della abilità cognitiva <em>visual</em>.</p>
 </section>
 </section>
@@ -840,11 +873,10 @@ x9 0.9942 0.307   Yes
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="501_missing_data.html"
@@ -864,10 +896,7 @@ x9 0.9942 0.307   Yes
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -936,8 +965,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

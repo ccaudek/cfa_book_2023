@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>4. L’errore standard della misurazione &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="5. La stima del punteggio vero" href="038_err_std_stima.html" />
     <link rel="prev" title="3. Fondamenti teorici" href="035_ctt.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -378,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -389,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -436,11 +447,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="l-errore-standard-della-misurazione">
-<span id="err-std-mis-notebook"></span><h1><span class="section-number">4. </span>L’errore standard della misurazione<a class="headerlink" href="#l-errore-standard-della-misurazione" title="Permalink to this headline">#</a></h1>
+<span id="err-std-mis-notebook"></span><h1><span class="section-number">4. </span>L’errore standard della misurazione<a class="headerlink" href="#l-errore-standard-della-misurazione" title="Permalink to this heading">#</a></h1>
 <p>Secondo <span id="id1">Lord and Novick [<a class="reference internal" href="z_biblio.html#id34" title="Frederic M Lord and Melvin R Novick. Statistical theories of mental test scores. Addison-Wesley, 1968.">LN68</a>]</span>, l’errore <span class="math notranslate nohighlight">\(E = X - T\)</span> rappresenta la variabile aleatoria di primario interesse per la CTT. Infatti, poiché lo scopo della CTT è di stimare il punteggio vero di ciascun rispondente e confrontare le stime ottenute per rispondenti diversi, la grandezza dell’errore <span class="math notranslate nohighlight">\(E\)</span> è un’informazione essenziale. La discrepanza tra il punteggio osservato e il punteggio vero può essere misurata utilizzando la deviazione standard di <span class="math notranslate nohighlight">\(E\)</span>, chiamata “errore standard della misurazione” o SEM. Pertanto, l’errore standard della misurazione è lo strumento utilizzato dalla CTT per stimare in che misura un punteggio osservato si discosta da un punteggio vero.</p>
 <p>In questo capitolo vedremo come si può stimare <span class="math notranslate nohighlight">\(\sigma_E\)</span>.</p>
 <section id="l-incertezza-della-misura">
-<h2><span class="section-number">4.1. </span>L’incertezza della misura<a class="headerlink" href="#l-incertezza-della-misura" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.1. </span>L’incertezza della misura<a class="headerlink" href="#l-incertezza-della-misura" title="Permalink to this heading">#</a></h2>
 <p>Secondo la CTT, l’errore standard della misurazione può essere stimato utilizzando una formula che richiede la conoscenza della deviazione standard della distribuzione dei punteggi del test e dell’affidabilità del test. Se questi valori sono noti (o possono essere calcolati), allora si può ottenere una stima dell’errore standard di un particolare punteggio. Tale misura di errore è utile per comprendere quanto il punteggio osservato si discosta dal vero punteggio del soggetto.</p>
 <p>Secondo la CTT, è possibile stimare l’errore standard della misurazione (<span class="math notranslate nohighlight">\(\sigma_E\)</span>) utilizzando l’equazione:</p>
 <div class="math notranslate nohighlight" id="equation-eq-err-stnd-mis">
@@ -453,7 +464,7 @@ document.write(`
 perfettamente affidabile non ci sono errori e <span class="math notranslate nohighlight">\(\sigma_E\)</span> è uguale a
 zero.</p>
 <section id="interpretazione">
-<h3><span class="section-number">4.1.1. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.1.1. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this heading">#</a></h3>
 <p>McDonald sostiene che il termine <span class="math notranslate nohighlight">\(E\)</span> segue una <em>propensity distribution</em>, che rappresenta le fluttuazioni casuali nel tempo di un individuo che risponde al test. Queste fluttuazioni possono essere causate da fattori come l’umore, la motivazione, ecc. L’errore standard di misura fornisce una stima della deviazione standard di tali punteggi, ovvero una stima della deviazione standard dei punteggi che un singolo individuo otterrebbe nel caso di infinite somministrazioni del test (o di forme parallele del test) sotto le stesse identiche condizioni, se il punteggio vero rimanesse costante.</p>
 <p>D’altra parte, la teoria classica dei test (CTT) presuppone che i punteggi ottenuti da un individuo in infinite somministrazioni del test nelle stesse identiche condizioni seguano una distribuzione normale centrata sul valore vero. L’errore standard di misura è quindi la stima della deviazione standard di tale distribuzione ipotetica di punteggi. Maggiore è l’errore standard di misura, maggiore è l’errore che si commette nell’utilizzo del test per valutare l’abilità latente del rispondente.</p>
 <p>Il coefficiente di attendibilità, la varianza dell’errore e l’errore
@@ -647,7 +658,7 @@ test sotto le stesse identiche condizioni?</p>
 </div>
 </section>
 <section id="simulazione">
-<h3><span class="section-number">4.1.2. </span>Simulazione<a class="headerlink" href="#simulazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">4.1.2. </span>Simulazione<a class="headerlink" href="#simulazione" title="Permalink to this heading">#</a></h3>
 <p>Torniamo ora alla simulazione precedente in cui abbiamo messo in relazione il modello della CTT con il modello di regressione lineare. In base a tale simulazione, poniamoci lo scopo di chiarire il significato dell’errore standard della misurazione.</p>
 <p>Impostiamo la simulazione come abbiamo fatto in precedenza. Chiamiamo <span class="math notranslate nohighlight">\(X\)</span> il valore osservato in un test. Per la CTT, il punteggio osservato <span class="math notranslate nohighlight">\(X\)</span> è costituito da due componenti, la componente vera <span class="math notranslate nohighlight">\(T\)</span> e la componente d’errore <span class="math notranslate nohighlight">\(E\)</span>. Si suppone che gli errori siano gaussiani e incorrelati con la componente vera. Immaginiamo di somministrare 200 volte il test ad un individuo sotto le stesse identiche condizioni.</p>
 <div class="cell docutils container">
@@ -727,7 +738,7 @@ della regressione:</p>
 </section>
 </section>
 <section id="dimostrazione">
-<h2><span class="section-number">4.2. </span>Dimostrazione<a class="headerlink" href="#dimostrazione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.2. </span>Dimostrazione<a class="headerlink" href="#dimostrazione" title="Permalink to this heading">#</a></h2>
 <p>Poniamoci ora il problema di derivare la formula dell’errore standard
 della misurazione. Per derivare la formula <span class="math notranslate nohighlight">\(\sigma_E = \sigma_X \sqrt{1 -\rho_{XX^\prime}}\)</span> sono necessari due passi: prima dobbiamo trovare la varianza del punteggio vero; poi dobbiamo esprimere il punteggio osservato come la somma della varianza del punteggio vero e la varianza dell’errore.</p>
 <p>In base alla definizione del coefficiente di attendibilità <span class="math notranslate nohighlight">\(\rho_{XX^\prime} = \frac{\sigma^2_T}{\sigma^2_X}\)</span> possiamo scrivere <span class="math notranslate nohighlight">\(\sigma^2_T = \rho_{XX^\prime} \sigma^2_X\)</span>, dove <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(X^\prime\)</span> sono due forme parallele di un test. Ricordiamo che misurazioni parallele hanno le seguenti proprietà: <span class="math notranslate nohighlight">\(\mathbb{E}(X) = \mathbb{E}(X^\prime)\)</span> e <span class="math notranslate nohighlight">\(\mathbb{V}(X) = \mathbb{V}(X^\prime)\)</span>. Dato che <span class="math notranslate nohighlight">\(\sigma_{X}=\sigma_{X^\prime}\)</span>, l’equazione precedente diventa <span class="math notranslate nohighlight">\(\sigma^2_T = \rho_{XX^\prime} \sigma_X\sigma_{X^\prime}.\)</span> Utilizzando la definizione della covarianza tra <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(X^\prime\)</span>, ovvero, <span class="math notranslate nohighlight">\(\sigma_{XX^\prime}=\rho_{XX^\prime}\sigma_X\sigma_{X^\prime}\)</span>, possiamo concludere che la varianza del punteggio vero è uguale alla covarianza tra due misurazioni parallele:</p>
@@ -758,7 +769,7 @@ una quantità incognita, <span class="math notranslate nohighlight">\(\sigma^2_E
 osservabili, <span class="math notranslate nohighlight">\(\sigma^2_X\)</span> e <span class="math notranslate nohighlight">\(\rho_{XX^\prime}\)</span>.</p>
 </section>
 <section id="intervallo-di-confidenza-per-il-punteggio-vero-e-sigma-e">
-<h2><span class="section-number">4.3. </span>Intervallo di confidenza per il punteggio vero e <span class="math notranslate nohighlight">\(\sigma_E\)</span><a class="headerlink" href="#intervallo-di-confidenza-per-il-punteggio-vero-e-sigma-e" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.3. </span>Intervallo di confidenza per il punteggio vero e <span class="math notranslate nohighlight">\(\sigma_E\)</span><a class="headerlink" href="#intervallo-di-confidenza-per-il-punteggio-vero-e-sigma-e" title="Permalink to this heading">#</a></h2>
 <p>Uno degli usi che vengono fatti dell’errore standard della misurazione è
 quello di costruire, con essi, gli intervalli di confidenza per il
 punteggio vero. Tale uso, però, non è corretto <span id="id3">[<a class="reference internal" href="z_biblio.html#id21" title="Richard A Charter. Revisiting the standard errors of measurement, estimate, and prediction and their application to test scores. Perceptual and Motor Skills, 82(3):1139–1144, 1996.">Cha96</a>]</span>.
@@ -774,7 +785,7 @@ vero, di ipotetiche misurazioni ripetute dello stesso test. Si può
 ribadire questo concetto nel modo seguente: “In spite of <span id="id4">Dudek [<a class="reference internal" href="z_biblio.html#id22" title="Frank J Dudek. The continuing misinterpretation of the standard error of measurement. Psychological Bulletin, 86(2):335–-337, 1979.">Dud79</a>]</span>’s reminder that the SEM should not be used to construct confidence intervals, many test manuals, computer-scoring programs, and texts in psychology and education continue to do so. Because authors of many textbooks and manuals make these errors, it is understandable that those who learned from and look to these sources for guidance also make these errors. In summary, the SEM should not be used to construct confidence intervals for test scores” (p. 1141). Sembra piuttosto chiaro.</p>
 </section>
 <section id="conclusioni">
-<h2><span class="section-number">4.4. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">4.4. </span>Conclusioni<a class="headerlink" href="#conclusioni" title="Permalink to this heading">#</a></h2>
 <p>Le stime di affidabilità sono uno strumento utile nell’ambito della teoria classica dei test (CTT) per valutare la coerenza dei test. Tuttavia, quando si prendono decisioni importanti sul superamento o meno di un esame, ad esempio, è più utile fare ricorso all’errore standard di misurazione (SEM) per valutare la coerenza di una serie di punteggi del test. Il SEM fornisce una stima quantitativa del grado di variazione dei punteggi del test dovuto ad errori di misurazione all’interno di un insieme di punteggi.</p>
 <p>Il SEM è una stima dell’errore medio nei punteggi di tutti gli esaminati che hanno sostenuto il test. Utilizzando il SEM, possiamo calcolare fino a che punto i punteggi degli esaminati possono variare solo per caso con una certa probabilità. In particolare, possiamo prevedere che l’errore può far variare i punteggi degli esaminati all’interno di una banda di più o meno un SEM con una precisione del 68% (sulla base delle percentuali previste sotto la distribuzione normale dei punteggi dei test). Ad esempio, se il punteggio vero di un candidato è 65 e il SEM è di 2, possiamo stimare che i suoi punteggi potrebbero variare casualmente tra 63 e 67 punti (65 – 2 = 63; 65 + 2 = 67) con una precisione del 68% se dovesse sostenere il test più volte. Se vogliamo essere ancora più sicuri nella previsione dei suoi punteggi in somministrazioni ripetute, possiamo utilizzare due SEM (2 + 2 = 4) e affermare che i suoi punteggi potrebbero variare solo casualmente tra 61 e 69 punti (65 – 4 = 61; 65 + 4 = 69) con una precisione del 95%.</p>
 <p>Il SEM indica quanto i punteggi di un test possono fluttuare casualmente se lo stesso test viene ripetuto più volte dagli stessi esaminati. Un SEM di 2 punti indica che ci si può aspettare fluttuazioni relativamente basse nei punteggi, mentre un SEM di 15 punti indica fluttuazioni maggiori. In generale, più il SEM è piccolo, più stretta sarà la banda di fluttuazioni casuali, ovvero la differenza tra i punteggi veri degli esaminati e quelli osservati. Questo significa che, se il SEM è piccolo, i punteggi rappresenteranno in modo più coerente le vere abilità degli esaminati. Alcuni psicologi preferiscono utilizzare il SEM rispetto alle stime di affidabilità del test, in quanto il SEM rappresenta una banda di punteggio più facilmente interpretabile rispetto alle stime di affidabilità, che possono essere più astratte o basate sulla stabilità temporale del test.</p>
@@ -806,11 +817,10 @@ ribadire questo concetto nel modo seguente: “In spite of <span id="id4">Dudek 
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="035_ctt.html"
@@ -830,10 +840,7 @@ ribadire questo concetto nel modo seguente: “In spite of <span id="id4">Dudek 
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -903,8 +910,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>28. Curve di crescita latente &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="29. Dati longitudinali" href="321_lgm_prelims.html" />
     <link rel="prev" title="27. Introduzione ai modelli di equazioni struttural" href="316_sem_intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -378,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -389,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -430,10 +441,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="curve-di-crescita-latente">
-<span id="lgm-intro-notebook"></span><h1><span class="section-number">28. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this headline">#</a></h1>
+<span id="lgm-intro-notebook"></span><h1><span class="section-number">28. </span>Curve di crescita latente<a class="headerlink" href="#curve-di-crescita-latente" title="Permalink to this heading">#</a></h1>
 <p>Quando si vuole studiare le differenze tra le persone, si confrontano i loro punteggi. Ma se l’attenzione è invece sui cambiamenti all’interno di ciascuna persona, sono necessarie informazioni longitudinali, cioè raccolte nel tempo, per descrivere le traiettorie di cambiamento. Per fare questo, occorre utilizzare un modello statistico che tenga conto sia delle differenze tra le persone sia dei cambiamenti nel tempo all’interno di ciascuna persona. Ci sono due approcci statistici principali per affrontare questo problema: i modelli misti e un’estensione del framework SEM (Structural Equation Modeling) per dati longitudinali. Nel resto del testo, si fornirà una panoramica su questi approcci, concentrandosi in particolare sul framework SEM per dati longitudinali.</p>
 <section id="misurare-il-cambiamento">
-<h2><span class="section-number">28.1. </span>Misurare il cambiamento<a class="headerlink" href="#misurare-il-cambiamento" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">28.1. </span>Misurare il cambiamento<a class="headerlink" href="#misurare-il-cambiamento" title="Permalink to this heading">#</a></h2>
 <p>Il modo più semplice per valutare il cambiamento individuale tra due momenti temporali è calcolare la differenza tra i punteggi ottenuti nelle due occasioni. Tuttavia, questa strategia presenta un problema: non conosciamo il vero punteggio dell’individuo nei due momenti temporali, ma solo un punteggio influenzato dall’errore di misurazione. L’errore di misura può ridurre drasticamente la precisione delle valutazioni sulle differenze individuali nel cambiamento.</p>
 <p>Per affrontare il problema dell’analisi di dati longitudinali, sono stati introdotti modelli SEM chiamati <em>Latent Growth Models</em> (LGM). Questi modelli assumono che ogni individuo abbia una traiettoria di cambiamento latente unica nel tempo. Quindi, i dati raccolti in ogni momento temporale sono considerati come la somma di tre componenti: (a) punteggi latenti o non osservati che rappresentano il livello dell’individuo in quel momento, (b) punteggi latenti che rappresentano il cambiamento individuale nel tempo, e (c) caratteristiche uniche e non osservate ma indipendenti delle misurazioni.</p>
 <p>Questa formulazione del modello SEM per dati longitudinali prevede tre fattori latenti:</p>
@@ -498,7 +509,7 @@ x_{5} &amp;= 0 + (1)\xi_{1} + (4)\xi_{2} + \delta_{5} \notag
 <p>Il modello LGC è un modello che ci permette di osservare la media e la varianza dei punteggi iniziali e del tasso di crescita dei partecipanti nel tempo. Ci aiuta a rispondere a domande classiche sulla crescita e lo sviluppo, come “Quanto cambiano gli studenti nel tempo?”, “Quanto varia la velocità di crescita?” e “Quanto differiscono gli studenti inizialmente?”. Il modello può essere reso più complesso per adattarsi a situazioni diverse, ma l’idea di base è di avere una media di crescita comune per tutti i partecipanti e poi considerare le differenze individuali nel tasso di crescita. Nella versione più semplice del modello, la pendenza della curva di crescita viene fatta coincidere con una crescita lineare, ma è possibile ampliare il modello includendo anche una crescita quadratico o altre forme di crescita. Inoltre, è possibile stimare i parametri del modello in modo da rendere più flessibile il modello per adattarsi a diverse situazioni di crescita.</p>
 </section>
 <section id="domande-della-ricerca">
-<h2><span class="section-number">28.2. </span>Domande della ricerca<a class="headerlink" href="#domande-della-ricerca" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">28.2. </span>Domande della ricerca<a class="headerlink" href="#domande-della-ricerca" title="Permalink to this heading">#</a></h2>
 <p>L’analisi di dati longitudinali nella ricerca psicologica è particolarmente interessata a valutare quanto le persone cambino in un particolare aspetto o tratto nel tempo (cioè la crescita media), quanto questa crescita varia rispetto agli altri individui (cioè la varianza della crescita), e come le persone cambiano rispetto a se stesse nel tempo (cioè i modelli di crescita intra-individuale). I modelli di crescita media (LGM) descrivono i primi due di questi elementi chiave, mentre i modelli di punteggio di cambiamento latente (LCSM) descrivono il terzo (come i valori precedenti prevedono i valori successivi nel tempo all’interno della stessa persona).</p>
 <p>In ambito di ricerca psicologica, l’analisi di dati longitudinali si concentra sullo studio di come le persone cambiano in un particolare tratto o aspetto nel tempo, sulla variazione di questo cambiamento rispetto ad altre persone e su come le persone cambiano rispetto a se stesse nel tempo. I modelli di crescita media (LGM) e quelli di punteggio di cambiamento latente (LCSM) vengono utilizzati per descrivere questi aspetti.</p>
 <p><span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id8" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span> identificano cinque motivi principali per cui questi modelli vengono utilizzati. In primo luogo, l’analisi longitudinale consente di identificare direttamente il cambiamento e la stabilità intra-individuale. Ciò significa che è possibile valutare in che modo specifici attributi dell’individuo cambiano o rimangono gli stessi nel tempo, attraverso la misurazione ripetuta della stessa persona.</p>
@@ -534,11 +545,10 @@ x_{5} &amp;= 0 + (1)\xi_{1} + (4)\xi_{2} + \delta_{5} \notag
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="316_sem_intro.html"
@@ -558,10 +568,7 @@ x_{5} &amp;= 0 + (1)\xi_{1} + (4)\xi_{2} + \delta_{5} \notag
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -625,8 +632,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>39. Invarianza fattoriale nei modelli LGM &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="40. Bibliografia" href="z_biblio.html" />
     <link rel="prev" title="38. Modello LCS bivariato" href="333_biv_change.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -378,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -389,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -473,7 +484,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="invarianza-fattoriale-nei-modelli-lgm">
-<span id="fact-inv-lcsm-notebook"></span><h1><span class="section-number">39. </span>Invarianza fattoriale nei modelli LGM<a class="headerlink" href="#invarianza-fattoriale-nei-modelli-lgm" title="Permalink to this headline">#</a></h1>
+<span id="fact-inv-lcsm-notebook"></span><h1><span class="section-number">39. </span>Invarianza fattoriale nei modelli LGM<a class="headerlink" href="#invarianza-fattoriale-nei-modelli-lgm" title="Permalink to this heading">#</a></h1>
 <p>Quando studiamo la variazione dei costrutti nel tempo, amministriamo ripetutamente gli stessi strumenti di misura. Per potere fare affermazioni su come le variabili latenti cambiano nel tempo, è tuttavia prima necessario stabilire che lo strumento utilizzato sia in grado di misurare in maniera invariante il costrutto nel tempo. L’invarianza della misurazione (MI) è confermata in uno studio quando “i partecipanti in tutti i [periodi di tempo] interpretano le singole domande, nonché il fattore latente sottostante, allo stesso modo” <span id="id1">[]</span>. Se l’invarianza della misurazione non viene rispettata, la natura del costrutto latente cambia nel tempo, e ciò impedisce di potere eseguire dei confronti tra le diverse rilevazioni temporali. Il problema fondamentale nella misurazione longitudinale è che il semplice passare del tempo (o l’atto di osservare i propri pensieri attraverso misurazioni ripetute) a volte può cambiare il modo in cui i partecipanti interpretano gli item del questionario. Per fare confronti temporali è dunque necessario che la natura del costrutto non sia cambi sostanzialmente nel corso del tempo.</p>
 <p>Per utilizzare la CFA per testare la MI, i ricercatori eseguono una serie di confronti tra modelli nidificati, ovvero confrontando tra loro una serie di modelli CFA dotati di vincoli sempre più stringenti relativi alle caratteristiche del modello in relazione al tempo. Modelli più restrittivi e parsimoniosi consentono ad un numero minore di parametri di variare in funzione del tempo per lo stesso costrutto latente. In generale, i parametri considerati sono:</p>
 <ul class="simple">
@@ -491,10 +502,10 @@ document.write(`
 </ul>
 <p>L’invarianza fattoriale temporale è importante perché, se viene violata, i ricercatori possono interpretare erroneamente le cause soggiacenti agli effetti osservati. Ad esempio, uno studio di <span id="id2"></span> ha concluso che i livelli di narcisismo sono aumentati tra il 1990 e il 2010. In seguito, <span id="id3"></span> hanno esaminato l’invarianza temporale di misurazione nei dati di <span id="id4"></span> e hanno trovato che, in diversi aspetti della <em>Narcissistic Personality Inventory</em> [la scala usata da <span id="id5"></span>], essa veniva violata. Tenendo conto di questa parziale non equivalenza di misurazione, <span id="id6"></span> hanno concluso che, in realtà, il narcisismo degli adolescenti è diminuito nel tempo. Il controllo dell’invarianza temporale di misurazione è quindi una pratica importante preliminarmente all’interpretazione dei risultati degli studi longitudinali.</p>
 <section id="studi-longitudinali-cross-lagged">
-<h2><span class="section-number">39.1. </span>Studi longitudinali cross-lagged<a class="headerlink" href="#studi-longitudinali-cross-lagged" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.1. </span>Studi longitudinali cross-lagged<a class="headerlink" href="#studi-longitudinali-cross-lagged" title="Permalink to this heading">#</a></h2>
 <p>Un aspetto importante degli studi longitudinali sono <em>gli effetti direzionali tra le variabili nel tempo</em>. Per studiare le iterazioni temporali tra le variabili, i ricercatori possono utilizzare i <em>cross-lagged panel models</em> (CLPM). Rispetto agli scudi trasversali, i modelli CLPM possono contribuire a chiarire la direzione delle relazioni causali, in quanto, nei disegni longitudinali, la precedenza temporale è certa.</p>
 <section id="invarianza-di-misura-in-studi-longitudinali-cross-lagged">
-<h3><span class="section-number">39.1.1. </span>Invarianza di misura in studi longitudinali cross-lagged<a class="headerlink" href="#invarianza-di-misura-in-studi-longitudinali-cross-lagged" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.1.1. </span>Invarianza di misura in studi longitudinali cross-lagged<a class="headerlink" href="#invarianza-di-misura-in-studi-longitudinali-cross-lagged" title="Permalink to this heading">#</a></h3>
 <p>Esamineremo qui uno studio di Mackinnon and Curtis (in press). I dati esaminati dai ricercatori derivano da uno studio longitudinale di 21 giorni che indaga il perfezionismo, le motivazioni al consumo di alcol e i problemi legati all’alcol. Le principali variabili latenti di interesse sono le seguenti:</p>
 <ul class="simple">
 <li><p>auto-presentazione perfezionistica (PSP), che misura il desiderio di un individuo di nascondere le proprie imperfezioni;</p></li>
@@ -504,11 +515,11 @@ document.write(`
 </section>
 </section>
 <section id="data-set">
-<h2><span class="section-number">39.2. </span>Data set<a class="headerlink" href="#data-set" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.2. </span>Data set<a class="headerlink" href="#data-set" title="Permalink to this heading">#</a></h2>
 <p>I dati esaminati contengono le risposte fornite da 251 partecipanti su due variabili latenti (scala PSP, composta da tre item, e scala SSA, composta da sette item). Le rilevazioni riguardano cinque giorni successivi (dal giorno sette al giorno undici nello studio originario). Gli item PSP sono stati misurati utilizzando una scala a 7 punti (da 1 a 7); gli item SSA sono stati misurati utilizzando una scala a 5 punti (da 0 a 4).</p>
 </section>
 <section id="stretegia-analitica">
-<h2><span class="section-number">39.3. </span>Stretegia analitica<a class="headerlink" href="#stretegia-analitica" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.3. </span>Stretegia analitica<a class="headerlink" href="#stretegia-analitica" title="Permalink to this heading">#</a></h2>
 <p>L’obiettivo dell’analisi è quello di confrontare, mediante la CFA, varie versioni nidificate del modello CLPM, per determinare la forma più appropriata del modello strutturale finale. Come in precedenza, cerchiamo il modello più semplice (ovvero il modello che stima il minor numero di parametri) che mantiene un buon adattamento ai dati.</p>
 <p>L’approccio seguito da Mackinnon e Curtis prevede cinque fasi.</p>
 <ul class="simple">
@@ -521,7 +532,7 @@ document.write(`
 <p>In particolare, le prime quattro verifiche si basano sull’analisi delle covarianze (~~) tra le variabili. Nella quinta verifica, un modello CLPM esamina invece le regressioni (~), ovvero le relazioni causali direzionali in funzione del tempo – ad esempio, i dati del giorno 7 vengono usati per prevedere i dati del giorno 8.</p>
 </section>
 <section id="leggere-in-dati-in-mathsf-r">
-<h2><span class="section-number">39.4. </span>Leggere in dati in <span class="math notranslate nohighlight">\(\mathsf{R}\)</span><a class="headerlink" href="#leggere-in-dati-in-mathsf-r" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.4. </span>Leggere in dati in <span class="math notranslate nohighlight">\(\mathsf{R}\)</span><a class="headerlink" href="#leggere-in-dati-in-mathsf-r" title="Permalink to this heading">#</a></h2>
 <p>Leggiamo i dati in <span class="math notranslate nohighlight">\(\mathsf{R}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,7 +554,7 @@ document.write(`
 </div>
 </section>
 <section id="struttura-degli-errori">
-<h2><span class="section-number">39.5. </span>Struttura degli errori<a class="headerlink" href="#struttura-degli-errori" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.5. </span>Struttura degli errori<a class="headerlink" href="#struttura-degli-errori" title="Permalink to this heading">#</a></h2>
 <p>Mackinnon e Curtis creano uno script separato che contiene la specificazione della struttura dei termini d’errore, che è complessa. Poiché il codice necessario occupa così tante righe, viene scritto separatamente e richiamato poi nella sintassi dei modelli che vengono definiti in seguito. Questo rende il codice più ordinato e più breve. Si noti che il codice seguente impone il vincolo dell’eguaglianza delle covarianze tra i termini d’errore di rilevazioni temporali successive.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -664,9 +675,9 @@ document.write(`
 </div>
 </section>
 <section id="modello-configurale">
-<h2><span class="section-number">39.6. </span>Modello configurale<a class="headerlink" href="#modello-configurale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.6. </span>Modello configurale<a class="headerlink" href="#modello-configurale" title="Permalink to this heading">#</a></h2>
 <section id="definizione-del-modello">
-<h3><span class="section-number">39.6.1. </span>Definizione del modello<a class="headerlink" href="#definizione-del-modello" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.6.1. </span>Definizione del modello<a class="headerlink" href="#definizione-del-modello" title="Permalink to this heading">#</a></h3>
 <p>In primo luogo, desideriamo stabilire l’invarianza configurale, che funge da modello di confronto per valutare l’invarianza temporale della misurazione. In tutti i nostri modelli, iniziamo definendo le saturazioni fattoriali sulle variabili latenti. Per impostazione predefinita in lavaan, la saturazione del primo indicatore per ciascuna variabile latente viene normalmente vincolata a 1, mentre la varianza di ciascuna variabile latente non viene vincolata. Tuttavia, poiché ciò renderebbe più scomodi i passaggi successivi (ad es. Invarianza metrica), imponiamo invece ad 1 la varianza di ciascuna variabile latente (ad es. <code class="docutils literal notranslate"><span class="pre">PSP.7</span> <span class="pre">~~</span> <span class="pre">1*PSP.7</span></code>), consentendo così alla saturazione del primo item di variare liberamente (ad es. <code class="docutils literal notranslate"><span class="pre">NA*psp1.7</span></code>).</p>
 <p>Da notare anche l’uso del comando <code class="docutils literal notranslate"><span class="pre">paste</span></code>, che unisce due stringhe di testo (il modello e la struttura degli errori). Questo di solito non è necessario per i modelli <code class="docutils literal notranslate"><span class="pre">lavaan</span></code>, ma accorcerà il nostro codice data la struttura dell’errore estremamente complicata.</p>
 <p>Nella figura seguente, gli ovali rappresentano le variabili latenti. I rettangoli etichettati rappresentano gli item misurati, con le corrispondenti saturazioni fattoriali mostrate come frecce che originano dalle variabili latenti. I triangoli rappresentano le intercette degli item e i cerchi rappresentano i residui. Le frecce a due punte rappresentano le covarianze. Nel modello configurazionale, abbiamo consentito che le saturazioni fattoriali, le intercette degli item e le varianze residue possano variare liberamente tra le successive rilevazioni temporali. Il modello utilizzato nel tutorial considera i dati di 5 giorni; per semplicità, figura &#64;ref(fig:configural) mostra solo i primi due giorni.</p>
@@ -721,7 +732,7 @@ document.write(`
 </div>
 </section>
 <section id="output-del-modello">
-<h3><span class="section-number">39.6.2. </span>Output del modello<a class="headerlink" href="#output-del-modello" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.6.2. </span>Output del modello<a class="headerlink" href="#output-del-modello" title="Permalink to this heading">#</a></h3>
 <p>Dopo avere definito il modello, lo adattiamo ai dati. Per questa e tutte le analisi successive, aggiungiamo la riga <code class="docutils literal notranslate"><span class="pre">std.lv</span> <span class="pre">=</span> <span class="pre">TRUE</span></code> per tenere conto della nostra modifica alle impostazioni sui vincoli dei default di <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> allo scopo di garantire l’identificabilità del modello. Esaminiamo i risultati con <code class="docutils literal notranslate"><span class="pre">summary()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -746,15 +757,15 @@ document.write(`
 </div>
 </section>
 <section id="interpretazione">
-<h3><span class="section-number">39.6.3. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.6.3. </span>Interpretazione<a class="headerlink" href="#interpretazione" title="Permalink to this heading">#</a></h3>
 <p>Dopo avere costruito il modello “baseline” passiamo a introdurre progressivamente dei vincoli aggiuntivi per poi procedere al confronto tra le versioni nidificate dei modelli proposti. Dopo aver adattato tutti i modelli, il modello più appropriato verrà selezionato mediante il confronto tra gli indici di bontà di adattamento.</p>
 </section>
 </section>
 <section id="invarianza-metrica">
-<h2><span class="section-number">39.7. </span>Invarianza metrica<a class="headerlink" href="#invarianza-metrica" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.7. </span>Invarianza metrica<a class="headerlink" href="#invarianza-metrica" title="Permalink to this heading">#</a></h2>
 <p>Esaminiamo ora l’invarianza metrica.</p>
 <section id="id7">
-<h3><span class="section-number">39.7.1. </span>Definizione del modello<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.7.1. </span>Definizione del modello<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>In questo modello, oltre ai vincoli dell’invarianza configurale, viene imposto il vincolo dell’eguaglianza delle saturazioni di ciascuna rilevazione temporale. Questo viene ottenuto applicando una singola etichetta a tutte e cinque le iterazioni degli item che saturano su ciascun fattore (ad es.,, l’etichetta <code class="docutils literal notranslate"><span class="pre">psp1f*</span></code> viene applicata a tutte e cinque le iterazioni di <code class="docutils literal notranslate"><span class="pre">psp1</span></code>).</p>
 <figure class="align-default" id="metric-fig">
 <a class="reference internal image-reference" href="_images/metric.png"><img alt="_images/metric.png" src="_images/metric.png" style="height: 450px;" /></a>
@@ -816,7 +827,7 @@ document.write(`
 </div>
 </section>
 <section id="id8">
-<h3><span class="section-number">39.7.2. </span>Output del modello<a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.7.2. </span>Output del modello<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>Adattiamo il modello.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -849,10 +860,10 @@ document.write(`
 </section>
 </section>
 <section id="invarianza-scalare">
-<h2><span class="section-number">39.8. </span>Invarianza scalare<a class="headerlink" href="#invarianza-scalare" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.8. </span>Invarianza scalare<a class="headerlink" href="#invarianza-scalare" title="Permalink to this heading">#</a></h2>
 <p>Esaminiamo il modello di invarianza scalare.</p>
 <section id="id9">
-<h3><span class="section-number">39.8.1. </span>Definizione del modello<a class="headerlink" href="#id9" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.8.1. </span>Definizione del modello<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>In questo modello, oltre ai vincoli applicati al modello metrico, fissiamo le intercette degli item in maniera tale che siano uguali in ciascuna rilevazione temporale. Come con il modello metrico, questo risultato viene ottenuto applicando una singola etichetta a tutte e cinque le iterazioni dell’intercetta di un item nel tempo (ad es. <code class="docutils literal notranslate"><span class="pre">psp1.7</span> <span class="pre">~</span> <span class="pre">psp1i*1</span></code>). In questo esempio, “psp1.7” è l’item, “psp1i” è l’etichetta e “*1” indica a <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> di fare riferimento all’intercetta. L’istruzione <code class="docutils literal notranslate"><span class="pre">paste</span></code> aggiunge questi vincoli al modello di invarianza metrica che è stato definito in precedenza.</p>
 <figure class="align-default" id="scalar-fig">
 <a class="reference internal image-reference" href="_images/scalar.png"><img alt="_images/scalar.png" src="_images/scalar.png" style="height: 450px;" /></a>
@@ -939,7 +950,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h3><span class="section-number">39.8.2. </span>Output del modello<a class="headerlink" href="#id10" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.8.2. </span>Output del modello<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>Adattiamo il modello.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -971,10 +982,10 @@ document.write(`
 </section>
 </section>
 <section id="invarianza-degli-errori">
-<h2><span class="section-number">39.9. </span>Invarianza degli errori<a class="headerlink" href="#invarianza-degli-errori" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.9. </span>Invarianza degli errori<a class="headerlink" href="#invarianza-degli-errori" title="Permalink to this heading">#</a></h2>
 <p>Passiamo ora ad applicare l’insieme più stringente di vincoli, ovvero quello dell’invarianza degli errori.</p>
 <section id="id11">
-<h3><span class="section-number">39.9.1. </span>Definizione del modello<a class="headerlink" href="#id11" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.9.1. </span>Definizione del modello<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>Nel presente modello, oltre ai vincoli applicati al modello scalare, imponiamo anche il vincolo dell’eguaglianza dei termini d’errore nelle diverse rilevazioni temporali. Ancora una volta, questo risultato viene ottenuto applicando una singola etichetta (ad esempio, <code class="docutils literal notranslate"><span class="pre">psp1u</span></code>) ai gruppi di item che desideriamo vincolare (ad esempio <code class="docutils literal notranslate"><span class="pre">psp1.7</span> <span class="pre">~~</span> <span class="pre">psp1u*psp1.7</span></code> e <code class="docutils literal notranslate"><span class="pre">psp1.8</span> <span class="pre">~~</span> <span class="pre">psp1u*psp1.8</span></code>). La sintassi è simile a quella che abbiamo usato in precedenza per le covarianze; tuttavia, in questo caso viene considerata la covariazione di ogni variabile con se stessa.</p>
 <figure class="align-default" id="residual-fig">
 <a class="reference internal image-reference" href="_images/residual.png"><img alt="_images/residual.png" src="_images/residual.png" style="height: 450px;" /></a>
@@ -1062,7 +1073,7 @@ document.write(`
 </div>
 </section>
 <section id="id12">
-<h3><span class="section-number">39.9.2. </span>Output del modello<a class="headerlink" href="#id12" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.9.2. </span>Output del modello<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>Adattiamo il modello.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1094,10 +1105,10 @@ document.write(`
 </section>
 </section>
 <section id="confronto-tra-modelli">
-<h2><span class="section-number">39.10. </span>Confronto tra modelli<a class="headerlink" href="#confronto-tra-modelli" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.10. </span>Confronto tra modelli<a class="headerlink" href="#confronto-tra-modelli" title="Permalink to this heading">#</a></h2>
 <p>Passiamo ora al confronto tra i vari modelli di invarianza temporale di misurazione.</p>
 <section id="codice-e-output">
-<h3><span class="section-number">39.10.1. </span>Codice e output<a class="headerlink" href="#codice-e-output" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.10.1. </span>Codice e output<a class="headerlink" href="#codice-e-output" title="Permalink to this heading">#</a></h3>
 <p>Usiamo il codice seguente per confrontare gli indici di adattamento dei quattro modelli descritti in precedenza.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1137,16 +1148,16 @@ document.write(`
 </div>
 </section>
 <section id="id13">
-<h3><span class="section-number">39.10.2. </span>Interpretazione<a class="headerlink" href="#id13" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.10.2. </span>Interpretazione<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>In generale, i valori degli indici di bontà dell’adattamento (es. Robust CFI, Robust TLI, AIC, BIC, Robust RMSEA e SRMR) sono simili tra i quattro modelli considerati. In questi termini, per questi dati, l’invarianza della misurazione più restrittiva sembra essere stata confermata. Si può notare, però, che non tutti gli indici di adattamento concordano su quale sia il modello migliore (ad esempio, il test del chi quadrato preferisce il modello metrico)! Nel tutorial, Mackinnon and Curtis non basano la selezione dei modelli usando i risultati del test del rapporto di verosimiglianza, ma preferiscono basarsi sugli altri indici. Questo fa capire quanto sia importante scegliere i criteri di selezione del modello a priori (idealmente, mediante una pre-registrazione dello studio).</p>
 <p>Procediamo ora all’analisi SEM utilizzando il modello dell’invarianza dei residui.</p>
 </section>
 </section>
 <section id="modello-strutturale">
-<h2><span class="section-number">39.11. </span>Modello strutturale<a class="headerlink" href="#modello-strutturale" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.11. </span>Modello strutturale<a class="headerlink" href="#modello-strutturale" title="Permalink to this heading">#</a></h2>
 <p>Dopo aver selezionato il modello dell’eguaglianza dei residui come il modello preferito (il che potrebbe essere alquanto discutibile, ma qui tale modello è stato scelto a scopo dimostrativo), usiamo il modello selezionato come modello Cross-lagged Panel.</p>
 <section id="id14">
-<h3><span class="section-number">39.11.1. </span>Definizione del modello<a class="headerlink" href="#id14" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.11.1. </span>Definizione del modello<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>Nel modello Cross-lagged Panel vengono stimati i coefficienti di regressione, non le covarianze. Vengono qui considerate solo le relazioni dal tempo <span class="math notranslate nohighlight">\(t\)</span> al tempo <span class="math notranslate nohighlight">\(t+1\)</span>. Cioè, le relazioni dal tempo <span class="math notranslate nohighlight">\(t\)</span> a <span class="math notranslate nohighlight">\(t+2\)</span>, a <span class="math notranslate nohighlight">\(t+3\)</span> e così via vengono omesse. Si potrebbe voler includere anche queste relazioni, ma per i presenti scopi didattici, qui verrà solo esaminato un modello più semplice e verrà imposto il vincolo per cui le relazioni tra variabili con ritardi temporali maggiori di +1 sono uguali a zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1181,7 +1192,7 @@ document.write(`
 </div>
 </section>
 <section id="id15">
-<h3><span class="section-number">39.11.2. </span>Output del modello<a class="headerlink" href="#id15" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.11.2. </span>Output del modello<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>Adattiamo il modello.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1220,10 +1231,10 @@ document.write(`
 </section>
 </section>
 <section id="modello-random-intercepts-cross-lagged-panel">
-<h2><span class="section-number">39.12. </span>Modello Random Intercepts Cross-Lagged Panel<a class="headerlink" href="#modello-random-intercepts-cross-lagged-panel" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.12. </span>Modello Random Intercepts Cross-Lagged Panel<a class="headerlink" href="#modello-random-intercepts-cross-lagged-panel" title="Permalink to this heading">#</a></h2>
 <p>Una variante del modello descritto in precedenza è il modello Random Intercepts Cross-Lagged Panel proposto da Ellen Hamaker (Hamaker, 2015; Mulder &amp; Hamaker, 2020).</p>
 <section id="id16">
-<h3><span class="section-number">39.12.1. </span>Definizione del modello<a class="headerlink" href="#id16" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.12.1. </span>Definizione del modello<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h3>
 <p>Questo modello apporta quattro modifiche al modello precedente:</p>
 <ul class="simple">
 <li><p>viene omessa la struttura residuale correlata;</p></li>
@@ -1444,7 +1455,7 @@ document.write(`
 </div>
 </section>
 <section id="id17">
-<h3><span class="section-number">39.12.2. </span>Output del modello<a class="headerlink" href="#id17" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">39.12.2. </span>Output del modello<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">sem.v2.fit</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">sem</span><span class="p">(</span><span class="n">sem.v2</span><span class="p">,</span>
@@ -1477,7 +1488,7 @@ document.write(`
 </section>
 </section>
 <section id="commenti-e-considerazioni-finali">
-<h2><span class="section-number">39.13. </span>Commenti e considerazioni finali<a class="headerlink" href="#commenti-e-considerazioni-finali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">39.13. </span>Commenti e considerazioni finali<a class="headerlink" href="#commenti-e-considerazioni-finali" title="Permalink to this heading">#</a></h2>
 <p>Per ricapitolare, abbiamo utilizzato l’analisi fattoriale confermativa per valutare l’invarianza della misurazione su cinque onde su due variabili correlate utilizzando quattro modelli nidificati sempre più restrittivi: modello configurale, metrico, scalare e di eguaglianza dei residui. Dopo aver selezionato il modello di eguaglianza dei residui come il modello più semplice che consentiva, nel contempo, un buon adattamento ai dati, abbiamo applicato i suoi vincoli a un modello di equazione strutturali, il che ci ha consentito di quantificare le relazioni cross-lagged delle due variabili esaminate in funzione del tempo.</p>
 <p>Nel nostro caso, il modello finale è conforme al livello più rigoroso di invarianza della misurazione. Tuttavia, in alcuni studi, questo non è il caso. <em>L’invarianza scalare è in genere sufficiente per l’analisi dei dati</em>, poiché indica che i partecipanti non variano molto tra le onde nel modo in cui interpretano e rispondono alle domande. Tuttavia, se viene confermata solo l’invarianza metrica, i ricercatori devono qualificare qualsiasi risultato successivo riconoscendo che, sebbene i fattori latenti vengano saturati dagli item in modo simile nel corso del tempo, il modo in cui gli individui interpretano gli item potrrebbe cambiare nel corso tempo. Vale la pena notare la tecnica qui descritta per testare la MI nei CLPM è maggiormente adatta a modelli con un numero di onde da basso a moderato. Per uno studio con rilevazioni su 20 giorni, potrebbe essere più semplice implementare tecniche di modellazione multi-livello o una modellazione di equazioni strutturali multi-livello.</p>
 </section>
@@ -1508,11 +1519,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="333_biv_change.html"
@@ -1532,10 +1542,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1642,8 +1649,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

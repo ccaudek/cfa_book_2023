@@ -18,19 +18,40 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-fit <- cfa(model, data = d, missing = "ml")
+source("_common.R")
+suppressPackageStartupMessages({
+    library("lavaan")
+    library("semPlot")
+    library("knitr")
+    library("markdown")
+    library("patchwork")
+    library("rio")
+    library(tidyr)
+    library("here")
+})
 
+set.seed(42)
 ------------------
 
 
-Error in eval(mc, parent.frame()): object 'model' not found
+Error in library("ggExtra"): non c'è alcun pacchetto chiamato ‘ggExtra’
 Traceback:
 
-1. cfa(model, data = d, missing = "ml")
-2. eval(mc, parent.frame())
-3. eval(mc, parent.frame())
-4. lavaan::lavaan(model = model, data = d, missing = "ml", model.type = "cfa", 
- .     int.ov.free = TRUE, int.lv.free = FALSE, auto.fix.first = TRUE, 
- .     auto.fix.single = TRUE, auto.var = TRUE, auto.cov.lv.x = TRUE, 
- .     auto.cov.y = TRUE, auto.th = TRUE, auto.delta = TRUE, auto.efa = TRUE)
+1. source("_common.R")
+2. withVisible(eval(ei, envir))
+3. eval(ei, envir)
+4. eval(ei, envir)
+5. suppressPackageStartupMessages({
+ .     library("here")
+ .     library("tidyverse")
+ .     library("scales")
+ .     library("patchwork")
+ .     library("bayesplot")
+ .     library("ggExtra")
+ .     library("ggpubr")
+ .     library("viridis")
+ .     library("ggokabeito")
+ . })
+6. withCallingHandlers(expr, packageStartupMessage = function(c) tryInvokeRestart("muffleMessage"))
+7. library("ggExtra")
 

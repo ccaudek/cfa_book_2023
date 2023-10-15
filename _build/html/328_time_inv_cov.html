@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>33. Covariate indipendenti dal tempo &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="34. Modelli di crescita latenti a gruppi multipli" href="329_growth_groups.html" />
     <link rel="prev" title="32. Il tempo su una metrica continua" href="327_growth_cont.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -378,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -389,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -430,7 +441,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="covariate-indipendenti-dal-tempo">
-<span id="cov-ind-time-notebook"></span><h1><span class="section-number">33. </span>Covariate indipendenti dal tempo<a class="headerlink" href="#covariate-indipendenti-dal-tempo" title="Permalink to this headline">#</a></h1>
+<span id="cov-ind-time-notebook"></span><h1><span class="section-number">33. </span>Covariate indipendenti dal tempo<a class="headerlink" href="#covariate-indipendenti-dal-tempo" title="Permalink to this heading">#</a></h1>
 <p>Partendo dai modelli di crescita lineare descritti nei capitoli precedenti, ci chiediamo se le differenze individuali nelle traiettorie di cambiamento siano associate ad altre variabili. Questo capitolo introduce modelli che esaminano se la variabilità nell’intercetta e nella pendenza del modello di crescita lineare può essere spiegata da covariate invarianti nel tempo. Queste sono variabili a livello di persona che non cambiano nel tempo, come il genere, le condizioni sperimentali e lo stato socio-economico. Nel contesto dei modelli a crescita latente, tali variabili vengono considerate come variabili indipendenti in un modello di regressione multipla in cui l’intercetta e la pendenza del modello di crescita lineare sono le variabili dipendenti. Le covariate invarianti nel tempo possono essere continue, ordinali o categoriche.</p>
 <p>Studiando come le differenze individuali nell’intercetta e nella pendenza sono correlate ad altre variabili a livello della persona, possiamo comprendere le possibili ragioni per cui gli individui cambiano in modi diversi. Tuttavia, i risultati di questi modelli non forniscono ulteriori inferenze sulla causalità rispetto ai tipici modelli di regressione. Gli utenti dovrebbero essere cauti quando discutono tali effetti e tenere presente se la covariata invariante nel tempo è stata assegnata in maniera casuale nel contesto di un protocollo sperimentale, oppure se i dati provengono da ricerche osservazionali.</p>
 <p>Per questo esempio considereremo i dati di prestazione matematica dal data set NLSY-CYA Long Data [si veda <span id="id1">Grimm <em>et al.</em> [<a class="reference internal" href="z_biblio.html#id8" title="Kevin J Grimm, Nilam Ram, and Ryne Estabrook. Growth modeling: Structural equation and multilevel modeling approaches. Guilford Publications, 2016.">GRE16</a>]</span>]. Iniziamo a leggere i dati.</p>
@@ -521,9 +532,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_line()`: Each group consists of only one observation.
 <span class=" -Color -Color-Cyan">ℹ</span> Do you need to adjust the <span class=" -Color -Color-Green">group</span> aesthetic?
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_line()`: Each group consists of only one observation.
+`geom_line()`: Each group consists of only one observation.
 <span class=" -Color -Color-Cyan">ℹ</span> Do you need to adjust the <span class=" -Color -Color-Green">group</span> aesthetic?
 </pre></div>
 </div>
@@ -668,15 +677,11 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some observed variances are (at least) a factor 1000 times larger than others; use varTable(fit) to investigate”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -835,7 +840,7 @@ Variances:
 </div>
 </div>
 <section id="valutare-il-contributo-delle-covariate">
-<h2><span class="section-number">33.1. </span>Valutare il contributo delle covariate<a class="headerlink" href="#valutare-il-contributo-delle-covariate" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.1. </span>Valutare il contributo delle covariate<a class="headerlink" href="#valutare-il-contributo-delle-covariate" title="Permalink to this heading">#</a></h2>
 <p>Per valutare se le covariate considerate migliorano l’adattamento del modello, confronteremo il modello precedente con un modello vincolato in cui l’effetto delle covariate viene fissato a zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -924,15 +929,11 @@ Variances:
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING: some observed variances are (at least) a factor 1000 times larger than others; use varTable(fit) to investigate”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
+Warning message in lav_data_full(data = data, group = group, cluster = cluster, :
 “lavaan WARNING:
     due to missing values, some pairwise combinations have less than
     10% coverage; use lavInspect(fit, &quot;coverage&quot;) to investigate.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
+Warning message in lav_mvnorm_missing_h1_estimate_moments(Y = X[[g]], wt = WT[[g]], :
 “lavaan WARNING:
     Maximum number of iterations reached when computing the sample
     moments using EM; use the em.h1.iter.max= argument to increase the
@@ -1099,24 +1100,23 @@ Variances:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Chi-Squared Difference Test
-
-                           Df   AIC   BIC  Chisq Chisq diff    RMSEA Df diff
-lg_math_tic_lavaan_fit     39 19600 19673 220.22                            
-lg_math_ticZERO_lavaan_fit 43 19606 19660 234.47     14.245 0.052395       4
-                           Pr(&gt;Chisq)   
-lg_math_tic_lavaan_fit                  
-lg_math_ticZERO_lavaan_fit   0.006552 **
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A anova: 2 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>Df</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>Chisq</th><th scope=col>Chisq diff</th><th scope=col>RMSEA</th><th scope=col>Df diff</th><th scope=col>Pr(&gt;Chisq)</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>lg_math_tic_lavaan_fit</th><td>39</td><td>19600.17</td><td>19672.75</td><td>220.2212</td><td>      NA</td><td>        NA</td><td>NA</td><td>         NA</td></tr>
+	<tr><th scope=row>lg_math_ticZERO_lavaan_fit</th><td>43</td><td>19606.42</td><td>19659.64</td><td>234.4666</td><td>14.24534</td><td>0.05239531</td><td> 4</td><td>0.006551826</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Il valore-p associato alla statistica chi-quadrato relativa alla differenza tra i due modelli è piccolo. Questo significa che i vincoli aggiuntivi hanno impattato in maniera sostanziale la bontà di adattamento del modello ai dati. Da ciò concludiamo che le covariate forniscono un contributo utile al modello.</p>
 </section>
 <section id="confronto-con-il-modello-misto">
-<h2><span class="section-number">33.2. </span>Confronto con il modello misto<a class="headerlink" href="#confronto-con-il-modello-misto" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">33.2. </span>Confronto con il modello misto<a class="headerlink" href="#confronto-con-il-modello-misto" title="Permalink to this heading">#</a></h2>
 <p>Eseguiamo l’analisi utilizzando un modello misto con intercetta e pendenza casuale. Confronteremo un modello ridotto, che include solo l’effetto del tempo, con un modello completo che include le covariate esaminate in precedenza. Il modello completo include gli effetti principali delle covariate e l’interazione tra le covariate e il tempo.</p>
 <p>Adattiamo il modello “completo”.</p>
 <div class="cell docutils container">
@@ -1211,18 +1211,18 @@ Model failed to converge with max|grad| = 0.00577356 (tol = 0.002, component 1)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in h(simpleError(msg, call)): error in evaluating the argument &#39;x&#39; in selecting a method for function &#39;print&#39;: no slot of name &quot;Options&quot; for this object of class &quot;lmerMod&quot;
-Traceback:
-
-1. print(lavTestLRT(fit2_lmer, fit3_lmer))
-2. lavTestLRT(fit2_lmer, fit3_lmer)
-3. .handleSimpleError(function (cond) 
- . .Internal(C_tryCatchHelper(addr, 1L, cond)), &quot;no slot of name \&quot;Options\&quot; for this object of class \&quot;lmerMod\&quot;&quot;, 
- .     base::quote(lavTestLRT(fit2_lmer, fit3_lmer)))
-4. h(simpleError(msg, call))
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><table class="dataframe">
+<caption>A anova: 2 × 8</caption>
+<thead>
+	<tr><th></th><th scope=col>npar</th><th scope=col>AIC</th><th scope=col>BIC</th><th scope=col>logLik</th><th scope=col>deviance</th><th scope=col>Chisq</th><th scope=col>Df</th><th scope=col>Pr(&gt;Chisq)</th></tr>
+	<tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+	<tr><th scope=row>fit3_lmer</th><td> 6</td><td>15949.39</td><td>15983.62</td><td>-7968.693</td><td>15937.39</td><td>      NA</td><td>NA</td><td>         NA</td></tr>
+	<tr><th scope=row>fit2_lmer</th><td>10</td><td>15943.14</td><td>16000.20</td><td>-7961.570</td><td>15923.14</td><td>14.24533</td><td> 4</td><td>0.006551848</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
 <p>Il risultato è sostanzialmente identico a quello ottenuto con il modello LGM.</p>
 </section>
@@ -1253,11 +1253,10 @@ Traceback:
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="327_growth_cont.html"
@@ -1277,10 +1276,7 @@ Traceback:
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1344,8 +1340,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

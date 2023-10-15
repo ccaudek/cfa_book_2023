@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>26. Dati mancanti &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="27. Introduzione ai modelli di equazioni struttural" href="316_sem_intro.html" />
     <link rel="prev" title="25. Dati non gaussiani e categoriali" href="500_cat_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -378,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -389,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -437,10 +448,10 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="dati-mancanti">
-<span id="missing-data-notebook"></span><h1><span class="section-number">26. </span>Dati mancanti<a class="headerlink" href="#dati-mancanti" title="Permalink to this headline">#</a></h1>
+<span id="missing-data-notebook"></span><h1><span class="section-number">26. </span>Dati mancanti<a class="headerlink" href="#dati-mancanti" title="Permalink to this heading">#</a></h1>
 <p>Raramente un ricercatore si trova nella situazione fortunata nella quale un’analisi statistica (di tipo CFA o altro) può essere condotta utilizzando un set di dati in cui tutte le variabili sono state osservate su tutte le unità statistiche: nella pratica ricerca i dati mancanti sono la norma piuttosto che l’eccezione.</p>
 <section id="tipologie-di-dati-mancanti">
-<h2><span class="section-number">26.1. </span>Tipologie di dati mancanti<a class="headerlink" href="#tipologie-di-dati-mancanti" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">26.1. </span>Tipologie di dati mancanti<a class="headerlink" href="#tipologie-di-dati-mancanti" title="Permalink to this heading">#</a></h2>
 <p>Ci sono molti motivi che possono stare alla base dei dati mancanti. Ad esempio, i dati possono mancare per disegno dello studio (“mancanza pianificata”), come ad esempio nei progetti di ricerca in cui i partecipanti al campione vengono selezionati casualmente per completare sottoinsiemi diversi della batteria di valutazione (una scelta di questo tipo viene motivata, ad esempio, a causa di considerazioni pratiche come i vincoli di tempo). In tali condizioni, si presume che i dati mancanti si distribuiscano in un modo completamente casuale rispetto a tutte le altre variabili nello studio.</p>
 <p>In generale, i meccanismi che determinano la presenza di dati mancanti possono essere classificati in tre categorie:</p>
 <ol class="arabic simple">
@@ -450,7 +461,7 @@ document.write(`
 </ol>
 </section>
 <section id="la-gestione-dei-dati-mancanti">
-<h2><span class="section-number">26.2. </span>La gestione dei dati mancanti<a class="headerlink" href="#la-gestione-dei-dati-mancanti" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">26.2. </span>La gestione dei dati mancanti<a class="headerlink" href="#la-gestione-dei-dati-mancanti" title="Permalink to this heading">#</a></h2>
 <p>Il passo successivo dopo la definizione dei meccanismi è quello della gestione dei dati mancanti. Sostanzialmente le scelte possibili sono due: l’eliminazione dei casi o la sostituzione dei dati mancanti. Un metodo semplice, indicato solo nel caso in cui l’ammontare dei dati mancanti è limitato e questi sono mancanti completamente a caso (MCAR), è quello di cancellare i casi con dati mancanti (<em>case deletion</em>).</p>
 <p>I modi per eliminare i casi sono due: <em>listwise deletion</em> e <em>pairwise deletion</em>. Nel primo caso si elimina dal campione ogni caso che ha dati mancanti. Le analisi avverranno quindi solo sui casi che hanno valori validi per tutte le variabili in esame. In questo modo si ottiene una maggiore semplicità di trattazione nell’analisi statistica, tuttavia non si utilizza tutta l’informazione osservata (si riduce la numerosità campionaria e, quindi, l’informazione). Il secondo metodo è la* pairwise deletio*n, che utilizza tutti i casi che hanno i dati validi su due variabili volta per volta. In questo modo si riesce a massimizzare la numerosità del campione da utilizzare, ma si tratta comunque di un metodo che presenta dei problemi, per esempio il fatto che con questo approccio i parametri del modello saranno basati su differenti insiemi di dati, con differenti numerosità campionarie e differenti errori standard.</p>
 <p>Quando i dati non sono MNAR è opportuno sostituirli con appropriate funzioni dei dati effettivamente osservati. Questa procedura è chiamata imputazione (<em>imputation</em>). Di seguito sono indicati alcuni metodi.</p>
@@ -462,7 +473,7 @@ variabile. Questo metodo, utilizzato troppo spesso per la sua semplicità, riduc
 <li><p><em>Expectation-Maximization</em>. Un altro approccio moderno del trattamento dei dati mancanti è l’applicazione dell’algoritmo Expectation Maximization (EM). La tecnica è quella di stimare i parametri sulla base dei dati osservati, e di stimare poi i dati mancanti sulla base di questi parametri (fase E). Poi i parametri vengono nuovamente stimati sulla base della nuova matrice di dati (fase M), e così via. Questo processo viene iterato fino a quando i valori stimati convergono. Tuttavia, una limitazione fondamentale dell’utilizzo dell’algoritmo EM per calcolare le matrici di input per le analisi CFA/SEM è che gli errori standard risultanti delle stime dei parametri non sono consistenti. Pertanto, gli intervalli di confidenza e i test di significatività possono risultare compromessi.</p></li>
 </ol>
 <section id="metodo-direct-ml">
-<h3><span class="section-number">26.2.1. </span>Metodo Direct ML<a class="headerlink" href="#metodo-direct-ml" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">26.2.1. </span>Metodo Direct ML<a class="headerlink" href="#metodo-direct-ml" title="Permalink to this heading">#</a></h3>
 <p>Benché vengano talvolta usati, i metodi precedenti sono stati presentati solo per ragioni storiche. Nella pratica concreta è preferibile usare il metodo <em>Direct ML</em>, conosciuto anche come “raw ML” o “full information ML” (FIML), in quanto è generalmente considerano come il metodo migliore per gestire i dati mancanti nella maggior parte delle applicazioni CFA e SEM. Direct ML è esente dai problemi associati all’utilizzo dell’algoritmo EM e produce stime consistenti sotto l’ipotesi di normalità multivariata per dati mancanti MAR.</p>
 <p>Intuitivamente, l’approccio utilizza la relazione tra le variabili per dedurre quali siano i valori mancanti con maggiore probabilità. Ad esempio, se due variabili, <span class="math notranslate nohighlight">\(X\)</span> e <span class="math notranslate nohighlight">\(Y\)</span>, sono correlate positivamente, allora se, per alcune osservazioni <span class="math notranslate nohighlight">\(i\)</span>, <span class="math notranslate nohighlight">\(X_i\)</span> è il valore più alto nella variabile, è probabile che anche il valore mancante <span class="math notranslate nohighlight">\(Y_i\)</span> sia un valore alto. FIML utilizza queste informazioni senza procedere all’imputazione dei valori mancanti, ma invece basandosi sulle stime più verosimili dei parametri della popolazione, ovvero massimizzando direttamente la verosimiglianza del modello specificato. Sotto l’assunzione di normalità multivariata, la funzione di verosimiglianza diventa</p>
 <div class="math notranslate nohighlight">
@@ -473,7 +484,7 @@ L(\mu, \Sigma) = \prod_i f(y_i \mid \mu_i, \Sigma_i),
 <p>In <code class="docutils literal notranslate"><span class="pre">lavaan</span></code> l’applicazione di tale metodo si ottiene specificando l’argomento <code class="docutils literal notranslate"><span class="pre">missing</span> <span class="pre">=</span> <span class="pre">&quot;ml&quot;</span></code>.</p>
 </section>
 <section id="un-esempio-concreto">
-<h3><span class="section-number">26.2.2. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">26.2.2. </span>Un esempio concreto<a class="headerlink" href="#un-esempio-concreto" title="Permalink to this heading">#</a></h3>
 <p>Per applicare il metodo <em>direct ML</em>, <a href="#id1"><span class="problematic" id="id2">brown2015confirmatory</span></a> prende in esame i dati reali di un questionario (un singolo fattore, quattro item, una covarianza di errore) con dati mancanti (N = 650). Leggiamo i dati dell’esempio:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -642,14 +653,14 @@ s4 0.6692308 0.6692308 0.6692308 0.7076923
 </section>
 </section>
 <section id="dati-mancanti-in-r">
-<h2><span class="section-number">26.3. </span>Dati mancanti in R<a class="headerlink" href="#dati-mancanti-in-r" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">26.3. </span>Dati mancanti in R<a class="headerlink" href="#dati-mancanti-in-r" title="Permalink to this heading">#</a></h2>
 </section>
 <section id="motivazione">
-<h2><span class="section-number">26.4. </span>Motivazione<a class="headerlink" href="#motivazione" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">26.4. </span>Motivazione<a class="headerlink" href="#motivazione" title="Permalink to this heading">#</a></h2>
 <p>La pulizia dei dati (<em>data cleaning</em>) in <code class="docutils literal notranslate"><span class="pre">R</span></code> è fondamentale per effettuare qualsiasi analisi. Uno degli aspetti più importanti della pulizia dei dati è la gestione dei dati mancanti. I valori mancanti (<em>missing values</em>) vengono indicati dal codice <code class="docutils literal notranslate"><span class="pre">NA</span></code>, che significa <em>not available</em> — non disponibile.</p>
 </section>
 <section id="trattamento-dei-dati-mancanti">
-<h2><span class="section-number">26.5. </span>Trattamento dei dati mancanti<a class="headerlink" href="#trattamento-dei-dati-mancanti" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">26.5. </span>Trattamento dei dati mancanti<a class="headerlink" href="#trattamento-dei-dati-mancanti" title="Permalink to this heading">#</a></h2>
 <p>Se una variabile contiene valori mancanti, <code class="docutils literal notranslate"><span class="pre">R</span></code> non è in grado di applicare ad essa alcune Funzioni, come ad esempio la media. Per questa ragione, la gran parte delle funzioni di <code class="docutils literal notranslate"><span class="pre">R</span></code> prevedono modi specifici per trattare i valori mancanti.</p>
 <p>Ci sono diversi tipi di dati “mancanti” in <code class="docutils literal notranslate"><span class="pre">R</span></code>;</p>
 <ul class="simple">
@@ -817,11 +828,10 @@ s4 0.6692308 0.6692308 0.6692308 0.7076923
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="500_cat_data.html"
@@ -841,10 +851,7 @@ s4 0.6692308 0.6692308 0.6692308 0.7076923
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -915,8 +922,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

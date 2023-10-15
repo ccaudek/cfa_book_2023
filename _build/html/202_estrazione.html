@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>17. L’estrazione dei fattori &#8212; cfa_book</title>
   
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,12 +39,14 @@
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
@@ -70,7 +72,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="18. Il numero dei fattori" href="203_numero_fattori.html" />
     <link rel="prev" title="16. Valutazione della matrice di correlazione" href="201_valutare_le_matrici.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -79,6 +81,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -378,10 +389,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
@@ -389,7 +400,7 @@ document.write(`
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -435,7 +446,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="l-estrazione-dei-fattori">
-<span id="extraction-notebook"></span><h1><span class="section-number">17. </span>L’estrazione dei fattori<a class="headerlink" href="#l-estrazione-dei-fattori" title="Permalink to this headline">#</a></h1>
+<span id="extraction-notebook"></span><h1><span class="section-number">17. </span>L’estrazione dei fattori<a class="headerlink" href="#l-estrazione-dei-fattori" title="Permalink to this heading">#</a></h1>
 <p>L’analisi fattoriale mira a descrivere in modo parsimonioso le relazioni tra un grande numero di item. L’obiettivo è identificare un piccolo numero di variabili latenti che, quando controllate, rendono uguali a zero le correlazioni parziali tra gli item. Una volta determinato il numero dei fattori comuni, è possibile stimare le saturazioni fattoriali, che corrispondono alle correlazioni o covarianze tra gli item e i fattori.</p>
 <p>In termini matriciali, il modello multifattoriale si scrive</p>
 <div class="math notranslate nohighlight">
@@ -447,7 +458,7 @@ e covarianze tra i fattori comuni e <span class="math notranslate nohighlight">\
 diagonale di ordine <span class="math notranslate nohighlight">\(p\)</span> con le unicità delle variabili.</p>
 <p>In questo capitolo descriveremo alcuni dei metodi che possono essere usati per stimare <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span>. Esamineremo il metodo delle componenti principali, il metodo dei fattori principali, il metodo dei fattori principali iterato e il metodo di massima verosimiglianza.</p>
 <section id="metodo-delle-componenti-principali">
-<h2><span class="section-number">17.1. </span>Metodo delle componenti principali<a class="headerlink" href="#metodo-delle-componenti-principali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.1. </span>Metodo delle componenti principali<a class="headerlink" href="#metodo-delle-componenti-principali" title="Permalink to this heading">#</a></h2>
 <p>L’analisi fattoriale eseguita mediante il metodo delle componenti
 principali, nonostante il nome, non è un’analisi delle componenti
 principali. Il metodo delle componenti principali costituisce invece
@@ -508,21 +519,6 @@ riportata di seguito:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>eigen() decomposition
-$values
-[1] 3.2633766259 1.5383820947 0.1679692814 0.0300298228 0.0002421752
-
-$vectors
-           [,1]       [,2]        [,3]       [,4]       [,5]
-[1,] -0.5367301 -0.1859819 -0.18991841 -0.1247931  0.7910052
-[2,] -0.2874672  0.6505666  0.68488713 -0.1198141  0.1034406
-[3,] -0.4343545 -0.4736877  0.40694897  0.6136634 -0.2115794
-[4,] -0.5373909 -0.1692797 -0.09532905 -0.6293896 -0.5266275
-[5,] -0.3896544  0.5377158 -0.56583170  0.4442491 -0.2037363
-</pre></div>
-</div>
-</div>
 </div>
 <p>Come indicato in precedenza, la matrice <strong>R</strong> può essere espressa come</p>
 <div class="math notranslate nohighlight">
@@ -535,18 +531,6 @@ $vectors
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 5 of type dbl</caption>
-<tbody>
-	<tr><td>1.000</td><td> 0.296</td><td> 0.881</td><td>0.995</td><td>0.545</td></tr>
-	<tr><td>0.296</td><td> 1.000</td><td>-0.022</td><td>0.326</td><td>0.837</td></tr>
-	<tr><td>0.881</td><td>-0.022</td><td> 1.000</td><td>0.867</td><td>0.130</td></tr>
-	<tr><td>0.995</td><td> 0.326</td><td> 0.867</td><td>1.000</td><td>0.544</td></tr>
-	<tr><td>0.545</td><td> 0.837</td><td> 0.130</td><td>0.544</td><td>1.000</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Esaminiamo ora gli autovalori. I primi due autovalori spiegano da soli
 il 96% della varianza campionaria:</p>
@@ -556,8 +540,6 @@ il 96% della varianza campionaria:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html">0.960351744117911</div></div>
 </div>
 <p>Usando i primi due autovalori e i primi due autovettori è dunque
 possibile riprodurre in maniera soddisfacente la matrice <strong>R</strong> operando
@@ -674,18 +656,6 @@ stimate nel modo seguente:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 2 of type dbl</caption>
-<tbody>
-	<tr><td>-0.970</td><td>-0.231</td></tr>
-	<tr><td>-0.519</td><td> 0.807</td></tr>
-	<tr><td>-0.785</td><td>-0.588</td></tr>
-	<tr><td>-0.971</td><td>-0.210</td></tr>
-	<tr><td>-0.704</td><td> 0.667</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>La matrice di correlazione riprodotta (con le comunalità sulla diagonale
 principale) diventa</p>
@@ -696,18 +666,6 @@ principale) diventa</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 5 of type dbl</caption>
-<tbody>
-	<tr><td>0.993</td><td> 0.317</td><td> 0.896</td><td>0.990</td><td>0.529</td></tr>
-	<tr><td>0.317</td><td> 0.921</td><td>-0.067</td><td>0.335</td><td>0.904</td></tr>
-	<tr><td>0.896</td><td>-0.067</td><td> 0.961</td><td>0.885</td><td>0.160</td></tr>
-	<tr><td>0.990</td><td> 0.335</td><td> 0.885</td><td>0.987</td><td>0.543</td></tr>
-	<tr><td>0.529</td><td> 0.904</td><td> 0.160</td><td>0.543</td><td>0.940</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>La matrice di correlazioni residue (con le specificità sulla diagonale principale) è la seguente.</p>
 <div class="cell docutils container">
@@ -716,21 +674,6 @@ principale) diventa</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 5 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>K</th><th scope=col>I</th><th scope=col>H</th><th scope=col>L</th><th scope=col>J</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>K</th><td> 0.007</td><td>-0.021</td><td>-0.015</td><td> 0.005</td><td> 0.016</td></tr>
-	<tr><th scope=row>I</th><td>-0.021</td><td> 0.079</td><td> 0.045</td><td>-0.009</td><td>-0.067</td></tr>
-	<tr><th scope=row>H</th><td>-0.015</td><td> 0.045</td><td> 0.039</td><td>-0.018</td><td>-0.030</td></tr>
-	<tr><th scope=row>L</th><td> 0.005</td><td>-0.009</td><td>-0.018</td><td> 0.013</td><td> 0.001</td></tr>
-	<tr><th scope=row>J</th><td> 0.016</td><td>-0.067</td><td>-0.030</td><td> 0.001</td><td> 0.060</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Possiamo ora capire il motivo del nome <em>metodo delle componenti
 principali</em>: le saturazioni fattoriali sono proporzionali agli
@@ -749,7 +692,7 @@ invece svolto quando la soluzione viene trovata con il metodo della
 massima verosimiglianza.</p>
 </section>
 <section id="metodo-dei-fattori-principali">
-<h2><span class="section-number">17.2. </span>Metodo dei fattori principali<a class="headerlink" href="#metodo-dei-fattori-principali" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.2. </span>Metodo dei fattori principali<a class="headerlink" href="#metodo-dei-fattori-principali" title="Permalink to this heading">#</a></h2>
 <p>Il <em>metodo dei fattori principali</em> (<em>principal factor method</em>, anche
 detto <em>principal axis method</em>) è uno dei metodi maggiormente usati per
 la stima delle saturazioni fattoriali e delle comunalità. Il metodo
@@ -823,21 +766,6 @@ ridotta delle correlazioni <span class="math notranslate nohighlight">\(\textbf{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 5 of type dbl</caption>
-<thead>
-	<tr><th></th><th scope=col>K</th><th scope=col>I</th><th scope=col>H</th><th scope=col>L</th><th scope=col>J</th></tr>
-</thead>
-<tbody>
-	<tr><th scope=row>K</th><td>0.995</td><td> 0.296</td><td> 0.881</td><td>0.995</td><td>0.545</td></tr>
-	<tr><th scope=row>I</th><td>0.296</td><td> 0.837</td><td>-0.022</td><td>0.326</td><td>0.837</td></tr>
-	<tr><th scope=row>H</th><td>0.881</td><td>-0.022</td><td> 0.881</td><td>0.867</td><td>0.130</td></tr>
-	<tr><th scope=row>L</th><td>0.995</td><td> 0.326</td><td> 0.867</td><td>0.995</td><td>0.544</td></tr>
-	<tr><th scope=row>J</th><td>0.545</td><td> 0.837</td><td> 0.130</td><td>0.544</td><td>0.837</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Gli autovalori della matrice ridotta di correlazioni
 <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> sono:</p>
@@ -845,11 +773,6 @@ ridotta delle correlazioni <span class="math notranslate nohighlight">\(\textbf{
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">ee</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">eigen</span><span class="p">(</span><span class="n">R1</span><span class="p">)</span>
 <span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">values</span><span class="p">,</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]  3.202  1.394  0.029  0.000 -0.080
 </pre></div>
 </div>
 </div>
@@ -861,26 +784,11 @@ ridotta delle correlazioni <span class="math notranslate nohighlight">\(\textbf{
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 4.545
-</pre></div>
-</div>
-</div>
 </div>
 <p>I primi due autovalori di <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> sono:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">print</span><span class="p">(</span><span class="nf">round</span><span class="p">(</span><span class="n">ee</span><span class="o">$</span><span class="n">vectors</span><span class="p">[,</span><span class="w"> </span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">],</span><span class="w"> </span><span class="m">3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       [,1]   [,2]
-[1,] -0.548 -0.177
-[2,] -0.272  0.656
-[3,] -0.431 -0.461
-[4,] -0.549 -0.159
-[5,] -0.373  0.549
 </pre></div>
 </div>
 </div>
@@ -893,23 +801,11 @@ autovalori si ottengono le stime delle saturazioni fattoriali:</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table class="dataframe">
-<caption>A matrix: 5 × 2 of type dbl</caption>
-<tbody>
-	<tr><td>-0.981</td><td>-0.209</td></tr>
-	<tr><td>-0.487</td><td> 0.774</td></tr>
-	<tr><td>-0.772</td><td>-0.544</td></tr>
-	<tr><td>-0.982</td><td>-0.187</td></tr>
-	<tr><td>-0.667</td><td> 0.648</td></tr>
-</tbody>
-</table>
-</div></div>
 </div>
 <p>Tale risultato replica quello riportato da Rencher (2002).</p>
 </section>
 <section id="metodo-dei-fattori-principali-iterato">
-<h2><span class="section-number">17.3. </span>Metodo dei fattori principali iterato<a class="headerlink" href="#metodo-dei-fattori-principali-iterato" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.3. </span>Metodo dei fattori principali iterato<a class="headerlink" href="#metodo-dei-fattori-principali-iterato" title="Permalink to this heading">#</a></h2>
 <p>Solitamente, per migliorare la stima della comunalità, la diagonale
 della matrice <span class="math notranslate nohighlight">\(\textbf{S} - \hat{\boldsymbol{\Psi}}\)</span> o
 <span class="math notranslate nohighlight">\(\textbf{R} - \hat{\boldsymbol{\Psi}}\)</span> viene ottenuta per iterazione.
@@ -936,7 +832,7 @@ delle componenti principali producono risultati molto simili quando <span class=
 assume un piccolo valore (questo si verifica quando le correlazioni sono
 alte) e quando <span class="math notranslate nohighlight">\(p\)</span> (il numero delle variabili) è grande.</p>
 <section id="casi-di-heywood">
-<h3><span class="section-number">17.3.1. </span>Casi di Heywood<a class="headerlink" href="#casi-di-heywood" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">17.3.1. </span>Casi di Heywood<a class="headerlink" href="#casi-di-heywood" title="Permalink to this heading">#</a></h3>
 <p>Tra gli inconvenienti del metodo dei fattori principali iterato vi è il
 fatto che può talvolta portare a soluzioni inammissibili (quando viene
 fattorizzata la matrice <strong>R</strong>) caratterizzate da valori di comunalità
@@ -956,9 +852,7 @@ il programma riporta che non può essere trovata una soluzione.</p>
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in fa.stats(r = r, f = f, phi = phi, n.obs = n.obs, np.obs = np.obs, :
 “The estimated weights for the factor scores are probably incorrect.  Try a different factor score estimation method.”
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, :
+Warning message in fac(r = r, nfactors = nfactors, n.obs = n.obs, rotate = rotate, :
 “An ultra-Heywood case was detected.  Examine the results carefully”
 </pre></div>
 </div>
@@ -998,7 +892,7 @@ suggerisce che la soluzione è impropria.</p>
 </section>
 </section>
 <section id="metodo-di-massima-verosimiglianza">
-<h2><span class="section-number">17.4. </span>Metodo di massima verosimiglianza<a class="headerlink" href="#metodo-di-massima-verosimiglianza" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">17.4. </span>Metodo di massima verosimiglianza<a class="headerlink" href="#metodo-di-massima-verosimiglianza" title="Permalink to this heading">#</a></h2>
 <p>Il metodo di massima verosimiglianza è indicato quando si può assumere che le variabili manifeste seguano una distribuzione normale multivariata. In queste condizioni, il metodo produce stime dei pesi fattoriali che più verosimilmente hanno prodotto le correlazioni osservate. Gli stimatori di massima verosimiglianza sono preferibili a quelli ottenuti con altri metodi, a condizione che le premesse siano pienamente realizzate.</p>
 <p>La funzione <span class="math notranslate nohighlight">\(F\)</span> che viene minimizzata dal metodo di massima verosimiglianza rappresenta una misura di “distanza” tra la matrice di covarianza osservata e quella predetta dal modello. Uguagliando a zero le derivate di <span class="math notranslate nohighlight">\(F\)</span> rispetto ai parametri del modello <span class="math notranslate nohighlight">\(\boldsymbol{\Lambda}\)</span> e <span class="math notranslate nohighlight">\(\boldsymbol{\Psi}\)</span> si
 ottengono le equazioni per le stime di massima verosimiglianza di
@@ -1012,33 +906,6 @@ verosimiglianza.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">factanal</span><span class="p">(</span><span class="n">covmat</span><span class="o">=</span><span class="n">R</span><span class="p">,</span><span class="w"> </span><span class="n">factors</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="w"> </span><span class="n">rotation</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n.obs</span><span class="o">=</span><span class="m">225</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-factanal(factors = 2, covmat = R, n.obs = 225, rotation = &quot;none&quot;)
-
-Uniquenesses:
-    K     I     H     L     J 
-0.005 0.268 0.055 0.008 0.005 
-
-Loadings:
-  Factor1 Factor2
-K  0.955  -0.289 
-I  0.528   0.673 
-H  0.720  -0.653 
-L  0.954  -0.287 
-J  0.764   0.642 
-
-               Factor1 Factor2
-SS loadings      3.203   1.457
-Proportion Var   0.641   0.291
-Cumulative Var   0.641   0.932
-
-Test of the hypothesis that 2 factors are sufficient.
-The chi square statistic is 648.09 on 1 degree of freedom.
-The p-value is 5.81e-143 
 </pre></div>
 </div>
 </div>
@@ -1072,11 +939,10 @@ The p-value is 5.81e-143
 
               
               
-                <footer class="bd-footer-article">
-                  
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="201_valutare_le_matrici.html"
@@ -1096,10 +962,7 @@ The p-value is 5.81e-143
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -1168,8 +1031,8 @@ By Corrado Caudek
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
